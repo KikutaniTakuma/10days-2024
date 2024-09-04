@@ -18,16 +18,6 @@
 #include "GameObject/Comp/SpriteRenderDataComp.h"
 #include "GameObject/Comp/TransformComp.h"
 
-#include "GameObject/GameComp/CannonComp.h"
-#include "GameObject/GameComp/CustomizeComp.h"
-#include "GameObject/GameComp/ItemComp.h"
-#include "GameObject/GameComp/LoopCannonComp.h"
-#include "GameObject/GameComp/PlayerComp.h"
-#include "GameObject/GameComp/SailComp.h"
-#include "GameObject/GameComp/WhirlpoolsComp.h"
-#include "GameObject/GameComp/WindComp.h"
-#include "GameObject/GameComp/WindNodeComp.h"
-
 LevelData* LevelLoader::Load(const std::string& fileName)
 {
     // jsonをロード

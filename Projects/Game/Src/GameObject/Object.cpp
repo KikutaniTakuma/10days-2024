@@ -20,16 +20,6 @@
 #include "Comp/SpriteRenderDataComp.h"
 #include "Comp/TransformComp.h"
 
-#include "GameComp/CannonComp.h"
-#include "GameComp/CustomizeComp.h"
-#include "GameComp/ItemComp.h"
-#include "GameComp/LoopCannonComp.h"
-#include "GameComp/PlayerComp.h"
-#include "GameComp/SailComp.h"
-#include "GameComp/UIDrawComp.h"
-#include "GameComp/WhirlpoolsComp.h"
-#include "GameComp/WindComp.h"
-#include "GameComp/WindNodeComp.h"
 void Object::Init() {
 	/*for (auto& i : components_) {
 		i.second->Init();
@@ -120,15 +110,6 @@ bool Object::DebugAddComp() {
 		DebugAdd<SpriteRenderComp>();
 		DebugAdd<SpriteRenderDataComp>();
 		DebugAdd<TransformComp>();
-		DebugAdd<CannonComp>();
-		DebugAdd<ItemComp>();
-		DebugAdd<LoopCannonComp>();
-		DebugAdd<PlayerComp>();
-		DebugAdd<SailComp>();
-		DebugAdd<UIDrawComp>();
-		DebugAdd<WhirlpoolsComp>();
-		DebugAdd<WindComp>();
-		DebugAdd<WindNodeComp>();
 		ImGui::TreePop();
 
 		return true;
@@ -180,14 +161,5 @@ void Object::AddComps(nlohmann::json& compData)
 	AddAndLoadComp<SpriteRenderComp>(compName, compData);
 	AddAndLoadComp<SpriteRenderDataComp>(compName, compData);
 	AddAndLoadComp<TransformComp>(compName, compData);
-	AddAndLoadComp<CannonComp>(compName, compData);
-	AddAndLoadComp<ItemComp>(compName, compData);
-	AddAndLoadComp<LoopCannonComp>(compName, compData);
-	AddAndLoadComp<PlayerComp>(compName, compData);
-	AddAndLoadComp<SailComp>(compName, compData);
-	AddAndLoadComp<UIDrawComp>(compName, compData);
-	AddAndLoadComp<WhirlpoolsComp>(compName, compData);
-	AddAndLoadComp<WindComp>(compName, compData);
-	AddAndLoadComp<WindNodeComp>(compName, compData);
 }
 
