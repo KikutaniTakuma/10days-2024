@@ -1,39 +1,141 @@
 {
-    "name": "scene",
     "objects": [
         {
-            "type": "Object",
-            "Comps" :[
+            "Comps": [
                 {
-                    "CompName" : "class Data1Comp",
-                    "Data" : [
-                        1,
-                        2,
-                        3
-                    ]
+                    "BlendType": "kNone",
+                    "CompName": "class ModelRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Common/Cube.obj",
+                    "isLighting": true
                 },
                 {
-                    "CompName" : "class Data2Comp",
-                    "Data" : "filename.txt"
+                    "CompName": "class ModelRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        -0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "translate": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 }
-            ]
+            ],
+            "type": "Object"
         },
         {
-            "type": "Object",
-            "Comps" :[
+            "Comps": [
                 {
-                    "CompName" : "class Data1Comp",
-                    "Data" : [
-                        1,
-                        2,
-                        3
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        -0.16907574236392975,
+                        -0.7663795351982117,
+                        -0.27217137813568115,
+                        0.5567752122879028
+                    ],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        0.9999999403953552
+                    ],
+                    "translate": [
+                        4.076245307922363,
+                        5.903861999511719,
+                        1.0054539442062378
+                    ]
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "CompName": "class CameraComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.027420684695243835,
+                        -0.7059096693992615,
+                        0.027369458228349686,
+                        0.7072415351867676
+                    ],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        0.9999999403953552
+                    ],
+                    "translate": [
+                        23.29557228088379,
+                        1.7534804344177246,
+                        -0.05645439028739929
                     ]
                 },
                 {
-                    "CompName" : "class Data2Comp",
-                    "Data" : "filename.txt"
+                    "CompName": "class Camera3DComp",
+                    "aspectRatio": 1.7777777910232544,
+                    "farClip": 1000.0,
+                    "fov": 0.4869273006916046,
+                    "nearClip": 0.10000000149011612
                 }
-            ]
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNone",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/EngineResources/white2x2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.7071068286895752,
+                        -0.0,
+                        -0.7071067094802856
+                    ],
+                    "scale": [
+                        10.0,
+                        10.0,
+                        1.0
+                    ],
+                    "translate": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            ],
+            "type": "Object"
         }
-    ]
+    ],
+    "scene": "hoge"
 }
