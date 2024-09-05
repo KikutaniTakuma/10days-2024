@@ -1,5 +1,40 @@
 {
+    "scene": "editorTest",
     "objects": [
+        {
+            "Comps": [
+                {
+                    "CompName": "class CameraComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "translate": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "CompName": "class Camera2DComp",
+                    "width": 1280,
+                    "height" : 720,
+                    "farClip": 1000.0,
+                    "nearClip": 0.10000000149011612
+                }
+            ],
+            "type": "Object"
+        },
         {
             "Comps": [
                 {
