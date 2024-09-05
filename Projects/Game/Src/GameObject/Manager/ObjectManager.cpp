@@ -412,11 +412,9 @@ void ObjectManager::Load(const std::string& jsonFileName) {
 	
 	// オブジェクトを追加
 	for (auto& objectData : jsonFile["objects"]) {
-		if (objectData["type"].get<std::string>() == "Object") {
-			levelData.objects.push_back(Lamb::MakeSafePtr<Object>());
-			Object& object = *levelData.objects.back();
-			object.Load(objectData["Comps"]);
-		}
+		levelData.objects.push_back(Lamb::MakeSafePtr<Object>());
+		Object& object = *levelData.objects.back();
+		object.Load(objectData["Comps"]);
 	}
 
 	// オブジェクトをセット

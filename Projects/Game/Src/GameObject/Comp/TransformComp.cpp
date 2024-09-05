@@ -40,6 +40,9 @@ void TransformComp::Init()
 }
 
 void TransformComp::UpdateMatrix() {
+#ifdef _DEBUG
+	rotate = Quaternion::EulerToQuaternion(eulerRotate);
+#endif // _DEBUG
 	rotate = rotate.Normalize();
 	worldMatrix_ = Mat4x4::MakeAffin(scale, rotate, translate);
 }
@@ -94,27 +97,20 @@ void TransformComp::Debug([[maybe_unused]] const std::string& guiName) {
 			ImGui::EndCombo();
 		}
 		isGuizmo_ = true;
-		isDebug_ = false;
 
 		ImGui::TreePop();
 	}
-	else if (ImGui::TreeNode(guiName.c_str())) {
-		if (not isDebug_) {
-			eulerRotate = rotate.ToEuler();
-		}
-		isDebug_ = true;
+	else {
 		isGuizmo_ = false;
-
+	}
+	if (ImGui::TreeNode(guiName.c_str())) {
 		ImGui::DragFloat3("scale", scale.data(), 0.01f);
 
-
+		eulerRotate = rotate.ToEuler();
 		eulerRotate *= Lamb::Math::toDegree<float32_t>;
 		ImGui::DragFloat3("rotate(Degree)", eulerRotate.data(), 1.0f);
 		eulerRotate *= Lamb::Math::toRadian<float32_t>;
-
 		rotate = Quaternion::EulerToQuaternion(eulerRotate);
-		rotate = rotate.Normalize();
-
 
 		ImGui::DragFloat3("translate", translate.data(), 0.01f);
 		for (size_t index = 0; auto & i : children_) {
@@ -123,10 +119,6 @@ void TransformComp::Debug([[maybe_unused]] const std::string& guiName) {
 		}
 
 		ImGui::TreePop();
-	}
-	else {
-		isDebug_ = false;
-		isGuizmo_ = false;
 	}
 #endif // _DEBUG
 
@@ -144,10 +136,19 @@ void TransformComp::Guizmo(CameraComp* cameraComp) {
 		const Mat4x4& ndc = cameraComp->GetToNdcMatrix();
 		if (ImGuizmo::Manipulate(view.data(), ndc.data(), kGuizmoMode_[guimoType_].second, ImGuizmo::WORLD, worldMatrix_.data())) {
 			if (parent_) {
+#ifdef _DEBUG
+				(worldMatrix_ * parent_->worldMatrix_.Inverse()).Decompose(scale, eulerRotate, translate);
+#else
 				(worldMatrix_ * parent_->worldMatrix_.Inverse()).Decompose(scale, rotate, translate);
+#endif // _DEBUG
 			}
 			else {
+#ifdef _DEBUG
+				worldMatrix_.Decompose(scale, eulerRotate, translate);
+#else
 				worldMatrix_.Decompose(scale, rotate, translate);
+#endif // _DEBUG
+
 			}
 			TransformCompUpdater::GetInstance()->SetCurretnGuizmoID(guizmoID_);
 		}
