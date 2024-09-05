@@ -364,6 +364,9 @@ void ObjectManager::Save() {
 
 	// シーンを名前
 	root["scene"] = fileName;
+
+	RenderingManager::GetInstance()->Save(root);
+
 	// オブジェクト
 	root["objects"] = nlohmann::json::array();
 
@@ -405,6 +408,10 @@ void ObjectManager::Load(const std::string& jsonFileName) {
 	auto jsonFile = Lamb::LoadJson(jsonFileName);
 
 	currentScene_ = jsonFile["scene"].get<std::string>();
+	if (jsonFile.find("RederingSetting") != jsonFile.end()) {
+		RenderingManager::GetInstance()->Load(jsonFile);
+	}
+
 	levelDatas_[currentScene_].reset(new LevelData());
 	LevelData& levelData = *levelDatas_[currentScene_];
 	levelData.name = currentScene_;

@@ -64,11 +64,9 @@ void Fade::Update() {
 	if (ease_.ActiveExit()) {
 		isInStart_ = false;
 		isOutStart_ = false;
+		RenderingManager::GetInstance()->SetColor(Vector4::kIdentity);
 	}
 	if (isInStart_ || isOutStart_) {
 		RenderingManager::GetInstance()->SetColor(color_);
-	}
-	else {
-		RenderingManager::GetInstance()->SetColor(Vector4::kIdentity);
 	}
 }

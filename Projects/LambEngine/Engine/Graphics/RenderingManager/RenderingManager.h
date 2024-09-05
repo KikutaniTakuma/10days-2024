@@ -9,6 +9,7 @@
 #include "Engine/Graphics/PipelineObject/DeferredRendering/DeferredRendering.h"
 
 #include "Drawers/AirSkyBox/AirSkyBox.h"
+#include "json.hpp"
 
 #include <list>
 
@@ -52,9 +53,10 @@ public:
 	void SetHsv(const Vector3& hsv);
 	void SetColor(const Vector4& color);
 
-	void SetTime(float32_t time);
-
 	void Debug(const std::string& guiName);
+
+	void Save(nlohmann::json& jsonFile);
+	void Load(nlohmann::json& jsonFile);
 
 private:
 	// アルファ値がないものを描画
@@ -128,7 +130,8 @@ private:
 	std::unique_ptr<AirSkyBox> skyBox_;
 	QuaternionTransform transform_;
 	AirSkyBox::AtmosphericParams atmosphericParams_;
-	float32_t atmosphericTime_ = 6.0f;
+	Vector3 lightRotate_;
+	bool isDrawSkyBox_ = true;
 
 	Mat4x4 cameraMatrix_;
 
