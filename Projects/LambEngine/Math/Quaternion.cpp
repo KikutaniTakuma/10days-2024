@@ -281,6 +281,10 @@ Vector3 Quaternion::ToEuler() const {
 	return QuaternionToEuler(*this);
 }
 
+void Quaternion::SetEuler(const Vector3& euler) {
+	*this = EulerToQuaternion(euler);
+}
+
 #pragma endregion
 /// ========================================================================
 /// ========================================================================
@@ -364,8 +368,8 @@ Vector3 Quaternion::QuaternionToEuler(const Quaternion& q) {
 	float x = std::asin(-sinX);
 
 	// X軸回転が90度付近でジンバルロック状態の場合
-	if (std::isnan(x) || std::abs(std::abs(x) - std::numbers::pi_v<float> * 0.5f) < e) {
-		x = std::copysign(std::numbers::pi_v<float> * 0.5f, -sinX);
+	if (std::isnan(x) || std::abs(std::abs(x) - std::numbers::pi_v<float> *0.5f) < e) {
+		x = std::copysign(std::numbers::pi_v<float> *0.5f, -sinX);
 		return ToEulerAnglesZimbalLock(x, q);
 	}
 
