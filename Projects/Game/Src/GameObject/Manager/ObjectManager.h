@@ -65,6 +65,7 @@ private:
 
 	std::unordered_map<std::string, std::unique_ptr<LevelData>> levelDatas_;
 	std::string inputSceneName_;
+	std::string currentSceneName_;
 	std::string currentScene_;
 #ifdef _DEBUG
 	std::vector<std::filesystem::path> levelDataFilePathes_;
