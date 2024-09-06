@@ -1,4 +1,5 @@
 #include "ObbComp.h"
+#include "../Manager/ObbManager.h"
 #include <climits>
 #include <algorithm>
 #include "CameraComp.h"
@@ -28,12 +29,17 @@ std::array<const Vector3, 3> ObbComp::localOrientations_ = {
 
 void ObbComp::Init()
 {
+	ObbManager::GetInstance()->Set(this);
 	transformComp_ = object_.AddComp<TransformComp>();
 	positions_ = std::make_unique<std::array<Vector3, 8>>();
 	orientations_ = std::make_unique<std::array<Vector3, 3>>();
 #ifdef _DEBUG
 	color_ = std::numeric_limits<uint32_t>::max();
 #endif // _DEBUG
+}
+
+void ObbComp::Finalize() {
+	ObbManager::GetInstance()->Erase(this);
 }
 
 void ObbComp::FirstUpdate()

@@ -1,8 +1,14 @@
 #include "ObbPushComp.h"
+#include "../Manager/ObbManager.h"
 
 void ObbPushComp::Init()
 {
 	obbComp_ = object_.AddComp<ObbComp>();
+	ObbManager::GetInstance()->Set(this);
+}
+
+void ObbPushComp::Finalize() {
+	ObbManager::GetInstance()->Erase(this);
 }
 
 void ObbPushComp::Collision(Lamb::SafePtr<ObbComp> other) {

@@ -15,6 +15,7 @@
 #include <fstream>
 
 #include "Utils/FileUtils.h"
+#include "ObbManager.h"
 
 
 std::unique_ptr<ObjectManager> ObjectManager::instance_;
@@ -38,11 +39,14 @@ void ObjectManager::Initialize() {
 
 #ifdef _DEBUG
 	instance_->levelDataFilePathes_ = Lamb::GetFilePathFormDir("./SceneData/", ".json");
+	ObbManager::Initialize();
+	instance_->obbManager_ = ObbManager::GetInstance();
 #endif // _DEBUG
 }
 
 void ObjectManager::Finalize()
 {
+	ObbManager::Finalize();
 	instance_.reset();
 }
 
@@ -77,9 +81,6 @@ void ObjectManager::Set(const Lamb::SafePtr<Object>& object) {
 
 	if (itr ==  objects_.end() and object.have()) {
 		objects_.insert(std::unique_ptr<Object>(object.get()));
-		if (object->HasComp<ObbPushComp>()) {
-			obbObjects_.push_back(object->GetComp<ObbPushComp>());
-		}
 		for (const auto& i : object->GetTags()) {
 			objectTags_.insert(std::make_pair(i, true));
 		}
@@ -100,7 +101,6 @@ void ObjectManager::Erase(const Lamb::SafePtr<Object>& object) {
 
 void ObjectManager::Clear() {
 	objects_.clear();
-	obbObjects_.clear();
 
 	cameraComp_ = nullptr;
 }
@@ -151,7 +151,7 @@ void ObjectManager::Update() {
 	TransformCompUpdater::GetInstance()->UpdateMatrix();
 
 	// 当たり判定
-	Collision();
+	obbManager_->Collision();
 
 	TransformCompUpdater::GetInstance()->UpdateMatrix();
 
@@ -188,23 +188,6 @@ void ObjectManager::Draw() {
 	// 描画処理
 	for (auto& i : objects_) {
 		i->Draw(cameraComp_.get());
-	}
-}
-
-void ObjectManager::Collision() {
-	// 当たり判定(押し出し)
-	for (auto i = obbObjects_.begin(); i != obbObjects_.end(); i++) {
-		// 二重forで全部と当たり判定を取ると同じ組み合わせで2回当たり判定をとってしまうので
-		// 2番目のループで1ループの値で初期化する
-		for (auto j = i; j != obbObjects_.end(); j++) {
-			if (j == i) {
-				continue;
-			}
-			// 当たり判定(押し出し)
-			(*i)->Collision(&(*j)->GetObbComp());
-			// 当たり判定(押し出さない)
-			(*i)->GetObbComp().CollisionHasTag(&(*j)->GetObbComp());
-		}
 	}
 }
 
@@ -288,19 +271,7 @@ void ObjectManager::Debug() {
 				}
 				objectCount++;
 
-				if (isButton) {
-					if ((*itr)->HasComp<ObbPushComp>()) {
-						auto obbComp = (*itr)->GetComp<ObbPushComp>();
-						auto obbCompItr = std::find_if(
-							obbObjects_.begin(),
-							obbObjects_.end(),
-							[&obbComp](const Lamb::SafePtr<ObbPushComp>& element)->bool {
-								return obbComp == element.get();
-							}
-						);
-						obbObjects_.erase(obbCompItr);
-					}
-					
+				if (isButton) {					
 					objects_.erase(itr);
 					isErase = true;
 					break;
@@ -401,8 +372,8 @@ void ObjectManager::Save() {
 
 void ObjectManager::Load(const std::string& jsonFileName) {
 	objects_.clear();
-	obbObjects_.clear();
 	objectTags_.clear();
+	obbManager_->Clear();
 	cameraComp_ = nullptr;
 
 	auto jsonFile = Lamb::LoadJson(jsonFileName);

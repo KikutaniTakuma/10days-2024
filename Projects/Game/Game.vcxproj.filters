@@ -107,6 +107,9 @@
     <ClCompile Include="Src\Scenes\TestScene\TestScene.cpp">
       <Filter>Scenes\TestScene</Filter>
     </ClCompile>
+    <ClCompile Include="Src\GameObject\Manager\ObbManager.cpp">
+      <Filter>GameObject\Manager</Filter>
+    </ClCompile>
     <ClCompile Include="Src\GameObject\Comp\CloudComp.cpp">
       <Filter>GameObject\Comp</Filter>
     </ClCompile>
@@ -284,6 +287,9 @@
     </ClInclude>
     <ClInclude Include="Src\Scenes\TestScene\TestScene.h">
       <Filter>Scenes\TestScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Manager\ObbManager.h">
+      <Filter>GameObject\Manager</Filter>
     </ClInclude>
     <ClInclude Include="Src\GameObject\Comp\CloudComp.h">
       <Filter>GameObject\Comp</Filter>
