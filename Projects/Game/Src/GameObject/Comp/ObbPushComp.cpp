@@ -27,9 +27,6 @@ void ObbPushComp::Collision(Lamb::SafePtr<ObbComp> other) {
 			other->GetTransformComp().translate += pushvector;
 		}
 	}
-	else {
-		other->IsCollision(obbComp_.get());
-	}
 }
 
 void ObbPushComp::SetPushTag(const std::string& pushTag) {
@@ -66,6 +63,17 @@ void ObbPushComp::Debug([[maybe_unused]]const std::string& guiName)
 {
 #ifdef _DEBUG
 	if(ImGui::TreeNode(guiName.c_str())) {
+		ImGui::BeginChild(ImGui::GetID((void*)0), ImVec2(250, 100), ImGuiWindowFlags_NoTitleBar);
+		for (auto& i : pushTags_) {
+			if (ImGui::Button("erase")) {
+				pushTags_.erase(i);
+				break;
+			}
+			ImGui::SameLine();
+			ImGui::Text("tag : % s", i.c_str());
+		}
+		ImGui::EndChild();
+
 		inputTag_.resize(32);
 		ImGui::InputText(
 			"タグ",

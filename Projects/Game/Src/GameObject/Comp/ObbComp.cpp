@@ -416,6 +416,18 @@ void ObbComp::EraseCollisionTag(const std::string& collisionTag) {
 void ObbComp::Debug([[maybe_unused]]const std::string& guiName) {
 #ifdef _DEBUG
 	if (ImGui::TreeNode(guiName.c_str())) {
+
+		ImGui::BeginChild(ImGui::GetID((void*)0), ImVec2(250, 100), ImGuiWindowFlags_NoTitleBar);
+		for (auto& i : collisionTags_) {
+			if (ImGui::Button("erase")) {
+				collisionTags_.erase(i);
+				break;
+			}
+			ImGui::SameLine();
+			ImGui::Text("tag : % s", i.c_str());
+		}
+		ImGui::EndChild();
+
 		inputTag_.resize(32);
 		ImGui::DragFloat3("scale", scale.data(), 0.01f);
 		ImGui::DragFloat3("center", center.data(), 0.01f);
