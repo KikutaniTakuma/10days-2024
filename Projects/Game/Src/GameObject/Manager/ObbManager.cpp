@@ -50,21 +50,17 @@ void ObbManager::Erase(const Lamb::SafePtr<ObbPushComp>& obbPushComp) {
 void ObbManager::Collision() {
 	// 当たり判定(押し出し)
 	for (auto i = obbPushComps_.begin(); i != obbPushComps_.end(); i++) {
-		// 二重forで全部と当たり判定を取ると同じ組み合わせで2回当たり判定をとってしまうので
-		// 2番目のループで1ループの値で初期化する
-		for (auto j = i; j != obbPushComps_.end(); j++) {
+		for (auto j = obbPushComps_.begin(); j != obbPushComps_.end(); j++) {
 			if (j == i) {
 				continue;
 			}
 			// 当たり判定(押し出し)
-			(*i)->Collision(&(*j)->GetObbComp());
+			(*i)->Collision((*j));
 		}
 	}
 	// 当たり判定(押し出し)
 	for (auto i = obbComps_.begin(); i != obbComps_.end(); i++) {
-		// 二重forで全部と当たり判定を取ると同じ組み合わせで2回当たり判定をとってしまうので
-		// 2番目のループで1ループの値で初期化する
-		for (auto j = i; j != obbComps_.end(); j++) {
+		for (auto j = obbComps_.begin(); j != obbComps_.end(); j++) {
 			if (j == i) {
 				continue;
 			}

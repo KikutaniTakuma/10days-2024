@@ -11,7 +11,7 @@ public:
 	void Init() override;
 	void Finalize() override;
 
-	void Collision(Lamb::SafePtr<ObbComp> other);
+	void Collision(Lamb::SafePtr<ObbPushComp> other);
 
 	// 押し出すタグ
 	void SetPushTag(const std::string& pushTag);

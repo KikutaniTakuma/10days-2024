@@ -37,6 +37,9 @@
         {
             "Comps": [
                 {
+                    "CompName": "class PlayerComp"
+                },
+                {
                     "BlendType": "kNone",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
@@ -60,18 +63,46 @@
                         1.0
                     ],
                     "scale": [
-                        32.0,
-                        32.0,
-                        1.0
+                        24.0,
+                        24.0,
+                        24.0
                     ],
                     "translate": [
-                        544.0,
-                        -352.0,
+                        608.0,
+                        -288.0,
                         1.0
                     ]
+                },
+                {
+                    "CompName": "class FallComp",
+                    "gravity": -9.800000190734863
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class InputMoveComp",
+                    "speed": 5.0
+                },
+                {
+                    "CompName": "class FlagComp"
                 }
-            ],
-            "type": "Object"
+            ]
         },
         {
             "Comps": [
@@ -101,13 +132,39 @@
                     "scale": [
                         32.0,
                         32.0,
-                        1.0
+                        32.0
                     ],
                     "translate": [
-                        544.0,
-                        -416.0,
+                        608.0,
+                        -352.0,
                         1.0
                     ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
                 }
             ],
             "type": "Object"
