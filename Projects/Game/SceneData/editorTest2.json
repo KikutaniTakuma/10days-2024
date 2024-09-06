@@ -453,8 +453,8 @@
                         1.0
                     ],
                     "scale": [
-                        32.0,
-                        32.0,
+                        24.0,
+                        24.0,
                         1.0
                     ],
                     "translate": [
@@ -483,9 +483,7 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class CloudComp"
-                    ]
+                    "pushTags": []
                 },
                 {
                     "CompName": "class InputMoveComp",

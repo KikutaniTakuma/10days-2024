@@ -138,6 +138,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Src\GameObject\Comp\CameraComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\ChildrenObjectComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\CsvDataComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\Direction2DComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\EventComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\FallComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\FlagComp.cpp" />
@@ -179,6 +180,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="Src\GameObject\Comp\CameraComp.h" />
     <ClInclude Include="Src\GameObject\Comp\ChildrenObjectComp.h" />
     <ClInclude Include="Src\GameObject\Comp\CsvDataComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\Direction2DComp.h" />
     <ClInclude Include="Src\GameObject\Comp\EventComp.h" />
     <ClInclude Include="Src\GameObject\Comp\FallComp.h" />
     <ClInclude Include="Src\GameObject\Comp\FlagComp.h" />

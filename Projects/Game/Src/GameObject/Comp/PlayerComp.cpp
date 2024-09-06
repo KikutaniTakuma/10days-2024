@@ -27,7 +27,7 @@ void PlayerComp::Move() {
 
 	if (not collision_->GetObbComp().GetIsCollision() and not fall_->GetIsFall()) {
 		fall_->Start();
-		fall_->gravity = -0.098f;
+		fall_->gravity = -0.98f;
 	}
 	
 	if(collision_->GetObbComp().GetIsCollision().OnStay()) {

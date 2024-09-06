@@ -19,10 +19,10 @@ void InputMoveComp::FirstUpdate()
 	}
 	else {
 		if (key->GetKey(DIK_A)) {
-			direction_.x -= 1.0f;
+			direction_.x = -1.0f;
 		}
 		else if (key->GetKey(DIK_D)) {
-			direction_.x += 1.0f;
+			direction_.x = 1.0f;
 		}
 		else {
 			direction_.x = 0.0f;
