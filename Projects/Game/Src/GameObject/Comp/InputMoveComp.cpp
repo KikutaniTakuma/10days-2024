@@ -15,20 +15,17 @@ void InputMoveComp::FirstUpdate()
 	}
 
 	if (isPad_) {
-		direction_ = gamepad->GetStick(Gamepad::Stick::LEFT);
+		direction_.x = gamepad->GetStick(Gamepad::Stick::LEFT).x;
 	}
 	else {
-		if (key->GetKey(DIK_W)) {
-			direction_.z += 1.0f;
-		}
 		if (key->GetKey(DIK_A)) {
 			direction_.x -= 1.0f;
 		}
-		if (key->GetKey(DIK_S)) {
-			direction_.z -= 1.0f;
-		}
-		if (key->GetKey(DIK_D)) {
+		else if (key->GetKey(DIK_D)) {
 			direction_.x += 1.0f;
+		}
+		else {
+			direction_.x = 0.0f;
 		}
 
 		direction_ = direction_.Normalize();

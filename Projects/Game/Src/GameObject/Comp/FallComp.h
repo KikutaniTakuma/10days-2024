@@ -29,7 +29,7 @@ public:
 	void Load(nlohmann::json& json) override;
 
 public:
-	float32_t gravity = 9.8_f32;
+	float32_t gravity = -9.8_f32;
 
 private:
 	float32_t fallTime_ = 0.0_f32;

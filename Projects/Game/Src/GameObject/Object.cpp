@@ -19,6 +19,9 @@
 #include "Comp/SpriteRenderComp.h"
 #include "Comp/SpriteRenderDataComp.h"
 #include "Comp/TransformComp.h"
+#include "Comp/CloudComp.h"
+#include "Comp/FlagComp.h"
+#include "Comp/PlayerComp.h"
 
 void Object::Init() {
 	/*for (auto& i : components_) {
@@ -110,6 +113,9 @@ bool Object::DebugAddComp() {
 		DebugAdd<SpriteRenderComp>();
 		DebugAdd<SpriteRenderDataComp>();
 		DebugAdd<TransformComp>();
+		DebugAdd<FlagComp>();
+		DebugAdd<CloudComp>();
+		DebugAdd<PlayerComp>();
 		ImGui::TreePop();
 
 		return true;
@@ -161,5 +167,8 @@ void Object::AddComps(nlohmann::json& compData)
 	AddAndLoadComp<SpriteRenderComp>(compName, compData);
 	AddAndLoadComp<SpriteRenderDataComp>(compName, compData);
 	AddAndLoadComp<TransformComp>(compName, compData);
+	AddAndLoadComp<FlagComp>(compName, compData);
+	AddAndLoadComp<CloudComp>(compName, compData);
+	AddAndLoadComp<PlayerComp>(compName, compData);
 }
 

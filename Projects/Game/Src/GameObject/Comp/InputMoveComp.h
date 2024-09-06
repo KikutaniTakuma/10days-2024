@@ -34,7 +34,7 @@ public:
 
 
 private:
-	float32_t speed_ = 0.0f;
+	float32_t speed_ = 1.0f;
 	Vector3 direction_;
 
 	Vector3 moveVector_;

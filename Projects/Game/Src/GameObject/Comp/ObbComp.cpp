@@ -43,7 +43,6 @@ void ObbComp::FirstUpdate()
 #ifdef _DEBUG
 	color_ = std::numeric_limits<uint32_t>::max();
 #endif // _DEBUG
-	isCollision_ = false;
 }
 
 void ObbComp::Event() {

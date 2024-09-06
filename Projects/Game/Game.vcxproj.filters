@@ -107,6 +107,15 @@
     <ClCompile Include="Src\Scenes\TestScene\TestScene.cpp">
       <Filter>Scenes\TestScene</Filter>
     </ClCompile>
+    <ClCompile Include="Src\GameObject\Comp\CloudComp.cpp">
+      <Filter>GameObject\Comp</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\Comp\FlagComp.cpp">
+      <Filter>GameObject\Comp</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\Comp\PlayerComp.cpp">
+      <Filter>GameObject\Comp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="GlobalVariables">
@@ -272,6 +281,15 @@
     </ClInclude>
     <ClInclude Include="Src\Scenes\TestScene\TestScene.h">
       <Filter>Scenes\TestScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Comp\CloudComp.h">
+      <Filter>GameObject\Comp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Comp\FlagComp.h">
+      <Filter>GameObject\Comp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Comp\PlayerComp.h">
+      <Filter>GameObject\Comp</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

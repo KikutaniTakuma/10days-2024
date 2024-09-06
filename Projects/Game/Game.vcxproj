@@ -129,6 +129,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Src\GameObject\Comp\CloudComp.cpp" />
     <ClCompile Include="Src\Camera\Camera.cpp" />
     <ClCompile Include="Src\Editor\ParticleEditor\ParticleEditor.cpp" />
     <ClCompile Include="Src\GameObject\Comp\ButtonComp.cpp" />
@@ -139,12 +140,14 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Src\GameObject\Comp\CsvDataComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\EventComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\FallComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\FlagComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\JsonComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\ModelRenderComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\InputMoveComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\ObbComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\ObbPushComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\ModelRenderDataComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\PlayerComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\QuadComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\SceneChangeComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\SpriteRenderComp.cpp" />
@@ -167,6 +170,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Src\World\World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Src\GameObject\Comp\CloudComp.h" />
     <ClInclude Include="Src\Camera\Camera.h" />
     <ClInclude Include="Src\Editor\ParticleEditor\ParticleEditor.h" />
     <ClInclude Include="Src\GameObject\Comp\ButtonComp.h" />
@@ -177,12 +181,14 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="Src\GameObject\Comp\CsvDataComp.h" />
     <ClInclude Include="Src\GameObject\Comp\EventComp.h" />
     <ClInclude Include="Src\GameObject\Comp\FallComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\FlagComp.h" />
     <ClInclude Include="Src\GameObject\Comp\InputMoveComp.h" />
     <ClInclude Include="Src\GameObject\Comp\JsonComp.h" />
     <ClInclude Include="Src\GameObject\Comp\ModelRenderComp.h" />
     <ClInclude Include="Src\GameObject\Comp\ObbComp.h" />
     <ClInclude Include="Src\GameObject\Comp\ObbPushComp.h" />
     <ClInclude Include="Src\GameObject\Comp\ModelRenderDataComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\PlayerComp.h" />
     <ClInclude Include="Src\GameObject\Comp\QuadComp.h" />
     <ClInclude Include="Src\GameObject\Comp\SceneChangeComp.h" />
     <ClInclude Include="Src\GameObject\Comp\SpriteRenderComp.h" />
