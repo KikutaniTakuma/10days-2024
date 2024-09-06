@@ -19,7 +19,7 @@ void CloudComp::Update() {
 
 	//雲が存在している状態だったら表示
 	if (flagComp_->GetIsActive()) {
-		transformComp_->scale = { cloudSize_,cloudSize_,1.0f };
+		transformComp_->scale = { cloudSize_,cloudSize_,cloudSize_ };
 	}
 	//食べられて存在しなくなった場合は非表示
 	else {
