@@ -113,11 +113,7 @@ RenderingManager::RenderingManager() {
 	skyBox_->Load();
 	transform_.scale *= 500.0f;
 
-	atmosphericTime_ = 6.0f;
-
 	//deferredRendering_->SetEnvironmentHandle(skyBox_->GetHandle());
-
-	SetTime(8.0f);
 }
 
 RenderingManager::~RenderingManager()
@@ -189,6 +185,10 @@ void RenderingManager::Draw() {
 	Lamb::SafePtr renderContextManager = RenderContextManager::GetInstance();
 
 	deferredRenderingData_.directionLight.ligDirection = atmosphericParams_.lightDirection;
+	gaussianPipeline_[0]->SetGaussianState(gaussianBlurStateHorizontal_);
+	gaussianPipeline_[1]->SetGaussianState(gaussianBlurStateVertical_);
+	luminate_->SetLuminanceThreshold(luminanceThreshold);
+	outlinePipeline_->SetWeight(weight_);
 
 	/// ====================================================================================
 
@@ -227,7 +227,9 @@ void RenderingManager::Draw() {
 
 	skyBox_->SetAtmosphericParams(atmosphericParams_);
 
-	DrawSkyBox();
+	if (isDrawSkyBox_) {
+		DrawSkyBox();
+	}
 
 	RenderDataLists rgbaList = {
 		renderContextManager->CreateRenderList(BlendType::kNormal),
@@ -330,6 +332,7 @@ void RenderingManager::SetCameraPos(const Vector3& cameraPos) {
 	deferredRenderingData_.eyePos = cameraPos;
 	transform_.translate = cameraPos;
 	atmosphericParams_.cameraPosition = cameraPos;
+	atmosphericParams_.lightDirection = -Vector3::kXIdentity * Quaternion::EulerToQuaternion(lightRotate_);
 }
 
 void RenderingManager::SetCameraMatrix(const Mat4x4& camera)
@@ -356,17 +359,18 @@ void RenderingManager::SetColor(const Vector4& color)
 	rgbaTexture_->color = color.GetColorRGBA();
 }
 
-void RenderingManager::SetTime(float32_t time) {
-	atmosphericTime_ = time;
-	float32_t rotate = std::lerp(0.0f, 360.0f * Lamb::Math::toRadian<float>, std::fmodf(atmosphericTime_, 24.0f) / 24.0f);
-	atmosphericParams_.lightDirection = -Vector3::kYIdentity * Quaternion::MakeRotateZAxis(rotate);
-}
-
 void RenderingManager::Debug([[maybe_unused]]const std::string& guiName) {
 #ifdef _DEBUG
 	if(ImGui::TreeNode(guiName.c_str())){
 		ImGui::Checkbox("lighting", reinterpret_cast<bool*>(&deferredRenderingData_.isDirectionLight));
-		ImGui::DragFloat("environment", &deferredRenderingData_.environmentCoefficient, 0.001f, 0.0f, 5.0f);
+		lightRotate_ *= Lamb::Math::toDegree<float>;
+		ImGui::DragFloat3("ライト角度", lightRotate_.data(), 1.0f);
+		lightRotate_.x = std::fmodf(lightRotate_.x, 360.0f);
+		lightRotate_.y = std::fmodf(lightRotate_.y, 360.0f);
+		lightRotate_.z = std::fmodf(lightRotate_.z, 360.0f);
+		lightRotate_ *= Lamb::Math::toRadian<float>;
+
+		atmosphericParams_.lightDirection = -Vector3::kXIdentity * Quaternion::EulerToQuaternion(lightRotate_);
 		if (ImGui::TreeNode("hsv")) {
 			ImGui::DragFloat("h", &hsv_.h, 0.1f, 0.0f, 360.0f);
 			ImGui::DragFloat("s", &hsv_.s, 0.001f, 0.0f, 1.0f);
@@ -389,11 +393,15 @@ void RenderingManager::Debug([[maybe_unused]]const std::string& guiName) {
 			ImGui::TreePop();
 		}
 
-		if (ImGui::TreeNode("AtmosphericParams")) {
-			ImGui::DragFloat("時間", &atmosphericTime_, 0.01f, 0.0f, 24.0f);
-			float32_t rotate = std::lerp(0.0f, 360.0f * Lamb::Math::toRadian<float>, atmosphericTime_ / 24.0f);
-			atmosphericParams_.lightDirection = -Vector3::kYIdentity * Quaternion::MakeRotateZAxis(rotate);
-
+		if (ImGui::TreeNode("SkyBox")) {
+			if (isDrawSkyBox_) {
+				ImGui::DragFloat("environment", &deferredRenderingData_.environmentCoefficient, 0.001f, 0.0f, 5.0f);
+			}
+			else {
+				deferredRenderingData_.environmentCoefficient = 0.0f;
+			}
+			ImGui::Checkbox("SkyBox描画", &isDrawSkyBox_);
+			ImGui::DragFloat3("scale", transform_.scale.data(), 0.1f);
 			ImGui::TreePop();
 		}
 
@@ -407,6 +415,50 @@ void RenderingManager::Debug([[maybe_unused]]const std::string& guiName) {
 		ImGui::TreePop();
 	}
 #endif // _DEBUG
+
+}
+
+void RenderingManager::Save(nlohmann::json& jsonFile) {
+	auto& json = jsonFile["RederingSetting"];
+
+	json["isDirectionLight"] = static_cast<bool>(deferredRenderingData_.isDirectionLight);
+	json["lightRotate"] = nlohmann::json::array();
+	for (auto& i : lightRotate_) {
+		json["lightRotate"].push_back(i);
+	}
+	json["hsv"] = nlohmann::json::array();
+	for (auto& i : hsv_) {
+		json["hsv"].push_back(i);
+	}
+	json["bloom"]["x"] = gaussianBlurStateHorizontal_.kernelSize;
+	json["bloom"]["y"] = gaussianBlurStateVertical_.kernelSize;
+	json["bloom"]["luminanceThreshold"] = luminanceThreshold;
+	json["skybox"]["scale"] = nlohmann::json::array();
+	for (auto& i : transform_.scale) {
+		json["skybox"]["scale"].push_back(i);
+	}
+	json["skybox"]["isDraw"] = isDrawSkyBox_;
+	json["outline"] = weight_;
+}
+
+void RenderingManager::Load(nlohmann::json& jsonFile) {
+	auto& json = jsonFile["RederingSetting"];
+	deferredRenderingData_.isDirectionLight = json["isDirectionLight"].get<bool>();
+	for (size_t i = 0; i < lightRotate_.size(); i++) {
+		lightRotate_[i] = json["lightRotate"][i].get<float>();
+	}
+
+	for (size_t i = 0; i < hsv_.size(); i++) {
+		hsv_[i] = json["hsv"][i].get<float>();
+	}
+	gaussianBlurStateHorizontal_.kernelSize = json["bloom"]["x"].get<int32_t>();
+	gaussianBlurStateVertical_.kernelSize = json["bloom"]["y"].get<int32_t>();
+	luminanceThreshold = json["bloom"]["luminanceThreshold"].get<float>();
+	for (size_t i = 0; i < transform_.scale.size(); i++) {
+		transform_.scale[i] = json["skybox"]["scale"][i].get<float>();
+	}
+	isDrawSkyBox_ = json["skybox"]["isDraw"].get<bool>();
+	weight_ = json["outline"].get<float>();
 
 }
 

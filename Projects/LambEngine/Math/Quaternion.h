@@ -9,9 +9,9 @@ using LogQuaternion = Vector3;
 /// クォータニオンクラス
 /// </summary>
 class Quaternion final {
-/// <summary>
-/// コンストラクタ
-/// </summary>
+	/// <summary>
+	/// コンストラクタ
+	/// </summary>
 public:
 	constexpr Quaternion();
 	constexpr Quaternion(const Quaternion&) = default;
@@ -22,16 +22,16 @@ public:
 	Quaternion(float x, float y, float z, float w);
 	~Quaternion() = default;
 
-/// <summary>
-/// 単項演算子
-/// </summary>
+	/// <summary>
+	/// 単項演算子
+	/// </summary>
 public:
 	[[nodiscard]] Quaternion operator+() const noexcept;
 	[[nodiscard]] Quaternion operator-() const noexcept;
 
-/// <summary>
-/// 二項演算子のオーバーロード
-/// </summary>
+	/// <summary>
+	/// 二項演算子のオーバーロード
+	/// </summary>
 public:
 	Quaternion& operator=(const Quaternion&) = default;
 	Quaternion& operator=(Quaternion&&)noexcept = default;
@@ -58,9 +58,9 @@ public:
 	[[nodiscard]] bool operator==(const Quaternion& right) const;
 	[[nodiscard]] bool operator!=(const Quaternion& right) const;
 
-/// <summary>
-/// 配列関係の関数
-/// </summary>
+	/// <summary>
+	/// 配列関係の関数
+	/// </summary>
 public:
 	[[nodiscard]] float* data() noexcept {
 		return m.data();
@@ -142,11 +142,11 @@ public:
 
 	[[nodiscard]] Vector3 ToEuler() const;
 
+	void SetEuler(const Vector3& euler);
 
-
-/// <summary>
-/// 静的メンバ関数
-/// </summary>
+	/// <summary>
+	/// 静的メンバ関数
+	/// </summary>
 public:
 	/// <summary>
 	/// クォータニオン版のDirectionToDirection
@@ -219,9 +219,9 @@ public:
 	static [[nodiscard]] Quaternion Exp(const LogQuaternion& logQuaternion);
 
 
-/// <summary>
-/// 静的メンバ定数
-/// </summary>
+	/// <summary>
+	/// 静的メンバ定数
+	/// </summary>
 public:
 	/// <summary>
 	/// x = 0.0f, y = 0.0f, z = 0.0f w = 1.0f
@@ -233,9 +233,9 @@ public:
 	/// </summary>
 	static const Quaternion kZero;
 
-/// <summary>
-/// メンバ変数
-/// </summary>
+	/// <summary>
+	/// メンバ変数
+	/// </summary>
 public:
 	union
 	{

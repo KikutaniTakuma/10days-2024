@@ -169,6 +169,10 @@ bool ObbComp::IsCollision(Vector3 pos, float radius)
 	constexpr int32_t min = 0;
 	constexpr int32_t max = 1;
 
+	if (not isCollision_.OnEnter()) {
+		isCollision_ = false;
+	}
+
 	std::array<Vector3, 2> positions = {
 		transformComp_->scale * 0.5f, // 左下手前
 
@@ -208,6 +212,13 @@ bool ObbComp::IsCollision(ObbComp* const other)
 
 	std::array<float, 8> projectLength{};
 	std::array<float, 8> otherProjectLength{};
+
+	if (not isCollision_.OnEnter()) {
+		isCollision_ = false;
+	}
+	if (not other->isCollision_.OnEnter()) {
+		other->isCollision_ = false;
+	}
 
 	auto isSepatateAxis = [&](const Vector3& separationAxis)->bool {
 		for (size_t i = 0; i < 8llu; i++) {
@@ -276,6 +287,13 @@ bool ObbComp::IsCollision(ObbComp* const other, Vector3& pushVector)
 
 	float minOverLap = std::numeric_limits<float>::max();
 	Vector3 overLapAxis;
+
+	if (not isCollision_.OnEnter()) {
+		isCollision_ = false;
+	}
+	if (not other->isCollision_.OnEnter()) {
+		other->isCollision_ = false;
+	}
 
 	auto isSepatateAxisAndClacOverLap = [&](const Vector3& separationAxis)->bool {
 		if (separationAxis == Vector3::kZero) {

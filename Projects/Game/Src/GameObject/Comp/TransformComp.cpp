@@ -7,17 +7,17 @@
 
 #ifdef _DEBUG
 const std::array<std::pair<std::string, ImGuizmo::OPERATION>, 5> TransformComp::kGuizmoMode_ = {
-	std::make_pair<std::string, ImGuizmo::OPERATION>("TRANSLATE", ImGuizmo::TRANSLATE ),
-	std::make_pair<std::string, ImGuizmo::OPERATION>("ROTATE", ImGuizmo::ROTATE ),
-	std::make_pair<std::string, ImGuizmo::OPERATION>("SCALE", ImGuizmo::SCALE ),
-	std::make_pair<std::string, ImGuizmo::OPERATION>("SCALEU", ImGuizmo::SCALEU ),
-	std::make_pair<std::string, ImGuizmo::OPERATION>("UNIVERSAL", ImGuizmo::UNIVERSAL )
+	std::make_pair<std::string, ImGuizmo::OPERATION>("TRANSLATE", ImGuizmo::TRANSLATE),
+	std::make_pair<std::string, ImGuizmo::OPERATION>("ROTATE", ImGuizmo::ROTATE),
+	std::make_pair<std::string, ImGuizmo::OPERATION>("SCALE", ImGuizmo::SCALE),
+	std::make_pair<std::string, ImGuizmo::OPERATION>("SCALEU", ImGuizmo::SCALEU),
+	std::make_pair<std::string, ImGuizmo::OPERATION>("UNIVERSAL", ImGuizmo::UNIVERSAL)
 };
 #endif // _DEBUG
 
 
 
-TransformComp::TransformComp(Object* const object):
+TransformComp::TransformComp(Object* const object) :
 	IComp(object),
 	scale(Vector3::kIdentity),
 	rotate(),
@@ -36,12 +36,12 @@ TransformComp::~TransformComp()
 
 void TransformComp::Init()
 {
-	
+
 }
 
 void TransformComp::UpdateMatrix() {
 #ifdef _DEBUG
-	rotate = Quaternion::EulerToQuaternion(eulerRotate);
+	rotate.SetEuler(eulerRotate);
 #endif // _DEBUG
 	rotate = rotate.Normalize();
 	worldMatrix_ = Mat4x4::MakeAffin(scale, rotate, translate);
@@ -183,4 +183,9 @@ void TransformComp::Load(nlohmann::json& json)
 	for (size_t i = 0; i < json["translate"].size(); i++) {
 		translate[i] = json["translate"][i];
 	}
+
+#ifdef _DEBUG
+	eulerRotate = rotate.ToEuler();
+#endif // _DEBUG
+
 }
