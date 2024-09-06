@@ -1,4 +1,5 @@
 #include "ObbComp.h"
+#include "../Manager/ObbManager.h"
 #include <climits>
 #include <algorithm>
 #include "CameraComp.h"
@@ -28,12 +29,17 @@ std::array<const Vector3, 3> ObbComp::localOrientations_ = {
 
 void ObbComp::Init()
 {
+	ObbManager::GetInstance()->Set(this);
 	transformComp_ = object_.AddComp<TransformComp>();
 	positions_ = std::make_unique<std::array<Vector3, 8>>();
 	orientations_ = std::make_unique<std::array<Vector3, 3>>();
 #ifdef _DEBUG
 	color_ = std::numeric_limits<uint32_t>::max();
 #endif // _DEBUG
+}
+
+void ObbComp::Finalize() {
+	ObbManager::GetInstance()->Erase(this);
 }
 
 void ObbComp::FirstUpdate()
@@ -410,6 +416,18 @@ void ObbComp::EraseCollisionTag(const std::string& collisionTag) {
 void ObbComp::Debug([[maybe_unused]]const std::string& guiName) {
 #ifdef _DEBUG
 	if (ImGui::TreeNode(guiName.c_str())) {
+
+		ImGui::BeginChild(ImGui::GetID((void*)0), ImVec2(250, 100), ImGuiWindowFlags_NoTitleBar);
+		for (auto& i : collisionTags_) {
+			if (ImGui::Button("erase")) {
+				collisionTags_.erase(i);
+				break;
+			}
+			ImGui::SameLine();
+			ImGui::Text("tag : % s", i.c_str());
+		}
+		ImGui::EndChild();
+
 		inputTag_.resize(32);
 		ImGui::DragFloat3("scale", scale.data(), 0.01f);
 		ImGui::DragFloat3("center", center.data(), 0.01f);
