@@ -39,4 +39,6 @@ private:
 
 	Lamb::SafePtr <class FlagComp> isDead_;
 
+	Lamb::SafePtr<class Direction2DComp> direction_;
+
 };

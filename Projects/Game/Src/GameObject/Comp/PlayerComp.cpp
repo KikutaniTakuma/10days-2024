@@ -5,6 +5,7 @@
 #include "FallComp.h"
 #include "ObbPushComp.h"
 #include "FlagComp.h"
+#include "Direction2DComp.h"
 
 void PlayerComp::Init() {
 
@@ -14,6 +15,7 @@ void PlayerComp::Init() {
 	fall_ = object_.AddComp<FallComp>();
 	collision_ = object_.AddComp<ObbPushComp>();
 	isDead_ = object_.AddComp<FlagComp>();	
+	direction_ = object_.AddComp<Direction2DComp>();
 
 }
 
@@ -24,6 +26,10 @@ void PlayerComp::FirstUpdate() {
 void PlayerComp::Move() {
 
 	transform_->translate += move_->GetMoveVector();
+
+	if (fabsf(move_->GetDirection().Length()) > 0.01f) {
+		direction_->direction_ = { move_->GetMoveVector().x, move_->GetMoveVector().y };
+	}
 
 	if (not collision_->GetObbComp().GetIsCollision() and not fall_->GetIsFall()) {
 		fall_->Start();

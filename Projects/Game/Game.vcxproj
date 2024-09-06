@@ -137,8 +137,10 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Src\GameObject\Comp\Camera3DComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\CameraComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\ChildrenObjectComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\CountComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\CsvDataComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\Direction2DComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\EatCloudComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\EventComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\FallComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\FlagComp.cpp" />
@@ -150,6 +152,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Src\GameObject\Comp\ModelRenderDataComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\PlayerComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\QuadComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\RemoveCloudComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\SceneChangeComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\SpriteRenderComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\SpriteRenderDataComp.cpp" />
@@ -179,8 +182,10 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="Src\GameObject\Comp\Camera3DComp.h" />
     <ClInclude Include="Src\GameObject\Comp\CameraComp.h" />
     <ClInclude Include="Src\GameObject\Comp\ChildrenObjectComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\CountComp.h" />
     <ClInclude Include="Src\GameObject\Comp\CsvDataComp.h" />
     <ClInclude Include="Src\GameObject\Comp\Direction2DComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\EatCloudComp.h" />
     <ClInclude Include="Src\GameObject\Comp\EventComp.h" />
     <ClInclude Include="Src\GameObject\Comp\FallComp.h" />
     <ClInclude Include="Src\GameObject\Comp\FlagComp.h" />
@@ -192,6 +197,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="Src\GameObject\Comp\ModelRenderDataComp.h" />
     <ClInclude Include="Src\GameObject\Comp\PlayerComp.h" />
     <ClInclude Include="Src\GameObject\Comp\QuadComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\RemoveCloudComp.h" />
     <ClInclude Include="Src\GameObject\Comp\SceneChangeComp.h" />
     <ClInclude Include="Src\GameObject\Comp\SpriteRenderComp.h" />
     <ClInclude Include="Src\GameObject\Comp\SpriteRenderDataComp.h" />
