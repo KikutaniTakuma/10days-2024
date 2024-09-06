@@ -374,6 +374,61 @@ bool ObbComp::IsCollision(ObbComp* const other, Vector3& pushVector)
 	return true;
 }
 
+bool ObbComp::IsCollision(const Vector3& start, const Vector3& end)
+{
+	if (not isCollision_.OnEnter()) {
+		isCollision_ = false;
+	}
+
+	static constexpr float kEpsilon = static_cast<float32_t>(1.0e-5);
+
+	const Vector3& orientarionX = (*orientations_)[0].Normalize();
+	const Vector3& orientarionY = (*orientations_)[1].Normalize();
+	const Vector3& orientarionZ = (*orientations_)[2].Normalize();
+
+	Vector3 worldScale = transformComp_->GetWorldMatrix().GetScale();
+	Vector3 orientarionLength = (scale * worldScale * 0.5f);
+
+	Vector3 dir = end - start;
+
+	Vector3 m = (start + dir) * 0.5f;
+	Vector3 d = dir - m;
+	m = m - (transformComp_->translate + center);
+	m = Vector3(orientarionX.Dot(m), orientarionY.Dot(m), orientarionZ.Dot(m));
+	d = Vector3(orientarionX.Dot(d), orientarionY.Dot(d), orientarionZ.Dot(d));
+
+	float32_t adx = std::fabsf(d.x);
+	if (orientarionLength.x + adx < std::fabsf(m.x)) {
+		return false;
+	}
+	float32_t ady = std::fabsf(d.y);
+	if (orientarionLength.y + ady < std::fabsf(m.y)) {
+		return false;
+	}
+	float32_t adz = std::fabsf(d.z);
+	if (orientarionLength.z + adz < std::fabsf(m.z)) {
+		return false;
+	}
+
+	adx += kEpsilon;
+	ady += kEpsilon;
+	adz += kEpsilon;
+
+	if (fabsf(m.y * d.z - m.z * d.y) > orientarionLength.y * adz + orientarionLength.z * ady
+		or fabsf(m.z * d.x - m.x * d.z) > orientarionLength.x * adz + orientarionLength.z * adx
+		or fabsf(m.x * d.y - m.y * d.x) > orientarionLength.x * ady + orientarionLength.y * adx
+		) {
+		return false;
+	}
+
+	isCollision_ = true;
+#ifdef _DEBUG
+	color_ = 0xff0000ff;
+#endif // _DEBUG
+
+	return true;
+}
+
 bool ObbComp::CollisionHasTag(ObbComp* const other) {
 	bool hasTag = false;
 	for (auto& i : collisionTags_) {
