@@ -15,6 +15,8 @@ public:
 
 	void Init() override;
 
+	void Finalize() override;
+
 	void FirstUpdate() override;
 
 	void Event() override;

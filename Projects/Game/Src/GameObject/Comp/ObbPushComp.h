@@ -9,6 +9,7 @@ public:
 	~ObbPushComp() = default;
 
 	void Init() override;
+	void Finalize() override;
 
 	void Collision(Lamb::SafePtr<ObbComp> other);
 

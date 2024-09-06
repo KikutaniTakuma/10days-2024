@@ -107,6 +107,9 @@
     <ClCompile Include="Src\Scenes\TestScene\TestScene.cpp">
       <Filter>Scenes\TestScene</Filter>
     </ClCompile>
+    <ClCompile Include="Src\GameObject\Manager\ObbManager.cpp">
+      <Filter>GameObject\Manager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="GlobalVariables">
@@ -272,6 +275,9 @@
     </ClInclude>
     <ClInclude Include="Src\Scenes\TestScene\TestScene.h">
       <Filter>Scenes\TestScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Manager\ObbManager.h">
+      <Filter>GameObject\Manager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
