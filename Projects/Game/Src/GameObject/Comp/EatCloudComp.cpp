@@ -13,14 +13,6 @@ void EatCloudComp::FirstUpdate()
 	Lamb::SafePtr key = Input::GetInstance()->GetKey();
 	Lamb::SafePtr mouse = Input::GetInstance()->GetMouse();
 
-	//雲が10未満でRボタンを押したら食事開始。吐き出す動作とは重複しない
-	if (not isEat_ and count_->GetCount() < 10 and not gamepad->Pushed(Gamepad::Button::LEFT_SHOULDER) and
-		gamepad->Pushed(Gamepad::Button::RIGHT_SHOULDER)) {
-
-		isEat_ = true;
-
-	}
-
 }
 
 void EatCloudComp::Init()

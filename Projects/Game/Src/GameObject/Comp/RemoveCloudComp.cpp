@@ -23,14 +23,6 @@ void RemoveCloudComp::FirstUpdate()
 	Lamb::SafePtr key = Input::GetInstance()->GetKey();
 	Lamb::SafePtr mouse = Input::GetInstance()->GetMouse();
 
-	//雲を持っていてLボタンを押したら吐き出し開始。食べる動作とは重複しない
-	if (not isRemove_ and count_->GetCount() > 0 and gamepad->Pushed(Gamepad::Button::LEFT_SHOULDER) and
-		not gamepad->Pushed(Gamepad::Button::RIGHT_SHOULDER)) {
-
-		isRemove_ = true;
-
-	}
-
 }
 
 void RemoveCloudComp::Event()
