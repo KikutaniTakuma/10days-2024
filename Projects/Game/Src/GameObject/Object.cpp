@@ -81,10 +81,11 @@ void Object::Debug([[maybe_unused]] const std::string& guiName) {
 			return;
 		}
 		ImGui::Text("tags : ");
+		ImGui::BeginChild(ImGui::GetID((void*)0), { 0.0f, 50.0f }, ImGuiChildFlags_AlwaysAutoResize | ImGuiChildFlags_AutoResizeX, ImGuiWindowFlags_NoTitleBar);
 		for (auto& i : tags_) {
-			ImGui::SameLine();
 			ImGui::Text("%s, ", i.c_str());
 		}
+		ImGui::EndChild();
 		if (ImGui::TreeNode("componets")) {
 			for (auto& i : components_) {
 				i.second->Debug(i.first);
@@ -99,6 +100,7 @@ void Object::Debug([[maybe_unused]] const std::string& guiName) {
 bool Object::DebugAddComp() {
 #ifdef _DEBUG
 	if (ImGui::TreeNode("Comps")) {
+		ImGui::BeginChild(ImGui::GetID((void*)0), { 0.0f, 150.0f }, ImGuiChildFlags_AlwaysAutoResize | ImGuiChildFlags_AutoResizeX, ImGuiWindowFlags_NoTitleBar);
 		DebugAdd<ButtonComp>();
 		DebugAdd<Camera2DComp>();
 		DebugAdd<Camera3DComp>();
@@ -124,7 +126,8 @@ bool Object::DebugAddComp() {
 		DebugAdd<LineRenderComp>();
 		DebugAdd<LineRenderDataComp>();
 		
-		
+		ImGui::EndChild();
+
 		ImGui::TreePop();
 
 		return true;
