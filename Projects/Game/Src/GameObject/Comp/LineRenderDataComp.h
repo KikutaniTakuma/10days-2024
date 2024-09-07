@@ -15,8 +15,8 @@ public:
 	void Debug(const std::string& guiName);
 
 public:
-	Vector4 color;
-	bool isDepth = false;
+	Vector4 color = Vector4::kIdentity;
+	bool isDepth = true;
 
 private:
 	Lamb::SafePtr<class LineComp> lineComp_;
