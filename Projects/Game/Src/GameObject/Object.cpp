@@ -23,6 +23,10 @@
 #include "Comp/FlagComp.h"
 #include "Comp/PlayerComp.h"
 
+#include "Comp/LineComp.h"
+#include "Comp/LineRenderComp.h"
+#include "Comp/LineRenderDataComp.h"
+
 void Object::Init() {
 	/*for (auto& i : components_) {
 		i.second->Init();
@@ -116,6 +120,11 @@ bool Object::DebugAddComp() {
 		DebugAdd<FlagComp>();
 		DebugAdd<CloudComp>();
 		DebugAdd<PlayerComp>();
+		DebugAdd<LineComp>();
+		DebugAdd<LineRenderComp>();
+		DebugAdd<LineRenderDataComp>();
+		
+		
 		ImGui::TreePop();
 
 		return true;
@@ -170,5 +179,8 @@ void Object::AddComps(nlohmann::json& compData)
 	AddAndLoadComp<FlagComp>(compName, compData);
 	AddAndLoadComp<CloudComp>(compName, compData);
 	AddAndLoadComp<PlayerComp>(compName, compData);
+	AddAndLoadComp<LineComp>(compName, compData);
+	AddAndLoadComp<LineRenderComp>(compName, compData);
+	AddAndLoadComp<LineRenderDataComp>(compName, compData);
 }
 
