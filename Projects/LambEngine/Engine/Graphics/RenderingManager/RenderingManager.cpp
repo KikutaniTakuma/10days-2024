@@ -48,7 +48,7 @@ RenderingManager::RenderingManager() {
 	deferredRenderingData_.environmentCoefficient = 0.2f;
 	deferredRenderingData_.directionLight.shinness = 42.0f;
 	deferredRenderingData_.directionLight.ligColor = Vector3::kIdentity;
-	deferredRenderingData_.directionLight.ligDirection = Vector3::kXIdentity * Quaternion::EulerToQuaternion(Vector3(-90.0f, 0.0f, 90.0f) * Lamb::Math::toRadian<float>);
+	deferredRenderingData_.directionLight.ligDirection = Vector3::kXIdentity * Quaternion::EulerToQuaternion(Vector3(-90.0f, 0.0f, 90.0f) * Lamb::Math::kToRadian<float>);
 
 	depthStencil_ = std::make_unique<DepthBuffer>();
 	srvHeap->BookingHeapPos(1u);
@@ -363,12 +363,12 @@ void RenderingManager::Debug([[maybe_unused]]const std::string& guiName) {
 #ifdef _DEBUG
 	if(ImGui::TreeNode(guiName.c_str())){
 		ImGui::Checkbox("lighting", reinterpret_cast<bool*>(&deferredRenderingData_.isDirectionLight));
-		lightRotate_ *= Lamb::Math::toDegree<float>;
+		lightRotate_ *= Lamb::Math::kToDegree<float>;
 		ImGui::DragFloat3("ライト角度", lightRotate_.data(), 1.0f);
 		lightRotate_.x = std::fmodf(lightRotate_.x, 360.0f);
 		lightRotate_.y = std::fmodf(lightRotate_.y, 360.0f);
 		lightRotate_.z = std::fmodf(lightRotate_.z, 360.0f);
-		lightRotate_ *= Lamb::Math::toRadian<float>;
+		lightRotate_ *= Lamb::Math::kToRadian<float>;
 
 		atmosphericParams_.lightDirection = -Vector3::kXIdentity * Quaternion::EulerToQuaternion(lightRotate_);
 		if (ImGui::TreeNode("hsv")) {

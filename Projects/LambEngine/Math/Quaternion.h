@@ -151,8 +151,8 @@ public:
 	/// <summary>
 	/// クォータニオン版のDirectionToDirection
 	/// </summary>
-	/// <param name="from">始点</param>
-	/// <param name="to">終点</param>
+	/// <param name="from">始点(単位ベクトル)</param>
+	/// <param name="to">終点(単位ベクトル)</param>
 	/// <returns>クォータニオン</returns>
 	static [[nodiscard]] Quaternion DirectionToDirection(const Vector3& from, const Vector3& to);
 

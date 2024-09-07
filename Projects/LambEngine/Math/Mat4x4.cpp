@@ -85,7 +85,7 @@ Matrix<float,4,4> Matrix<float,4,4>::MakeAffin(const Vector3& scale, const Quate
 Matrix<float,4,4> Matrix<float,4,4>::MakeAffin(const Vector3& scale, const Vector3& from, const Vector3& to, const Vector3& translate) {
 	Matrix<float,4,4> result;
 
-	result.xmMatrix_ = DirectX::XMMatrixAffineTransformation({ scale.x, scale.y, scale.z }, {}, Quaternion::DirectionToDirection(from, to).m128, { translate.x,translate.y,translate.z });
+	result.xmMatrix_ = DirectX::XMMatrixAffineTransformation({ scale.x, scale.y, scale.z }, {}, Quaternion::DirectionToDirection(from.Normalize(), to.Normalize()).m128, {translate.x,translate.y,translate.z});
 
 	return result;
 }

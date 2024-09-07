@@ -47,7 +47,7 @@ void Water::Init() {
 	waveData_.waveSpeed = 10.0f;
 	waveData_.timeAttenuation = 0.1f;
 
-	lightRotate_ = Vector3(-90.0f, 0.0f, 90.0f) * Lamb::Math::toRadian<float>;
+	lightRotate_ = Vector3(-90.0f, 0.0f, 90.0f) * Lamb::Math::kToRadian<float>;
 
 	lightScale_ = 8.0f;
 	light_ = Light{
@@ -134,9 +134,9 @@ void Water::Debug([[maybe_unused]]const std::string& guiName){
 	ImGui::DragFloat("density", &density_, 0.01f);
 
 	if (ImGui::TreeNode("Light")) {
-		lightRotate_ *= Lamb::Math::toDegree<float>;
+		lightRotate_ *= Lamb::Math::kToDegree<float>;
 		ImGui::DragFloat3("lightDirection", lightRotate_.data(), 1.0f, -360.0f, 360.0f);
-		lightRotate_ *= Lamb::Math::toRadian<float>;
+		lightRotate_ *= Lamb::Math::kToRadian<float>;
 		light_.ligDirection = Vector3::kXIdentity * Quaternion::EulerToQuaternion(lightRotate_);
 		light_.ligDirection = light_.ligDirection.Normalize();
 		light_.ligColor /= lightScale_;

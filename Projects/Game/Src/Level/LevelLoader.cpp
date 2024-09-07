@@ -104,9 +104,9 @@ void LevelLoader::AddTransform(nlohmann::json& data, Object& object)
     transform.rotate[1] = -static_cast<float>(transformData["rotation"][2]);
     transform.rotate[2] = -static_cast<float>(transformData["rotation"][1]);
 
-    transform.rotate *= Lamb::Math::toRadian<float>;
+    transform.rotate *= Lamb::Math::kToRadian<float>;
     if (type.compare("CAMERA") == 0) {
-        transform.rotate.x += 90.0f * Lamb::Math::toRadian<float>;
+        transform.rotate.x += 90.0f * Lamb::Math::kToRadian<float>;
     }
     transform.scale[0] = static_cast<float>(transformData["scaling"][0]);
     transform.scale[1] = static_cast<float>(transformData["scaling"][2]);
