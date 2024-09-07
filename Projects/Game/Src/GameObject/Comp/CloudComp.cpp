@@ -70,3 +70,15 @@ void CloudComp::Save(nlohmann::json& json) {
 void CloudComp::Load([[maybe_unused]] nlohmann::json& json) {
 
 }
+
+ObbPushComp& CloudComp::GetObbPushComp()
+{
+	return *collision_;
+}
+
+const ObbPushComp& CloudComp::GetObbPushComp() const
+{
+	
+	return *collision_;
+
+}

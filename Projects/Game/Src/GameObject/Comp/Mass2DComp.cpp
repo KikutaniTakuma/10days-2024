@@ -8,7 +8,7 @@ void Mass2DComp::Init()
 
 }
 
-void Mass2DComp::Move()
+void Mass2DComp::Update()
 {
 
 	if (massSize_ != 0) {

@@ -10,7 +10,7 @@ public:
 
 	void Init() override;
 
-	void Move() override;
+	void Update() override;
 
 	void SetXOffset(float offset) { offsetX_ = offset; }
 	void SetYOffset(float offset) { offsetY_ = offset; }
@@ -31,6 +31,9 @@ private:
 
 	int32_t massX_;
 	int32_t massY_;
+
+	int32_t tmpMassX_;
+	int32_t tmpMassY_;
 
 	int32_t massSize_ = 32;
 

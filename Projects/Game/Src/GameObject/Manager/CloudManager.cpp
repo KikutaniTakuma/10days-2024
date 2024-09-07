@@ -1,4 +1,5 @@
 #include "CloudManager.h"
+#include "../Comp/ObbPushComp.h"
 
 std::unique_ptr<CloudManager> CloudManager::instance_;
 

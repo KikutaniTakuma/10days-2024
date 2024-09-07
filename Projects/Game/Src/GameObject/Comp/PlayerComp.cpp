@@ -13,6 +13,7 @@
 #include "Mass2DComp.h"
 #include "Game/TileName/TileName.h"
 #include "Input/Input.h"
+#include "../Manager/CloudManager.h"
 
 void PlayerComp::Init() {
 
@@ -96,12 +97,90 @@ void PlayerComp::LastUpdate() {
 bool PlayerComp::OnGround()
 {
 
-	if ((csvData_->GetNumber(mass_->GetMassX(), mass_->GetMassY() + 1) == static_cast<int32_t>(TileName::kCloud) or
+	//雲のマネージャーからプレイヤーと当たっているオブジェクトを取ってくる
+	for (auto cloud = CloudManager::GetInstance()->GetClouds().begin(); cloud != CloudManager::GetInstance()->GetClouds().end(); cloud++) {
+
+		//当たっている場合
+		if ((*cloud)->GetObbPushComp().GetObbComp().GetIsCollision()) {
+
+			if ((*cloud)->GetMassY() > mass_->GetMassY()) {
+
+				
+				if ((*cloud)->GetMassX() > mass_->GetMassX()) {
+
+					//壁がない場合
+					if (csvData_->GetNumber(mass_->GetMassX() + 1, mass_->GetMassY()) != static_cast<int32_t>(TileName::kCloud)) {
+
+						//既定の高さより上なら地面
+						if (transform_->translate.y - 30.0f > -float(mass_->GetMassY()) * 32.0f) {
+							return true;
+						}
+
+					}
+
+				}
+				else if((*cloud)->GetMassX() < mass_->GetMassX()) {
+
+					//壁がない場合
+					if (csvData_->GetNumber(mass_->GetMassX() - 1, mass_->GetMassY()) != static_cast<int32_t>(TileName::kCloud)) {
+
+						//既定の高さより上なら地面
+						if (transform_->translate.y - 30.0f > -float(mass_->GetMassY()) * 32.0f) {
+							return true;
+						}
+
+					}
+
+				}
+				else {
+					return true;
+				}
+
+			}
+
+		}
+
+	}
+
+	////下にブロックがある場合
+	//if (csvData_->GetNumber(mass_->GetMassX(), mass_->GetMassY() + 1) == static_cast<int32_t>(TileName::kCloud)) {
+
+	//	//地面に触れているならtrue
+	//	if (collision_->GetObbComp().GetIsCollision() and -float(mass_->GetMassY()) * 32.0f - (transform_->translate.y - 12.0f) <= 0.01f) {
+	//		return true;
+	//	}
+
+	//}
+	////左下にブロックがある場合
+	//if (csvData_->GetNumber(mass_->GetMassX() - 1, mass_->GetMassY() + 1) == static_cast<int32_t>(TileName::kCloud)) {
+
+	//	//隣が壁でない且つ地面に触れていたらtrue
+	//	if (collision_->GetObbComp().GetIsCollision() and
+	//		csvData_->GetNumber(mass_->GetMassX() - 1, mass_->GetMassY()) != static_cast<int32_t>(TileName::kCloud) and
+	//		collision_->GetObbComp().GetIsCollision() and -float(mass_->GetMassY()) * 32.0f - (transform_->translate.y - 12.0f) <= 0.01f) {
+	//		return true;
+	//	}
+
+
+	//}
+	////右下にブロックがある場合
+	//if (csvData_->GetNumber(mass_->GetMassX() + 1, mass_->GetMassY() + 1) == static_cast<int32_t>(TileName::kCloud)) {
+
+	//	//隣が壁でない且つ地面に触れていたらtrue
+	//	if (collision_->GetObbComp().GetIsCollision() and
+	//		csvData_->GetNumber(mass_->GetMassX() + 1, mass_->GetMassY()) != static_cast<int32_t>(TileName::kCloud) and
+	//		collision_->GetObbComp().GetIsCollision() and -float(mass_->GetMassY()) * 32.0f - (transform_->translate.y - 12.0f) <= 0.01f) {
+	//		return true;
+	//	}
+
+	//}
+
+	/*if ((csvData_->GetNumber(mass_->GetMassX(), mass_->GetMassY() + 1) == static_cast<int32_t>(TileName::kCloud) or
 		csvData_->GetNumber(mass_->GetMassX() - 1, mass_->GetMassY() + 1) == static_cast<int32_t>(TileName::kCloud) or
 		csvData_->GetNumber(mass_->GetMassX() + 1, mass_->GetMassY() + 1) == static_cast<int32_t>(TileName::kCloud)) and
-		collision_->GetObbComp().GetIsCollision().OnStay()) {
+		collision_->GetObbComp().GetIsCollision()) {
 		return true;
-	}
+	}*/
 
 	return false;
 

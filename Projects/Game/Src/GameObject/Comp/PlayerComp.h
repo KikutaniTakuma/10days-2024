@@ -55,4 +55,6 @@ private:
 
 	Lamb::SafePtr<class Mass2DComp> mass_;
 
+	Lamb::Flg onGround_;
+
 };

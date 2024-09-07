@@ -1,5 +1,6 @@
 #pragma once
  #include "../Object.h"
+#include "ObbPushComp.h"
 
  class CloudComp : public IComp {
  public:
@@ -27,6 +28,9 @@
 
 	 void Save(nlohmann::json& json) override;
 	 void Load(nlohmann::json& json) override;
+
+	 ObbPushComp& GetObbPushComp();
+	 const ObbPushComp& GetObbPushComp() const;
 
  private:
 

@@ -35,6 +35,8 @@ public:
 
 	Lamb::SafePtr<CloudComp> GetAliveCloud(int32_t massX, int32_t massY);
 
+	std::unordered_set<Lamb::SafePtr<CloudComp>>& GetClouds() { return cloudComps_; }
+
 private:
 
 	static std::unique_ptr<CloudManager> instance_;

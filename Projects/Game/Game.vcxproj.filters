@@ -137,6 +137,9 @@
     <ClCompile Include="Src\GameObject\Comp\Mass2DComp.cpp">
       <Filter>GameObject\Comp</Filter>
     </ClCompile>
+    <ClCompile Include="Src\GameObject\Comp\JumpComp.cpp">
+      <Filter>GameObject\Comp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="GlobalVariables">
@@ -337,6 +340,9 @@
       <Filter>Game\TileName</Filter>
     </ClInclude>
     <ClInclude Include="Src\GameObject\Comp\Mass2DComp.h">
+      <Filter>GameObject\Comp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Comp\JumpComp.h">
       <Filter>GameObject\Comp</Filter>
     </ClInclude>
   </ItemGroup>
