@@ -32,10 +32,10 @@
                 {
                     "CompName": "class TransformComp",
                     "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
+                        -0.005771483760327101,
+                        0.051833342760801315,
+                        0.0002995629911310971,
+                        0.9986389875411987
                     ],
                     "scale": [
                         1.0,
@@ -45,7 +45,7 @@
                     "translate": [
                         0.0,
                         0.0,
-                        -1.9800000190734863
+                        -100.0
                     ]
                 },
                 {
@@ -64,12 +64,25 @@
         {
             "Comps": [
                 {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
+                    "CompName": "class LineRenderDataComp",
+                    "color": [
+                        1.0,
                         0.0,
                         0.0,
                         1.0
+                    ],
+                    "isDepth": true
+                },
+                {
+                    "CompName": "class LineRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        -0.0,
+                        1.0,
+                        0.0,
+                        5.960464477539063e-08
                     ],
                     "scale": [
                         400.0,
@@ -83,19 +96,6 @@
                     ]
                 },
                 {
-                    "CompName": "class LineRenderComp"
-                },
-                {
-                    "CompName": "class LineRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "isDepth": true
-                },
-                {
                     "CompName": "class LineComp",
                     "end": [
                         -200.0,
@@ -107,6 +107,10 @@
                         0.0,
                         0.0
                     ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": []
                 },
                 {
                     "CompName": "class ObbComp",
@@ -123,8 +127,64 @@
                     ]
                 },
                 {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "CollisionTag": [],
+                    "CollisionTags": [
+                        "class ModelRenderComp"
+                    ],
+                    "CompName": "class LineCollisionComp"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNone",
+                    "CompName": "class ModelRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources\\Common\\Cube.obj",
+                    "isLighting": true
+                },
+                {
+                    "CompName": "class ModelRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        -0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        50.0,
+                        50.0,
+                        50.0
+                    ],
+                    "translate": [
+                        6.935131072998047,
+                        -5.709053039550781,
+                        0.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collsiionTags": [],
+                    "scale": [
+                        2.0,
+                        2.0,
+                        2.0
+                    ]
                 }
             ],
             "type": "Object"

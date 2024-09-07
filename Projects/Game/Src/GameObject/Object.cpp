@@ -26,6 +26,7 @@
 #include "Comp/LineComp.h"
 #include "Comp/LineRenderComp.h"
 #include "Comp/LineRenderDataComp.h"
+#include "Comp/LineCollisionComp.h"
 
 void Object::Init() {
 	/*for (auto& i : components_) {
@@ -125,6 +126,7 @@ bool Object::DebugAddComp() {
 		DebugAdd<LineComp>();
 		DebugAdd<LineRenderComp>();
 		DebugAdd<LineRenderDataComp>();
+		DebugAdd<LineCollisionComp>();
 		
 		ImGui::EndChild();
 
@@ -185,5 +187,6 @@ void Object::AddComps(nlohmann::json& compData)
 	AddAndLoadComp<LineComp>(compName, compData);
 	AddAndLoadComp<LineRenderComp>(compName, compData);
 	AddAndLoadComp<LineRenderDataComp>(compName, compData);
+	AddAndLoadComp<LineCollisionComp>(compName, compData);
 }
 

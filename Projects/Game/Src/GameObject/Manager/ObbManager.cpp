@@ -1,4 +1,6 @@
 #include "ObbManager.h"
+#include "../Comp/LineCollisionComp.h"
+#include "../Comp/LineComp.h"
 
 std::unique_ptr<ObbManager> ObbManager::instance_;
 
@@ -58,7 +60,7 @@ void ObbManager::Collision() {
 			(*i)->Collision((*j));
 		}
 	}
-	// 当たり判定(押し出し)
+	// 当たり判定
 	for (auto i = obbComps_.begin(); i != obbComps_.end(); i++) {
 		for (auto j = obbComps_.begin(); j != obbComps_.end(); j++) {
 			if (j == i) {
@@ -66,6 +68,21 @@ void ObbManager::Collision() {
 			}
 			// 当たり判定(押し出さない)
 			(*i)->CollisionHasTag((*j).get());
+		}
+	}
+
+	// 当たり判定(線分)
+	for (auto i = obbComps_.begin(); i != obbComps_.end(); i++) {
+		if ((*i)->getObject().HasComp<LineCollisionComp>()) {
+			Lamb::SafePtr lineComp = (*i)->getObject().GetComp<LineCollisionComp>();
+
+			for (auto j = obbComps_.begin(); j != obbComps_.end(); j++) {
+				if (j == i) {
+					continue;
+				}
+				// 当たり判定
+				lineComp->IsCollisionHasTag(j->get());
+			}
 		}
 	}
 }

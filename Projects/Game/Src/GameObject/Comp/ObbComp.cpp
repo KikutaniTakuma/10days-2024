@@ -446,6 +446,7 @@ bool ObbComp::CollisionHasTag(ObbComp* const other) {
 	return false;
 }
 
+
 TransformComp& ObbComp::GetTransformComp()
 {
 	return *transformComp_;

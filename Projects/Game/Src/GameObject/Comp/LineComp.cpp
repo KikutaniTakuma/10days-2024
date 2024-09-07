@@ -24,23 +24,6 @@ void LineComp::Load(nlohmann::json& json)
 	}
 }
 
-void LineComp::FirstUpdate() {
-	if (object_.HasComp<TransformComp>()) {
-		Lamb::SafePtr transformComp = object_.GetComp<TransformComp>();
-
-		transformComp->translate = Vector3::Lerp(start, end, 0.5f);
-		transformComp->scale = { (start - end).Length(), 10.0f, 10.0f };
-
-		Vector3 to = (end - start).Normalize();
-#ifdef _DEBUG
-		transformComp->eulerRotate = Quaternion::DirectionToDirection(Vector3::kXIdentity, to).ToEuler();
-#else
-		transformComp->rotate = Quaternion::DirectionToDirection(Vector3::kXIdentity, to);
-#endif // _DEBUG
-
-	}
-}
-
 void LineComp::Debug([[maybe_unused]]const std::string& guiName)
 {
 #ifdef _DEBUG
