@@ -29,8 +29,15 @@ void LineComp::FirstUpdate() {
 		Lamb::SafePtr transformComp = object_.GetComp<TransformComp>();
 
 		transformComp->translate = Vector3::Lerp(start, end, 0.5f);
-		transformComp->scale = { 0.1f, 0.1f, (start - end).Length() };
-		transformComp->rotate = Quaternion::DirectionToDirection(start, end);
+		transformComp->scale = { (start - end).Length(), 10.0f, 10.0f };
+
+		Vector3 to = (end - start).Normalize();
+#ifdef _DEBUG
+		transformComp->eulerRotate = Quaternion::DirectionToDirection(Vector3::kXIdentity, to).ToEuler();
+#else
+		transformComp->rotate = Quaternion::DirectionToDirection(Vector3::kXIdentity, to);
+#endif // _DEBUG
+
 	}
 }
 

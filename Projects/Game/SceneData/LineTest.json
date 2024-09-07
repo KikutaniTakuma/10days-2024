@@ -64,6 +64,28 @@
         {
             "Comps": [
                 {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        400.0,
+                        10.0,
+                        10.0
+                    ],
+                    "translate": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "CompName": "class LineRenderComp"
+                },
+                {
                     "CompName": "class LineRenderDataComp",
                     "color": [
                         1.0,
@@ -72,9 +94,6 @@
                         1.0
                     ],
                     "isDepth": true
-                },
-                {
-                    "CompName": "class LineRenderComp"
                 },
                 {
                     "CompName": "class LineComp",
@@ -88,6 +107,24 @@
                         0.0,
                         0.0
                     ]
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collsiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": []
                 }
             ],
             "type": "Object"
