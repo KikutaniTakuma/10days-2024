@@ -1,4 +1,5 @@
 #include "LineComp.h"
+#include "ObbComp.h"
 
 void LineComp::Save(nlohmann::json& json)
 {
@@ -20,6 +21,16 @@ void LineComp::Load(nlohmann::json& json)
 	}
 	for (size_t i = 0; i < end.size(); i++) {
 		end[i] = json["end"][i].get<float32_t>();
+	}
+}
+
+void LineComp::FirstUpdate() {
+	if (object_.HasComp<TransformComp>()) {
+		Lamb::SafePtr transformComp = object_.GetComp<TransformComp>();
+
+		transformComp->translate = Vector3::Lerp(start, end, 0.5f);
+		transformComp->scale = { 0.1f, 0.1f, (start - end).Length() };
+		transformComp->rotate = Quaternion::DirectionToDirection(start, end);
 	}
 }
 

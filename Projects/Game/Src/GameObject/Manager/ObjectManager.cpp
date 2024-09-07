@@ -331,7 +331,7 @@ void ObjectManager::Debug() {
 		}
 	}
 
-	ImGui::BeginChild(ImGui::GetID((void*)0), ImVec2(300, 200), ImGuiWindowFlags_NoTitleBar);
+	ImGui::BeginChild(ImGui::GetID((void*)0), { 0.0f, 200.0f  }, ImGuiChildFlags_AlwaysAutoResize | ImGuiChildFlags_AutoResizeX, ImGuiWindowFlags_NoTitleBar);
 	size_t objectCount = 0;
 	bool isErase = false;
 	for (auto itr = objects_.begin(); itr != objects_.end(); itr++) {
