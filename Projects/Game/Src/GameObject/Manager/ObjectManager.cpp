@@ -219,7 +219,7 @@ void ObjectManager::Debug() {
 				int32_t button = MessageBoxA(
 					windowHandle,
 					("this file exists. -> " + newFilePath + "\nDo you want to overwrite?").c_str(), "ObjectManager",
-					MB_YESNOCANCEL | MB_APPLMODAL | MB_ICONINFORMATION
+					MB_OKCANCEL | MB_APPLMODAL | MB_ICONINFORMATION
 				);
 
 				if (button == IDOK) {
@@ -296,7 +296,42 @@ void ObjectManager::Debug() {
 		auto newObject = std::make_unique<Object>();
 		objects_.insert(std::move(newObject));
 	}
+	if (ImGui::Button("ClearObject")) {
+		int32_t button = MessageBoxA(
+			windowHandle,
+			"All Objects erase. Accepted?", "ObjectManager",
+			MB_OKCANCEL | MB_APPLMODAL | MB_ICONINFORMATION
+		);
 
+		if (button == IDOK) {
+			Lamb::SafePtr<Object> cameraObject;
+			for (auto i = objects_.begin(); i != objects_.end();) {
+				if ((*i)->HasComp<CameraComp>()) {
+					cameraObject = i->get();
+					i++;
+				}
+				else {
+					i = objects_.erase(i);
+				}
+			}
+
+			objectTags_.clear();
+			obbManager_->Clear();
+
+			for (auto& i : cameraObject->GetTags()) {
+				objectTags_.insert(std::make_pair(i, true));
+			}
+			
+			if (cameraObject->HasComp<ObbComp>()) {
+				obbManager_->Set(cameraObject->GetComp<ObbComp>());
+			}
+			if (cameraObject->HasComp<ObbPushComp>()) {
+				obbManager_->Set(cameraObject->GetComp<ObbPushComp>());
+			}
+		}
+	}
+
+	ImGui::BeginChild(ImGui::GetID((void*)0), ImVec2(300, 200), ImGuiWindowFlags_NoTitleBar);
 	size_t objectCount = 0;
 	bool isErase = false;
 	for (auto itr = objects_.begin(); itr != objects_.end(); itr++) {
@@ -323,6 +358,7 @@ void ObjectManager::Debug() {
 			break;
 		}
 	}
+	ImGui::EndChild();
 	ImGui::End();
 #endif // _DEBUG
 }
