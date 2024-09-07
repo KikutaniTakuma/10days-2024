@@ -16,7 +16,7 @@
 
 #include "Utils/FileUtils.h"
 #include "ObbManager.h"
-
+#include "CloudManager.h"
 
 std::unique_ptr<ObjectManager> ObjectManager::instance_;
 
@@ -39,14 +39,20 @@ void ObjectManager::Initialize() {
 
 #ifdef _DEBUG
 	instance_->levelDataFilePathes_ = Lamb::GetFilePathFormDir("./SceneData/", ".json");
+	
+#endif // _DEBUG
+
 	ObbManager::Initialize();
 	instance_->obbManager_ = ObbManager::GetInstance();
-#endif // _DEBUG
+	CloudManager::Initialize();
+	instance_->cloudManager_ = CloudManager::GetInstance();
+
 }
 
 void ObjectManager::Finalize()
 {
 	ObbManager::Finalize();
+	CloudManager::Finalize();
 	instance_.reset();
 }
 
@@ -374,6 +380,7 @@ void ObjectManager::Load(const std::string& jsonFileName) {
 	objects_.clear();
 	objectTags_.clear();
 	obbManager_->Clear();
+	cloudManager_->Clear();
 	cameraComp_ = nullptr;
 
 	auto jsonFile = Lamb::LoadJson(jsonFileName);

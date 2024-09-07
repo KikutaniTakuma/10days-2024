@@ -48,7 +48,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/block10.png",
+                    "fileName": "./Resources/Textures/Blocks/player.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -101,6 +101,34 @@
                 },
                 {
                     "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Direction2DComp"
+                },
+                {
+                    "CompName": "class CsvDataComp",
+                    "fileName": "Resources/Maps/test3.csv"
+                },
+                {
+                    "CompName": "class EatCloudComp"
+                },
+                {
+                    "CompName": "class RemoveCloudComp"
+                },
+                {
+                    "CompName": "class CountComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        20,
+                        4
+                    ],
+                    "offset": [
+                        16.0,
+                        16.0
+                    ],
+                    "size": 32
                 }
             ]
         },
@@ -115,7 +143,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/block1.png",
+                    "fileName": "./Resources/Textures/Blocks/cloud.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -165,6 +193,18 @@
                 },
                 {
                     "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        20,
+                        7
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"

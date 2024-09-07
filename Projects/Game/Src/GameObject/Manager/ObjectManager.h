@@ -60,6 +60,7 @@ public:
 private:
 	std::unordered_set<std::unique_ptr<Object>> objects_;
 	Lamb::SafePtr<class ObbManager> obbManager_;
+	Lamb::SafePtr<class CloudManager> cloudManager_;
 	std::unordered_map<std::string, bool> objectTags_;
 	Lamb::SafePtr<class CameraComp> cameraComp_;
 

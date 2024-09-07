@@ -27,6 +27,10 @@ public:
 
 private:
 
+	bool OnGround();
+
+private:
+
 	Lamb::SafePtr<class TransformComp> transform_;
 
 	Lamb::SafePtr<class SpriteRenderComp> sprite_;
@@ -40,5 +44,15 @@ private:
 	Lamb::SafePtr <class FlagComp> isDead_;
 
 	Lamb::SafePtr<class Direction2DComp> direction_;
+
+	Lamb::SafePtr<class CsvDataComp> csvData_;
+
+	Lamb::SafePtr<class EatCloudComp> eatCloud_;
+
+	Lamb::SafePtr<class RemoveCloudComp> removeCloud_;
+
+	Lamb::SafePtr<class CountComp> count_;
+
+	Lamb::SafePtr<class Mass2DComp> mass_;
 
 };

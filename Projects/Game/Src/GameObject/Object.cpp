@@ -22,6 +22,11 @@
 #include "Comp/CloudComp.h"
 #include "Comp/FlagComp.h"
 #include "Comp/PlayerComp.h"
+#include "Comp/CountComp.h"
+#include "Comp/Direction2DComp.h"
+#include "Comp/EatCloudComp.h"
+#include "Comp/RemoveCloudComp.h"
+#include "Comp/Mass2DComp.h"
 
 void Object::Init() {
 	/*for (auto& i : components_) {
@@ -116,6 +121,11 @@ bool Object::DebugAddComp() {
 		DebugAdd<FlagComp>();
 		DebugAdd<CloudComp>();
 		DebugAdd<PlayerComp>();
+		DebugAdd<CountComp>();
+		DebugAdd<Direction2DComp>();
+		DebugAdd<EatCloudComp>();
+		DebugAdd<RemoveCloudComp>();
+		DebugAdd<Mass2DComp>();
 		ImGui::TreePop();
 
 		return true;
@@ -170,5 +180,10 @@ void Object::AddComps(nlohmann::json& compData)
 	AddAndLoadComp<FlagComp>(compName, compData);
 	AddAndLoadComp<CloudComp>(compName, compData);
 	AddAndLoadComp<PlayerComp>(compName, compData);
+	AddAndLoadComp<CountComp>(compName, compData);
+	AddAndLoadComp<Direction2DComp>(compName, compData);
+	AddAndLoadComp<EatCloudComp>(compName, compData);
+	AddAndLoadComp<RemoveCloudComp>(compName, compData);
+	AddAndLoadComp<Mass2DComp>(compName, compData);
 }
 

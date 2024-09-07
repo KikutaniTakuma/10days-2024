@@ -14,6 +14,17 @@
 	 
 	 void Update() override;
 
+	 void Finalize() override;
+
+	 const Lamb::Flg& GetIsActive() const;
+
+	 void SetIsActive(bool flag);
+
+	 void SetPosition(const Vector3& position);
+
+	 int32_t GetMassX() const;
+	 int32_t GetMassY() const;
+
 	 void Save(nlohmann::json& json) override;
 	 void Load(nlohmann::json& json) override;
 
@@ -28,5 +39,7 @@
 	 Lamb::SafePtr<class ObbPushComp> collision_;
 
 	 Lamb::SafePtr<class FlagComp> flagComp_;
+
+	 Lamb::SafePtr<class Mass2DComp> mass_;
 
  };

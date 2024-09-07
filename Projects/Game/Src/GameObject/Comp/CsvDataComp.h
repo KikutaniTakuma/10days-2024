@@ -13,6 +13,10 @@ public:
 
 	const std::vector<std::vector<int32_t>>& GetCsvData() const;
 
+	void SetNumber(int32_t x, int32_t y, int32_t num);
+
+	int32_t GetNumber(int32_t x, int32_t y) const;
+
 	void Debug(const std::string& guiName);
 
 	void Save(nlohmann::json& json) override;

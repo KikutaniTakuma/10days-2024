@@ -8,16 +8,20 @@
 
 	 ~CountComp() = default;
 
-	 void Event() override;
+	 void AddCount(int32_t num) { count += num; }
 
-	 void Update() override;
+	 void ResetCount(int32_t num) { count = num; }
+
+	 int32_t GetCount() const { return count; }
 
  public:
 
 	 void Save(nlohmann::json& json) override;
 	 void Load(nlohmann::json& json) override;
 
-	 int32_t count;
+ private:
+
+	 int32_t count = 0;
 
  };
 

@@ -147,6 +147,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Src\GameObject\Comp\JsonComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\ModelRenderComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\InputMoveComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\Mass2DComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\ObbComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\ObbPushComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\ModelRenderDataComp.cpp" />
@@ -157,6 +158,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Src\GameObject\Comp\SpriteRenderComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\SpriteRenderDataComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\TransformComp.cpp" />
+    <ClCompile Include="Src\GameObject\Manager\CloudManager.cpp" />
     <ClCompile Include="Src\GameObject\Manager\ObbManager.cpp" />
     <ClCompile Include="Src\GameObject\Manager\ObjectManager.cpp" />
     <ClCompile Include="Src\GameObject\Manager\TransformCompUpdater.cpp" />
@@ -193,6 +195,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="Src\GameObject\Comp\InputMoveComp.h" />
     <ClInclude Include="Src\GameObject\Comp\JsonComp.h" />
     <ClInclude Include="Src\GameObject\Comp\ModelRenderComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\Mass2DComp.h" />
     <ClInclude Include="Src\GameObject\Comp\ObbComp.h" />
     <ClInclude Include="Src\GameObject\Comp\ObbPushComp.h" />
     <ClInclude Include="Src\GameObject\Comp\ModelRenderDataComp.h" />
@@ -203,10 +206,12 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="Src\GameObject\Comp\SpriteRenderComp.h" />
     <ClInclude Include="Src\GameObject\Comp\SpriteRenderDataComp.h" />
     <ClInclude Include="Src\GameObject\Comp\TransformComp.h" />
+    <ClInclude Include="Src\GameObject\Manager\CloudManager.h" />
     <ClInclude Include="Src\GameObject\Manager\ObbManager.h" />
     <ClInclude Include="Src\GameObject\Manager\ObjectManager.h" />
     <ClInclude Include="Src\GameObject\Manager\TransformCompUpdater.h" />
     <ClInclude Include="Src\GameObject\Object.h" />
+    <ClInclude Include="Src\Game\TileName\TileName.h" />
     <ClInclude Include="Src\Game\Water\Water.h" />
     <ClInclude Include="Src\GlobalVariables\GlobalVariables.h" />
     <ClInclude Include="Src\Level\LevelData.h" />
