@@ -27,14 +27,6 @@ void LineCollisionComp::FirstUpdate()
 	mostNearCollisionObjectPtr_ = nullptr;
 }
 
-void LineCollisionComp::LastUpdate() {
-#ifdef _DEBUG
-	if (object_.HasComp<LineRenderDataComp>()) {
-		object_.GetComp<LineRenderDataComp>()->color = color_;
-	}
-#endif // _DEBUG
-}
-
 bool LineCollisionComp::IsCollisionHasTag(ObbComp* obbComp)
 {
 	bool hasTag = false;

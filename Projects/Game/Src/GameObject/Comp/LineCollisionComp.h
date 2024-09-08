@@ -15,7 +15,6 @@ public:
 	void Init() override;
 
 	void FirstUpdate() override;
-	void LastUpdate() override;
 
 	bool IsCollisionHasTag(ObbComp* obbComp);
 
