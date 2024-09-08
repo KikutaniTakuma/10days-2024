@@ -140,7 +140,7 @@ public:
 
 	virtual void Draw([[maybe_unused]] CameraComp* cameraComp) const;
 
-	virtual void Debug(const std::string& guiName);
+	virtual bool Debug(const std::string& guiName);
 
 	bool DebugAddComp();
 

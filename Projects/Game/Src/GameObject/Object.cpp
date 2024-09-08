@@ -28,6 +28,10 @@
 #include "Comp/LineRenderDataComp.h"
 #include "Comp/LineCollisionComp.h"
 
+#include "Comp/EyeComp.h"
+#include "Comp/EyeStateComp.h"
+#include "Comp/EaseingComp.h"
+
 void Object::Init() {
 	/*for (auto& i : components_) {
 		i.second->Init();
@@ -74,12 +78,12 @@ void Object::Draw([[maybe_unused]] CameraComp* cameraComp) const
 	}
 }
 
-void Object::Debug([[maybe_unused]] const std::string& guiName) {
+bool Object::Debug([[maybe_unused]] const std::string& guiName) {
 #ifdef _DEBUG
 	if (ImGui::TreeNode(guiName.c_str())) {
 		if (DebugAddComp()) {
 			ImGui::TreePop();
-			return;
+			return true;
 		}
 		ImGui::Text("tags : ");
 		ImGui::BeginChild(ImGui::GetID((void*)0), { 0.0f, 50.0f }, ImGuiChildFlags_AlwaysAutoResize | ImGuiChildFlags_AutoResizeX, ImGuiWindowFlags_NoTitleBar);
@@ -96,6 +100,8 @@ void Object::Debug([[maybe_unused]] const std::string& guiName) {
 		ImGui::TreePop();
 	}
 #endif // _DEBUG
+
+	return false;
 }
 
 bool Object::DebugAddComp() {
@@ -127,6 +133,9 @@ bool Object::DebugAddComp() {
 		DebugAdd<LineRenderComp>();
 		DebugAdd<LineRenderDataComp>();
 		DebugAdd<LineCollisionComp>();
+		DebugAdd<EyeComp>();
+		DebugAdd<EyeStateComp>();
+		DebugAdd<EaseingComp>();
 		
 		ImGui::EndChild();
 
@@ -188,5 +197,8 @@ void Object::AddComps(nlohmann::json& compData)
 	AddAndLoadComp<LineRenderComp>(compName, compData);
 	AddAndLoadComp<LineRenderDataComp>(compName, compData);
 	AddAndLoadComp<LineCollisionComp>(compName, compData);
+	AddAndLoadComp<EyeComp>(compName, compData);
+	AddAndLoadComp<EyeStateComp>(compName, compData);
+	AddAndLoadComp<EaseingComp>(compName, compData);
 }
 
