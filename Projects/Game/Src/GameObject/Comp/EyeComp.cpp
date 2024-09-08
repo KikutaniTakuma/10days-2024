@@ -4,6 +4,7 @@
 #include "LineComp.h"
 #include "LineCollisionComp.h"
 #include "EyeStateComp.h"
+#include "EaseingComp.h"
 
 void EyeComp::Init()
 {
@@ -11,6 +12,7 @@ void EyeComp::Init()
 	beamLineComp_ = object_.AddComp<LineComp>();
 	beamLineCollisionComp_ = object_.AddComp<LineCollisionComp>();
 	eyeStateComp_ = object_.AddComp<EyeStateComp>();
+	easeingComp_ = object_.AddComp<EaseingComp>();
 }
 
 void EyeComp::SetPlayerComp(PlayerComp* playerComp) {
@@ -66,17 +68,18 @@ void EyeComp::Event() {
 	switch (eyeStateComp_->state) {
 		// 探してる
 	case EyeStateComp::State::kSearch:
+		// 初期化
+		eyeStateComp_->aimCount = 0.0f;
+		eyeStateComp_->aimFixedCount = 0.0f;
+		eyeStateComp_->fireCount = 0.0f;
+		isEasesingStart_ = false;
+
+
 		// 探している最中にプレイヤーを直視できたら狙う
 		if(isCollision){
 			eyeStateComp_->state = EyeStateComp::State::kAim;
 		}
 
-		// 初期化
-		eyeStateComp_->aimCount = 0.0f;
-		// 初期化
-		eyeStateComp_->aimFixedCount = 0.0f;
-		// 初期化
-		eyeStateComp_->fireCount = 0.0f;
 
 		break;
 		// 狙いを定める
@@ -84,6 +87,22 @@ void EyeComp::Event() {
 		// 狙いを定めている最中にプレイヤーを直視できなくなったらSearchに移行
 		if(isCollision){
 			eyeStateComp_->state = EyeStateComp::State::kSearch;
+		}
+
+		// もしイージングしてなかったら開始する
+		if (not isEasesingStart_) {
+			easeingComp_->GetEaseing().Start(easeingComp_->isLoop, easeingComp_->spdT, easeingComp_->type);
+			isEasesingStart_ = true;
+			easeingStartPosX = transformComp_->translate.x;
+		}
+		// イージングが開始されたら
+		else if (isEasesingStart_ and easeingComp_->GetEaseing().GetIsActive()) {
+			// イージングさせて近づけさせる
+			transformComp_->translate.x = easeingComp_->GetEaseing().Get(easeingStartPosX, playerTransformComp_->translate.x);
+		}
+		// それ以外は完全に一致させる
+		else {
+			transformComp_->translate.x = playerTransformComp_->translate.x;
 		}
 
 		// ビームの終わりをプレイヤーにする

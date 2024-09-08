@@ -1,5 +1,6 @@
 #pragma once
 #include "../Object.h"
+
 class EyeComp : public IComp {
 public:
 	using IComp::IComp;
@@ -36,4 +37,10 @@ private:
 	Lamb::SafePtr<class LineCollisionComp> beamLineCollisionComp_;
 
 	Lamb::SafePtr<class EyeStateComp> eyeStateComp_;
+
+	Lamb::SafePtr<class EaseingComp> easeingComp_;
+	
+
+	bool isEasesingStart_ = false;
+	float32_t easeingStartPosX = 0.0f;
 };
