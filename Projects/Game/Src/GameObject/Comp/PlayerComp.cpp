@@ -34,7 +34,7 @@ void PlayerComp::Move() {
 		fall_->Stop();
 	}
 
-	transform_->translate.y += fall_->GetFall();
+	//transform_->translate.y += fall_->GetFall();
 
 
 }
