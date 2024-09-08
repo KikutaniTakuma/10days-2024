@@ -35,6 +35,7 @@ private:
 
 	Lamb::SafePtr<class LineComp> beamLineComp_;
 	Lamb::SafePtr<class LineCollisionComp> beamLineCollisionComp_;
+	Lamb::SafePtr<class LineRenderDataComp> beamLineRenderDataComp_;
 
 	Lamb::SafePtr<class EyeStateComp> eyeStateComp_;
 
