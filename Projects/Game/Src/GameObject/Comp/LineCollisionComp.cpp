@@ -4,7 +4,6 @@
 void LineCollisionComp::Init()
 {
 	lineComp_ = object_.AddComp<LineComp>();
-	obbComp_ = object_.AddComp<ObbComp>();
 	transFormComp_ = object_.AddComp<TransformComp>();
 }
 
@@ -23,6 +22,9 @@ void LineCollisionComp::FirstUpdate()
 		transformComp->rotate = Quaternion::DirectionToDirection(Vector3::kXIdentity, to);
 #endif // _DEBUG
 	}
+
+	// 初期化
+	mostNearCollisionObjectPtr_ = nullptr;
 }
 
 void LineCollisionComp::LastUpdate() {
@@ -44,20 +46,47 @@ bool LineCollisionComp::IsCollisionHasTag(ObbComp* obbComp)
 		}
 	}
 
+	// タグをもっていなかったら当たり判定をしない
 	if (not hasTag) {
 		return false;
 	}
 
+	// 毎フレームリセットする
 	if (not isCollision_.OnEnter()) {
 		isCollision_ = false;
+#ifdef _DEBUG
 		color_ = 0xffffffff;
-	}
-	isCollision_ = obbComp->IsCollision(lineComp_->start, lineComp_->end);
-	if (isCollision_) {
-		color_ = 0xff0000ff;
+#endif // _DEBUG
 	}
 
-	return !!isCollision_;
+	// 当たり判定
+	bool isCollision = obbComp->IsCollision(lineComp_->start, lineComp_->end);
+
+	if (isCollision) {
+		// 当たり判定フラグ追加
+		isCollision_ = true;
+		
+		// もっとも近いオブジェクトのポインタを保存
+		// emptyだった場合はそのまま保存
+		if (mostNearCollisionObjectPtr_.empty()) {
+			mostNearCollisionObjectPtr_ = &(obbComp->getObject());
+		}
+		else {
+			float32_t preMostNearObjectLength = (mostNearCollisionObjectPtr_->GetComp<TransformComp>()->translate - lineComp_->start).Length();
+			float32_t currentMostNearObjectLength = (obbComp->GetTransformComp().translate - lineComp_->start).Length();
+			// いま持っているオブジェクトより近かったらポインタを代入
+			if (currentMostNearObjectLength < preMostNearObjectLength) {
+				mostNearCollisionObjectPtr_ = &(obbComp->getObject());
+			}
+		}
+
+		// 当たってたら色変更
+#ifdef _DEBUG
+		color_ = 0xff0000ff;
+#endif // _DEBUG
+	}
+
+	return isCollision;
 }
 
 void LineCollisionComp::Save(nlohmann::json& json) {
@@ -117,7 +146,7 @@ const LineComp& LineCollisionComp::GetLineComp() const
 	return *lineComp_;
 }
 
-const ObbComp& LineCollisionComp::GetObbComp() const
+const Lamb::SafePtr<const Object>& LineCollisionComp::GetMostNearCollisionObjectPtr() const
 {
-	return *obbComp_;
+	return mostNearCollisionObjectPtr_;
 }

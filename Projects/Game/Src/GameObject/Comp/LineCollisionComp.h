@@ -25,14 +25,16 @@ public:
 	void Debug(const std::string& guiName) override;
 
 	const LineComp& GetLineComp() const;
-	const ObbComp& GetObbComp() const;
+
+	const Lamb::SafePtr<const Object>& GetMostNearCollisionObjectPtr() const;
 
 private:
 	Lamb::SafePtr<LineComp> lineComp_;
-	Lamb::SafePtr<ObbComp> obbComp_;
 	Lamb::SafePtr<TransformComp> transFormComp_;
 
 	std::unordered_set<std::string> collisionTags_;
+	// もっとも近いオブジェクトのポインタ
+	Lamb::SafePtr<const Object> mostNearCollisionObjectPtr_;
 
 	Lamb::Flg isCollision_;
 
