@@ -43,7 +43,7 @@ private:
 
 
 #pragma region 菊谷が追加 2024/9/8
-	Lamb::Flg& beamCollisionFlg_;
+	Lamb::Flg beamCollisionFlg_;
 #pragma endregion
 
 };
