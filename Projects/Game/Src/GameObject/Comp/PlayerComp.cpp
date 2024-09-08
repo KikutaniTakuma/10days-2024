@@ -62,3 +62,8 @@ void PlayerComp::Save(nlohmann::json& json) {
 void PlayerComp::Load([[maybe_unused]] nlohmann::json& json) {
 
 }
+
+void PlayerComp::SetIsBeamCollision(const Lamb::Flg& collisionFlg)
+{
+	beamCollisionFlg_ = collisionFlg;
+}

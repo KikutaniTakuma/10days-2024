@@ -25,6 +25,8 @@ public:
 	void Save(nlohmann::json& json) override;
 	void Load(nlohmann::json& json) override;
 
+	void SetIsBeamCollision(const Lamb::Flg& collisionFlg);
+
 private:
 
 	Lamb::SafePtr<class TransformComp> transform_;
@@ -38,5 +40,10 @@ private:
 	Lamb::SafePtr<class ObbPushComp> collision_;
 
 	Lamb::SafePtr <class FlagComp> isDead_;
+
+
+#pragma region 菊谷が追加 2024/9/8
+	Lamb::Flg& beamCollisionFlg_;
+#pragma endregion
 
 };
