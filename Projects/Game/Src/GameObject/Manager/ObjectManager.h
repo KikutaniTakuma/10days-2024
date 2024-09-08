@@ -61,7 +61,7 @@ public:
 
 private:
 	std::unordered_set<std::unique_ptr<Object>> objects_;
-	Lamb::SafePtr<class ObbManager> obbManager_;
+	Lamb::SafePtr<class CollisionManager> obbManager_;
 	std::unordered_map<std::string, bool> objectTags_;
 	Lamb::SafePtr<class CameraComp> cameraComp_;
 

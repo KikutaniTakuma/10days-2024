@@ -15,7 +15,7 @@
 #include <fstream>
 
 #include "Utils/FileUtils.h"
-#include "ObbManager.h"
+#include "CollisionManager.h"
 
 #include "../Comp/EyeComp.h"
 #include "../Comp/PlayerComp.h"
@@ -42,14 +42,14 @@ void ObjectManager::Initialize() {
 
 #ifdef _DEBUG
 	instance_->levelDataFilePathes_ = Lamb::GetFilePathFormDir("./SceneData/", ".json");
-	ObbManager::Initialize();
-	instance_->obbManager_ = ObbManager::GetInstance();
+	CollisionManager::Initialize();
+	instance_->obbManager_ = CollisionManager::GetInstance();
 #endif // _DEBUG
 }
 
 void ObjectManager::Finalize()
 {
-	ObbManager::Finalize();
+	CollisionManager::Finalize();
 	instance_.reset();
 }
 
@@ -448,12 +448,13 @@ void ObjectManager::Save() {
 }
 
 void ObjectManager::SetPlayerCompToEyeComp() {
-	const std::unique_ptr<Object>& playerCompObject = *std::find_if(objects_.begin(), objects_.end(), [](const std::unique_ptr<Object>& object)->bool {
-		return object->HasComp<PlayerComp>();
+	Lamb::SafePtr<PlayerComp> playerComp;
+	for (auto& i : objects_) {
+		if (i->HasComp<PlayerComp>()) {
+			playerComp = i->GetComp<PlayerComp>();
+			break;
 		}
-	);
-
-	Lamb::SafePtr playerComp = playerCompObject->GetComp<PlayerComp>();
+	}
 
 	for (auto& i : objects_) {
 		if (i->HasComp<EyeComp>()) {

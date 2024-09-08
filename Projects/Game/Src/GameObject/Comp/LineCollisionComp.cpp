@@ -1,10 +1,16 @@
 #include "LineCollisionComp.h"
 #include "LineRenderDataComp.h"
+#include "../Manager/CollisionManager.h"
 
 void LineCollisionComp::Init()
 {
+	CollisionManager::GetInstance()->Set(this);
 	lineComp_ = object_.AddComp<LineComp>();
 	transFormComp_ = object_.AddComp<TransformComp>();
+}
+
+void LineCollisionComp::Finalize() {
+	CollisionManager::GetInstance()->Erase(this);
 }
 
 void LineCollisionComp::FirstUpdate()

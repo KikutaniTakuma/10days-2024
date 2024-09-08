@@ -161,7 +161,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Src\GameObject\Comp\SpriteRenderComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\SpriteRenderDataComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\TransformComp.cpp" />
-    <ClCompile Include="Src\GameObject\Manager\ObbManager.cpp" />
+    <ClCompile Include="Src\GameObject\Manager\CollisionManager.cpp" />
     <ClCompile Include="Src\GameObject\Manager\ObjectManager.cpp" />
     <ClCompile Include="Src\GameObject\Manager\TransformCompUpdater.cpp" />
     <ClCompile Include="Src\GameObject\Object.cpp" />
@@ -211,7 +211,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="Src\GameObject\Comp\SpriteRenderComp.h" />
     <ClInclude Include="Src\GameObject\Comp\SpriteRenderDataComp.h" />
     <ClInclude Include="Src\GameObject\Comp\TransformComp.h" />
-    <ClInclude Include="Src\GameObject\Manager\ObbManager.h" />
+    <ClInclude Include="Src\GameObject\Manager\CollisionManager.h" />
     <ClInclude Include="Src\GameObject\Manager\ObjectManager.h" />
     <ClInclude Include="Src\GameObject\Manager\TransformCompUpdater.h" />
     <ClInclude Include="Src\GameObject\Object.h" />
