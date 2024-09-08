@@ -20,6 +20,8 @@ public:
 	void Save(nlohmann::json& json) override;
 	void Load(nlohmann::json& json) override;
 
+	void Debug(const std::string& guiName);
+
 public:
 	float32_t GetAimTime() const;
 	float32_t GetAimFixedTime() const;
