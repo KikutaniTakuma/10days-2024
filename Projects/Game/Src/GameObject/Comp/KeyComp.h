@@ -6,6 +6,8 @@ public:
 
 	using IComp::IComp;
 
+	void Init() override;
+
 	~KeyComp() = default;
 
 public:
@@ -15,6 +17,12 @@ public:
 
 private:
 
+	Lamb::SafePtr<class TransformComp> transformComp_;
 
+	Lamb::SafePtr<class SpriteRenderComp> spriteRenderComp_;
+
+	Lamb::SafePtr<class ObbPushComp> collision_;
+
+	Lamb::SafePtr<class Mass2DComp> mass_;
 
 };

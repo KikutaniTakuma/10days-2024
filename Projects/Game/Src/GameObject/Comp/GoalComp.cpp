@@ -1,5 +1,9 @@
 #include "GoalComp.h"
 
+void GoalComp::Init()
+{
+}
+
 void GoalComp::Save(nlohmann::json& json) {
 	SaveCompName(json);
 }

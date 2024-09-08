@@ -1,5 +1,9 @@
 #include "KeyComp.h"
 
+void KeyComp::Init()
+{
+}
+
 void KeyComp::Save(nlohmann::json& json) {
 	SaveCompName(json);
 }

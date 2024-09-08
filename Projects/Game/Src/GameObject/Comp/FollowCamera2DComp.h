@@ -8,6 +8,10 @@ public:
 
 	~FollowCamera2DComp() = default;
 
+	void Init() override;
+
+	void Move() override;
+
 public:
 
 	void Save(nlohmann::json& json) override;
@@ -15,6 +19,8 @@ public:
 
 private:
 
+	Lamb::SafePtr<class Camera2DComp> camera_;
 
+	Lamb::SafePtr<class TransformComp> transform_;
 
 };
