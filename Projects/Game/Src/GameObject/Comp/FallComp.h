@@ -23,6 +23,12 @@ public:
 		return gravity * fallTime_;
 	}
 
+	float32_t GetDeltaFall() {
+
+		return gravity * object_.GetDeltaTime();
+
+	}
+
 	void Start();
 
 	void Stop();

@@ -14,6 +14,7 @@
 #include "Game/TileName/TileName.h"
 #include "Input/Input.h"
 #include "../Manager/CloudManager.h"
+#include "JumpComp.h"
 
 void PlayerComp::Init() {
 
@@ -29,6 +30,7 @@ void PlayerComp::Init() {
 	removeCloud_ = object_.AddComp<RemoveCloudComp>();
 	count_ = object_.AddComp<CountComp>();
 	mass_ = object_.AddComp<Mass2DComp>();
+	jump_ = object_.AddComp<JumpComp>();
 
 }
 
@@ -42,7 +44,24 @@ void PlayerComp::Move() {
 	Lamb::SafePtr key = Input::GetInstance()->GetKey();
 	Lamb::SafePtr mouse = Input::GetInstance()->GetMouse();
 
-	transform_->translate += move_->GetMoveVector();
+	velocity_.x = move_->GetMoveVector().x;
+
+	if (gamepad->Pushed(Gamepad::Button::B) and OnGround()) {
+
+		jump_->Start();
+
+	}
+
+#ifdef _DEBUG
+
+	if (key->Pushed(DIK_SPACE) and OnGround()) {
+
+		jump_->Start();
+
+	}
+
+#endif // _DEBUG
+
 
 	if (fabsf(move_->GetDirection().Length()) > 0.01f) {
 		direction_->direction_ = { move_->GetMoveVector().x, move_->GetMoveVector().y };
@@ -52,10 +71,19 @@ void PlayerComp::Move() {
 		fall_->Start();
 	}
 
-	transform_->translate.y += fall_->GetFall();
+	velocity_.y += jump_->GetJumpVelocity();
 
-	if (OnGround() && collision_->GetObbComp().GetIsCollision().OnStay()) {
+	if (not OnGround()) {
+		velocity_.y += + fall_->GetDeltaFall();
+	}
+
+	/*transform_->translate.y += fall_->GetFall();*/
+
+	transform_->translate += velocity_;
+
+	if (OnGround()) {
 		fall_->Stop();
+		velocity_.y = 0.0f;
 	}
 
 	//雲が10未満でRボタンかトリガーを押したら食事開始。吐き出す動作とは重複しない

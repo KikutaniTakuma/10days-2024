@@ -27,6 +27,7 @@
 #include "Comp/EatCloudComp.h"
 #include "Comp/RemoveCloudComp.h"
 #include "Comp/Mass2DComp.h"
+#include "Comp/JumpComp.h"
 
 void Object::Init() {
 	/*for (auto& i : components_) {
@@ -126,6 +127,7 @@ bool Object::DebugAddComp() {
 		DebugAdd<EatCloudComp>();
 		DebugAdd<RemoveCloudComp>();
 		DebugAdd<Mass2DComp>();
+		DebugAdd<JumpComp>();
 		ImGui::TreePop();
 
 		return true;
@@ -185,5 +187,6 @@ void Object::AddComps(nlohmann::json& compData)
 	AddAndLoadComp<EatCloudComp>(compName, compData);
 	AddAndLoadComp<RemoveCloudComp>(compName, compData);
 	AddAndLoadComp<Mass2DComp>(compName, compData);
+	AddAndLoadComp<JumpComp>(compName, compData);
 }
 

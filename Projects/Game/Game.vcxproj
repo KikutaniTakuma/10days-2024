@@ -137,6 +137,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Src\GameObject\Comp\Camera3DComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\CameraComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\ChildrenObjectComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\CollectionComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\CountComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\CsvDataComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\Direction2DComp.cpp" />
@@ -144,8 +145,11 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Src\GameObject\Comp\EventComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\FallComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\FlagComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\FollowCamera2DComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\GoalComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\JsonComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\JumpComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\KeyComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\ModelRenderComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\InputMoveComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\Mass2DComp.cpp" />
@@ -186,6 +190,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="Src\GameObject\Comp\Camera3DComp.h" />
     <ClInclude Include="Src\GameObject\Comp\CameraComp.h" />
     <ClInclude Include="Src\GameObject\Comp\ChildrenObjectComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\CollectionComp.h" />
     <ClInclude Include="Src\GameObject\Comp\CountComp.h" />
     <ClInclude Include="Src\GameObject\Comp\CsvDataComp.h" />
     <ClInclude Include="Src\GameObject\Comp\Direction2DComp.h" />
@@ -193,9 +198,12 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="Src\GameObject\Comp\EventComp.h" />
     <ClInclude Include="Src\GameObject\Comp\FallComp.h" />
     <ClInclude Include="Src\GameObject\Comp\FlagComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\FollowCamera2DComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\GoalComp.h" />
     <ClInclude Include="Src\GameObject\Comp\InputMoveComp.h" />
     <ClInclude Include="Src\GameObject\Comp\JsonComp.h" />
     <ClInclude Include="Src\GameObject\Comp\JumpComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\KeyComp.h" />
     <ClInclude Include="Src\GameObject\Comp\ModelRenderComp.h" />
     <ClInclude Include="Src\GameObject\Comp\Mass2DComp.h" />
     <ClInclude Include="Src\GameObject\Comp\ObbComp.h" />

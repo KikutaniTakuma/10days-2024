@@ -55,6 +55,10 @@ private:
 
 	Lamb::SafePtr<class Mass2DComp> mass_;
 
+	Lamb::SafePtr<class JumpComp> jump_;
+
 	Lamb::Flg onGround_;
+
+	Vector3 velocity_{};
 
 };

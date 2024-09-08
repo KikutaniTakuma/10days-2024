@@ -3,14 +3,16 @@
 void JumpComp::FirstUpdate()
 {
 
-
+	if (count_ > 0) {
+		count_--;
+	}
 
 }
 
 void JumpComp::Start()
 {
 
-
+	count_ = jumpTime_;
 
 }
 
