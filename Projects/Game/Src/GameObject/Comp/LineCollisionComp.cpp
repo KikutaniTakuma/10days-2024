@@ -9,7 +9,7 @@ void LineCollisionComp::Init()
 
 void LineCollisionComp::FirstUpdate()
 {
-	if (object_.HasComp<TransformComp>()) {
+	if (object_.HasComp<ObbComp>()) {
 		Lamb::SafePtr transformComp = object_.GetComp<TransformComp>();
 
 		transformComp->translate = Vector3::Lerp(lineComp_->start, lineComp_->end, 0.5f);
