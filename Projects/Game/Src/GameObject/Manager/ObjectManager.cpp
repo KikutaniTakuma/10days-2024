@@ -17,6 +17,9 @@
 #include "Utils/FileUtils.h"
 #include "ObbManager.h"
 
+#include "../Comp/EyeComp.h"
+#include "../Comp/PlayerComp.h"
+
 
 std::unique_ptr<ObjectManager> ObjectManager::instance_;
 
@@ -334,6 +337,7 @@ void ObjectManager::Debug() {
 	ImGui::BeginChild(ImGui::GetID((void*)0), { 0.0f, 200.0f  }, ImGuiChildFlags_AlwaysAutoResize | ImGuiChildFlags_AutoResizeX, ImGuiWindowFlags_NoTitleBar);
 	size_t objectCount = 0;
 	bool isErase = false;
+	bool isAddComp = false;
 	for (auto itr = objects_.begin(); itr != objects_.end(); itr++) {
 		for (auto& tag : objectTags_) {
 			if (((*itr)->HasTag(tag.first) and tag.second) or (*itr)->GetTags().empty()) {
@@ -341,7 +345,9 @@ void ObjectManager::Debug() {
 				bool isButton = isCamera ? false : ImGui::Button("erase object");
 				if (not isButton) {
 					if (not isCamera) { ImGui::SameLine(); }
-					(*itr)->Debug("object_" + std::to_string(objectCount));
+					if ((*itr)->Debug("object_" + std::to_string(objectCount)) and not isAddComp) {
+						isAddComp = true;
+					}
 				}
 				objectCount++;
 
@@ -358,6 +364,13 @@ void ObjectManager::Debug() {
 			break;
 		}
 	}
+
+	if (isAddComp) {
+		// ゲーム固有処理
+		// Eyeの処理の別オブジェクトのPlayerCompが必要なのでここで設定する
+		SetPlayerCompToEyeComp();
+	}
+
 	ImGui::EndChild();
 	ImGui::End();
 #endif // _DEBUG
@@ -434,6 +447,21 @@ void ObjectManager::Save() {
 	}
 }
 
+void ObjectManager::SetPlayerCompToEyeComp() {
+	const std::unique_ptr<Object>& playerCompObject = *std::find_if(objects_.begin(), objects_.end(), [](const std::unique_ptr<Object>& object)->bool {
+		return object->HasComp<PlayerComp>();
+		}
+	);
+
+	Lamb::SafePtr playerComp = playerCompObject->GetComp<PlayerComp>();
+
+	for (auto& i : objects_) {
+		if (i->HasComp<EyeComp>()) {
+			i->GetComp<EyeComp>()->SetPlayerComp(playerComp.get());
+		}
+	}
+}
+
 void ObjectManager::Load(const std::string& jsonFileName) {
 	objects_.clear();
 	objectTags_.clear();
@@ -466,6 +494,10 @@ void ObjectManager::Load(const std::string& jsonFileName) {
 	}
 
 	SetCamera();
+
+	// ゲーム固有処理
+	// Eyeの処理の別オブジェクトのPlayerCompが必要なのでここで設定する
+	SetPlayerCompToEyeComp();
 
 #ifdef _DEBUG
 	MessageBoxA(
