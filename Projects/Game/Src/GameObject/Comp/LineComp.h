@@ -12,6 +12,9 @@ public:
 	
 	void Debug(const std::string& guiName);
 
+	float32_t GetLenghth() const;
+	Vector3 GetDirection() const;
+
 public:
 	Vector3 start;
 	Vector3 end;

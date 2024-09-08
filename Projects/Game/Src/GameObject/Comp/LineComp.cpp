@@ -36,3 +36,13 @@ void LineComp::Debug([[maybe_unused]]const std::string& guiName)
 #endif // _DEBUG
 
 }
+
+float32_t LineComp::GetLenghth() const
+{
+	return (end - start).Length();
+}
+
+Vector3 LineComp::GetDirection() const
+{
+	return (end - start).Normalize();
+}
