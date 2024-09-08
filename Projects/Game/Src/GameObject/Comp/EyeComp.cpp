@@ -133,9 +133,8 @@ void EyeComp::Event() {
 		// 時間を加算
 		eyeStateComp_->fireCount += object_.GetDeltaTime();
 
-		bool isPlayerComp = playerObbComp_->IsCollision(beamLineComp_->start, beamLineComp_->end);
-
-		playerComp_->SetIsBeamCollision(isPlayerComp);
+		// 当たり判定の結果を設定
+		playerComp_->SetIsBeamCollision(playerObbComp_->IsCollision(beamLineComp_->start, beamLineComp_->end));
 
 		if (eyeStateComp_->GetFireTime() <= eyeStateComp_->fireCount) {
 			eyeStateComp_->state = EyeStateComp::State::kSearch;
