@@ -5,12 +5,14 @@
 #include "LineCollisionComp.h"
 #include "EyeStateComp.h"
 #include "EaseingComp.h"
+#include "LineRenderDataComp.h"
 
 void EyeComp::Init()
 {
 	transformComp_ = object_.AddComp<TransformComp>();
 	beamLineComp_ = object_.AddComp<LineComp>();
 	beamLineCollisionComp_ = object_.AddComp<LineCollisionComp>();
+	beamLineRenderDataComp_ = object_.AddComp<LineRenderDataComp>();
 	eyeStateComp_ = object_.AddComp<EyeStateComp>();
 	easeingComp_ = object_.AddComp<EaseingComp>();
 }
@@ -60,7 +62,7 @@ void EyeComp::Event() {
 	if (mostNearCollisionObjectPtr.have()) {
 		Lamb::SafePtr collsionCbjectTransFormComp = mostNearCollisionObjectPtr->GetComp<TransformComp>();
 		// 長さを当たっているオブジェクトの長さにする
-		beamLineComp_->end = beamLineComp_->GetDirection() * (collsionCbjectTransFormComp->translate - beamLineComp_->start).Length();
+		beamLineComp_->end = collsionCbjectTransFormComp->translate;
 		isCollision = true;
 	}
 
@@ -76,14 +78,18 @@ void EyeComp::Event() {
 
 
 		// 探している最中にプレイヤーを直視できたら狙う
-		if(isCollision){
+		if(not isCollision){
 			eyeStateComp_->state = EyeStateComp::State::kAim;
 		}
+
+		beamLineRenderDataComp_->color = 0x00ff00ff;
 
 
 		break;
 		// 狙いを定める
 	case EyeStateComp::State::kAim:
+		beamLineRenderDataComp_->color = 0xff0000ff;
+
 		// 狙いを定めている最中にプレイヤーを直視できなくなったらSearchに移行
 		if(isCollision){
 			eyeStateComp_->state = EyeStateComp::State::kSearch;
@@ -105,6 +111,8 @@ void EyeComp::Event() {
 			transformComp_->translate.x = playerTransformComp_->translate.x;
 		}
 
+		easeingComp_->GetEaseing().Update();
+
 		// ビームの終わりをプレイヤーにする
 		beamLineComp_->end = playerTransformComp_->translate;
 
@@ -119,6 +127,7 @@ void EyeComp::Event() {
 		break;
 		// 狙いを固定
 	case EyeStateComp::State::kAimFixed:
+		beamLineRenderDataComp_->color = 0xff00ffff;
 		// 時間を加算
 		eyeStateComp_->aimFixedCount += object_.GetDeltaTime();
 
@@ -130,6 +139,8 @@ void EyeComp::Event() {
 		break;
 		// 発射
 	case EyeStateComp::State::kFire:
+		beamLineRenderDataComp_->color = 0xffff;
+
 		// 時間を加算
 		eyeStateComp_->fireCount += object_.GetDeltaTime();
 
