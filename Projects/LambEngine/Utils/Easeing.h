@@ -60,8 +60,8 @@ public:
 		kNum
 	};
 
-private:
-	static const std::array<std::string, size_t(Type::kNum)> kEaseingTypeString_;
+public:
+	static const std::array<std::string, size_t(Type::kNum)> kEaseingTypeString;
 
 
 public:
