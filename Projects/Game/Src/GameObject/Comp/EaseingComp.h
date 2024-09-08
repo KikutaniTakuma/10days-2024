@@ -23,9 +23,9 @@ public:
 	void Load(nlohmann::json& json) override;
 
 public:
-	Lamb::Flg isLoop;
+	bool isLoop;
 
-	float spdT;
+	float spdT = 0.0f;
 
 	Easeing::Type type = Easeing::Type::kNone;
 private:

@@ -28,7 +28,7 @@ void EaseingComp::Debug([[maybe_unused]]const std::string& guiName) {
 			ImGui::EndCombo();
 		}
 
-		ImGui::Checkbox("isLoop", isLoop.data());
+		ImGui::Checkbox("isLoop", &isLoop);
 		ImGui::DragFloat("speed", &spdT);
 
 		ImGui::TreePop();
@@ -44,7 +44,7 @@ Easeing& EaseingComp::GetEaseing()
 void EaseingComp::Save(nlohmann::json& json) {
 	SaveCompName(json);
 
-	json["isLoop"] = !!isLoop;
+	json["isLoop"] = isLoop;
 	json["spdT"] = spdT;
 	json["type"] = Easeing::kEaseingTypeString[static_cast<uint32_t>(type)];
 }
