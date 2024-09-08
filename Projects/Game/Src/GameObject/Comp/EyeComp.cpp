@@ -15,6 +15,9 @@ void EyeComp::Init()
 
 void EyeComp::SetPlayerComp(PlayerComp* playerComp) {
 	playerComp_ = playerComp;
+	if (playerComp_.empty()) {
+		return;
+	}
 	playerTransformComp_ = playerComp_->getObject().GetComp<TransformComp>();
 	beamLineComp_->end = playerTransformComp_->translate;
 
@@ -29,6 +32,10 @@ void EyeComp::Load([[maybe_unused]]nlohmann::json& json) {
 }
 
 void EyeComp::FirstUpdate() {
+	if (playerComp_.empty()) {
+		return;
+	}
+
 	// ビームの始まりをEyeのポジションにする
 	beamLineComp_->start = transformComp_->translate;
 	// ビームの終わりをプレイヤーにして当たり判定をとる
@@ -39,6 +46,10 @@ void EyeComp::FirstUpdate() {
 }
 
 void EyeComp::Event() {
+
+	if (playerComp_.empty()) {
+		return;
+	}
 
 	// 当たっていたらポインタを持っている
 	// 持っていなかったらプレイヤーを直視できてる
