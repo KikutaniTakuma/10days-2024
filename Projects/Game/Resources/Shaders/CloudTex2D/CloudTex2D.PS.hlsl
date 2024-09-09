@@ -13,7 +13,6 @@ PixelShaderOutPut3 main(VertexOutPut input)
         discard;
     }
 
-    // お水の処理
 	const float32_t2 kRandomVec = kWaterData[input.instanceID].randomVec;
     const float32_t kDensity = kWaterData[input.instanceID].density;
     
