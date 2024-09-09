@@ -7,6 +7,8 @@
 #include "EaseingComp.h"
 #include "LineRenderDataComp.h"
 
+#include "Engine/Graphics/RenderingManager/RenderingManager.h"
+
 void EyeComp::Init()
 {
 	transformComp_ = object_.AddComp<TransformComp>();
@@ -15,6 +17,8 @@ void EyeComp::Init()
 	beamLineRenderDataComp_ = object_.AddComp<LineRenderDataComp>();
 	eyeStateComp_ = object_.AddComp<EyeStateComp>();
 	easeingComp_ = object_.AddComp<EaseingComp>();
+
+	RenderingManager::GetInstance()->SetBloomColor(Vector3::kZIdentity);
 }
 
 void EyeComp::SetPlayerComp(PlayerComp* playerComp) {

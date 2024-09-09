@@ -67,7 +67,7 @@ RenderingManager::RenderingManager() {
 	std::unique_ptr<Luminate> luminate = std::make_unique<Luminate>();
 	luminate->Init();
 	luminate_ = luminate.release();
-	luminanceThreshold = 1.4f;
+	luminanceThreshold = Vector3::kIdentity;
 	luminate_->SetLuminanceThreshold(luminanceThreshold);
 
 	luminateTexture_ = std::make_unique<PeraRender>();
@@ -359,6 +359,10 @@ void RenderingManager::SetColor(const Vector4& color)
 	rgbaTexture_->color = color.GetColorRGBA();
 }
 
+void RenderingManager::SetBloomColor(const Vector3& bloomColor) {
+	luminanceThreshold = bloomColor;
+}
+
 void RenderingManager::Debug([[maybe_unused]]const std::string& guiName) {
 #ifdef _DEBUG
 	if(ImGui::TreeNode(guiName.c_str())){
@@ -384,7 +388,7 @@ void RenderingManager::Debug([[maybe_unused]]const std::string& guiName) {
 		if (ImGui::TreeNode("Bloom")) {
 			ImGui::DragInt("横カーネルサイズ", &gaussianBlurStateHorizontal_.kernelSize, 0.1f, 0, 128);
 			ImGui::DragInt("縦カーネルサイズ", &gaussianBlurStateVertical_.kernelSize, 0.1f, 0, 128);
-			ImGui::DragFloat("輝度しきい値", &luminanceThreshold, 0.001f, 0.0f, 2.0f);
+			ImGui::ColorEdit3("輝度しきい値", luminanceThreshold.data());
 
 			gaussianPipeline_[0]->SetGaussianState(gaussianBlurStateHorizontal_);
 			gaussianPipeline_[1]->SetGaussianState(gaussianBlurStateVertical_);
@@ -432,7 +436,10 @@ void RenderingManager::Save(nlohmann::json& jsonFile) {
 	}
 	json["bloom"]["x"] = gaussianBlurStateHorizontal_.kernelSize;
 	json["bloom"]["y"] = gaussianBlurStateVertical_.kernelSize;
-	json["bloom"]["luminanceThreshold"] = luminanceThreshold;
+	json["bloom"]["luminanceThreshold"] = nlohmann::json::array();
+	for(auto& i : luminanceThreshold){
+		json["bloom"]["luminanceThreshold"].push_back(i);
+	}
 	json["skybox"]["scale"] = nlohmann::json::array();
 	for (auto& i : transform_.scale) {
 		json["skybox"]["scale"].push_back(i);
@@ -453,7 +460,14 @@ void RenderingManager::Load(nlohmann::json& jsonFile) {
 	}
 	gaussianBlurStateHorizontal_.kernelSize = json["bloom"]["x"].get<int32_t>();
 	gaussianBlurStateVertical_.kernelSize = json["bloom"]["y"].get<int32_t>();
-	luminanceThreshold = json["bloom"]["luminanceThreshold"].get<float>();
+	if (json["bloom"]["luminanceThreshold"].is_array()) {
+		for (size_t i = 0; i < luminanceThreshold.size(); i++) {
+			luminanceThreshold[i] = json["bloom"]["luminanceThreshold"][i].get<float>();
+		}
+	}
+	else {
+		luminanceThreshold = Vector3::kIdentity;
+	}
 	for (size_t i = 0; i < transform_.scale.size(); i++) {
 		transform_.scale[i] = json["skybox"]["scale"][i].get<float>();
 	}
