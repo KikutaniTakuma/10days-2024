@@ -15,7 +15,10 @@
 #include <fstream>
 
 #include "Utils/FileUtils.h"
-#include "ObbManager.h"
+#include "CollisionManager.h"
+
+#include "../Comp/EyeComp.h"
+#include "../Comp/PlayerComp.h"
 
 
 std::unique_ptr<ObjectManager> ObjectManager::instance_;
@@ -39,14 +42,14 @@ void ObjectManager::Initialize() {
 
 #ifdef _DEBUG
 	instance_->levelDataFilePathes_ = Lamb::GetFilePathFormDir("./SceneData/", ".json");
-	ObbManager::Initialize();
-	instance_->obbManager_ = ObbManager::GetInstance();
+	CollisionManager::Initialize();
+	instance_->obbManager_ = CollisionManager::GetInstance();
 #endif // _DEBUG
 }
 
 void ObjectManager::Finalize()
 {
-	ObbManager::Finalize();
+	CollisionManager::Finalize();
 	instance_.reset();
 }
 
@@ -193,28 +196,67 @@ void ObjectManager::Draw() {
 
 void ObjectManager::Debug() {
 #ifdef _DEBUG
-	ImGui::Begin("Objects");
-	inputSceneName_.resize(32);
-	ImGui::InputText("fileName .json", inputSceneName_.data(), inputSceneName_.size());
-	if (ImGui::Button("保存")) {
-		Save();
-	}
-	ImGui::Text("current scene : %s", currentScene_.c_str());
-	if (ImGui::Button("ファイルパス再読み込み")) {
-		levelDataFilePathes_ = Lamb::GetFilePathFormDir("./SceneData/", ".json");
-	}
-	if (ImGui::TreeNode("ロード")) {
-		for (auto& i : levelDataFilePathes_) {
-			if (ImGui::Button(i.string().c_str())) {
-				Load(i.string());
-				ImGui::TreePop();
-				ImGui::End();
+	auto windowHandle = WindowFactory::GetInstance()->GetHwnd();
 
-				isLoad_ = true;
-				return;
+	ImGui::Begin("Objects");
+	ImGui::Text("current scene : %s", currentScene_.c_str());
+	ImGui::Text("select file name : %s", currentSceneName_.c_str());
+	if (ImGui::TreeNode("ファイル")) {
+		inputSceneName_.resize(32);
+		ImGui::Text("新規ファイル : ");
+		ImGui::SameLine();
+		ImGui::InputText(".json", inputSceneName_.data(), inputSceneName_.size());
+		if (ImGui::Button("新規ファイルを作成して保存する")) {
+			std::string newFilePath;
+			for (auto& i : inputSceneName_) {
+				if (i == '\0') {
+					break;
+				}
+				newFilePath += i;
+			}
+			if (newFilePath.empty()) {
+				newFilePath = "newfile";
+			}
+			newFilePath = "./SceneData/" + newFilePath + ".json";
+			if (std::filesystem::exists(newFilePath)) {
+				int32_t button = MessageBoxA(
+					windowHandle,
+					("this file exists. -> " + newFilePath + "\nDo you want to overwrite?").c_str(), "ObjectManager",
+					MB_OKCANCEL | MB_APPLMODAL | MB_ICONINFORMATION
+				);
+
+				if (button == IDOK) {
+					currentSceneName_ = newFilePath;
+					Save();
+				}
+			}
+			else {
+				currentSceneName_ = newFilePath;
+				Save();
 			}
 		}
+		if (ImGui::Button("ファイルパス再読み込み")) {
+			levelDataFilePathes_ = Lamb::GetFilePathFormDir("./SceneData/", ".json");
+		}
+		ImGui::BeginChild(ImGui::GetID((void*)0), ImVec2(250, 100), ImGuiWindowFlags_NoTitleBar);
+		for (auto& i : levelDataFilePathes_) {
+			if (ImGui::Button(i.string().c_str())) {
+				currentSceneName_ = i.string();
+			}
+		}
+		ImGui::EndChild();
 
+		if (ImGui::Button("ロード")) {
+			Load(currentSceneName_);
+			ImGui::TreePop();
+			ImGui::End();
+
+			isLoad_ = true;
+			return;
+		}
+		if (ImGui::Button("保存")) {
+			Save();
+		}
 		ImGui::TreePop();
 	}
 
@@ -257,9 +299,45 @@ void ObjectManager::Debug() {
 		auto newObject = std::make_unique<Object>();
 		objects_.insert(std::move(newObject));
 	}
+	if (ImGui::Button("ClearObject")) {
+		int32_t button = MessageBoxA(
+			windowHandle,
+			"All Objects erase. Accepted?", "ObjectManager",
+			MB_OKCANCEL | MB_APPLMODAL | MB_ICONINFORMATION
+		);
 
+		if (button == IDOK) {
+			Lamb::SafePtr<Object> cameraObject;
+			for (auto i = objects_.begin(); i != objects_.end();) {
+				if ((*i)->HasComp<CameraComp>()) {
+					cameraObject = i->get();
+					i++;
+				}
+				else {
+					i = objects_.erase(i);
+				}
+			}
+
+			objectTags_.clear();
+			obbManager_->Clear();
+
+			for (auto& i : cameraObject->GetTags()) {
+				objectTags_.insert(std::make_pair(i, true));
+			}
+			
+			if (cameraObject->HasComp<ObbComp>()) {
+				obbManager_->Set(cameraObject->GetComp<ObbComp>());
+			}
+			if (cameraObject->HasComp<ObbPushComp>()) {
+				obbManager_->Set(cameraObject->GetComp<ObbPushComp>());
+			}
+		}
+	}
+
+	ImGui::BeginChild(ImGui::GetID((void*)0), { 0.0f, 200.0f  }, ImGuiChildFlags_AlwaysAutoResize | ImGuiChildFlags_AutoResizeX, ImGuiWindowFlags_NoTitleBar);
 	size_t objectCount = 0;
 	bool isErase = false;
+	bool isAddComp = false;
 	for (auto itr = objects_.begin(); itr != objects_.end(); itr++) {
 		for (auto& tag : objectTags_) {
 			if (((*itr)->HasTag(tag.first) and tag.second) or (*itr)->GetTags().empty()) {
@@ -267,7 +345,9 @@ void ObjectManager::Debug() {
 				bool isButton = isCamera ? false : ImGui::Button("erase object");
 				if (not isButton) {
 					if (not isCamera) { ImGui::SameLine(); }
-					(*itr)->Debug("object_" + std::to_string(objectCount));
+					if ((*itr)->Debug("object_" + std::to_string(objectCount)) and not isAddComp) {
+						isAddComp = true;
+					}
 				}
 				objectCount++;
 
@@ -284,6 +364,14 @@ void ObjectManager::Debug() {
 			break;
 		}
 	}
+
+	if (isAddComp) {
+		// ゲーム固有処理
+		// Eyeの処理の別オブジェクトのPlayerCompが必要なのでここで設定する
+		SetPlayerCompToEyeComp();
+	}
+
+	ImGui::EndChild();
 	ImGui::End();
 #endif // _DEBUG
 }
@@ -292,26 +380,15 @@ void ObjectManager::Save() {
 	nlohmann::json root;
 	root = nlohmann::json::object();
 
-	std::string fileName;
+	std::filesystem::path filePath = currentSceneName_;
+	std::string fileName = filePath.stem().string();
 
-	for (auto& i : inputSceneName_) {
-		if (i == '\0') {
-			break;
-		}
-		fileName += i;
-	}
-
-	if (fileName.empty()) {
-		fileName = currentScene_;
-	}
-
-	std::string filePath = "./SceneData/" + fileName + ".json";
 	auto windowHandle = WindowFactory::GetInstance()->GetHwnd();
 
 	if (std::filesystem::exists(filePath)) {
 		int32_t button = MessageBoxA(
 			windowHandle,
-			("this file exists. -> " + filePath + "\nDo you want to overwrite?").c_str(), "ObjectManager",
+			("this file exists. -> " + filePath.string() + "\nDo you want to overwrite?").c_str(), "ObjectManager",
 			MB_YESNOCANCEL | MB_APPLMODAL | MB_ICONINFORMATION
 		);
 
@@ -324,7 +401,7 @@ void ObjectManager::Save() {
 
 			if (MessageBoxA(
 				windowHandle,
-				("Would you like to save it as " + filePath + " ?").c_str(), "ObjectManager",
+				("Would you like to save it as " + filePath.string() + " ?").c_str(), "ObjectManager",
 				MB_OKCANCEL | MB_APPLMODAL | MB_ICONINFORMATION
 			) == IDCANCEL
 				) {
@@ -370,6 +447,22 @@ void ObjectManager::Save() {
 	}
 }
 
+void ObjectManager::SetPlayerCompToEyeComp() {
+	Lamb::SafePtr<PlayerComp> playerComp;
+	for (auto& i : objects_) {
+		if (i->HasComp<PlayerComp>()) {
+			playerComp = i->GetComp<PlayerComp>();
+			break;
+		}
+	}
+
+	for (auto& i : objects_) {
+		if (i->HasComp<EyeComp>()) {
+			i->GetComp<EyeComp>()->SetPlayerComp(playerComp.get());
+		}
+	}
+}
+
 void ObjectManager::Load(const std::string& jsonFileName) {
 	objects_.clear();
 	objectTags_.clear();
@@ -377,6 +470,7 @@ void ObjectManager::Load(const std::string& jsonFileName) {
 	cameraComp_ = nullptr;
 
 	auto jsonFile = Lamb::LoadJson(jsonFileName);
+	currentSceneName_ = jsonFileName;
 
 	currentScene_ = jsonFile["scene"].get<std::string>();
 	if (jsonFile.find("RederingSetting") != jsonFile.end()) {
@@ -401,6 +495,10 @@ void ObjectManager::Load(const std::string& jsonFileName) {
 	}
 
 	SetCamera();
+
+	// ゲーム固有処理
+	// Eyeの処理の別オブジェクトのPlayerCompが必要なのでここで設定する
+	SetPlayerCompToEyeComp();
 
 #ifdef _DEBUG
 	MessageBoxA(

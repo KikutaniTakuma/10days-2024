@@ -1,4 +1,5 @@
 #include "Quaternion.h"
+#include "Math/MathCommon.h"
 #include "Mat4x4.h"
 #include <cmath>
 #include <numbers>
@@ -295,9 +296,13 @@ void Quaternion::SetEuler(const Vector3& euler) {
 /// ========================================================================
 #pragma region Static member function
 Quaternion Quaternion::DirectionToDirection(const Vector3& from, const Vector3& to) {
+	if (1.0f + Lamb::Math::kEpsilon<float> < from.LengthSQ() or 1.0f + Lamb::Math::kEpsilon<float> < to.LengthSQ()) [[unlikely]] {
+		throw Lamb::Error::Code<Quaternion>("Length of ""from"" or ""to"" is not 1.0f", ErrorPlace);
+	}
+
 	Quaternion result;
 	Vector3 normal;
-	float theata = std::acos(from.Dot(to)) * 0.5f;
+	float theata = std::acos(std::clamp(from.Dot(to), -1.0f, 1.0f)) * 0.5f;
 
 	if (from.Dot(to) == -1.0f) {
 		if (from.x != 0.0f || from.y != 0.0f) {
@@ -355,7 +360,7 @@ Vector3 ToEulerAnglesZimbalLock(float x, const Quaternion& q) {
 
 // クォータニオンからオイラー角を計算する（ラジアン単位）
 Vector3 Quaternion::QuaternionToEuler(const Quaternion& q) {
-	float sinX = 2 * q.quaternion.y * q.quaternion.z - 2 * q.quaternion.x * q.quaternion.w;
+	float sinX = (2.0f * q.quaternion.y * q.quaternion.z) - (2.0f * q.quaternion.x * q.quaternion.w);
 	float absSinX = std::abs(sinX);
 
 	const float e = 0.001f;
@@ -366,15 +371,15 @@ Vector3 Quaternion::QuaternionToEuler(const Quaternion& q) {
 	}
 
 	float x = std::asin(-sinX);
+	// 正常な計算
+	float cosX = std::cos(x);
 
 	// X軸回転が90度付近でジンバルロック状態の場合
-	if (std::isnan(x) || std::abs(std::abs(x) - std::numbers::pi_v<float> *0.5f) < e) {
-		x = std::copysign(std::numbers::pi_v<float> *0.5f, -sinX);
+	if (std::isnan(x) or std::abs(std::abs(x) - std::numbers::pi_v<float> *0.5f) < e or std::abs(cosX) < e) {
+		x = std::sin(-sinX) * std::numbers::pi_v<float> * 0.5f;
 		return ToEulerAnglesZimbalLock(x, q);
 	}
 
-	// 正常な計算
-	float cosX = std::cos(x);
 
 	float sinY = (2.0f * q.quaternion.x * q.quaternion.z + 2.0f * q.quaternion.y * q.quaternion.w) / cosX;
 	float cosY = (2.0f * std::pow(q.quaternion.w, 2.0f) + 2.0f * std::pow(q.quaternion.z, 2.0f) - 1.0f) / cosX;

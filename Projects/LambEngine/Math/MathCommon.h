@@ -7,18 +7,21 @@
 namespace Lamb {
 	namespace Math {
 		template<std::floating_point Floating>
-		constexpr Floating toRadian = static_cast<Floating>(std::numbers::pi_v<double> / 180.0);
+		constexpr Floating kToRadian = static_cast<Floating>(std::numbers::pi_v<double> / 180.0);
 
 		template<std::floating_point Floating>
-		constexpr Floating toDegree = static_cast <Floating>(180.0 / std::numbers::pi_v<double>);
+		constexpr Floating kToDegree = static_cast<Floating>(180.0 / std::numbers::pi_v<double>);
+
+		template<std::floating_point Floating>
+		constexpr Floating kEpsilon = static_cast<Floating>(1.0e-5);
 
 		template<std::floating_point Floating>
 		constexpr Floating ToRadian(Floating degree) {
-			return std::fmod(degree, 360.0f) * toRadian<Floating>;
+			return std::fmod(degree, 360.0f) * kToRadian<Floating>;
 		}
 		template<std::floating_point Floating>
 		constexpr Floating ToDegree(Floating radian) {
-			return std::fmod(radian, 2.0f * std::numbers::pi_v<Floating>) * toDegree<Floating>;
+			return std::fmod(radian, 2.0f * std::numbers::pi_v<Floating>) * kToDegree<Floating>;
 		}
 
 		float LengthSQ(const std::initializer_list<float>& data);

@@ -1,0 +1,277 @@
+{
+    "RederingSetting": {
+        "bloom": {
+            "luminanceThreshold": 1.399999976158142,
+            "x": 8,
+            "y": 8
+        },
+        "hsv": [
+            0.0,
+            0.0,
+            1.0
+        ],
+        "isDirectionLight": false,
+        "lightRotate": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "outline": 0.0,
+        "skybox": {
+            "isDraw": true,
+            "scale": [
+                1280.0,
+                720.0,
+                1000.0
+            ]
+        }
+    },
+    "objects": [
+        {
+            "Comps": [
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        1.6922559353815814e-08,
+                        1.0
+                    ],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "translate": [
+                        0.0,
+                        0.0,
+                        -22.826997756958008
+                    ]
+                },
+                {
+                    "CompName": "class Camera2DComp",
+                    "farClip": 1000.0,
+                    "height": 720.0,
+                    "nearClip": 0.10000000149011612,
+                    "width": 1280.0
+                },
+                {
+                    "CompName": "class CameraComp"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "CompName": "class EyeComp"
+                },
+                {
+                    "CompName": "class LineRenderDataComp",
+                    "color": [
+                        0.0,
+                        1.0,
+                        0.0,
+                        1.0
+                    ],
+                    "isDepth": false
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        100.0,
+                        100.0,
+                        1.0
+                    ],
+                    "translate": [
+                        -34.00023651123047,
+                        245.0,
+                        2.6700000762939453
+                    ]
+                },
+                {
+                    "CompName": "class EyeStateComp",
+                    "aimFixedTime": 1.0,
+                    "aimeTime": 1.5,
+                    "fireTime": 0.10000000149011612
+                },
+                {
+                    "CompName": "class LineComp",
+                    "end": [
+                        0.0,
+                        -205.1088104248047,
+                        3.8255650997161865
+                    ],
+                    "start": [
+                        -34.00023651123047,
+                        245.0,
+                        2.6700000762939453
+                    ]
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": false,
+                    "spdT": 0.5,
+                    "type": "InOutSine"
+                },
+                {
+                    "CollisionTag": [],
+                    "CollisionTags": [
+                        "class ModelRenderComp"
+                    ],
+                    "CompName": "class LineCollisionComp"
+                },
+                {
+                    "BlendType": "kNone",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./NoviceResources\\uvChecker.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class LineRenderComp"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "CompName": "class PlayerComp"
+                },
+                {
+                    "CompName": "class FallComp",
+                    "gravity": -0.9800000190734863
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        100.0,
+                        100.0,
+                        100.0
+                    ],
+                    "translate": [
+                        -34.00023651123047,
+                        -148.00010681152344,
+                        10.0
+                    ]
+                },
+                {
+                    "BlendType": "kNone",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/EngineResources/white2x2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collsiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class InputMoveComp",
+                    "speed": 1.0
+                },
+                {
+                    "CompName": "class FlagComp"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "CompName": "class ModelRenderComp"
+                },
+                {
+                    "BlendType": "kNone",
+                    "CompName": "class ModelRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources\\Common\\Cube.obj",
+                    "isLighting": true
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        -0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        50.0,
+                        50.0,
+                        22.329999923706055
+                    ],
+                    "translate": [
+                        -36.340084075927734,
+                        39.99988555908203,
+                        10.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collsiionTags": [],
+                    "scale": [
+                        2.0,
+                        2.0,
+                        2.0
+                    ]
+                }
+            ],
+            "type": "Object"
+        }
+    ],
+    "scene": "EyeTest"
+}

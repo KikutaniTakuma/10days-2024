@@ -23,6 +23,15 @@
 #include "Comp/FlagComp.h"
 #include "Comp/PlayerComp.h"
 
+#include "Comp/LineComp.h"
+#include "Comp/LineRenderComp.h"
+#include "Comp/LineRenderDataComp.h"
+#include "Comp/LineCollisionComp.h"
+
+#include "Comp/EyeComp.h"
+#include "Comp/EyeStateComp.h"
+#include "Comp/EaseingComp.h"
+
 void Object::Init() {
 	/*for (auto& i : components_) {
 		i.second->Init();
@@ -69,18 +78,19 @@ void Object::Draw([[maybe_unused]] CameraComp* cameraComp) const
 	}
 }
 
-void Object::Debug([[maybe_unused]] const std::string& guiName) {
+bool Object::Debug([[maybe_unused]] const std::string& guiName) {
 #ifdef _DEBUG
 	if (ImGui::TreeNode(guiName.c_str())) {
 		if (DebugAddComp()) {
 			ImGui::TreePop();
-			return;
+			return true;
 		}
 		ImGui::Text("tags : ");
+		ImGui::BeginChild(ImGui::GetID((void*)0), { 0.0f, 50.0f }, ImGuiChildFlags_AlwaysAutoResize | ImGuiChildFlags_AutoResizeX, ImGuiWindowFlags_NoTitleBar);
 		for (auto& i : tags_) {
-			ImGui::SameLine();
 			ImGui::Text("%s, ", i.c_str());
 		}
+		ImGui::EndChild();
 		if (ImGui::TreeNode("componets")) {
 			for (auto& i : components_) {
 				i.second->Debug(i.first);
@@ -90,11 +100,14 @@ void Object::Debug([[maybe_unused]] const std::string& guiName) {
 		ImGui::TreePop();
 	}
 #endif // _DEBUG
+
+	return false;
 }
 
 bool Object::DebugAddComp() {
 #ifdef _DEBUG
 	if (ImGui::TreeNode("Comps")) {
+		ImGui::BeginChild(ImGui::GetID((void*)0), { 0.0f, 150.0f }, ImGuiChildFlags_AlwaysAutoResize | ImGuiChildFlags_AutoResizeX, ImGuiWindowFlags_NoTitleBar);
 		DebugAdd<ButtonComp>();
 		DebugAdd<Camera2DComp>();
 		DebugAdd<Camera3DComp>();
@@ -116,6 +129,16 @@ bool Object::DebugAddComp() {
 		DebugAdd<FlagComp>();
 		DebugAdd<CloudComp>();
 		DebugAdd<PlayerComp>();
+		DebugAdd<LineComp>();
+		DebugAdd<LineRenderComp>();
+		DebugAdd<LineRenderDataComp>();
+		DebugAdd<LineCollisionComp>();
+		DebugAdd<EyeComp>();
+		DebugAdd<EyeStateComp>();
+		DebugAdd<EaseingComp>();
+		
+		ImGui::EndChild();
+
 		ImGui::TreePop();
 
 		return true;
@@ -170,5 +193,12 @@ void Object::AddComps(nlohmann::json& compData)
 	AddAndLoadComp<FlagComp>(compName, compData);
 	AddAndLoadComp<CloudComp>(compName, compData);
 	AddAndLoadComp<PlayerComp>(compName, compData);
+	AddAndLoadComp<LineComp>(compName, compData);
+	AddAndLoadComp<LineRenderComp>(compName, compData);
+	AddAndLoadComp<LineRenderDataComp>(compName, compData);
+	AddAndLoadComp<LineCollisionComp>(compName, compData);
+	AddAndLoadComp<EyeComp>(compName, compData);
+	AddAndLoadComp<EyeStateComp>(compName, compData);
+	AddAndLoadComp<EaseingComp>(compName, compData);
 }
 

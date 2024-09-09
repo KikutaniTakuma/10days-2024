@@ -7,7 +7,7 @@
 #include <cmath>
 #include <numbers>
 
-const std::array<std::string, size_t(Easeing::Type::kNum)> Easeing::kEaseingTypeString_ = {
+const std::array<std::string, size_t(Easeing::Type::kNum)> Easeing::kEaseingTypeString = {
 		"None",
 
 		"InSine",
@@ -102,12 +102,12 @@ void Easeing::Stop() {
 void Easeing::Debug([[maybe_unused]]const std::string& debugName) {
 #ifdef _DEBUG
 	ImGui::Begin(debugName.c_str());
-	if (ImGui::BeginCombo("BlendType", kEaseingTypeString_[static_cast<uint32_t>(type_)].c_str()))
+	if (ImGui::BeginCombo("BlendType", kEaseingTypeString[static_cast<uint32_t>(type_)].c_str()))
 	{
 		for (uint32_t i = 0; i < static_cast<uint32_t>(Type::kNum); ++i)
 		{
 			bool isSelected = (type_ == static_cast<Type>(i));
-			if (ImGui::Selectable(kEaseingTypeString_[i].c_str(), isSelected))
+			if (ImGui::Selectable(kEaseingTypeString[i].c_str(), isSelected))
 			{
 				type_ = static_cast<Type>(i);
 			}
@@ -135,12 +135,12 @@ void Easeing::Debug([[maybe_unused]]const std::string& debugName) {
 void Easeing::DebugTreeNode([[maybe_unused]] const std::string& debugName) {
 #ifdef _DEBUG
 	if (ImGui::TreeNode(debugName.c_str())) {
-		if (ImGui::BeginCombo("BlendType", kEaseingTypeString_[static_cast<uint32_t>(type_)].c_str()))
+		if (ImGui::BeginCombo("BlendType", kEaseingTypeString[static_cast<uint32_t>(type_)].c_str()))
 		{
 			for (uint32_t i = 0; i < static_cast<uint32_t>(Type::kNum); ++i)
 			{
 				bool isSelected = (type_ == static_cast<Type>(i));
-				if (ImGui::Selectable(kEaseingTypeString_[i].c_str(), isSelected))
+				if (ImGui::Selectable(kEaseingTypeString[i].c_str(), isSelected))
 				{
 					type_ = static_cast<Type>(i);
 				}

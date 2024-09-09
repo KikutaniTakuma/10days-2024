@@ -1,5 +1,5 @@
 #include "ObbComp.h"
-#include "../Manager/ObbManager.h"
+#include "../Manager/CollisionManager.h"
 #include <climits>
 #include <algorithm>
 #include "CameraComp.h"
@@ -29,7 +29,7 @@ std::array<const Vector3, 3> ObbComp::localOrientations_ = {
 
 void ObbComp::Init()
 {
-	ObbManager::GetInstance()->Set(this);
+	CollisionManager::GetInstance()->Set(this);
 	transformComp_ = object_.AddComp<TransformComp>();
 	positions_ = std::make_unique<std::array<Vector3, 8>>();
 	orientations_ = std::make_unique<std::array<Vector3, 3>>();
@@ -39,7 +39,7 @@ void ObbComp::Init()
 }
 
 void ObbComp::Finalize() {
-	ObbManager::GetInstance()->Erase(this);
+	CollisionManager::GetInstance()->Erase(this);
 }
 
 void ObbComp::FirstUpdate()
@@ -60,7 +60,7 @@ void ObbComp::UpdatePosAndOrient()
 	const Mat4x4& worldMatrix = transformComp_->GetWorldMatrix();
 
 	for (size_t i = 0; i < localPositions_.size(); i++) {
-		positions_->at(i) = (center + localPositions_.at(i) * scale) * worldMatrix;
+		positions_->at(i) = localPositions_.at(i) * Mat4x4::MakeAffin(scale, Vector3(), center) * worldMatrix;
 	}
 
 	Quaternion&& rotate = worldMatrix.GetRotate();
@@ -374,6 +374,67 @@ bool ObbComp::IsCollision(ObbComp* const other, Vector3& pushVector)
 	return true;
 }
 
+bool ObbComp::IsCollision(const Vector3& start, const Vector3& end)
+{
+	if (not isCollision_.OnEnter()) {
+		isCollision_ = false;
+	}
+
+	static constexpr float kEpsilon = static_cast<float32_t>(1.175494e-37);
+
+	Vector3 orientarionLength = Vector3::kIdentity * 0.5f;
+	Mat4x4&& invWorldMat = (Mat4x4::MakeAffin(scale, Vector3(), center) * transformComp_->GetWorldMatrix()).Inverse();
+
+	Vector3 localStart = start * invWorldMat;
+	Vector3 localEnd = end * invWorldMat;
+	//Vector3 localDiff = localEnd - localStart;
+
+	Vector3 worldMax = orientarionLength;
+	Vector3 worldMin = -orientarionLength;
+
+	Vector3 b = (localEnd - localStart);
+
+	if (b.x == 0.0f && b.y == 0.0f && b.z == 0.0f) {
+		return false;
+	}
+
+	float tMinX = (worldMin.x - localStart.x) / b.x;
+	float tMaxX = (worldMax.x - localStart.x) / b.x;
+
+	float tNearX = std::min(tMinX, tMaxX);
+	float tFarX = std::max(tMinX, tMaxX);
+
+	float tMinY = (worldMin.y - localStart.y) / b.y;
+	float tMaxY = (worldMax.y - localStart.y) / b.y;
+
+	float tNearY = std::min(tMinY, tMaxY);
+	float tFarY = std::max(tMinY, tMaxY);
+
+	float tMinZ = (worldMin.z - localStart.z) / b.z;
+	float tMaxZ = (worldMax.z - localStart.z) / b.z;
+
+	float tNearZ = std::min(tMinZ, tMaxZ);
+	float tFarZ = std::max(tMinZ, tMaxZ);
+
+	float tMin = std::max(std::max(tNearX, tNearY), tNearZ);
+	float tMax = std::min(std::min(tFarX, tFarY), tFarZ);
+
+	if (((0.0f <= tNearX && tNearX <= 1.0f) || (0.0f <= tFarX && tFarX <= 1.0f)) ||
+		((0.0f <= tNearY && tNearY <= 1.0f) || (0.0f <= tFarY && tFarY <= 1.0f)) ||
+		((0.0f <= tNearZ && tNearZ <= 1.0f) || (0.0f <= tFarZ && tFarZ <= 1.0f))) {
+		if (tMin <= tMax) {
+			isCollision_ = true;
+#ifdef _DEBUG
+			color_ = 0xff0000ff;
+#endif // _DEBUG
+			return true;
+		}
+	}
+
+
+	return false;
+}
+
 bool ObbComp::CollisionHasTag(ObbComp* const other) {
 	bool hasTag = false;
 	for (auto& i : collisionTags_) {
@@ -390,6 +451,7 @@ bool ObbComp::CollisionHasTag(ObbComp* const other) {
 
 	return false;
 }
+
 
 TransformComp& ObbComp::GetTransformComp()
 {

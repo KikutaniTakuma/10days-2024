@@ -54,17 +54,20 @@ private:
 
 	void Save();
 
+	void SetPlayerCompToEyeComp();
+
 public:
 	void Load(const std::string& jsonFileName);
 
 private:
 	std::unordered_set<std::unique_ptr<Object>> objects_;
-	Lamb::SafePtr<class ObbManager> obbManager_;
+	Lamb::SafePtr<class CollisionManager> obbManager_;
 	std::unordered_map<std::string, bool> objectTags_;
 	Lamb::SafePtr<class CameraComp> cameraComp_;
 
 	std::unordered_map<std::string, std::unique_ptr<LevelData>> levelDatas_;
 	std::string inputSceneName_;
+	std::string currentSceneName_;
 	std::string currentScene_;
 #ifdef _DEBUG
 	std::vector<std::filesystem::path> levelDataFilePathes_;

@@ -107,9 +107,9 @@ void TransformComp::Debug([[maybe_unused]] const std::string& guiName) {
 		ImGui::DragFloat3("scale", scale.data(), 0.01f);
 
 		eulerRotate = rotate.ToEuler();
-		eulerRotate *= Lamb::Math::toDegree<float32_t>;
+		eulerRotate *= Lamb::Math::kToDegree<float32_t>;
 		ImGui::DragFloat3("rotate(Degree)", eulerRotate.data(), 1.0f);
-		eulerRotate *= Lamb::Math::toRadian<float32_t>;
+		eulerRotate *= Lamb::Math::kToRadian<float32_t>;
 		rotate = Quaternion::EulerToQuaternion(eulerRotate);
 
 		ImGui::DragFloat3("translate", translate.data(), 0.01f);

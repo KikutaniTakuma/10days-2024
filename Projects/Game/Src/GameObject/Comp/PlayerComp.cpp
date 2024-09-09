@@ -34,7 +34,7 @@ void PlayerComp::Move() {
 		fall_->Stop();
 	}
 
-	transform_->translate.y += fall_->GetFall();
+	//transform_->translate.y += fall_->GetFall();
 
 
 }
@@ -61,4 +61,9 @@ void PlayerComp::Save(nlohmann::json& json) {
 
 void PlayerComp::Load([[maybe_unused]] nlohmann::json& json) {
 
+}
+
+void PlayerComp::SetIsBeamCollision(const Lamb::Flg& collisionFlg)
+{
+	beamCollisionFlg_ = collisionFlg;
 }

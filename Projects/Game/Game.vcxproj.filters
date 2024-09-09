@@ -107,7 +107,7 @@
     <ClCompile Include="Src\Scenes\TestScene\TestScene.cpp">
       <Filter>Scenes\TestScene</Filter>
     </ClCompile>
-    <ClCompile Include="Src\GameObject\Manager\ObbManager.cpp">
+    <ClCompile Include="Src\GameObject\Manager\CollisionManager.cpp">
       <Filter>GameObject\Manager</Filter>
     </ClCompile>
     <ClCompile Include="Src\GameObject\Comp\CloudComp.cpp">
@@ -120,6 +120,27 @@
       <Filter>GameObject\Comp</Filter>
     </ClCompile>
     <ClCompile Include="Src\GameObject\Comp\Direction2DComp.cpp">
+      <Filter>GameObject\Comp</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\Comp\EyeComp.cpp">
+      <Filter>GameObject\Comp</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\Comp\LineRenderComp.cpp">
+      <Filter>GameObject\Comp</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\Comp\LineRenderDataComp.cpp">
+      <Filter>GameObject\Comp</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\Comp\LineComp.cpp">
+      <Filter>GameObject\Comp</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\Comp\LineCollisionComp.cpp">
+      <Filter>GameObject\Comp</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\Comp\EyeStateComp.cpp">
+      <Filter>GameObject\Comp</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\Comp\EaseingComp.cpp">
       <Filter>GameObject\Comp</Filter>
     </ClCompile>
   </ItemGroup>
@@ -288,7 +309,7 @@
     <ClInclude Include="Src\Scenes\TestScene\TestScene.h">
       <Filter>Scenes\TestScene</Filter>
     </ClInclude>
-    <ClInclude Include="Src\GameObject\Manager\ObbManager.h">
+    <ClInclude Include="Src\GameObject\Manager\CollisionManager.h">
       <Filter>GameObject\Manager</Filter>
     </ClInclude>
     <ClInclude Include="Src\GameObject\Comp\CloudComp.h">
@@ -301,6 +322,27 @@
       <Filter>GameObject\Comp</Filter>
     </ClInclude>
     <ClInclude Include="Src\GameObject\Comp\Direction2DComp.h">
+      <Filter>GameObject\Comp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Comp\EyeComp.h">
+      <Filter>GameObject\Comp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Comp\LineRenderComp.h">
+      <Filter>GameObject\Comp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Comp\LineRenderDataComp.h">
+      <Filter>GameObject\Comp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Comp\LineComp.h">
+      <Filter>GameObject\Comp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Comp\LineCollisionComp.h">
+      <Filter>GameObject\Comp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Comp\EyeStateComp.h">
+      <Filter>GameObject\Comp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Comp\EaseingComp.h">
       <Filter>GameObject\Comp</Filter>
     </ClInclude>
   </ItemGroup>

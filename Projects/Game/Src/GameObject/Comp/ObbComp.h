@@ -31,6 +31,7 @@ public:
 	bool IsCollision(Vector3 pos, float radius);
 	bool IsCollision(ObbComp* const other);
 	bool IsCollision(ObbComp* const other, Vector3& pushVector);
+	bool IsCollision(const Vector3& start, const Vector3& end);
 
 	bool CollisionHasTag(ObbComp* const other);
 
