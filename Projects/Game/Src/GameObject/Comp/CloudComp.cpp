@@ -3,15 +3,19 @@
 #include "SpriteRenderComp.h"
 #include "FlagComp.h"
 #include "ObbPushComp.h"
+#include "Mass2DComp.h"
+#include "../Manager/CloudManager.h"
 
 void CloudComp::Init() {
 
+	CloudManager::GetInstance()->Set(this);
 	transformComp_ = object_.AddComp<TransformComp>();
 	spriteRenderComp_ = object_.AddComp<SpriteRenderComp>();
 	collision_ = object_.AddComp<ObbPushComp>();
 	collision_->SetPushTag("class PlayerComp");
 	flagComp_ = object_.AddComp<FlagComp>();
 	flagComp_->SetIsActive(true);
+	mass_ = object_.AddComp<Mass2DComp>();
 
 }
 
@@ -29,10 +33,52 @@ void CloudComp::Update() {
 
 }
 
+void CloudComp::Finalize()
+{
+	CloudManager::GetInstance()->Erase(this);
+}
+
+const Lamb::Flg& CloudComp::GetIsActive() const
+{
+	return flagComp_->GetIsActive();
+}
+
+void CloudComp::SetIsActive(bool flag)
+{
+	flagComp_->SetIsActive(flag);
+}
+
+void CloudComp::SetPosition(const Vector3& position)
+{
+	transformComp_->translate = position;
+}
+
+int32_t CloudComp::GetMassX() const
+{
+	return mass_->GetMassX();
+}
+
+int32_t CloudComp::GetMassY() const
+{
+	return mass_->GetMassY();
+}
+
 void CloudComp::Save(nlohmann::json& json) {
 	SaveCompName(json);
 }
 
 void CloudComp::Load([[maybe_unused]] nlohmann::json& json) {
+
+}
+
+ObbPushComp& CloudComp::GetObbPushComp()
+{
+	return *collision_;
+}
+
+const ObbPushComp& CloudComp::GetObbPushComp() const
+{
+	
+	return *collision_;
 
 }

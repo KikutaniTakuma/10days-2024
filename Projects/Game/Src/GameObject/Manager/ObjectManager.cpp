@@ -16,6 +16,7 @@
 
 #include "Utils/FileUtils.h"
 #include "CollisionManager.h"
+#include "CloudManager.h"
 
 #include "../Comp/EyeComp.h"
 #include "../Comp/PlayerComp.h"
@@ -42,14 +43,20 @@ void ObjectManager::Initialize() {
 
 #ifdef _DEBUG
 	instance_->levelDataFilePathes_ = Lamb::GetFilePathFormDir("./SceneData/", ".json");
+	
+#endif // _DEBUG
+
 	CollisionManager::Initialize();
 	instance_->obbManager_ = CollisionManager::GetInstance();
-#endif // _DEBUG
+	CloudManager::Initialize();
+	instance_->cloudManager_ = CloudManager::GetInstance();
+
 }
 
 void ObjectManager::Finalize()
 {
 	CollisionManager::Finalize();
+	CloudManager::Finalize();
 	instance_.reset();
 }
 
@@ -467,6 +474,7 @@ void ObjectManager::Load(const std::string& jsonFileName) {
 	objects_.clear();
 	objectTags_.clear();
 	obbManager_->Clear();
+	cloudManager_->Clear();
 	cameraComp_ = nullptr;
 
 	auto jsonFile = Lamb::LoadJson(jsonFileName);

@@ -37,7 +37,7 @@ public:
 	};
 
 	// RT,LT
-	enum class Triger {
+	enum class Trigger {
 		LEFT,
 		RIGHT,
 	};
@@ -57,8 +57,8 @@ private:
 	Gamepad& operator=(Gamepad&&) = delete;
 
 private:
-	WORD preButton_;
 	XINPUT_STATE state_;
+	XINPUT_STATE preState_;
 	XINPUT_VIBRATION vibration_;
 
 public:
@@ -110,6 +110,27 @@ public:
 	bool Released(Button type);
 
 	/// <summary>
+	/// 押した瞬間かを取得
+	/// </summary>
+	/// <param name="type">トリガータイプ</param>
+	/// <returns>1:押された 0:押されてない</returns>
+	bool Pushed(Trigger type, float deadZone = 0.3f);
+
+	/// <summary>
+	/// 押し続けているかを取得
+	/// </summary>
+	/// <param name="type">トリガータイプ</param>
+	/// <returns>1:押された 0:押されてない</returns>
+	bool LongPush(Trigger type, float deadZone = 0.3f);
+
+	/// <summary>
+	/// ボタンを離した瞬間かを取得
+	/// </summary>
+	/// <param name="type">トリガータイプ</param>
+	/// <returns>1:押された 0:押されてない</returns>
+	bool Released(Trigger type, float deadZone = 0.3f);
+
+	/// <summary>
 	/// 何かしらのキーやトリガーが押された
 	/// </summary>
 	/// <returns>押されたらtrue</returns>
@@ -120,7 +141,14 @@ public:
 	/// </summary>
 	/// <param name="type">トリガーのタイプ</param>
 	/// <returns>0.0f ～ 1.0f の値</returns>
-	float GetTriger(Triger type, float deadZone = 0.3f);
+	float GetTrigger(Trigger type, float deadZone = 0.3f);
+
+	/// <summary>
+	/// トリガーを取得
+	/// </summary>
+	/// <param name="type">トリガーのタイプ</param>
+	/// <returns>0.0f ～ 1.0f の値</returns>
+	float GetPreTrigger(Trigger type, float deadZone = 0.3f);
 
 	/// <summary>
 	/// Stick

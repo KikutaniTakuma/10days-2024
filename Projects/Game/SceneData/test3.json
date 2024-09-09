@@ -37,10 +37,7 @@
         {
             "Comps": [
                 {
-                    "CompName": "class PlayerComp"
-                },
-                {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -48,7 +45,48 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/block10.png",
+                    "fileName": "./Resources/Textures/backGround/backGround_back.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        1280.0,
+                        720.0,
+                        16.0
+                    ],
+                    "translate": [
+                        624.0,
+                        -344.0,
+                        10.0
+                    ]
+                }
+            ]
+        },
+        {
+            "Comps": [
+                {
+                    "CompName": "class PlayerComp"
+                },
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/player/player_stop.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -101,13 +139,41 @@
                 },
                 {
                     "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Direction2DComp"
+                },
+                {
+                    "CompName": "class CsvDataComp",
+                    "fileName": "Resources/Maps/test3.csv"
+                },
+                {
+                    "CompName": "class EatCloudComp"
+                },
+                {
+                    "CompName": "class RemoveCloudComp"
+                },
+                {
+                    "CompName": "class CountComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        20,
+                        4
+                    ],
+                    "offset": [
+                        16.0,
+                        16.0
+                    ],
+                    "size": 32
                 }
             ]
         },
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -115,7 +181,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/block1.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -165,6 +231,18 @@
                 },
                 {
                     "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        20,
+                        7
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"

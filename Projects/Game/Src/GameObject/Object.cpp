@@ -22,6 +22,12 @@
 #include "Comp/CloudComp.h"
 #include "Comp/FlagComp.h"
 #include "Comp/PlayerComp.h"
+#include "Comp/CountComp.h"
+#include "Comp/Direction2DComp.h"
+#include "Comp/EatCloudComp.h"
+#include "Comp/RemoveCloudComp.h"
+#include "Comp/Mass2DComp.h"
+#include "Comp/JumpComp.h"
 
 #include "Comp/LineComp.h"
 #include "Comp/LineRenderComp.h"
@@ -129,6 +135,12 @@ bool Object::DebugAddComp() {
 		DebugAdd<FlagComp>();
 		DebugAdd<CloudComp>();
 		DebugAdd<PlayerComp>();
+		DebugAdd<CountComp>();
+		DebugAdd<Direction2DComp>();
+		DebugAdd<EatCloudComp>();
+		DebugAdd<RemoveCloudComp>();
+		DebugAdd<Mass2DComp>();
+		DebugAdd<JumpComp>();
 		DebugAdd<LineComp>();
 		DebugAdd<LineRenderComp>();
 		DebugAdd<LineRenderDataComp>();
@@ -200,5 +212,11 @@ void Object::AddComps(nlohmann::json& compData)
 	AddAndLoadComp<EyeComp>(compName, compData);
 	AddAndLoadComp<EyeStateComp>(compName, compData);
 	AddAndLoadComp<EaseingComp>(compName, compData);
+	AddAndLoadComp<CountComp>(compName, compData);
+	AddAndLoadComp<Direction2DComp>(compName, compData);
+	AddAndLoadComp<EatCloudComp>(compName, compData);
+	AddAndLoadComp<RemoveCloudComp>(compName, compData);
+	AddAndLoadComp<Mass2DComp>(compName, compData);
+	AddAndLoadComp<JumpComp>(compName, compData);
 }
 

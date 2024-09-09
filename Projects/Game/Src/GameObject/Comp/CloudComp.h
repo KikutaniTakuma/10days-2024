@@ -1,5 +1,6 @@
 #pragma once
  #include "../Object.h"
+#include "ObbPushComp.h"
 
  class CloudComp : public IComp {
  public:
@@ -14,8 +15,22 @@
 	 
 	 void Update() override;
 
+	 void Finalize() override;
+
+	 const Lamb::Flg& GetIsActive() const;
+
+	 void SetIsActive(bool flag);
+
+	 void SetPosition(const Vector3& position);
+
+	 int32_t GetMassX() const;
+	 int32_t GetMassY() const;
+
 	 void Save(nlohmann::json& json) override;
 	 void Load(nlohmann::json& json) override;
+
+	 ObbPushComp& GetObbPushComp();
+	 const ObbPushComp& GetObbPushComp() const;
 
  private:
 
@@ -28,5 +43,7 @@
 	 Lamb::SafePtr<class ObbPushComp> collision_;
 
 	 Lamb::SafePtr<class FlagComp> flagComp_;
+
+	 Lamb::SafePtr<class Mass2DComp> mass_;
 
  };
