@@ -162,14 +162,26 @@ void PlayerComp::CheckCollision()
 
 				//プレイヤーが右側から侵入したなら右に戻す
 				if (prePositions_->at(static_cast<size_t>(Aabb2DComp::Point::kLeftUp)).y > (*cloud)->GetAabb2DComp().GetPosition(Aabb2DComp::Point::kRightUnder).y + 1.0f) {
-					tmpPosition_.x = (*cloud)->GetAabb2DComp().GetPosition(Aabb2DComp::Point::kRightUnder).x + kPlayerSize_ * 0.5f;
+					
+					tmpPosition_.x = (*cloud)->GetAabb2DComp().GetPosition(Aabb2DComp::Point::kRightUnder).x + kPlayerHalfSize_;
+
+					transform_->translate = tmpPosition_;
+					transform_->UpdateMatrix();
+
+					aabbCollision_->UpdatePosAndOrient();
+
 				}
 				else {
 
 					//下側から侵入しているなら下に戻す
 					if (prePositions_->at(static_cast<size_t>(Aabb2DComp::Point::kLeftUp)).x < (*cloud)->GetAabb2DComp().GetPosition(Aabb2DComp::Point::kRightUnder).x - 1.0f) {
 						
-						tmpPosition_.y = (*cloud)->GetAabb2DComp().GetPosition(Aabb2DComp::Point::kRightUnder).y - kPlayerSize_ * 0.5f;
+						tmpPosition_.y = (*cloud)->GetAabb2DComp().GetPosition(Aabb2DComp::Point::kRightUnder).y - kPlayerHalfSize_;
+
+						transform_->translate = tmpPosition_;
+						transform_->UpdateMatrix();
+
+						aabbCollision_->UpdatePosAndOrient();
 
 						//ジャンプ中だったらジャンプ止める
 						if (velocity_.y > 0.0f) {
@@ -189,14 +201,26 @@ void PlayerComp::CheckCollision()
 
 				//プレイヤーが左側から侵入したなら左に戻す
 				if (prePositions_->at(static_cast<size_t>(Aabb2DComp::Point::kRightUp)).y > (*cloud)->GetAabb2DComp().GetPosition(Aabb2DComp::Point::kLeftUnder).y + 1.0f) {
-					tmpPosition_.x = (*cloud)->GetAabb2DComp().GetPosition(Aabb2DComp::Point::kLeftUnder).x - kPlayerSize_ * 0.5f;
+					
+					tmpPosition_.x = (*cloud)->GetAabb2DComp().GetPosition(Aabb2DComp::Point::kLeftUnder).x - kPlayerHalfSize_;
+
+					transform_->translate = tmpPosition_;
+					transform_->UpdateMatrix();
+
+					aabbCollision_->UpdatePosAndOrient();
+
 				}
 				else {
 
 					//下側から侵入しているなら下に戻す
 					if (prePositions_->at(static_cast<size_t>(Aabb2DComp::Point::kRightUp)).x > (*cloud)->GetAabb2DComp().GetPosition(Aabb2DComp::Point::kLeftUnder).x) {
 
-						tmpPosition_.y = (*cloud)->GetAabb2DComp().GetPosition(Aabb2DComp::Point::kRightUnder).y - kPlayerSize_ * 0.5f;
+						tmpPosition_.y = (*cloud)->GetAabb2DComp().GetPosition(Aabb2DComp::Point::kRightUnder).y - kPlayerHalfSize_;
+
+						transform_->translate = tmpPosition_;
+						transform_->UpdateMatrix();
+
+						aabbCollision_->UpdatePosAndOrient();
 
 						//ジャンプ中だったらジャンプ止める
 						if (velocity_.y > 0.0f) {
@@ -216,15 +240,32 @@ void PlayerComp::CheckCollision()
 
 				//プレイヤーが右側から侵入したなら右に戻す
 				if (prePositions_->at(static_cast<size_t>(Aabb2DComp::Point::kLeftUnder)).y < (*cloud)->GetAabb2DComp().GetPosition(Aabb2DComp::Point::kRightUp).y) {
-					tmpPosition_.x = (*cloud)->GetAabb2DComp().GetPosition(Aabb2DComp::Point::kRightUp).x + kPlayerSize_ * 0.5f;
+					
+					tmpPosition_.x = (*cloud)->GetAabb2DComp().GetPosition(Aabb2DComp::Point::kRightUp).x + kPlayerHalfSize_;
+
+					transform_->translate = tmpPosition_;
+					transform_->UpdateMatrix();
+
+					aabbCollision_->UpdatePosAndOrient();
+
 				}
 				else {
 
-					tmpPosition_.y = (*cloud)->GetAabb2DComp().GetPosition(Aabb2DComp::Point::kRightUp).y + kPlayerSize_ * 0.5f;
+					//乗っている足場の一つ上がブロックでなければ乗れる
+					if (csvData_->GetNumber((*cloud)->GetMassX(), (*cloud)->GetMassY() - 1) != static_cast<int32_t>(TileName::kCloud)) {
 
-					fall_->Stop();
-					velocity_.y = 0.0f;
-					onGround_ = true;
+						tmpPosition_.y = (*cloud)->GetAabb2DComp().GetPosition(Aabb2DComp::Point::kRightUp).y + kPlayerHalfSize_;
+
+						transform_->translate = tmpPosition_;
+						transform_->UpdateMatrix();
+
+						aabbCollision_->UpdatePosAndOrient();
+
+						fall_->Stop();
+						velocity_.y = 0.0f;
+						onGround_ = true;
+
+					}
 
 				}
 
@@ -234,15 +275,32 @@ void PlayerComp::CheckCollision()
 
 				//プレイヤーが左側から侵入したなら左に戻す
 				if (prePositions_->at(static_cast<size_t>(Aabb2DComp::Point::kRightUnder)).y < (*cloud)->GetAabb2DComp().GetPosition(Aabb2DComp::Point::kLeftUp).y) {
-					tmpPosition_.x = (*cloud)->GetAabb2DComp().GetPosition(Aabb2DComp::Point::kLeftUp).x - kPlayerSize_ * 0.5f;
+					
+					tmpPosition_.x = (*cloud)->GetAabb2DComp().GetPosition(Aabb2DComp::Point::kLeftUp).x - kPlayerHalfSize_;
+
+					transform_->translate = tmpPosition_;
+					transform_->UpdateMatrix();
+
+					aabbCollision_->UpdatePosAndOrient();
+
 				}
 				else {
 
-					tmpPosition_.y = (*cloud)->GetAabb2DComp().GetPosition(Aabb2DComp::Point::kLeftUp).y + kPlayerSize_ * 0.5f;
+					//乗っている足場の一つ上がブロックでなければ乗れる
+					if (csvData_->GetNumber((*cloud)->GetMassX(), (*cloud)->GetMassY() - 1) != static_cast<int32_t>(TileName::kCloud)) {
 
-					fall_->Stop();
-					velocity_.y = 0.0f;
-					onGround_ = true;
+						tmpPosition_.y = (*cloud)->GetAabb2DComp().GetPosition(Aabb2DComp::Point::kLeftUp).y + kPlayerHalfSize_;
+
+						transform_->translate = tmpPosition_;
+						transform_->UpdateMatrix();
+
+						aabbCollision_->UpdatePosAndOrient();
+
+						fall_->Stop();
+						velocity_.y = 0.0f;
+						onGround_ = true;
+
+					}
 
 				}
 

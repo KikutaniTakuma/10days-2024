@@ -44,11 +44,11 @@ void Aabb2DComp::UpdatePosAndOrient()
 	//左上
 	positions_->at(static_cast<size_t>(Point::kLeftUp)) = Vector3{ min_.x, max_.y, (min_.z + max_.z) * 0.5f  };
 	//右上
-	positions_->at(static_cast<size_t>(Point::kRightUp)) = Vector3{ max_.x, max_.y, (min_.z + max_.z) * 0.5f };
+	positions_->at(static_cast<size_t>(Point::kRightUp)) = Vector3{ max_.x - 0.0f, max_.y, (min_.z + max_.z) * 0.5f };
 	//左下
-	positions_->at(static_cast<size_t>(Point::kLeftUnder)) = Vector3{ min_.x, min_.y, (min_.z + max_.z) * 0.5f };
+	positions_->at(static_cast<size_t>(Point::kLeftUnder)) = Vector3{ min_.x, min_.y + 0.0f, (min_.z + max_.z) * 0.5f };
 	//右下
-	positions_->at(static_cast<size_t>(Point::kRightUnder)) = Vector3{ max_.x, min_.y, (min_.z + max_.z) * 0.5f };
+	positions_->at(static_cast<size_t>(Point::kRightUnder)) = Vector3{ max_.x - 0.0f, min_.y + 0.0f, (min_.z + max_.z) * 0.5f };
 
 }
 

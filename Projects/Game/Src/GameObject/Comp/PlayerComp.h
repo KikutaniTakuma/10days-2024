@@ -10,6 +10,8 @@ public:
 
 	static constexpr float kPlayerSize_ = 24.0f;
 
+	static constexpr float kPlayerHalfSize_ = 12.0f;
+
 public:
 
 	void Init() override;
