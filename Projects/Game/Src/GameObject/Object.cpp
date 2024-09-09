@@ -28,6 +28,12 @@
 #include "Comp/RemoveCloudComp.h"
 #include "Comp/Mass2DComp.h"
 #include "Comp/JumpComp.h"
+#include "Comp/Aabb2DComp.h"
+#include "Comp/CollectionComp.h"
+#include "Comp/FollowCamera2DComp.h"
+#include "Comp/GoalComp.h"
+#include "Comp/InvisibleComp.h"
+#include "Comp/KeyComp.h"
 
 #include "Comp/LineComp.h"
 #include "Comp/LineRenderComp.h"
@@ -141,6 +147,12 @@ bool Object::DebugAddComp() {
 		DebugAdd<RemoveCloudComp>();
 		DebugAdd<Mass2DComp>();
 		DebugAdd<JumpComp>();
+		DebugAdd<Aabb2DComp>();
+		DebugAdd<CollectionComp>();
+		DebugAdd<FollowCamera2DComp>();
+		DebugAdd<GoalComp>();
+		DebugAdd<InvisibleComp>();
+		DebugAdd<KeyComp>();
 		DebugAdd<LineComp>();
 		DebugAdd<LineRenderComp>();
 		DebugAdd<LineRenderDataComp>();
@@ -218,5 +230,11 @@ void Object::AddComps(nlohmann::json& compData)
 	AddAndLoadComp<RemoveCloudComp>(compName, compData);
 	AddAndLoadComp<Mass2DComp>(compName, compData);
 	AddAndLoadComp<JumpComp>(compName, compData);
+	AddAndLoadComp<Aabb2DComp>(compName, compData);
+	AddAndLoadComp<CollectionComp>(compName, compData);
+	AddAndLoadComp<FollowCamera2DComp>(compName, compData);
+	AddAndLoadComp<GoalComp>(compName, compData);
+	AddAndLoadComp<InvisibleComp>(compName, compData);
+	AddAndLoadComp<KeyComp>(compName, compData);
 }
 

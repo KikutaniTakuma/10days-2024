@@ -152,6 +152,18 @@
     <ClCompile Include="Src\GameObject\Comp\FollowCamera2DComp.cpp">
       <Filter>GameObject\Comp</Filter>
     </ClCompile>
+    <ClCompile Include="Src\GameObject\Comp\InvisibleComp.cpp">
+      <Filter>GameObject\Comp</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\Manager\MapChipManager.cpp">
+      <Filter>GameObject\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\Comp\Aabb2DComp.cpp">
+      <Filter>GameObject\Comp</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\Manager\Aabb2DManager.cpp">
+      <Filter>GameObject\Manager</Filter>
+    </ClCompile>
     <ClCompile Include="Src\GameObject\Comp\EyeComp.cpp">
       <Filter>GameObject\Comp</Filter>
     </ClCompile>
@@ -413,6 +425,18 @@
     </ClInclude>
     <ClInclude Include="Src\GameObject\Comp\FollowCamera2DComp.h">
       <Filter>GameObject\Comp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Comp\InvisibleComp.h">
+      <Filter>GameObject\Comp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Manager\MapChipManager.h">
+      <Filter>GameObject\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Comp\Aabb2DComp.h">
+      <Filter>GameObject\Comp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Manager\Aabb2DManager.h">
+      <Filter>GameObject\Manager</Filter>
     </ClInclude>
     <ClInclude Include="Src\GameObject\Comp\SpriteAnimatorComp.h">
       <Filter>GameObject\Comp</Filter>

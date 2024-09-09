@@ -34,6 +34,18 @@ void InputMoveComp::FirstUpdate()
 	moveVector_ = direction_ * speed_;
 }
 
+void InputMoveComp::Debug([[maybe_unused]] const std::string& guiName)
+{
+
+	if (ImGui::TreeNode(guiName.c_str())) {
+
+		ImGui::DragFloat("横移動速度", &speed_, 0.05f);
+
+		ImGui::TreePop();
+	}
+
+}
+
 void InputMoveComp::Save(nlohmann::json& json)
 {
 	SaveCompName(json);

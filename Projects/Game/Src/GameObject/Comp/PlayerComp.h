@@ -8,6 +8,8 @@ public:
 
 	~PlayerComp() = default;
 
+	static constexpr float kPlayerSize_ = 24.0f;
+
 public:
 
 	void Init() override;
@@ -29,7 +31,7 @@ public:
 
 private:
 
-	bool OnGround();
+	void CheckCollision();
 
 private:
 
@@ -59,9 +61,15 @@ private:
 
 	Lamb::SafePtr<class JumpComp> jump_;
 
+	Lamb::SafePtr<class Aabb2DComp> aabbCollision_;
+
 	Lamb::Flg onGround_;
 
+	std::unique_ptr<std::array<Vector3, 4>> prePositions_;
+
 	Vector3 velocity_{};
+
+	Vector3 tmpPosition_{ 0.0f,0.0f,1.0f };
 
 
 #pragma region 菊谷が追加 2024/9/8
