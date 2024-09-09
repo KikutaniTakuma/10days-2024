@@ -11,7 +11,11 @@ public:
 	void Load(nlohmann::json& json) override;
 
 public:
+	void Init() override;
+
 	void Update() override;
+
+	void LastUpdate() override;
 
 	void Debug(const std::string& guiName);
 
@@ -79,4 +83,6 @@ private:
 
 	bool isActive_ = false;
 	bool isLoop_ = false;
+
+	Lamb::SafePtr<class SpriteRenderDataComp> spriteRenderDataComp_;
 };

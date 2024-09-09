@@ -1,4 +1,5 @@
 #include "SpriteAnimatorComp.h"
+#include "SpriteRenderDataComp.h"
 
 void SpriteAnimatorComp::Save(nlohmann::json& json)
 {
@@ -21,6 +22,11 @@ void SpriteAnimatorComp::Load(nlohmann::json& json) {
 	duration_ = json["duration"].get<float32_t>();
 }
 
+void SpriteAnimatorComp::Init()
+{
+	spriteRenderDataComp_ = object_.AddComp<SpriteRenderDataComp>();
+}
+
 void SpriteAnimatorComp::Update() {
 	if ((duration_ * static_cast<float>(currentAnimationNumber_) < animationTime_)) {
 		currentAnimationNumber_++;
@@ -41,6 +47,11 @@ void SpriteAnimatorComp::Update() {
 	}
 
 	animationMatrix_ = Mat4x4::MakeAffin(scale_, Vector3::kZero, currentPos_);
+}
+
+void SpriteAnimatorComp::LastUpdate() {
+	auto& transform = spriteRenderDataComp_->uvTransform;
+	animationMatrix_.Decompose(transform.scale, transform.rotate, transform.translate);
 }
 
 void SpriteAnimatorComp::Debug([[maybe_unused]]const std::string& guiName) {
