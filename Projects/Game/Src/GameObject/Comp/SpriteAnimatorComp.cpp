@@ -59,7 +59,7 @@ void SpriteAnimatorComp::Debug([[maybe_unused]]const std::string& guiName) {
 	if (ImGui::TreeNode(guiName.c_str())) {
 		ImGui::DragFloat2("startPos", startPos_.data(), 0.001f);
 		ImGui::Checkbox("isLoop", &isLoop_);
-		ImGui::DragInt("アニメーション枚数", &animationNumber_, 0.01f, 1.0f, 100.0f);
+		ImGui::DragInt("アニメーション枚数", &animationNumber_, 0.01f, 1, 100);
 		ImGui::DragFloat("アニメーション間隔", &duration_, 0.01f, 0.0001f, 100.0f);
 
 		if (ImGui::Button("start")) {
