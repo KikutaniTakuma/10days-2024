@@ -8,6 +8,8 @@ public:
 
 	void Init() override;
 
+	void Event() override;
+
 	~CollectionComp() = default;
 
 public:
@@ -21,7 +23,7 @@ private:
 
 	Lamb::SafePtr<class SpriteRenderComp> spriteRenderComp_;
 
-	Lamb::SafePtr<class ObbPushComp> collision_;
+	Lamb::SafePtr<class ObbComp> collision_;
 
 	Lamb::SafePtr<class Mass2DComp> mass_;
 

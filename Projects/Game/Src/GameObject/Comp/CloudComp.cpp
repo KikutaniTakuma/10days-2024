@@ -4,18 +4,22 @@
 #include "FlagComp.h"
 #include "ObbPushComp.h"
 #include "Mass2DComp.h"
+#include "SpriteRenderDataComp.h"
 #include "../Manager/CloudManager.h"
+#include "Aabb2DComp.h"
 
 void CloudComp::Init() {
 
 	CloudManager::GetInstance()->Set(this);
 	transformComp_ = object_.AddComp<TransformComp>();
 	spriteRenderComp_ = object_.AddComp<SpriteRenderComp>();
-	collision_ = object_.AddComp<ObbPushComp>();
-	collision_->SetPushTag("class PlayerComp");
+	spriteRenderDataComp_ = object_.AddComp<SpriteRenderDataComp>();
+	/*collision_ = object_.AddComp<ObbPushComp>();
+	collision_->SetPushTag("class PlayerComp");*/
 	flagComp_ = object_.AddComp<FlagComp>();
 	flagComp_->SetIsActive(true);
 	mass_ = object_.AddComp<Mass2DComp>();
+	aabbCollision_ = object_.AddComp<Aabb2DComp>();
 
 }
 
@@ -23,7 +27,7 @@ void CloudComp::Update() {
 
 	//雲が存在している状態だったら表示
 	if (flagComp_->GetIsActive()) {
-		transformComp_->scale = { cloudSize_,cloudSize_,cloudSize_ };
+		transformComp_->scale = { kCloudSize_,kCloudSize_,kCloudSize_ };
 	}
 	//食べられて存在しなくなった場合は非表示
 	else {
@@ -71,14 +75,24 @@ void CloudComp::Load([[maybe_unused]] nlohmann::json& json) {
 
 }
 
-ObbPushComp& CloudComp::GetObbPushComp()
+Aabb2DComp& CloudComp::GetAabb2DComp()
 {
-	return *collision_;
+	return *aabbCollision_;
 }
 
-const ObbPushComp& CloudComp::GetObbPushComp() const
+const Aabb2DComp& CloudComp::GetAabb2DComp() const
 {
-	
-	return *collision_;
-
+	return *aabbCollision_;
 }
+
+//ObbPushComp& CloudComp::GetObbPushComp()
+//{
+//	return *collision_;
+//}
+//
+//const ObbPushComp& CloudComp::GetObbPushComp() const
+//{
+//	
+//	return *collision_;
+//
+//}

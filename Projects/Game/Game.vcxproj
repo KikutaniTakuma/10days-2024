@@ -129,6 +129,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Src\GameObject\Comp\Aabb2DComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\CloudComp.cpp" />
     <ClCompile Include="Src\Camera\Camera.cpp" />
     <ClCompile Include="Src\Editor\ParticleEditor\ParticleEditor.cpp" />
@@ -150,6 +151,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Src\GameObject\Comp\FlagComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\FollowCamera2DComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\GoalComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\InvisibleComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\JsonComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\LineCollisionComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\LineComp.cpp" />
@@ -171,6 +173,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Src\GameObject\Comp\SpriteRenderComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\SpriteRenderDataComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\TransformComp.cpp" />
+    <ClCompile Include="Src\GameObject\Manager\Aabb2DManager.cpp" />
     <ClCompile Include="Src\GameObject\Manager\CollisionManager.cpp" />
     <ClCompile Include="Src\GameObject\Manager\CloudManager.cpp" />
     <ClCompile Include="Src\GameObject\Manager\ObjectManager.cpp" />
@@ -190,6 +193,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Src\World\World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Src\GameObject\Comp\Aabb2DComp.h" />
     <ClInclude Include="Src\GameObject\Comp\CloudComp.h" />
     <ClInclude Include="Src\Camera\Camera.h" />
     <ClInclude Include="Src\Editor\ParticleEditor\ParticleEditor.h" />
@@ -212,6 +216,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="Src\GameObject\Comp\FollowCamera2DComp.h" />
     <ClInclude Include="Src\GameObject\Comp\GoalComp.h" />
     <ClInclude Include="Src\GameObject\Comp\InputMoveComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\InvisibleComp.h" />
     <ClInclude Include="Src\GameObject\Comp\JsonComp.h" />
     <ClInclude Include="Src\GameObject\Comp\LineCollisionComp.h" />
     <ClInclude Include="Src\GameObject\Comp\LineComp.h" />
@@ -232,6 +237,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="Src\GameObject\Comp\SpriteRenderComp.h" />
     <ClInclude Include="Src\GameObject\Comp\SpriteRenderDataComp.h" />
     <ClInclude Include="Src\GameObject\Comp\TransformComp.h" />
+    <ClInclude Include="Src\GameObject\Manager\Aabb2DManager.h" />
     <ClInclude Include="Src\GameObject\Manager\CollisionManager.h" />
     <ClInclude Include="Src\GameObject\Manager\CloudManager.h" />
     <ClInclude Include="Src\GameObject\Manager\ObjectManager.h" />

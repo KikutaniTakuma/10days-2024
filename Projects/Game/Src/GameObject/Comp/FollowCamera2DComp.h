@@ -23,4 +23,6 @@ private:
 
 	Lamb::SafePtr<class TransformComp> transform_;
 
+	Lamb::SafePtr<class PlayerComp> target_;
+
 };

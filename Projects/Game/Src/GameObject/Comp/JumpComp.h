@@ -12,9 +12,11 @@ public:
 
 	void Start();
 
-	float32_t GetJumpVelocity() const { return jumpVelocity_ * float(count_); }
+	void Stop();
 
-	bool IsStartJump() { return count_ > 0; }
+	void Debug(const std::string& guiName);
+
+	float32_t GetJumpVelocity() const { return jumpVelocity_ * jumpTime_; }
 
 public:
 
@@ -23,10 +25,11 @@ public:
 
 private:
 
-	float32_t jumpVelocity_ = 1.0f;
+	float32_t jumpVelocity_ = 10.0f;
 
-	int32_t jumpTime_ = 5;
-	int32_t count_ = 0;
+	float32_t jumpTime_ = 0.0_f32;
+	float32_t startJumpTime_ = 0.11_f32;
+	Lamb::Flg isJump_;
 
 };
 
