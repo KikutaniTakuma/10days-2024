@@ -6,6 +6,13 @@ PixelShaderOutPut3 main(VertexOutPut input)
 {
 	PixelShaderOutPut3 output;
 
+    uint32_t textureID = kTexture2DData[input.instanceID].textureID;
+	
+	float32_t4 textureColor = textures[textureID].Sample(smp, input.uv);
+    if(textureColor.w < 0.1f){
+        discard;
+    }
+
     // お水の処理
 	const float32_t2 kRandomVec = kWaterData[input.instanceID].randomVec;
     const float32_t kDensity = kWaterData[input.instanceID].density;
@@ -17,7 +24,7 @@ PixelShaderOutPut3 main(VertexOutPut input)
     float32_t3 blendNormal = BlendNormal(perlinNormal, tangent, binormal, normal);
     
     // 色
-    output.color0 = kColor[input.instanceID].color;
+    output.color0 = textureColor * kColor[input.instanceID].color;
 
     // 法線
     output.color1.xyz = blendNormal;
