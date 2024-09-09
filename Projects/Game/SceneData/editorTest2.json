@@ -37,7 +37,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -45,7 +45,45 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/backGround/backGround_back.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        1280.0,
+                        720.0,
+                        16.0
+                    ],
+                    "translate": [
+                        624.0,
+                        -344.0,
+                        10.0
+                    ]
+                }
+            ]
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -114,7 +152,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -122,7 +160,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -191,7 +229,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -199,7 +237,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -268,7 +306,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -276,7 +314,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -345,7 +383,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -353,7 +391,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -422,7 +460,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -430,7 +468,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -502,7 +540,7 @@
                     "CompName": "class PlayerComp"
                 },
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -510,7 +548,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/player.png",
+                    "fileName": "./Resources/Textures/player/player_stop.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -597,7 +635,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -605,7 +643,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -674,7 +712,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -682,7 +720,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -751,7 +789,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -759,7 +797,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -828,7 +866,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -836,7 +874,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -905,7 +943,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -913,7 +951,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -982,7 +1020,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -990,7 +1028,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -1059,7 +1097,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -1067,7 +1105,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -1136,7 +1174,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -1144,7 +1182,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -1213,7 +1251,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -1221,7 +1259,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -1290,7 +1328,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -1298,7 +1336,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -1367,7 +1405,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -1375,7 +1413,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -1444,7 +1482,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -1452,7 +1490,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -1521,7 +1559,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -1529,7 +1567,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -1598,7 +1636,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -1606,7 +1644,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -1675,7 +1713,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -1683,7 +1721,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -1752,7 +1790,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -1760,7 +1798,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -1829,7 +1867,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -1837,7 +1875,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -1906,7 +1944,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -1914,7 +1952,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -1983,7 +2021,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -1991,7 +2029,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -2060,7 +2098,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -2068,7 +2106,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -2137,7 +2175,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -2145,7 +2183,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -2214,7 +2252,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -2222,7 +2260,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -2291,7 +2329,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -2299,7 +2337,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -2368,7 +2406,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -2376,7 +2414,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -2445,7 +2483,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -2453,7 +2491,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -2522,7 +2560,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -2530,7 +2568,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -2599,7 +2637,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -2607,7 +2645,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -2676,7 +2714,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -2684,7 +2722,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -2753,7 +2791,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -2761,7 +2799,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -2830,7 +2868,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -2838,7 +2876,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -2907,7 +2945,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -2915,7 +2953,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -2984,7 +3022,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -2992,7 +3030,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -3061,7 +3099,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -3069,7 +3107,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -3138,7 +3176,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -3146,7 +3184,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -3215,7 +3253,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -3223,7 +3261,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -3292,7 +3330,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -3300,7 +3338,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -3369,7 +3407,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -3377,7 +3415,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -3446,7 +3484,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -3454,7 +3492,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -3523,7 +3561,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -3531,7 +3569,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -3600,7 +3638,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -3608,7 +3646,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -3677,7 +3715,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -3685,7 +3723,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -3754,7 +3792,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -3762,7 +3800,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -3831,7 +3869,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -3839,7 +3877,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -3908,7 +3946,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -3916,7 +3954,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -3985,7 +4023,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -3993,7 +4031,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -4062,7 +4100,7 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
@@ -4070,7 +4108,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/Blocks/cloud.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
