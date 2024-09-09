@@ -47,7 +47,7 @@ void ObjectManager::Initialize() {
 #endif // _DEBUG
 
 	CollisionManager::Initialize();
-	instance_->obbManager_ = CollisionManager::GetInstance();
+	instance_->collisionManager_ = CollisionManager::GetInstance();
 	CloudManager::Initialize();
 	instance_->cloudManager_ = CloudManager::GetInstance();
 
@@ -161,7 +161,7 @@ void ObjectManager::Update() {
 	TransformCompUpdater::GetInstance()->UpdateMatrix();
 
 	// 当たり判定
-	obbManager_->Collision();
+	collisionManager_->Collision();
 
 	TransformCompUpdater::GetInstance()->UpdateMatrix();
 
@@ -326,17 +326,17 @@ void ObjectManager::Debug() {
 			}
 
 			objectTags_.clear();
-			obbManager_->Clear();
+			collisionManager_->Clear();
 
 			for (auto& i : cameraObject->GetTags()) {
 				objectTags_.insert(std::make_pair(i, true));
 			}
 			
 			if (cameraObject->HasComp<ObbComp>()) {
-				obbManager_->Set(cameraObject->GetComp<ObbComp>());
+				collisionManager_->Set(cameraObject->GetComp<ObbComp>());
 			}
 			if (cameraObject->HasComp<ObbPushComp>()) {
-				obbManager_->Set(cameraObject->GetComp<ObbPushComp>());
+				collisionManager_->Set(cameraObject->GetComp<ObbPushComp>());
 			}
 		}
 	}
@@ -473,7 +473,7 @@ void ObjectManager::SetPlayerCompToEyeComp() {
 void ObjectManager::Load(const std::string& jsonFileName) {
 	objects_.clear();
 	objectTags_.clear();
-	obbManager_->Clear();
+	collisionManager_->Clear();
 	cloudManager_->Clear();
 	cameraComp_ = nullptr;
 
