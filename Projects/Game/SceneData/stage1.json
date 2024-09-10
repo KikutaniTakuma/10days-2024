@@ -78,6 +78,191 @@
         {
             "Comps": [
                 {
+                    "CompName": "class EyeComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        100.0,
+                        100.0,
+                        100.0
+                    ],
+                    "translate": [
+                        320.0,
+                        -192.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class EyeStateComp",
+                    "aimFixedTime": 1.0,
+                    "aimeTime": 1.5,
+                    "fireTime": 0.5
+                },
+                {
+                    "CollisionTags": [
+                        "class CloudComp"
+                    ],
+                    "CompName": "class LineCollisionComp"
+                },
+                {
+                    "CompName": "class LineComp",
+                    "end": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "start": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "CompName": "class LineRenderDataComp",
+                    "color": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "isDepth": true
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": false,
+                    "spdT": 0.5,
+                    "type": "InOutSine"
+                },
+                {
+                    "Children": [
+                        {
+                            "Comps": [
+                                {
+                                    "BlendType": "kNormal",
+                                    "CompName": "class SpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/Textures/enemy/enemy_eye_up.png",
+                                    "offsetType": "kMiddle"
+                                },
+                                {
+                                    "CompName": "class SpriteRenderComp"
+                                },
+                                {
+                                    "CompName": "class TransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "translate": [
+                                        0.0,
+                                        0.0,
+                                        -0.10000000149011612
+                                    ]
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "BlendType": "kNormal",
+                                    "CompName": "class SpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/EngineResources/white2x2.png",
+                                    "offsetType": "kMiddle"
+                                },
+                                {
+                                    "CompName": "class SpriteRenderComp"
+                                },
+                                {
+                                    "CompName": "class TransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.0,
+                                        10.0,
+                                        10.0
+                                    ],
+                                    "translate": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "CompName": "class LineConvertTransformComp"
+                                },
+                                {
+                                    "CompName": "class LineComp",
+                                    "end": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "start": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ]
+                                }
+                            ],
+                            "type": "Object"
+                        }
+                    ],
+                    "CompName": "class ChildrenObjectComp"
+                },
+                {
+                    "CompName": "class LineRenderComp"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/enemy/enemy_eye_down.png",
+                    "offsetType": "kMiddle"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
                     "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
@@ -2388,191 +2573,6 @@
         {
             "Comps": [
                 {
-                    "CompName": "class EyeComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        100.0,
-                        100.0,
-                        100.0
-                    ],
-                    "translate": [
-                        256.0,
-                        -320.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class EyeStateComp",
-                    "aimFixedTime": 1.0,
-                    "aimeTime": 1.5,
-                    "fireTime": 0.5
-                },
-                {
-                    "CollisionTags": [
-                        "class CloudComp"
-                    ],
-                    "CompName": "class LineCollisionComp"
-                },
-                {
-                    "CompName": "class LineComp",
-                    "end": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "start": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ]
-                },
-                {
-                    "CompName": "class LineRenderDataComp",
-                    "color": [
-                        1.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "isDepth": true
-                },
-                {
-                    "CompName": "class EaseingComp",
-                    "isLoop": false,
-                    "spdT": 0.5,
-                    "type": "InOutSine"
-                },
-                {
-                    "Children": [
-                        {
-                            "Comps": [
-                                {
-                                    "BlendType": "kNormal",
-                                    "CompName": "class SpriteRenderDataComp",
-                                    "color": [
-                                        1.0,
-                                        1.0,
-                                        1.0,
-                                        1.0
-                                    ],
-                                    "fileName": "./Resources/Textures/enemy/enemy_eye_up.png",
-                                    "offsetType": "kMiddle"
-                                },
-                                {
-                                    "CompName": "class SpriteRenderComp"
-                                },
-                                {
-                                    "CompName": "class TransformComp",
-                                    "rotate": [
-                                        0.0,
-                                        0.0,
-                                        0.0,
-                                        1.0
-                                    ],
-                                    "scale": [
-                                        1.0,
-                                        1.0,
-                                        1.0
-                                    ],
-                                    "translate": [
-                                        0.0,
-                                        0.0,
-                                        -0.10000000149011612
-                                    ]
-                                }
-                            ],
-                            "type": "Object"
-                        },
-                        {
-                            "Comps": [
-                                {
-                                    "BlendType": "kNormal",
-                                    "CompName": "class SpriteRenderDataComp",
-                                    "color": [
-                                        1.0,
-                                        0.0,
-                                        0.0,
-                                        1.0
-                                    ],
-                                    "fileName": "./Resources/EngineResources/white2x2.png",
-                                    "offsetType": "kMiddle"
-                                },
-                                {
-                                    "CompName": "class SpriteRenderComp"
-                                },
-                                {
-                                    "CompName": "class TransformComp",
-                                    "rotate": [
-                                        0.0,
-                                        0.0,
-                                        0.0,
-                                        1.0
-                                    ],
-                                    "scale": [
-                                        0.0,
-                                        10.0,
-                                        10.0
-                                    ],
-                                    "translate": [
-                                        0.0,
-                                        0.0,
-                                        0.0
-                                    ]
-                                },
-                                {
-                                    "CompName": "class LineConvertTransformComp"
-                                },
-                                {
-                                    "CompName": "class LineComp",
-                                    "end": [
-                                        0.0,
-                                        0.0,
-                                        0.0
-                                    ],
-                                    "start": [
-                                        0.0,
-                                        0.0,
-                                        0.0
-                                    ]
-                                }
-                            ],
-                            "type": "Object"
-                        }
-                    ],
-                    "CompName": "class ChildrenObjectComp"
-                },
-                {
-                    "CompName": "class LineRenderComp"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/enemy/enemy_eye_down.png",
-                    "offsetType": "kMiddle"
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
                     "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
@@ -2735,7 +2735,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/gimmick/goal_close1.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -2889,7 +2889,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "fileName": "./Resources/Textures/gimmick/goal_close1.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -3020,7 +3020,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/gimmick/coin.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -3174,7 +3174,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "fileName": "./Resources/Textures/gimmick/coin.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -7423,83 +7423,6 @@
                         32.0
                     ],
                     "translate": [
-                        704.0,
-                        -736.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collisiionTags": [],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
-                    ]
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        22,
-                        23
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
                         448.0,
                         -512.0,
                         1.0
@@ -7690,6 +7613,83 @@
                     "mass": [
                         16,
                         16
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        704.0,
+                        -736.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        22,
+                        23
                     ],
                     "offset": [
                         0.0,
