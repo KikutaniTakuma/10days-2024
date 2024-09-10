@@ -417,7 +417,7 @@ bool ObbComp::IsCollision(const Vector3& start, const Vector3& end)
 	float tMin = std::max(std::max(tNearX, tNearY), tNearZ);
 	float tMax = std::min(std::min(tFarX, tFarY), tFarZ);
 
-	if (tMin <= tMax and (Lamb::Between(tMin, 0.0f, 1.0f) or Lamb::Between(tMax, 0.0f, 1.0f))) {
+	if (tMin <= tMax and (Lamb::Between(tMin, 0.0f, 1.0f) and Lamb::Between(tMax, 0.0f, 1.0f))) {
 		isCollision_ = true;
 #ifdef _DEBUG
 		color_ = 0xff0000ff;
