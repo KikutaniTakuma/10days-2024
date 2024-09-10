@@ -10,7 +10,7 @@ void LineConvertTransformComp::Init() {
 
 void LineConvertTransformComp::LastUpdate() {
 	transformComp_->translate = Vector3::Lerp(lineComp_->start, lineComp_->end, 0.5f);
-	transformComp_->scale = { (lineComp_->start - lineComp_->end).Length(), 10.0f, 10.0f };
+	transformComp_->scale = { (lineComp_->start - lineComp_->end).Length(), transformComp_->scale.y, transformComp_->scale.z };
 
 	Vector3 to = (lineComp_->end - lineComp_->start).Normalize();
 #ifdef _DEBUG
