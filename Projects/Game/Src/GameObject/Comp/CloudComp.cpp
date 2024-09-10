@@ -7,7 +7,6 @@
 #include "SpriteRenderDataComp.h"
 #include "../Manager/CloudManager.h"
 #include "Aabb2DComp.h"
-#include "SpriteAnimatorComp.h"
 
 void CloudComp::Init() {
 
@@ -21,7 +20,7 @@ void CloudComp::Init() {
 	flagComp_->SetIsActive(true);
 	mass_ = object_.AddComp<Mass2DComp>();
 	aabbCollision_ = object_.AddComp<Aabb2DComp>();
-	animation_ = object_.AddComp<SpriteAnimatorComp>();
+	spriteRenderDataComp_->uvTransform.scale.x = 0.25f;
 
 }
 

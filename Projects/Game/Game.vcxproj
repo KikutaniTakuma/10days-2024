@@ -176,6 +176,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Src\GameObject\Comp\SpriteAnimatorComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\SpriteRenderComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\SpriteRenderDataComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\TextureHandlesComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\TransformComp.cpp" />
     <ClCompile Include="Src\GameObject\Manager\Aabb2DManager.cpp" />
     <ClCompile Include="Src\GameObject\Manager\CollisionManager.cpp" />
@@ -245,6 +246,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="Src\GameObject\Comp\SpriteAnimatorComp.h" />
     <ClInclude Include="Src\GameObject\Comp\SpriteRenderComp.h" />
     <ClInclude Include="Src\GameObject\Comp\SpriteRenderDataComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\TextureHandlesComp.h" />
     <ClInclude Include="Src\GameObject\Comp\TransformComp.h" />
     <ClInclude Include="Src\GameObject\Manager\Aabb2DManager.h" />
     <ClInclude Include="Src\GameObject\Manager\CollisionManager.h" />

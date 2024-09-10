@@ -21,7 +21,7 @@
                     "translate": [
                         624.0,
                         -344.0,
-                        0.0
+                        -10.0
                     ]
                 },
                 {
@@ -4270,9 +4270,9 @@
                         1.0
                     ],
                     "scale": [
-                        24.0,
-                        24.0,
-                        24.0
+                        48.0,
+                        48.0,
+                        48.0
                     ],
                     "translate": [
                         224.0,
@@ -4293,14 +4293,22 @@
                     ],
                     "collisiionTags": [],
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        0.5,
+                        0.5,
+                        0.5
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
                     "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
                 },
                 {
                     "CompName": "class InputMoveComp",
@@ -4336,6 +4344,17 @@
                         16.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class SpriteAnimatorComp",
+                    "animationNumber": 6,
+                    "duration": 0.16660000383853912,
+                    "isLoop": true,
+                    "startPos": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 }
             ]
         },

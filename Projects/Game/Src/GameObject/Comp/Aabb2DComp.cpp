@@ -106,6 +106,7 @@ void Aabb2DComp::Save(nlohmann::json& json) {
 	for (auto& i : collisionTags_) {
 		json["collsiionTags"].push_back(i);
 	}
+	json["scale"] = nlohmann::json::array({ scale_.x, scale_.y, scale_.z });
 }
 
 void Aabb2DComp::Load([[maybe_unused]] nlohmann::json& json) {
@@ -114,5 +115,10 @@ void Aabb2DComp::Load([[maybe_unused]] nlohmann::json& json) {
 	for (size_t i = 0; i < json["collsiionTags"].size(); i++) {
 		collisionTags_.insert(json["collsiionTags"][i].get<std::string>());
 	}
+
+	for (size_t i = 0; i < json["scale"].size(); i++) {
+		scale_[i] = json["scale"][i].get<float32_t>();
+	}
+
 }
 

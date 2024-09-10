@@ -41,6 +41,8 @@ private:
 
 	Lamb::SafePtr<class SpriteRenderComp> sprite_;
 
+	Lamb::SafePtr<class SpriteRenderDataComp> spriteRenderData_;
+
 	Lamb::SafePtr <class InputMoveComp> move_;
 
 	Lamb::SafePtr<class FallComp> fall_;
