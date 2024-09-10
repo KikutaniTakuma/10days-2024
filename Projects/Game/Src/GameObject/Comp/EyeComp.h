@@ -40,6 +40,8 @@ private:
 	Lamb::SafePtr<class EyeStateComp> eyeStateComp_;
 
 	Lamb::SafePtr<class EaseingComp> easeingComp_;
+
+	Vector3 aimDirection_;
 	
 
 	bool isEasesingStart_ = false;
