@@ -21,6 +21,7 @@
 #include "Comp/SpriteAnimatorComp.h"
 #include "Comp/TransformComp.h"
 #include "Comp/CloudComp.h"
+#include "Comp/CloudRenderComp.h"
 #include "Comp/FlagComp.h"
 #include "Comp/PlayerComp.h"
 #include "Comp/CountComp.h"
@@ -154,6 +155,7 @@ bool Object::DebugAddComp() {
 		DebugAdd<TransformComp>();
 		DebugAdd<FlagComp>();
 		DebugAdd<CloudComp>();
+		DebugAdd<CloudRenderComp>();
 		DebugAdd<PlayerComp>();
 		DebugAdd<CountComp>();
 		DebugAdd<Direction2DComp>();
@@ -234,6 +236,7 @@ void Object::AddComps(nlohmann::json& compData)
 	AddAndLoadComp<TransformComp>(compName, compData);
 	AddAndLoadComp<FlagComp>(compName, compData);
 	AddAndLoadComp<CloudComp>(compName, compData);
+	AddAndLoadComp<CloudRenderComp>(compName, compData);
 	AddAndLoadComp<PlayerComp>(compName, compData);
 	AddAndLoadComp<LineComp>(compName, compData);
 	AddAndLoadComp<LineRenderComp>(compName, compData);
