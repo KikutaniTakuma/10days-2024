@@ -17,6 +17,7 @@
 #include "JumpComp.h"
 #include "Aabb2DComp.h"
 #include "InvisibleComp.h"
+#include "SpriteAnimatorComp.h"
 
 void PlayerComp::Init() {
 
@@ -36,6 +37,7 @@ void PlayerComp::Init() {
 	aabbCollision_ = object_.AddComp<Aabb2DComp>();
 	prePositions_ = std::make_unique<std::array<Vector3, 4>>();
 	invisible_ = object_.AddComp<InvisibleComp>();
+	animation_ = object_.AddComp<SpriteAnimatorComp>();
 
 }
 
