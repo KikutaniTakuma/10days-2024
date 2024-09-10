@@ -92,8 +92,8 @@ void CollisionManager::MakeCollisionPair() {
 			if (j == i) {
 				continue;
 			}
-			for (auto& tag : j->get()->GetCollisionTagList()) {
-				if (i->get()->getObject().HasTag(tag)) {
+			for (auto& tag : i->get()->GetCollisionTagList()) {
+				if (j->get()->getObject().HasTag(tag)) {
 					collisionPairsObbPushObbPush_.push_back(std::make_pair(*i, *j));
 				}
 			}
@@ -105,8 +105,8 @@ void CollisionManager::MakeCollisionPair() {
 			if (j == i) {
 				continue;
 			}
-			for (auto& tag : j->get()->GetCollisionTagList()) {
-				if (i->get()->getObject().HasTag(tag)) {
+			for (auto& tag : i->get()->GetCollisionTagList()) {
+				if (j->get()->getObject().HasTag(tag)) {
 					collisionPairsObbObb_.push_back(std::make_pair(*i, *j));
 				}
 			}
