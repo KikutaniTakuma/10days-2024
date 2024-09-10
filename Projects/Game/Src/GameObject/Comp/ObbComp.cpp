@@ -435,21 +435,8 @@ bool ObbComp::IsCollision(const Vector3& start, const Vector3& end)
 	return false;
 }
 
-bool ObbComp::CollisionHasTag(ObbComp* const other) {
-	bool hasTag = false;
-	for (auto& i : collisionTags_) {
-		if (other->getObject().HasTag(i)) {
-			currentCollisionTag_ = i;
-			hasTag = true;
-			break;
-		}
-	}
-
-	if (hasTag) {
-		return IsCollision(other);
-	}
-
-	return false;
+bool ObbComp::Collision(ObbComp* const other) {
+	return IsCollision(other);
 }
 
 

@@ -33,22 +33,8 @@ void LineCollisionComp::FirstUpdate()
 	mostNearCollisionObjectPtr_ = nullptr;
 }
 
-bool LineCollisionComp::IsCollisionHasTag(ObbComp* obbComp)
+bool LineCollisionComp::Collision(ObbComp* obbComp)
 {
-	bool hasTag = false;
-	for (auto& i : collisionTags_) {
-		if (obbComp->getObject().HasTag(i)) {
-			currentCollisionTag_ = i;
-			hasTag = true;
-			break;
-		}
-	}
-
-	// タグをもっていなかったら当たり判定をしない
-	if (not hasTag) {
-		return false;
-	}
-
 	// 毎フレームリセットする
 	if (not isCollision_.OnEnter()) {
 		isCollision_ = false;

@@ -61,14 +61,42 @@ void CollisionManager::Erase(const Lamb::SafePtr<LineCollisionComp>& lineCollisi
 }
 
 void CollisionManager::Collision() {
+	for (auto& i : collisionPairsObbObb_) {
+		i.first->Collision(i.second.get());
+	}
+	for (auto& i : collisionPairsObbPushObbPush_) {
+		i.first->Collision(i.second.get());
+	}
+	for (auto& i : collisionPairsObbLine_) {
+		i.first->Collision(i.second.get());
+	}
+}
+
+void CollisionManager::Clear()
+{
+	obbComps_.clear();
+	obbPushComps_.clear();
+}
+
+void CollisionManager::MakeCollisionPair() {
+	collisionPairsObbObb_.clear();
+	collisionPairsObbObb_.reserve(obbComps_.size());
+	collisionPairsObbPushObbPush_.clear();
+	collisionPairsObbPushObbPush_.reserve(obbPushComps_.size());
+	collisionPairsObbLine_.clear();
+	collisionPairsObbLine_.reserve(lineCollisionComps_.size());
+
 	// 当たり判定(押し出し)
 	for (auto i = obbPushComps_.begin(); i != obbPushComps_.end(); i++) {
 		for (auto j = obbPushComps_.begin(); j != obbPushComps_.end(); j++) {
 			if (j == i) {
 				continue;
 			}
-			// 当たり判定(押し出し)
-			(*i)->Collision((*j));
+			for (auto& tag : i->get()->GetCollisionTagList()) {
+				if (j->get()->getObject().HasTag(tag)) {
+					collisionPairsObbPushObbPush_.push_back(std::make_pair(*i, *j));
+				}
+			}
 		}
 	}
 	// 当たり判定
@@ -77,22 +105,22 @@ void CollisionManager::Collision() {
 			if (j == i) {
 				continue;
 			}
-			// 当たり判定(押し出さない)
-			(*i)->CollisionHasTag((*j).get());
+			for (auto& tag : i->get()->GetCollisionTagList()) {
+				if (j->get()->getObject().HasTag(tag)) {
+					collisionPairsObbObb_.push_back(std::make_pair(*i, *j));
+				}
+			}
 		}
 	}
 
 	// 当たり判定(線分)
 	for (auto i = lineCollisionComps_.begin(); i != lineCollisionComps_.end(); i++) {
 		for (auto j = obbComps_.begin(); j != obbComps_.end(); j++) {
-			// 当たり判定
-			(*i)->IsCollisionHasTag(j->get());
+			for (auto& tag : i->get()->GetCollisionTagList()) {
+				if (j->get()->getObject().HasTag(tag)) {
+					collisionPairsObbLine_.push_back(std::make_pair(*i, *j));
+				}
+			}
 		}
 	}
-}
-
-void CollisionManager::Clear()
-{
-	obbComps_.clear();
-	obbPushComps_.clear();
 }

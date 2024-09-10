@@ -12,20 +12,9 @@ void ObbPushComp::Finalize() {
 }
 
 void ObbPushComp::Collision(Lamb::SafePtr<ObbPushComp> other) {
-	bool isPush = false;
-
-	for (const auto& i : pushTags_) {
-		if (other->getObject().HasTag(i)) {
-			isPush = true;
-			break;
-		}
-	}
-
-	if (isPush) {
-		Vector3 pushvector;
-		if (obbComp_->IsCollision(&other->GetObbComp(), pushvector)) {
-			other->GetObbComp().GetTransformComp().translate += pushvector;
-		}
+	Vector3 pushvector;
+	if (obbComp_->IsCollision(&other->GetObbComp(), pushvector)) {
+		other->GetObbComp().GetTransformComp().translate += pushvector;
 	}
 }
 

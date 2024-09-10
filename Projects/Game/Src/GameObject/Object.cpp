@@ -18,6 +18,7 @@
 #include "Comp/SceneChangeComp.h"
 #include "Comp/SpriteRenderComp.h"
 #include "Comp/SpriteRenderDataComp.h"
+#include "Comp/SpriteAnimatorComp.h"
 #include "Comp/TransformComp.h"
 #include "Comp/CloudComp.h"
 #include "Comp/FlagComp.h"
@@ -100,12 +101,12 @@ bool Object::Debug([[maybe_unused]] const std::string& guiName) {
 		ImGui::Text("tags : ");
 		ImGui::BeginChild(ImGui::GetID((void*)0), { 0.0f, 50.0f }, ImGuiChildFlags_AlwaysAutoResize | ImGuiChildFlags_AutoResizeX, ImGuiWindowFlags_NoTitleBar);
 		for (auto& i : tags_) {
-			ImGui::Text("%s, ", i.c_str());
+			ImGui::Text("%s, ", i.second.c_str());
 		}
 		ImGui::EndChild();
 		if (ImGui::TreeNode("componets")) {
 			for (auto& i : components_) {
-				i.second->Debug(i.first);
+				i.second->Debug(tags_[i.first]);
 			}
 			ImGui::TreePop();
 		}
@@ -137,6 +138,7 @@ bool Object::DebugAddComp() {
 		DebugAdd<SceneChangeComp>();
 		DebugAdd<SpriteRenderComp>();
 		DebugAdd<SpriteRenderDataComp>();
+		DebugAdd<SpriteAnimatorComp>();
 		DebugAdd<TransformComp>();
 		DebugAdd<FlagComp>();
 		DebugAdd<CloudComp>();
@@ -213,6 +215,7 @@ void Object::AddComps(nlohmann::json& compData)
 	AddAndLoadComp<SceneChangeComp>(compName, compData);
 	AddAndLoadComp<SpriteRenderComp>(compName, compData);
 	AddAndLoadComp<SpriteRenderDataComp>(compName, compData);
+	AddAndLoadComp<SpriteAnimatorComp>(compName, compData);
 	AddAndLoadComp<TransformComp>(compName, compData);
 	AddAndLoadComp<FlagComp>(compName, compData);
 	AddAndLoadComp<CloudComp>(compName, compData);
