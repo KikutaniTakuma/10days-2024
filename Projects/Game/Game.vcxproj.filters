@@ -197,6 +197,9 @@
     <ClCompile Include="Src\GameObject\Comp\BgmComp.cpp">
       <Filter>GameObject\Comp</Filter>
     </ClCompile>
+    <ClCompile Include="Src\GameObject\Comp\CloudRenderComp.cpp">
+      <Filter>GameObject\Comp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="GlobalVariables">
@@ -457,6 +460,9 @@
       <Filter>GameObject\Comp</Filter>
     </ClInclude>
     <ClInclude Include="Src\GameObject\Comp\BgmComp.h">
+      <Filter>GameObject\Comp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Comp\CloudRenderComp.h">
       <Filter>GameObject\Comp</Filter>
     </ClInclude>
   </ItemGroup>
