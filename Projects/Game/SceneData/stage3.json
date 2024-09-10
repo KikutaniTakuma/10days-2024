@@ -1,119 +1,10 @@
 {
-    "RederingSetting": {
-        "bloom": {
-            "luminanceThreshold": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "x": 8,
-            "y": 8
-        },
-        "hsv": [
-            0.0,
-            0.0,
-            1.0
-        ],
-        "isDirectionLight": true,
-        "lightRotate": [
-            0.0,
-            0.0,
-            0.0
-        ],
-        "outline": 0.0,
-        "skybox": {
-            "isDraw": true,
-            "scale": [
-                500.0,
-                500.0,
-                500.0
-            ]
-        }
-    },
     "objects": [
         {
             "Comps": [
                 {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
+                    "CompName": "class CameraComp"
                 },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
-                        768.0,
-                        -736.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        24,
-                        23
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collsiionTags": [],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
-                    ]
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
                 {
                     "CompName": "class TransformComp",
                     "rotate": [
@@ -136,12 +27,9 @@
                 {
                     "CompName": "class Camera2DComp",
                     "farClip": 1000.0,
-                    "height": 720.0,
+                    "height": 720,
                     "nearClip": 0.10000000149011612,
-                    "width": 1280.0
-                },
-                {
-                    "CompName": "class CameraComp"
+                    "width": 1280
                 }
             ],
             "type": "Object"
@@ -181,6 +69,59 @@
                         -344.0,
                         10.0
                     ]
+                }
+            ]
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/coin.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        448.0,
+                        -192.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class CollectionComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        14,
+                        6
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -225,32 +166,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        23,
-                        6
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -262,6 +184,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        23,
+                        6
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -306,32 +243,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        24,
-                        6
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -343,6 +261,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        24,
+                        6
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -387,32 +320,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        25,
-                        6
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -424,6 +338,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        25,
+                        6
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -468,32 +397,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        12,
-                        7
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -505,6 +415,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        12,
+                        7
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -549,32 +474,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        13,
-                        7
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -586,6 +492,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        13,
+                        7
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -630,6 +551,29 @@
                     "CompName": "class CloudComp"
                 },
                 {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
                     "CompName": "class Mass2DComp",
                     "mass": [
                         14,
@@ -640,114 +584,6 @@
                         0.0
                     ],
                     "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collsiionTags": [],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
-                    ]
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
-                        704.0,
-                        -224.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        22,
-                        7
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collsiionTags": [],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
-                    ]
                 }
             ],
             "type": "Object"
@@ -792,32 +628,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        15,
-                        7
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -829,6 +646,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        15,
+                        7
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -873,6 +705,29 @@
                     "CompName": "class CloudComp"
                 },
                 {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
                     "CompName": "class Mass2DComp",
                     "mass": [
                         16,
@@ -883,114 +738,6 @@
                         0.0
                     ],
                     "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collsiionTags": [],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
-                    ]
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
-                        640.0,
-                        -480.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        20,
-                        15
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collsiionTags": [],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
-                    ]
                 }
             ],
             "type": "Object"
@@ -1035,32 +782,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        20,
-                        7
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -1072,6 +800,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        20,
+                        7
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -1116,32 +859,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        21,
-                        7
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -1153,6 +877,98 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        21,
+                        7
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        704.0,
+                        -224.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        22,
+                        7
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -1197,32 +1013,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        26,
-                        7
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -1234,6 +1031,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        26,
+                        7
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -1278,32 +1090,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        27,
-                        7
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -1315,6 +1108,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        27,
+                        7
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -1359,32 +1167,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        28,
-                        7
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -1396,6 +1185,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        28,
+                        7
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -1440,32 +1244,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        29,
-                        7
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -1477,6 +1262,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        29,
+                        7
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -1521,32 +1321,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        11,
-                        9
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -1558,6 +1339,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        11,
+                        9
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -1573,7 +1369,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "fileName": "./Resources/Textures/gimmick/coin.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -1593,52 +1389,25 @@
                         32.0
                     ],
                     "translate": [
-                        288.0,
-                        -480.0,
+                        768.0,
+                        -288.0,
                         1.0
                     ]
                 },
                 {
-                    "CompName": "class CloudComp"
+                    "CompName": "class CollectionComp"
                 },
                 {
                     "CompName": "class Mass2DComp",
                     "mass": [
-                        9,
-                        15
+                        24,
+                        9
                     ],
                     "offset": [
                         0.0,
                         0.0
                     ],
                     "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collsiionTags": [],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
-                    ]
                 }
             ],
             "type": "Object"
@@ -1683,32 +1452,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        10,
-                        10
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -1720,6 +1470,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        10,
+                        10
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -1764,6 +1529,29 @@
                     "CompName": "class CloudComp"
                 },
                 {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
                     "CompName": "class Mass2DComp",
                     "mass": [
                         22,
@@ -1774,114 +1562,6 @@
                         0.0
                     ],
                     "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collsiionTags": [],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
-                    ]
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
-                        320.0,
-                        -416.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        10,
-                        13
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collsiionTags": [],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
-                    ]
                 }
             ],
             "type": "Object"
@@ -1926,32 +1606,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        24,
-                        10
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -1963,6 +1624,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        24,
+                        10
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -2007,6 +1683,29 @@
                     "CompName": "class CloudComp"
                 },
                 {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
                     "CompName": "class Mass2DComp",
                     "mass": [
                         26,
@@ -2017,114 +1716,6 @@
                         0.0
                     ],
                     "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collsiionTags": [],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
-                    ]
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
-                        704.0,
-                        -448.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        22,
-                        14
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collsiionTags": [],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
-                    ]
                 }
             ],
             "type": "Object"
@@ -2169,32 +1760,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        30,
-                        10
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -2206,6 +1778,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        30,
+                        10
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -2250,32 +1837,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        31,
-                        10
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -2287,6 +1855,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        31,
+                        10
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -2331,32 +1914,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        32,
-                        10
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -2368,6 +1932,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        32,
+                        10
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -2412,32 +1991,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        33,
-                        10
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -2449,6 +2009,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        33,
+                        10
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -2493,6 +2068,29 @@
                     "CompName": "class CloudComp"
                 },
                 {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
                     "CompName": "class Mass2DComp",
                     "mass": [
                         34,
@@ -2503,114 +2101,6 @@
                         0.0
                     ],
                     "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collsiionTags": [],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
-                    ]
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
-                        704.0,
-                        -480.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        22,
-                        15
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collsiionTags": [],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
-                    ]
                 }
             ],
             "type": "Object"
@@ -2655,6 +2145,29 @@
                     "CompName": "class CloudComp"
                 },
                 {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
                     "CompName": "class Mass2DComp",
                     "mass": [
                         35,
@@ -2665,114 +2178,6 @@
                         0.0
                     ],
                     "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collsiionTags": [],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
-                    ]
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
-                        1184.0,
-                        -480.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        37,
-                        15
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collsiionTags": [],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
-                    ]
                 }
             ],
             "type": "Object"
@@ -2817,32 +2222,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        9,
-                        11
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -2854,6 +2240,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        9,
+                        11
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -2898,32 +2299,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        12,
-                        11
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -2935,6 +2317,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        12,
+                        11
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -2979,32 +2376,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        13,
-                        11
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -3016,6 +2394,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        13,
+                        11
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -3060,6 +2453,29 @@
                     "CompName": "class CloudComp"
                 },
                 {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
                     "CompName": "class Mass2DComp",
                     "mass": [
                         14,
@@ -3070,114 +2486,6 @@
                         0.0
                     ],
                     "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collsiionTags": [],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
-                    ]
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
-                        224.0,
-                        -512.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        7,
-                        16
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collsiionTags": [],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
-                    ]
                 }
             ],
             "type": "Object"
@@ -3222,32 +2530,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        15,
-                        11
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -3259,6 +2548,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        15,
+                        11
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -3303,32 +2607,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        30,
-                        11
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -3340,6 +2625,75 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        30,
+                        11
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/coin.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        224.0,
+                        -384.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class CollectionComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        7,
+                        12
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -3384,32 +2738,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        8,
-                        12
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -3421,6 +2756,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        8,
+                        12
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -3465,32 +2815,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        11,
-                        12
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -3502,6 +2833,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        11,
+                        12
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -3546,32 +2892,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        22,
-                        12
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -3583,6 +2910,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        22,
+                        12
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -3627,6 +2969,29 @@
                     "CompName": "class CloudComp"
                 },
                 {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
                     "CompName": "class Mass2DComp",
                     "mass": [
                         24,
@@ -3637,195 +3002,6 @@
                         0.0
                     ],
                     "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collsiionTags": [],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
-                    ]
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
-                        256.0,
-                        -512.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        8,
-                        16
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collsiionTags": [],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
-                    ]
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
-                        960.0,
-                        -480.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        30,
-                        15
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collsiionTags": [],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
-                    ]
                 }
             ],
             "type": "Object"
@@ -3870,32 +3046,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        26,
-                        12
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -3907,6 +3064,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        26,
+                        12
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -3951,32 +3123,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        30,
-                        12
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -3988,6 +3141,75 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        30,
+                        12
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/goal_close1.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        1056.0,
+                        -384.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class GoalComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        33,
+                        12
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -4032,32 +3254,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        7,
-                        13
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -4069,6 +3272,98 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        7,
+                        13
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        320.0,
+                        -416.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        10,
+                        13
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -4113,32 +3408,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        17,
-                        13
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -4150,6 +3426,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        17,
+                        13
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -4194,6 +3485,29 @@
                     "CompName": "class CloudComp"
                 },
                 {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
                     "CompName": "class Mass2DComp",
                     "mass": [
                         30,
@@ -4204,114 +3518,6 @@
                         0.0
                     ],
                     "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collsiionTags": [],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
-                    ]
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
-                        736.0,
-                        -480.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        23,
-                        15
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collsiionTags": [],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
-                    ]
                 }
             ],
             "type": "Object"
@@ -4356,32 +3562,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        32,
-                        13
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -4393,6 +3580,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        32,
+                        13
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -4437,32 +3639,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        33,
-                        13
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -4474,6 +3657,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        33,
+                        13
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -4518,32 +3716,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        34,
-                        13
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -4555,6 +3734,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        34,
+                        13
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -4599,32 +3793,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        37,
-                        13
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -4636,6 +3811,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        37,
+                        13
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -4680,32 +3870,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        38,
-                        13
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -4717,6 +3888,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        38,
+                        13
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -4761,32 +3947,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        9,
-                        14
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -4798,6 +3965,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        9,
+                        14
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -4842,32 +4024,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        10,
-                        14
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -4879,6 +4042,98 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        10,
+                        14
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        704.0,
+                        -448.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        22,
+                        14
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -4923,32 +4178,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        24,
-                        14
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -4960,6 +4196,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        24,
+                        14
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -5004,32 +4255,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        26,
-                        14
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -5041,6 +4273,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        26,
+                        14
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -5085,32 +4332,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        30,
-                        14
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -5122,6 +4350,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        30,
+                        14
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -5166,32 +4409,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        37,
-                        14
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -5203,6 +4427,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        37,
+                        14
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -5247,32 +4486,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        38,
-                        14
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -5284,6 +4504,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        38,
+                        14
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -5328,32 +4563,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        39,
-                        14
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -5365,9 +4581,122 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        39,
+                        14
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "CompName": "class PlayerComp"
+                },
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/player/player_stop.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        24.0,
+                        24.0,
+                        24.0
+                    ],
+                    "translate": [
+                        224.0,
+                        -480.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class FallComp",
+                    "gravity": -9.800000190734863
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class InputMoveComp",
+                    "speed": 1.0
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Direction2DComp"
+                },
+                {
+                    "CompName": "class CsvDataComp",
+                    "fileName": "Resources/Maps/stage3.csv"
+                },
+                {
+                    "CompName": "class EatCloudComp"
+                },
+                {
+                    "CompName": "class RemoveCloudComp"
+                },
+                {
+                    "CompName": "class CountComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        7,
+                        15
+                    ],
+                    "offset": [
+                        16.0,
+                        16.0
+                    ],
+                    "size": 32
+                }
+            ]
         },
         {
             "Comps": [
@@ -5400,7 +4729,7 @@
                         32.0
                     ],
                     "translate": [
-                        1248.0,
+                        288.0,
                         -480.0,
                         1.0
                     ]
@@ -5409,32 +4738,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        39,
-                        15
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -5446,115 +4756,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "CompName": "class PlayerComp"
-                },
-                {
-                    "CompName": "class FallComp",
-                    "gravity": -9.800000190734863
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        24.0,
-                        24.0,
-                        24.0
-                    ],
-                    "translate": [
-                        252.0,
-                        -484.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class Direction2DComp"
-                },
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/player/player_stop.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collsiionTags": [],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": []
-                },
-                {
-                    "CompName": "class InputMoveComp",
-                    "speed": 1.0
                 },
                 {
                     "CompName": "class FlagComp"
                 },
                 {
-                    "CompName": "class CsvDataComp",
-                    "fileName": "Resources/Maps/stage3.csv"
-                },
-                {
-                    "CompName": "class EatCloudComp"
-                },
-                {
                     "CompName": "class Mass2DComp",
                     "mass": [
-                        8,
+                        9,
                         15
                     ],
                     "offset": [
-                        16.0,
-                        16.0
+                        0.0,
+                        0.0
                     ],
                     "size": 32
-                },
-                {
-                    "CompName": "class CountComp"
-                },
-                {
-                    "CompName": "class RemoveCloudComp"
-                },
-                {
-                    "CompName": "class JumpComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
-                    "CompName": "class InvisibleComp"
                 }
             ],
             "type": "Object"
@@ -5599,32 +4815,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        10,
-                        15
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -5636,6 +4833,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        10,
+                        15
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -5680,32 +4892,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        19,
-                        15
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -5717,6 +4910,98 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        19,
+                        15
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        640.0,
+                        -480.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        20,
+                        15
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -5761,32 +5046,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        21,
-                        15
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -5798,6 +5064,175 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        21,
+                        15
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        704.0,
+                        -480.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        22,
+                        15
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        736.0,
+                        -480.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        23,
+                        15
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -5842,32 +5277,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        24,
-                        15
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -5879,6 +5295,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        24,
+                        15
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -5923,32 +5354,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        25,
-                        15
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -5960,6 +5372,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        25,
+                        15
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -6004,32 +5431,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        26,
-                        15
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -6041,6 +5449,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        26,
+                        15
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -6085,32 +5508,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        27,
-                        15
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -6122,6 +5526,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        27,
+                        15
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -6166,32 +5585,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        28,
-                        15
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -6203,6 +5603,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        28,
+                        15
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -6247,32 +5662,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        29,
-                        15
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -6284,6 +5680,98 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        29,
+                        15
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        960.0,
+                        -480.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        30,
+                        15
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -6328,32 +5816,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        36,
-                        15
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -6365,6 +5834,98 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        36,
+                        15
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        1184.0,
+                        -480.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        37,
+                        15
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -6409,32 +5970,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        38,
-                        15
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -6446,6 +5988,98 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        38,
+                        15
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        1248.0,
+                        -480.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        39,
+                        15
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -6490,32 +6124,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        6,
-                        16
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -6527,6 +6142,175 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        6,
+                        16
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        224.0,
+                        -512.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        7,
+                        16
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        256.0,
+                        -512.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        8,
+                        16
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -6571,32 +6355,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        9,
-                        16
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -6608,6 +6373,98 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        9,
+                        16
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        768.0,
+                        -736.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        24,
+                        23
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -6652,32 +6509,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        18,
-                        24
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -6689,6 +6527,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        18,
+                        24
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -6733,32 +6586,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        23,
-                        24
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -6770,6 +6604,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        23,
+                        24
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"
@@ -6814,32 +6663,13 @@
                     "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        24,
-                        24
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
-                },
-                {
                     "CompName": "class ObbComp",
                     "center": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "collsiionTags": [],
+                    "collisiionTags": [],
                     "scale": [
                         1.0,
                         1.0,
@@ -6851,6 +6681,21 @@
                     "pushTags": [
                         "class PlayerComp"
                     ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        24,
+                        24
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
                 }
             ],
             "type": "Object"

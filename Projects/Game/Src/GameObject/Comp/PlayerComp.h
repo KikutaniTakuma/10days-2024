@@ -67,6 +67,8 @@ private:
 
 	Lamb::SafePtr<class InvisibleComp> invisible_;
 
+	Lamb::SafePtr<class SpriteAnimatorComp> animation_;
+
 	Lamb::Flg onGround_;
 
 	std::unique_ptr<std::array<Vector3, 4>> prePositions_;

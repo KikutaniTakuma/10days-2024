@@ -20,7 +20,7 @@
 
 #include "../Comp/EyeComp.h"
 #include "../Comp/PlayerComp.h"
-
+#include "../Comp/GoalComp.h"
 
 std::unique_ptr<ObjectManager> ObjectManager::instance_;
 
@@ -378,7 +378,7 @@ void ObjectManager::Debug() {
 	if (isAddComp) {
 		// ゲーム固有処理
 		// Eyeの処理の別オブジェクトのPlayerCompが必要なのでここで設定する
-		IniEyeComp();
+		SetPlayerCompToOther();
 	}
 
 	ImGui::EndChild();
@@ -457,7 +457,7 @@ void ObjectManager::Save() {
 	}
 }
 
-void ObjectManager::IniEyeComp() {
+void ObjectManager::SetPlayerCompToOther() {
 	Lamb::SafePtr<PlayerComp> playerComp;
 	for (auto& i : objects_) {
 		if (i->HasComp<PlayerComp>()) {
@@ -471,6 +471,9 @@ void ObjectManager::IniEyeComp() {
 			Lamb::SafePtr eyeComp = i->GetComp<EyeComp>();
 			eyeComp->SetPlayerComp(playerComp.get());
 			eyeComp->SetBeamTransformComp();
+		}
+		if (i->HasComp<GoalComp>()) {
+			i->GetComp<GoalComp>()->SetPlayerComp(playerComp.get());
 		}
 	}
 }
@@ -511,7 +514,7 @@ void ObjectManager::Load(const std::string& jsonFileName) {
 
 	// ゲーム固有処理
 	// Eyeの処理の別オブジェクトのPlayerCompが必要なのでここで設定する
-	IniEyeComp();
+	SetPlayerCompToOther();
 
 
 	collisionManager_->MakeCollisionPair();

@@ -9,7 +9,7 @@ TestScene::TestScene():
 void TestScene::Load()
 {
 	objectManager_ = ObjectManager::GetInstance();
-	objectManager_->Load("./SceneData/editorTest.json");
+	objectManager_->Load("./SceneData/stage1.json");
 }
 
 void TestScene::Initialize() {

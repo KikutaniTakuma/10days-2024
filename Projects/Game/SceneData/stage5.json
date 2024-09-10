@@ -6423,18 +6423,7 @@
                     ]
                 },
                 {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collisiionTags": [],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
+                    "CompName": "class KeyComp"
                 },
                 {
                     "CompName": "class Mass2DComp",

@@ -54,7 +54,7 @@ private:
 
 	void Save();
 
-	void IniEyeComp();
+	void SetPlayerCompToOther();
 
 public:
 	void Load(const std::string& jsonFileName);

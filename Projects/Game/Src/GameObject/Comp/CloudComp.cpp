@@ -7,6 +7,7 @@
 #include "SpriteRenderDataComp.h"
 #include "../Manager/CloudManager.h"
 #include "Aabb2DComp.h"
+#include "SpriteAnimatorComp.h"
 
 void CloudComp::Init() {
 
@@ -14,12 +15,13 @@ void CloudComp::Init() {
 	transformComp_ = object_.AddComp<TransformComp>();
 	spriteRenderComp_ = object_.AddComp<SpriteRenderComp>();
 	spriteRenderDataComp_ = object_.AddComp<SpriteRenderDataComp>();
-	/*collision_ = object_.AddComp<ObbPushComp>();
-	collision_->SetPushTag("class PlayerComp");*/
+	collision_ = object_.AddComp<ObbPushComp>();
+	collision_->SetPushTag("class PlayerComp");
 	flagComp_ = object_.AddComp<FlagComp>();
 	flagComp_->SetIsActive(true);
 	mass_ = object_.AddComp<Mass2DComp>();
 	aabbCollision_ = object_.AddComp<Aabb2DComp>();
+	animation_ = object_.AddComp<SpriteAnimatorComp>();
 
 }
 
@@ -85,14 +87,14 @@ const Aabb2DComp& CloudComp::GetAabb2DComp() const
 	return *aabbCollision_;
 }
 
-//ObbPushComp& CloudComp::GetObbPushComp()
-//{
-//	return *collision_;
-//}
-//
-//const ObbPushComp& CloudComp::GetObbPushComp() const
-//{
-//	
-//	return *collision_;
-//
-//}
+ObbPushComp& CloudComp::GetObbPushComp()
+{
+	return *collision_;
+}
+
+const ObbPushComp& CloudComp::GetObbPushComp() const
+{
+	
+	return *collision_;
+
+}

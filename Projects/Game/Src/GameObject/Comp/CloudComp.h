@@ -1,6 +1,7 @@
 #pragma once
  #include "../Object.h"
 #include "Aabb2DComp.h"
+#include "ObbPushComp.h"
 
  class CloudComp : public IComp {
  public:
@@ -31,8 +32,8 @@
 	 void Save(nlohmann::json& json) override;
 	 void Load(nlohmann::json& json) override;
 
-	 /*ObbPushComp& GetObbPushComp();
-	 const ObbPushComp& GetObbPushComp() const;*/
+	 ObbPushComp& GetObbPushComp();
+	 const ObbPushComp& GetObbPushComp() const;
 
 	 Aabb2DComp& GetAabb2DComp();
 	 const Aabb2DComp& GetAabb2DComp() const;
@@ -45,12 +46,14 @@
 
 	 Lamb::SafePtr<class SpriteRenderDataComp> spriteRenderDataComp_;
 
-	 /*Lamb::SafePtr<class ObbPushComp> collision_;*/
+	 Lamb::SafePtr<class ObbPushComp> collision_;
 
 	 Lamb::SafePtr<class FlagComp> flagComp_;
 
 	 Lamb::SafePtr<class Mass2DComp> mass_;
 
 	 Lamb::SafePtr<class Aabb2DComp> aabbCollision_;
+
+	 Lamb::SafePtr<class SpriteAnimatorComp> animation_;
 
  };
