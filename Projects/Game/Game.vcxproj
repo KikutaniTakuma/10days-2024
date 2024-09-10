@@ -140,6 +140,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Src\GameObject\Comp\Camera3DComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\CameraComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\ChildrenObjectComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\CloudRenderComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\CollectionComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\CountComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\CsvDataComp.cpp" />
@@ -209,6 +210,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="Src\GameObject\Comp\Camera3DComp.h" />
     <ClInclude Include="Src\GameObject\Comp\CameraComp.h" />
     <ClInclude Include="Src\GameObject\Comp\ChildrenObjectComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\CloudRenderComp.h" />
     <ClInclude Include="Src\GameObject\Comp\CollectionComp.h" />
     <ClInclude Include="Src\GameObject\Comp\CountComp.h" />
     <ClInclude Include="Src\GameObject\Comp\CsvDataComp.h" />
