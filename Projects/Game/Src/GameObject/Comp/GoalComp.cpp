@@ -41,6 +41,11 @@ void GoalComp::SetPlayerComp(PlayerComp* playerComp)
 
 }
 
+const Lamb::Flg& GoalComp::GetIsGoal() const
+{
+	return isGoal_->GetIsActive();
+}
+
 void GoalComp::Save(nlohmann::json& json) {
 	SaveCompName(json);
 }

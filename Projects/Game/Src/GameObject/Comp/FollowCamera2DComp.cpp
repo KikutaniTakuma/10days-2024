@@ -1,6 +1,7 @@
 #include "FollowCamera2DComp.h"
 #include "Camera2DComp.h"
 #include "TransformComp.h"
+#include "PlayerComp.h"
 
 void FollowCamera2DComp::Init()
 {
@@ -10,6 +11,25 @@ void FollowCamera2DComp::Init()
 
 void FollowCamera2DComp::Move()
 {
+
+	if (target_) {
+
+		
+
+	}
+
+}
+
+void FollowCamera2DComp::SetPlayerComp(PlayerComp* playerComp)
+{
+
+	target_ = playerComp;
+	if (target_.empty()) {
+		return;
+	}
+
+
+
 }
 
 void FollowCamera2DComp::Save(nlohmann::json& json) {
