@@ -63,8 +63,8 @@
                         1.0
                     ],
                     "scale": [
-                        1280.0,
-                        720.0,
+                        12800.0,
+                        7200.0,
                         16.0
                     ],
                     "translate": [
@@ -74,6 +74,191 @@
                     ]
                 }
             ]
+        },
+        {
+            "Comps": [
+                {
+                    "CompName": "class EyeComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        100.0,
+                        100.0,
+                        100.0
+                    ],
+                    "translate": [
+                        320.0,
+                        -192.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class EyeStateComp",
+                    "aimFixedTime": 1.0,
+                    "aimeTime": 1.5,
+                    "fireTime": 0.5
+                },
+                {
+                    "CollisionTags": [
+                        "class CloudComp"
+                    ],
+                    "CompName": "class LineCollisionComp"
+                },
+                {
+                    "CompName": "class LineComp",
+                    "end": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "start": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "CompName": "class LineRenderDataComp",
+                    "color": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "isDepth": true
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": false,
+                    "spdT": 0.5,
+                    "type": "InOutSine"
+                },
+                {
+                    "Children": [
+                        {
+                            "Comps": [
+                                {
+                                    "BlendType": "kNormal",
+                                    "CompName": "class SpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/Textures/enemy/enemy_eye_up.png",
+                                    "offsetType": "kMiddle"
+                                },
+                                {
+                                    "CompName": "class SpriteRenderComp"
+                                },
+                                {
+                                    "CompName": "class TransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "translate": [
+                                        0.0,
+                                        0.0,
+                                        -0.10000000149011612
+                                    ]
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "BlendType": "kNormal",
+                                    "CompName": "class SpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/EngineResources/white2x2.png",
+                                    "offsetType": "kMiddle"
+                                },
+                                {
+                                    "CompName": "class SpriteRenderComp"
+                                },
+                                {
+                                    "CompName": "class TransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.0,
+                                        10.0,
+                                        10.0
+                                    ],
+                                    "translate": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "CompName": "class LineConvertTransformComp"
+                                },
+                                {
+                                    "CompName": "class LineComp",
+                                    "end": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "start": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ]
+                                }
+                            ],
+                            "type": "Object"
+                        }
+                    ],
+                    "CompName": "class ChildrenObjectComp"
+                },
+                {
+                    "CompName": "class LineRenderComp"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/enemy/enemy_eye_down.png",
+                    "offsetType": "kMiddle"
+                }
+            ],
+            "type": "Object"
         },
         {
             "Comps": [
@@ -148,6 +333,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -225,6 +413,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -356,6 +547,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -433,6 +627,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -510,6 +707,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -587,6 +787,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -664,6 +867,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -741,6 +947,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -818,6 +1027,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -895,6 +1107,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -972,6 +1187,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -1049,6 +1267,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -1126,6 +1347,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -1203,6 +1427,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -1334,6 +1561,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -1411,6 +1641,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -1488,6 +1721,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -1565,6 +1801,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -1642,6 +1881,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -1719,6 +1961,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -1796,6 +2041,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -1873,6 +2121,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -1950,6 +2201,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -2027,6 +2281,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -2158,6 +2415,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -2235,6 +2495,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -2312,6 +2575,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -2389,6 +2655,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -2466,6 +2735,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -2543,6 +2815,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -2620,6 +2895,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -2697,6 +2975,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -2774,6 +3055,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -2851,6 +3135,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -2928,6 +3215,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -3005,6 +3295,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -3082,6 +3375,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -3159,6 +3455,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -3236,6 +3535,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -3313,6 +3615,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -3390,6 +3695,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -3467,6 +3775,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -3544,6 +3855,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -3621,6 +3935,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -3698,6 +4015,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -3775,6 +4095,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -3852,6 +4175,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -3929,6 +4255,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -4006,6 +4335,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -4083,6 +4415,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -4160,6 +4495,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -4237,6 +4575,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -4431,6 +4772,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -4508,6 +4852,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -4585,6 +4932,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -4662,6 +5012,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -4739,6 +5092,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -4816,6 +5172,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -4893,6 +5252,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -5024,6 +5386,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -5101,6 +5466,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -5178,6 +5546,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -5255,6 +5626,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -5332,6 +5706,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -5409,6 +5786,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -5486,6 +5866,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -5563,6 +5946,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -5640,6 +6026,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -5717,6 +6106,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -5794,6 +6186,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -5871,6 +6266,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -5948,6 +6346,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -6025,6 +6426,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -6102,6 +6506,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -6179,6 +6586,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -6256,6 +6666,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -6333,6 +6746,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -6410,6 +6826,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -6487,6 +6906,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -6564,6 +6986,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -6641,6 +7066,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -6718,6 +7146,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -6795,6 +7226,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -6872,6 +7306,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -6949,6 +7386,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -7026,6 +7466,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -7103,6 +7546,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -7180,6 +7626,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -7257,6 +7706,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -7334,6 +7786,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -7411,6 +7866,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -7488,6 +7946,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
@@ -7565,6 +8026,9 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp"
                 }
             ],
             "type": "Object"
