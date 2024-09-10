@@ -10,3 +10,12 @@ void BgmComp::FirstUpdate() {
 		audioComp_->GetAudio().Start(audioComp_->volume, audioComp_->isLoop);
 	}
 }
+
+void BgmComp::Save(nlohmann::json& json)
+{
+	SaveCompName(json);
+}
+
+void BgmComp::Load([[maybe_unused]]nlohmann::json& json)
+{
+}
