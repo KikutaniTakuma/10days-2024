@@ -10,6 +10,8 @@ public:
 
 	static constexpr float kPlayerSize_ = 24.0f;
 
+	static constexpr float kPlayerHalfSize_ = 12.0f;
+
 public:
 
 	void Init() override;
@@ -62,6 +64,8 @@ private:
 	Lamb::SafePtr<class JumpComp> jump_;
 
 	Lamb::SafePtr<class Aabb2DComp> aabbCollision_;
+
+	Lamb::SafePtr<class InvisibleComp> invisible_;
 
 	Lamb::Flg onGround_;
 
