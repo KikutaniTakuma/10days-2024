@@ -130,6 +130,8 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Src\GameObject\Comp\Aabb2DComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\AudioComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\BgmComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\CloudComp.cpp" />
     <ClCompile Include="Src\Camera\Camera.cpp" />
     <ClCompile Include="Src\Editor\ParticleEditor\ParticleEditor.cpp" />
@@ -196,6 +198,8 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\GameObject\Comp\Aabb2DComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\AudioComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\BgmComp.h" />
     <ClInclude Include="Src\GameObject\Comp\CloudComp.h" />
     <ClInclude Include="Src\Camera\Camera.h" />
     <ClInclude Include="Src\Editor\ParticleEditor\ParticleEditor.h" />

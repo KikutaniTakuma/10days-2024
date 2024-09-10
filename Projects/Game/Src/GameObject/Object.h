@@ -98,6 +98,7 @@ public:
 	virtual void LastUpdate() override {}
 
 	virtual void Draw([[maybe_unused]] CameraComp*) {}
+	virtual void Draw() {}
 
 	virtual void Debug([[maybe_unused]]const std::string& guiName) {};
 
@@ -139,6 +140,7 @@ public:
 	virtual void LastUpdate() override;
 
 	virtual void Draw([[maybe_unused]] CameraComp* cameraComp) const;
+	virtual void Draw() const;
 
 	virtual bool Debug(const std::string& guiName);
 
