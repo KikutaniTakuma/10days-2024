@@ -75,7 +75,7 @@ void AudioComp::Debug(const std::string& guiName) {
 
 }
 
-Audio* AudioComp::GetAudio()
+Lamb::SafePtr<Audio> AudioComp::GetAudio()
 {
 	return audio_;
 }

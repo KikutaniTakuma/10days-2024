@@ -22,8 +22,7 @@ public:
 
 	void Debug(const std::string& guiName) override;
 
-	Audio* GetAudio();
-
+	Lamb::SafePtr<class Audio> GetAudio();
 private:
 	std::string fileName_;
 

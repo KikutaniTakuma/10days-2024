@@ -6,7 +6,7 @@ void BgmComp::Init() {
 }
 
 void BgmComp::FirstUpdate() {
-	if (audioComp_->GetAudio() and not audioComp_->GetAudio()->IsStart()) {
+	if (audioComp_->GetAudio().have() and not audioComp_->GetAudio()->IsStart()) {
 		audioComp_->GetAudio()->Start(audioComp_->volume, audioComp_->isLoop);
 	}
 }
