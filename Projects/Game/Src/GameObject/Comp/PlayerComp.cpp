@@ -18,11 +18,13 @@
 #include "Aabb2DComp.h"
 #include "InvisibleComp.h"
 #include "SpriteAnimatorComp.h"
+#include "SpriteRenderDataComp.h"
 
 void PlayerComp::Init() {
 
 	transform_ = object_.AddComp<TransformComp>();
 	sprite_ = object_.AddComp<SpriteRenderComp>();
+	spriteRenderData_ = object_.AddComp<SpriteRenderDataComp>();
 	move_ = object_.AddComp<InputMoveComp>();
 	fall_ = object_.AddComp<FallComp>();
 	collision_ = object_.AddComp<ObbPushComp>();
@@ -43,9 +45,9 @@ void PlayerComp::Init() {
 
 void PlayerComp::FirstUpdate() {
 
-	transform_->scale = { 48.0f,48.0f,48.0f };
+	/*transform_->scale = { 48.0f,48.0f,48.0f };
 	collision_->GetObbComp().scale = { 0.5f,0.5f,0.5f };
-	aabbCollision_->scale_ = { 0.5f,0.5f,0.5f };
+	aabbCollision_->scale_ = { 0.5f,0.5f,0.5f };*/
 
 }
 
@@ -152,6 +154,13 @@ void PlayerComp::Move() {
 
 #endif // _DEBUG
 
+	//向きによってuvのスケールを変更
+	if (direction_->IsLeft()) {
+		spriteRenderData_->uvTransform.scale.x = -1.0f;
+	}
+	else {
+		spriteRenderData_->uvTransform.scale.x = 1.0f;
+	}
 
 	transform_->UpdateMatrix();
 

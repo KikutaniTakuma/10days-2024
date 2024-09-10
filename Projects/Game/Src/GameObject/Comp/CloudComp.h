@@ -54,6 +54,4 @@
 
 	 Lamb::SafePtr<class Aabb2DComp> aabbCollision_;
 
-	 Lamb::SafePtr<class SpriteAnimatorComp> animation_;
-
  };
