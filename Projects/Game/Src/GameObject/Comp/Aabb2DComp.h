@@ -57,6 +57,8 @@ public:
 	void Save(nlohmann::json& json) override;
 	void Load(nlohmann::json& json) override;
 
+	Vector3 scale_{ 1.0f,1.0f,1.0f };
+
 private:
 
 	Lamb::SafePtr<class TransformComp> transformComp_;

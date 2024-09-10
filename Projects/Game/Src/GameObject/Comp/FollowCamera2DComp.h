@@ -28,7 +28,7 @@ private:
 	Lamb::SafePtr<class PlayerComp> target_;
 	Lamb::SafePtr<class TransformComp> targetTransform_;
 
-	Vector2 min_{ 304.0f,-164.0f };
-	Vector2 max_{ 3536.0f, -796.0f };
+	Vector2 min_{ 368.0f,0.0f };
+	Vector2 max_{ 3472.0f, 0.0f };
 
 };

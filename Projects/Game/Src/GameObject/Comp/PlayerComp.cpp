@@ -43,6 +43,10 @@ void PlayerComp::Init() {
 
 void PlayerComp::FirstUpdate() {
 
+	transform_->scale = { 48.0f,48.0f,48.0f };
+	collision_->GetObbComp().scale = { 0.5f,0.5f,0.5f };
+	aabbCollision_->scale_ = { 0.5f,0.5f,0.5f };
+
 }
 
 void PlayerComp::Move() {

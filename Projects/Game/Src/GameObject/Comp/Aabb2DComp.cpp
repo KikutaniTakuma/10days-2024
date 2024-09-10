@@ -37,9 +37,9 @@ void Aabb2DComp::UpdatePosAndOrient()
 
 	const Mat4x4& worldMatrix = transformComp_->GetWorldMatrix();
 
-	min_ = (Vector3{ -0.5f,-0.5f,-0.5f }) * worldMatrix;
+	min_ = (Vector3{ -0.5f,-0.5f,-0.5f }) * Mat4x4::MakeAffin(scale_, Vector3(), Vector3()) * worldMatrix;
 
-	max_ = (Vector3{ +0.5f,+0.5f,+0.5f }) * worldMatrix;
+	max_ = (Vector3{ +0.5f,+0.5f,+0.5f }) * Mat4x4::MakeAffin(scale_, Vector3(), Vector3()) * worldMatrix;
 
 	//左上
 	positions_->at(static_cast<size_t>(Point::kLeftUp)) = Vector3{ min_.x, max_.y, (min_.z + max_.z) * 0.5f  };
