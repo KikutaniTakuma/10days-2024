@@ -66,7 +66,10 @@ void EyeComp::FirstUpdate() {
 	beamLineComp_->start = transformComp_->translate;
 	// ビームの終わりをプレイヤーにして当たり判定をとる
 	beamLineComp_->end = playerTransformComp_->translate;
-	beamLineComp_->end.y += playerTransformComp_->scale.y;
+
+	if (eyeStateComp_->state == EyeStateComp::State::kAimFixed or eyeStateComp_->state == EyeStateComp::State::kFire) {
+		beamLineComp_->end = beamLineComp_->start + aimDirection_ * ((aimPoint_ - beamLineComp_->start).Length() + playerTransformComp_->scale.Length());
+	}
 }
 
 void EyeComp::Event() {
@@ -86,7 +89,7 @@ void EyeComp::Event() {
 			beamLineComp_->end = beamLineComp_->start + aimDirection_ * (collsionCbjectTransFormComp->translate - beamLineComp_->start).Length();
 		}
 		else {
-			beamLineComp_->end = collsionCbjectTransFormComp->translate;
+			beamLineComp_->end = beamLineComp_->start + beamLineComp_->GetDirection() * (collsionCbjectTransFormComp->translate - beamLineComp_->start).Length();
 		}
 		isCollision = true;
 	}
@@ -148,7 +151,8 @@ void EyeComp::Event() {
 		if (eyeStateComp_->GetAimTime() <= eyeStateComp_->aimCount) {
 			eyeStateComp_->state = EyeStateComp::State::kAimFixed;
 
-			aimDirection_ = beamLineComp_->GetDirection();
+			aimPoint_ = playerTransformComp_->translate;
+			aimDirection_ = (aimPoint_ - beamLineComp_->start).Normalize();
 		}
 
 		break;
