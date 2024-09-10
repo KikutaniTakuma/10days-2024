@@ -1947,7 +1947,7 @@
                         {
                             "Comps": [
                                 {
-                                    "BlendType": "kNone",
+                                    "BlendType": "kNormal",
                                     "CompName": "class SpriteRenderDataComp",
                                     "color": [
                                         1.0,
@@ -1986,7 +1986,7 @@
                         {
                             "Comps": [
                                 {
-                                    "BlendType": "kNone",
+                                    "BlendType": "kNormal",
                                     "CompName": "class SpriteRenderDataComp",
                                     "color": [
                                         1.0,
@@ -2048,7 +2048,7 @@
                     "CompName": "class SpriteRenderComp"
                 },
                 {
-                    "BlendType": "kNone",
+                    "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
                         1.0,
