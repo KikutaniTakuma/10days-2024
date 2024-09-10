@@ -20,7 +20,7 @@ void CloudComp::Init() {
 	flagComp_->SetIsActive(true);
 	mass_ = object_.AddComp<Mass2DComp>();
 	aabbCollision_ = object_.AddComp<Aabb2DComp>();
-	spriteRenderDataComp_->uvTransform.scale.x = 0.25f;
+	//spriteRenderDataComp_->uvTransform.scale.x = 0.25f;
 
 }
 

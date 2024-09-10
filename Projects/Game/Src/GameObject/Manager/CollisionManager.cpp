@@ -76,6 +76,7 @@ void CollisionManager::Clear()
 {
 	obbComps_.clear();
 	obbPushComps_.clear();
+	lineCollisionComps_.clear();
 }
 
 void CollisionManager::MakeCollisionPair() {
