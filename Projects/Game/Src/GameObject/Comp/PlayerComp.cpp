@@ -19,6 +19,7 @@
 #include "InvisibleComp.h"
 #include "SpriteAnimatorComp.h"
 #include "SpriteRenderDataComp.h"
+#include "TextureHandlesComp.h"
 
 void PlayerComp::Init() {
 
@@ -40,6 +41,7 @@ void PlayerComp::Init() {
 	prePositions_ = std::make_unique<std::array<Vector3, 4>>();
 	invisible_ = object_.AddComp<InvisibleComp>();
 	animation_ = object_.AddComp<SpriteAnimatorComp>();
+	handles_ = object_.AddComp<TextureHandlesComp>();
 
 }
 
