@@ -6,6 +6,7 @@
 #include "EyeStateComp.h"
 #include "EaseingComp.h"
 #include "LineRenderDataComp.h"
+#include "ChildrenObjectComp.h"
 
 #include "Engine/Graphics/RenderingManager/RenderingManager.h"
 
@@ -17,6 +18,9 @@ void EyeComp::Init()
 	beamLineRenderDataComp_ = object_.AddComp<LineRenderDataComp>();
 	eyeStateComp_ = object_.AddComp<EyeStateComp>();
 	easeingComp_ = object_.AddComp<EaseingComp>();
+	childrenObjectComp_ = object_.AddComp<ChildrenObjectComp>();
+
+
 
 	RenderingManager::GetInstance()->SetBloomColor(Vector3::kZIdentity);
 }
@@ -30,6 +34,15 @@ void EyeComp::SetPlayerComp(PlayerComp* playerComp) {
 	beamLineComp_->end = playerTransformComp_->translate;
 
 	playerObbComp_ = playerComp_->getObject().GetComp<ObbComp>();
+}
+
+void EyeComp::SetBeamTransformComp() {
+	for (const auto& i : childrenObjectComp_->GetObjects()) {
+		if (i->HasComp<TransformComp>()) {
+			beamTransformComp_ = i->GetComp<TransformComp>();
+			beamTransformComp_->SetParent(nullptr);
+		}
+	}
 }
 
 void EyeComp::Save(nlohmann::json& json) {
@@ -162,4 +175,19 @@ void EyeComp::Event() {
 		break;
 	}
 
+}
+
+void EyeComp::LastUpdate() {
+	if (beamTransformComp_.empty()) {
+		return;
+	}
+	beamTransformComp_->translate = Vector3::Lerp(beamLineComp_->start, beamLineComp_->end, 0.5f);
+	beamTransformComp_->scale = { (beamLineComp_->start - beamLineComp_->end).Length(), 10.0f, 10.0f };
+
+	Vector3 to = (beamLineComp_->end - beamLineComp_->start).Normalize();
+#ifdef _DEBUG
+	beamTransformComp_->eulerRotate = Quaternion::DirectionToDirection(Vector3::kXIdentity, to).ToEuler();
+#else
+	beamTransformComp_->rotate = Quaternion::DirectionToDirection(Vector3::kXIdentity, to);
+#endif // _DEBUG
 }
