@@ -155,6 +155,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Src\GameObject\Comp\JsonComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\LineCollisionComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\LineComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\LineConvertTransformComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\LineRenderComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\LineRenderDataComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\JumpComp.cpp" />
@@ -221,6 +222,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="Src\GameObject\Comp\JsonComp.h" />
     <ClInclude Include="Src\GameObject\Comp\LineCollisionComp.h" />
     <ClInclude Include="Src\GameObject\Comp\LineComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\LineConvertTransformComp.h" />
     <ClInclude Include="Src\GameObject\Comp\LineRenderComp.h" />
     <ClInclude Include="Src\GameObject\Comp\LineRenderDataComp.h" />
     <ClInclude Include="Src\GameObject\Comp\JumpComp.h" />
