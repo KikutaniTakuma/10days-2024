@@ -18,6 +18,7 @@
 #include "Comp/SceneChangeComp.h"
 #include "Comp/SpriteRenderComp.h"
 #include "Comp/SpriteRenderDataComp.h"
+#include "Comp/SpriteAnimatorComp.h"
 #include "Comp/TransformComp.h"
 #include "Comp/CloudComp.h"
 #include "Comp/FlagComp.h"
@@ -137,6 +138,7 @@ bool Object::DebugAddComp() {
 		DebugAdd<SceneChangeComp>();
 		DebugAdd<SpriteRenderComp>();
 		DebugAdd<SpriteRenderDataComp>();
+		DebugAdd<SpriteAnimatorComp>();
 		DebugAdd<TransformComp>();
 		DebugAdd<FlagComp>();
 		DebugAdd<CloudComp>();
@@ -213,6 +215,7 @@ void Object::AddComps(nlohmann::json& compData)
 	AddAndLoadComp<SceneChangeComp>(compName, compData);
 	AddAndLoadComp<SpriteRenderComp>(compName, compData);
 	AddAndLoadComp<SpriteRenderDataComp>(compName, compData);
+	AddAndLoadComp<SpriteAnimatorComp>(compName, compData);
 	AddAndLoadComp<TransformComp>(compName, compData);
 	AddAndLoadComp<FlagComp>(compName, compData);
 	AddAndLoadComp<CloudComp>(compName, compData);
