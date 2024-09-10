@@ -17,7 +17,7 @@ public:
 	void Save(nlohmann::json& json) override;
 	void Load(nlohmann::json& json) override;
 
-	std::vector<int32_t> textureHandles_;
+	std::vector<uint32_t> textureHandles_;
 	std::vector<std::string> fileNames_;
 
 private:

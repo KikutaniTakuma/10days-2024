@@ -81,6 +81,7 @@ private:
 
 	Vector3 tmpPosition_{ 0.0f,0.0f,1.0f };
 
+	int32_t invisibleValue_ = 0;
 
 #pragma region 菊谷が追加 2024/9/8
 	Lamb::Flg beamCollisionFlg_;

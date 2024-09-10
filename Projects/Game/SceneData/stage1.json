@@ -4670,6 +4670,19 @@
                         0.0,
                         0.0
                     ]
+                },
+                {
+                    "CompName": "class TextureHandlesComp",
+                    "fileNames": [
+                        "./Resources/Textures/player/player_stop.png",
+                        "./Resources/Textures/player/player_walk.png",
+                        "./Resources/Textures/player/player_eat.png",
+                        "./Resources/Textures/player/player_out.png",
+                        "./Resources/Textures/player/player_stop_transparent.png",
+                        "./Resources/Textures/player/player_walk_transparent.png",
+                        "./Resources/Textures/player/player_eat_transparent.png",
+                        "./Resources/Textures/player/player_out_transparent.png"
+                    ]
                 }
             ]
         },

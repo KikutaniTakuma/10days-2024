@@ -86,6 +86,22 @@ void PlayerComp::Move() {
 		direction_->direction_ = { move_->GetMoveVector().x, move_->GetMoveVector().y };
 	}
 
+	if (fabsf(velocity_.x) > 0.01f) {
+
+		if (spriteRenderData_->texHandle != handles_->textureHandles_[1 + invisibleValue_]) {
+			spriteRenderData_->texHandle = handles_->textureHandles_[1 + invisibleValue_];
+			animation_->Reset();
+		}
+
+		
+	}
+	else {
+		if (spriteRenderData_->texHandle != handles_->textureHandles_[0 + invisibleValue_]) {
+			spriteRenderData_->texHandle = handles_->textureHandles_[0 + invisibleValue_];
+			animation_->Reset();
+		}
+	}
+
 	if (not onGround_ and not fall_->GetIsFall()) {
 		fall_->Start();
 	}
@@ -171,10 +187,10 @@ void PlayerComp::Event() {
 
 	//透明なら画像の変更処理
 	if (invisible_->GetIsInvisible()) {
-		
+		invisibleValue_ = 4;
 	}
 	else {
-
+		invisibleValue_ = 0;
 	}
 
 }

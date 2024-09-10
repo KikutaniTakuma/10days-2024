@@ -36,6 +36,7 @@
 #include "Comp/GoalComp.h"
 #include "Comp/InvisibleComp.h"
 #include "Comp/KeyComp.h"
+#include "Comp/TextureHandlesComp.h"
 
 #include "Comp/LineComp.h"
 #include "Comp/LineRenderComp.h"
@@ -177,6 +178,7 @@ bool Object::DebugAddComp() {
 		DebugAdd<EyeComp>();
 		DebugAdd<EyeStateComp>();
 		DebugAdd<EaseingComp>();
+		DebugAdd<TextureHandlesComp>();
 		
 		ImGui::EndChild();
 
@@ -258,5 +260,6 @@ void Object::AddComps(nlohmann::json& compData)
 	AddAndLoadComp<GoalComp>(compName, compData);
 	AddAndLoadComp<InvisibleComp>(compName, compData);
 	AddAndLoadComp<KeyComp>(compName, compData);
+	AddAndLoadComp<TextureHandlesComp>(compName, compData);
 }
 
