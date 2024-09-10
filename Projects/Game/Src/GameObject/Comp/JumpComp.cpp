@@ -4,10 +4,10 @@ void JumpComp::FirstUpdate()
 {
 
 	if (isJump_) {
-		jumpTime_ -= object_.GetDeltaTime();
+		jumpTime_ += object_.GetDeltaTime();
 
-		if (jumpTime_ < 0.0f) {
-			jumpTime_ = 0.0f;
+		if (jumpTime_ > endJumpTime_) {
+			jumpTime_ = endJumpTime_;
 			isJump_ = false;
 		}
 
@@ -18,14 +18,14 @@ void JumpComp::FirstUpdate()
 void JumpComp::Start()
 {
 
-	jumpTime_ = startJumpTime_;
+	jumpTime_ = 0.0f;
 	isJump_ = true;
 
 }
 
 void JumpComp::Stop()
 {
-	jumpTime_ = 0.0_f32;
+	jumpTime_ = endJumpTime_;
 }
 
 void JumpComp::Debug([[maybe_unused]] const std::string& guiName)
@@ -33,7 +33,7 @@ void JumpComp::Debug([[maybe_unused]] const std::string& guiName)
 
 	if (ImGui::TreeNode(guiName.c_str())) {
 		
-		ImGui::DragFloat("ジャンプ時間", &startJumpTime_, 0.001f);
+		ImGui::DragFloat("ジャンプ時間", &endJumpTime_, 0.001f);
 		ImGui::DragFloat("ジャンプ力", &jumpVelocity_, 0.01f);
 
 		ImGui::TreePop();
