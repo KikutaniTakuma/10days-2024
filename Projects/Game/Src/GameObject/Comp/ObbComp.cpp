@@ -387,13 +387,11 @@ bool ObbComp::IsCollision(const Vector3& start, const Vector3& end)
 
 	Vector3 localStart = start * invWorldMat;
 	Vector3 localEnd = end * invWorldMat;
-	//Vector3 localDiff = localEnd - localStart;
 
 	Vector3 worldMax = orientarionLength;
 	Vector3 worldMin = -orientarionLength;
 
 	Vector3 b = (localEnd - localStart);
-
 	if (b.x == 0.0f && b.y == 0.0f && b.z == 0.0f) {
 		return false;
 	}
@@ -419,16 +417,12 @@ bool ObbComp::IsCollision(const Vector3& start, const Vector3& end)
 	float tMin = std::max(std::max(tNearX, tNearY), tNearZ);
 	float tMax = std::min(std::min(tFarX, tFarY), tFarZ);
 
-	if (((0.0f <= tNearX && tNearX <= 1.0f) || (0.0f <= tFarX && tFarX <= 1.0f)) ||
-		((0.0f <= tNearY && tNearY <= 1.0f) || (0.0f <= tFarY && tFarY <= 1.0f)) ||
-		((0.0f <= tNearZ && tNearZ <= 1.0f) || (0.0f <= tFarZ && tFarZ <= 1.0f))) {
-		if (tMin <= tMax) {
-			isCollision_ = true;
+	if (tMin <= tMax and (Lamb::Between(tMin, 0.0f, 1.0f) or Lamb::Between(tMax, 0.0f, 1.0f))) {
+		isCollision_ = true;
 #ifdef _DEBUG
-			color_ = 0xff0000ff;
+		color_ = 0xff0000ff;
 #endif // _DEBUG
-			return true;
-		}
+		return true;
 	}
 
 

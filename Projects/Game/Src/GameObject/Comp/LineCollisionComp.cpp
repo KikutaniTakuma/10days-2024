@@ -2,6 +2,8 @@
 #include "LineRenderDataComp.h"
 #include "../Manager/CollisionManager.h"
 
+#include <format>
+
 void LineCollisionComp::Init()
 {
 	CollisionManager::GetInstance()->Set(this);
@@ -14,7 +16,7 @@ void LineCollisionComp::Finalize() {
 }
 
 void LineCollisionComp::FirstUpdate() {
-	// 初期化
+	isCollision_ = false;
 	mostNearCollisionObjectPtr_ = nullptr;
 }
 
@@ -22,7 +24,6 @@ bool LineCollisionComp::Collision(ObbComp* obbComp)
 {
 	// 毎フレームリセットする
 	if (not isCollision_.OnEnter()) {
-		isCollision_ = false;
 #ifdef _DEBUG
 		color_ = 0xffffffff;
 #endif // _DEBUG
@@ -75,6 +76,7 @@ void LineCollisionComp::Load([[maybe_unused]]nlohmann::json& json) {
 void LineCollisionComp::Debug([[maybe_unused]] const std::string& guiName) {
 #ifdef _DEBUG
 	if (ImGui::TreeNode(guiName.c_str())) {
+		ImGui::Text(std::format("isCollision : {}", !!isCollision_).c_str());
 
 		ImGui::BeginChild(ImGui::GetID((void*)0), ImVec2(250, 100), ImGuiWindowFlags_NoTitleBar);
 		for (auto& i : collisionTags_) {
@@ -113,6 +115,11 @@ void LineCollisionComp::Debug([[maybe_unused]] const std::string& guiName) {
 const LineComp& LineCollisionComp::GetLineComp() const
 {
 	return *lineComp_;
+}
+
+const Lamb::Flg& LineCollisionComp::GetIsCollision() const
+{
+	return isCollision_;
 }
 
 const Lamb::SafePtr<const Object>& LineCollisionComp::GetMostNearCollisionObjectPtr() const

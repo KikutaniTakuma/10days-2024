@@ -65,9 +65,10 @@ void EyeComp::FirstUpdate() {
 	// ビームの始まりをEyeのポジションにする
 	beamLineComp_->start = transformComp_->translate;
 	// ビームの終わりをプレイヤーにして当たり判定をとる
-	// もしエイムを固定してるか発射中ならなにもしない
-	if (eyeStateComp_->state != EyeStateComp::State::kAimFixed and eyeStateComp_->state != EyeStateComp::State::kFire) {
-		beamLineComp_->end = playerTransformComp_->translate;
+	beamLineComp_->end = playerTransformComp_->translate;
+
+	if (eyeStateComp_->state == EyeStateComp::State::kAimFixed or eyeStateComp_->state == EyeStateComp::State::kFire) {
+		beamLineComp_->end = beamLineComp_->start + aimDirection_ * ((aimPoint_ - beamLineComp_->start).Length() + playerTransformComp_->scale.Length());
 	}
 }
 
@@ -84,7 +85,12 @@ void EyeComp::Event() {
 	if (mostNearCollisionObjectPtr.have()) {
 		Lamb::SafePtr collsionCbjectTransFormComp = mostNearCollisionObjectPtr->GetComp<TransformComp>();
 		// 長さを当たっているオブジェクトの長さにする
-		beamLineComp_->end = collsionCbjectTransFormComp->translate;
+		if (eyeStateComp_->state == EyeStateComp::State::kAimFixed or eyeStateComp_->state == EyeStateComp::State::kFire) {
+			beamLineComp_->end = beamLineComp_->start + aimDirection_ * (collsionCbjectTransFormComp->translate - beamLineComp_->start).Length();
+		}
+		else {
+			beamLineComp_->end = beamLineComp_->start + beamLineComp_->GetDirection() * (collsionCbjectTransFormComp->translate - beamLineComp_->start).Length();
+		}
 		isCollision = true;
 	}
 
@@ -144,6 +150,9 @@ void EyeComp::Event() {
 		// 狙いを定めてる最中の時間を超えたら固定
 		if (eyeStateComp_->GetAimTime() <= eyeStateComp_->aimCount) {
 			eyeStateComp_->state = EyeStateComp::State::kAimFixed;
+
+			aimPoint_ = playerTransformComp_->translate;
+			aimDirection_ = (aimPoint_ - beamLineComp_->start).Normalize();
 		}
 
 		break;

@@ -26,6 +26,9 @@ public:
 
 	const LineComp& GetLineComp() const;
 
+	const Lamb::Flg& GetIsCollision() const;
+
+
 	const Lamb::SafePtr<const Object>& GetMostNearCollisionObjectPtr() const;
 
 	const std::unordered_set<std::string>& GetCollisionTagList() const {
