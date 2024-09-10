@@ -13,22 +13,7 @@ void LineCollisionComp::Finalize() {
 	CollisionManager::GetInstance()->Erase(this);
 }
 
-void LineCollisionComp::FirstUpdate()
-{
-	if (object_.HasComp<ObbComp>()) {
-		Lamb::SafePtr transformComp = object_.GetComp<TransformComp>();
-
-		transformComp->translate = Vector3::Lerp(lineComp_->start, lineComp_->end, 0.5f);
-		transformComp->scale = { (lineComp_->start - lineComp_->end).Length(), 10.0f, 10.0f };
-
-		Vector3 to = (lineComp_->end - lineComp_->start).Normalize();
-#ifdef _DEBUG
-		transformComp->eulerRotate = Quaternion::DirectionToDirection(Vector3::kXIdentity, to).ToEuler();
-#else
-		transformComp->rotate = Quaternion::DirectionToDirection(Vector3::kXIdentity, to);
-#endif // _DEBUG
-	}
-
+void LineCollisionComp::FirstUpdate() {
 	// 初期化
 	mostNearCollisionObjectPtr_ = nullptr;
 }
