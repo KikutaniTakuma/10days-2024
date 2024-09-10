@@ -127,7 +127,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -202,7 +204,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -277,7 +281,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -326,9 +332,9 @@
                         1.0
                     ],
                     "scale": [
-                        32.0,
-                        32.0,
-                        32.0
+                        24.0,
+                        24.0,
+                        24.0
                     ],
                     "translate": [
                         384.0,
@@ -349,9 +355,9 @@
                     ],
                     "collisiionTags": [],
                     "scale": [
-                        0.75,
-                        0.75,
-                        0.75
+                        1.0,
+                        1.0,
+                        1.0
                     ]
                 },
                 {
@@ -450,7 +456,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -525,7 +533,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -600,7 +610,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -675,7 +687,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -804,7 +818,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -879,7 +895,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -954,7 +972,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -1029,7 +1049,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -1104,7 +1126,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -1179,7 +1203,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -1254,7 +1280,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -1329,7 +1357,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -1404,7 +1434,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -1479,7 +1511,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -1554,7 +1588,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -1629,7 +1665,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -1704,7 +1742,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -1779,7 +1819,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -1854,7 +1896,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -1929,7 +1973,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -2004,7 +2050,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -2079,7 +2127,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -2154,7 +2204,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -2229,7 +2281,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -2304,7 +2358,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -2379,7 +2435,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -2454,7 +2512,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -2529,7 +2589,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -2604,7 +2666,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
@@ -2679,7 +2743,9 @@
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": []
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
                 },
                 {
                     "CompName": "class FlagComp"
