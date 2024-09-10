@@ -7,8 +7,10 @@
 #include "EaseingComp.h"
 #include "LineRenderDataComp.h"
 #include "ChildrenObjectComp.h"
+#include "LineConvertTransformComp.h"
 
 #include "Engine/Graphics/RenderingManager/RenderingManager.h"
+#include "SpriteRenderDataComp.h"
 
 void EyeComp::Init()
 {
@@ -21,8 +23,8 @@ void EyeComp::Init()
 	childrenObjectComp_ = object_.AddComp<ChildrenObjectComp>();
 
 
-
-	RenderingManager::GetInstance()->SetBloomColor(Vector3::kZIdentity);
+	Vector4 bloomColor = 0xd56ff9ff;
+	RenderingManager::GetInstance()->SetBloomColor({ bloomColor.color.r,bloomColor.color.g,bloomColor.color.b });
 }
 
 void EyeComp::SetPlayerComp(PlayerComp* playerComp) {
@@ -38,9 +40,12 @@ void EyeComp::SetPlayerComp(PlayerComp* playerComp) {
 
 void EyeComp::SetBeamTransformComp() {
 	for (const auto& i : childrenObjectComp_->GetObjects()) {
-		if (i->HasComp<TransformComp>()) {
-			beamTransformComp_ = i->GetComp<TransformComp>();
-			beamTransformComp_->SetParent(nullptr);
+		if (i->HasComp<LineConvertTransformComp>()) {
+			childrenBeamLIneComp_ = i->GetComp<LineComp>();
+			i->GetComp<TransformComp>()->SetParent(nullptr);
+		}
+		if (i->HasComp<SpriteRenderDataComp>()) {
+			childrenBeamRenderDataComp_ = i->GetComp<SpriteRenderDataComp>();
 		}
 	}
 }
@@ -144,7 +149,6 @@ void EyeComp::Event() {
 		break;
 		// 狙いを固定
 	case EyeStateComp::State::kAimFixed:
-		beamLineRenderDataComp_->color = 0xff00ffff;
 		// 時間を加算
 		eyeStateComp_->aimFixedCount += object_.GetDeltaTime();
 
@@ -156,7 +160,7 @@ void EyeComp::Event() {
 		break;
 		// 発射
 	case EyeStateComp::State::kFire:
-		beamLineRenderDataComp_->color = 0xffff;
+		beamLineRenderDataComp_->color = 0xd56ff9ff;
 
 		// 時間を加算
 		eyeStateComp_->fireCount += object_.GetDeltaTime();
@@ -177,17 +181,23 @@ void EyeComp::Event() {
 
 }
 
-void EyeComp::LastUpdate() {
-	if (beamTransformComp_.empty()) {
+void EyeComp::Update() {
+	if (childrenBeamLIneComp_.empty()) {
 		return;
 	}
-	beamTransformComp_->translate = Vector3::Lerp(beamLineComp_->start, beamLineComp_->end, 0.5f);
-	beamTransformComp_->scale = { (beamLineComp_->start - beamLineComp_->end).Length(), 10.0f, 10.0f };
+	
+	if (eyeStateComp_->state == EyeStateComp::State::kFire) {
+		childrenBeamLIneComp_->start = beamLineComp_->start;
+		childrenBeamLIneComp_->end = beamLineComp_->end;
+	}
+	else {
+		childrenBeamLIneComp_->start = Vector3::kZero;
+		childrenBeamLIneComp_->end = Vector3::kZero;
+	}
 
-	Vector3 to = (beamLineComp_->end - beamLineComp_->start).Normalize();
-#ifdef _DEBUG
-	beamTransformComp_->eulerRotate = Quaternion::DirectionToDirection(Vector3::kXIdentity, to).ToEuler();
-#else
-	beamTransformComp_->rotate = Quaternion::DirectionToDirection(Vector3::kXIdentity, to);
-#endif // _DEBUG
+	if (childrenBeamRenderDataComp_.empty()) {
+		return;
+	}
+
+	childrenBeamRenderDataComp_->color = beamLineRenderDataComp_->color;
 }

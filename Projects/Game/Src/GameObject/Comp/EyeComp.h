@@ -20,7 +20,7 @@ public:
 	// 当たり判定後の処理
 	void Event() override;
 
-	void LastUpdate() override;
+	void Update() override;
 
 private:
 	// これは別のオブジェクトが持っているPlayerComp
@@ -34,7 +34,8 @@ private:
 
 	// 黒目の子オブジェクト(これはベータ版で使う)
 	Lamb::SafePtr<class ChildrenObjectComp> childrenObjectComp_;
-	Lamb::SafePtr<class TransformComp> beamTransformComp_;
+	Lamb::SafePtr<class LineComp> childrenBeamLIneComp_;
+	Lamb::SafePtr<class SpriteRenderDataComp> childrenBeamRenderDataComp_;
 
 	Lamb::SafePtr<class LineComp> beamLineComp_;
 	Lamb::SafePtr<class LineCollisionComp> beamLineCollisionComp_;

@@ -44,5 +44,5 @@ private:
 	// 狙いを定めて狙いを固定している時間
 	float32_t aimFixedTime_ = 1.0f;
 	// 発射している時間(この時間は当たり判定が発生？)
-	float32_t fireTime_ = 0.01f;
+	float32_t fireTime_ = 0.1f;
 };
