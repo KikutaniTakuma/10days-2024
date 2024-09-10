@@ -16,6 +16,7 @@
 #include "../Manager/CloudManager.h"
 #include "JumpComp.h"
 #include "Aabb2DComp.h"
+#include "InvisibleComp.h"
 
 void PlayerComp::Init() {
 
@@ -34,6 +35,7 @@ void PlayerComp::Init() {
 	jump_ = object_.AddComp<JumpComp>();
 	aabbCollision_ = object_.AddComp<Aabb2DComp>();
 	prePositions_ = std::make_unique<std::array<Vector3, 4>>();
+	invisible_ = object_.AddComp<InvisibleComp>();
 
 }
 
@@ -124,6 +126,27 @@ void PlayerComp::Move() {
 
 	}
 
+#ifdef _DEBUG
+
+	//雲が10未満でRボタンかトリガーを押したら食事開始。吐き出す動作とは重複しない
+	if (not eatCloud_->isEat_ and count_->GetCount() < 10 and onGround_ and
+		not key->Pushed(DIK_Q) and 	key->Pushed(DIK_E)) {
+
+		eatCloud_->isEat_ = true;
+
+	}
+
+	//雲を持っていてLボタンかトリガーを押したら吐き出し開始。食べる動作とは重複しない
+	if (not removeCloud_->isRemove_ and count_->GetCount() > 0 and onGround_
+		and key->Pushed(DIK_Q) and not key->Pushed(DIK_E)) {
+
+		removeCloud_->isRemove_ = true;
+
+	}
+
+#endif // _DEBUG
+
+
 	transform_->UpdateMatrix();
 
 }
@@ -132,6 +155,14 @@ void PlayerComp::Event() {
 
 	if (onGround_) {
 		fall_->Stop();
+	}
+
+	//透明なら画像の変更処理
+	if (invisible_->GetIsInvisible()) {
+		
+	}
+	else {
+
 	}
 
 }
