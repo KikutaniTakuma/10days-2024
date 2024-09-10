@@ -17,7 +17,7 @@ public:
 
 	void FirstUpdate() override;
 
-	bool IsCollisionHasTag(ObbComp* obbComp);
+	bool Collision(ObbComp* obbComp);
 
 	void Save(nlohmann::json& json) override;
 	void Load(nlohmann::json& json) override;
@@ -27,6 +27,10 @@ public:
 	const LineComp& GetLineComp() const;
 
 	const Lamb::SafePtr<const Object>& GetMostNearCollisionObjectPtr() const;
+
+	const std::unordered_set<std::string>& GetCollisionTagList() const {
+		return collisionTags_;
+	}
 
 private:
 	Lamb::SafePtr<LineComp> lineComp_;

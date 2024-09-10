@@ -41,9 +41,15 @@ public:
 
 	void Clear();
 
+	void MakeCollisionPair();
+
 
 private:
 	std::unordered_set<Lamb::SafePtr<ObbComp>> obbComps_;
 	std::unordered_set<Lamb::SafePtr<ObbPushComp>> obbPushComps_;
 	std::unordered_set<Lamb::SafePtr<LineCollisionComp>> lineCollisionComps_;
+
+	std::vector<std::pair<Lamb::SafePtr<ObbComp>, Lamb::SafePtr<ObbComp>>> collisionPairsObbObb_;
+	std::vector<std::pair<Lamb::SafePtr<ObbPushComp>, Lamb::SafePtr<ObbPushComp>>> collisionPairsObbPushObbPush_;
+	std::vector<std::pair<Lamb::SafePtr<LineCollisionComp>, Lamb::SafePtr<ObbComp>>> collisionPairsObbLine_;
 };

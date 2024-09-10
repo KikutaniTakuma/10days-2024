@@ -92,7 +92,7 @@ void ObjectManager::Set(const Lamb::SafePtr<Object>& object) {
 	if (itr ==  objects_.end() and object.have()) {
 		objects_.insert(std::unique_ptr<Object>(object.get()));
 		for (const auto& i : object->GetTags()) {
-			objectTags_.insert(std::make_pair(i, true));
+			objectTags_.insert(std::make_pair(i.second, true));
 		}
 	}
 }
@@ -273,8 +273,8 @@ void ObjectManager::Debug() {
 	if (ImGui::TreeNode("sort")) {
 		for (auto& object : objects_) {
 			for (const auto& i : object->GetTags()) {
-				if (not objectTags_.contains(i)) {
-					objectTags_.insert(std::make_pair(i, true));
+				if (not objectTags_.contains(i.second)) {
+					objectTags_.insert(std::make_pair(i.second, true));
 				}
 			}
 		}
@@ -301,6 +301,9 @@ void ObjectManager::Debug() {
 			}
 		}
 		ImGui::TreePop();
+	}
+	if (ImGui::Button("当たり判定のペア更新")) {
+		collisionManager_->MakeCollisionPair();
 	}
 	if (ImGui::Button("AddObject")) {
 		auto newObject = std::make_unique<Object>();
@@ -329,7 +332,7 @@ void ObjectManager::Debug() {
 			collisionManager_->Clear();
 
 			for (auto& i : cameraObject->GetTags()) {
-				objectTags_.insert(std::make_pair(i, true));
+				objectTags_.insert(std::make_pair(i.second, true));
 			}
 			
 			if (cameraObject->HasComp<ObbComp>()) {
@@ -507,6 +510,9 @@ void ObjectManager::Load(const std::string& jsonFileName) {
 	// ゲーム固有処理
 	// Eyeの処理の別オブジェクトのPlayerCompが必要なのでここで設定する
 	SetPlayerCompToEyeComp();
+
+
+	collisionManager_->MakeCollisionPair();
 
 #ifdef _DEBUG
 	MessageBoxA(
