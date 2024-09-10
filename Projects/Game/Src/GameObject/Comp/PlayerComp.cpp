@@ -155,12 +155,7 @@ void PlayerComp::Move() {
 #endif // _DEBUG
 
 	//向きによってuvのスケールを変更
-	if (direction_->IsLeft()) {
-		spriteRenderData_->uvTransform.scale.x = -1.0f;
-	}
-	else {
-		spriteRenderData_->uvTransform.scale.x = 1.0f;
-	}
+	animation_->DirectionInverse(direction_->IsLeft());
 
 	transform_->UpdateMatrix();
 
