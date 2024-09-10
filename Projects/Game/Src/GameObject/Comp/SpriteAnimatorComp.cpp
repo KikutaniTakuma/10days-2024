@@ -20,11 +20,15 @@ void SpriteAnimatorComp::Load(nlohmann::json& json) {
 	isLoop_ = json["isLoop"].get<bool>();
 	animationNumber_ = json["animationNumber"].get<int32_t>();
 	duration_ = json["duration"].get<float32_t>();
+
+	SetAnimationNumber(animationNumber_);
 }
 
 void SpriteAnimatorComp::Init()
 {
 	spriteRenderDataComp_ = object_.AddComp<SpriteRenderDataComp>();
+
+	Start();
 }
 
 void SpriteAnimatorComp::Update() {
