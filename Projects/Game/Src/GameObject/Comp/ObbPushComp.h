@@ -29,6 +29,10 @@ public:
 
 	void Debug(const std::string& guiName) override;
 
+	const std::unordered_set<std::string>& GetCollisionTagList() const {
+		return pushTags_;
+	}
+
 private:
 	std::unordered_set<std::string> pushTags_;
 	Lamb::SafePtr<ObbComp> obbComp_;

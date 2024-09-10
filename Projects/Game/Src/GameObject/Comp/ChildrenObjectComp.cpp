@@ -141,6 +141,16 @@ void ChildrenObjectComp::Load(nlohmann::json& json) {
 	}
 }
 
+void ChildrenObjectComp::Load()
+{
+	for (auto itr = objects_.begin(); itr != objects_.end(); itr++) {
+		// トランスフォームコンポーネントを持っていたら親子関係を結ぶ
+		if ((*itr)->HasComp<TransformComp>() && object_.HasComp<TransformComp>()) {
+			(*itr)->GetComp<TransformComp>()->SetParent(transformComp_);
+		}
+	}
+}
+
 const std::unordered_set<std::unique_ptr<Object>>& ChildrenObjectComp::GetObjects() const
 {
 	return objects_;

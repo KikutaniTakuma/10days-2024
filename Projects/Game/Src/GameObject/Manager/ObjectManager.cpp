@@ -16,10 +16,12 @@
 
 #include "Utils/FileUtils.h"
 #include "CollisionManager.h"
+#include "CloudManager.h"
 
 #include "../Comp/EyeComp.h"
 #include "../Comp/PlayerComp.h"
-
+#include "../Comp/GoalComp.h"
+#include "../Comp/FollowCamera2DComp.h"
 
 std::unique_ptr<ObjectManager> ObjectManager::instance_;
 
@@ -42,14 +44,20 @@ void ObjectManager::Initialize() {
 
 #ifdef _DEBUG
 	instance_->levelDataFilePathes_ = Lamb::GetFilePathFormDir("./SceneData/", ".json");
-	CollisionManager::Initialize();
-	instance_->obbManager_ = CollisionManager::GetInstance();
+	
 #endif // _DEBUG
+
+	CollisionManager::Initialize();
+	instance_->collisionManager_ = CollisionManager::GetInstance();
+	CloudManager::Initialize();
+	instance_->cloudManager_ = CloudManager::GetInstance();
+
 }
 
 void ObjectManager::Finalize()
 {
 	CollisionManager::Finalize();
+	CloudManager::Finalize();
 	instance_.reset();
 }
 
@@ -85,7 +93,7 @@ void ObjectManager::Set(const Lamb::SafePtr<Object>& object) {
 	if (itr ==  objects_.end() and object.have()) {
 		objects_.insert(std::unique_ptr<Object>(object.get()));
 		for (const auto& i : object->GetTags()) {
-			objectTags_.insert(std::make_pair(i, true));
+			objectTags_.insert(std::make_pair(i.second, true));
 		}
 	}
 }
@@ -154,7 +162,7 @@ void ObjectManager::Update() {
 	TransformCompUpdater::GetInstance()->UpdateMatrix();
 
 	// 当たり判定
-	obbManager_->Collision();
+	collisionManager_->Collision();
 
 	TransformCompUpdater::GetInstance()->UpdateMatrix();
 
@@ -266,8 +274,8 @@ void ObjectManager::Debug() {
 	if (ImGui::TreeNode("sort")) {
 		for (auto& object : objects_) {
 			for (const auto& i : object->GetTags()) {
-				if (not objectTags_.contains(i)) {
-					objectTags_.insert(std::make_pair(i, true));
+				if (not objectTags_.contains(i.second)) {
+					objectTags_.insert(std::make_pair(i.second, true));
 				}
 			}
 		}
@@ -295,6 +303,9 @@ void ObjectManager::Debug() {
 		}
 		ImGui::TreePop();
 	}
+	if (ImGui::Button("当たり判定のペア更新")) {
+		collisionManager_->MakeCollisionPair();
+	}
 	if (ImGui::Button("AddObject")) {
 		auto newObject = std::make_unique<Object>();
 		objects_.insert(std::move(newObject));
@@ -319,17 +330,17 @@ void ObjectManager::Debug() {
 			}
 
 			objectTags_.clear();
-			obbManager_->Clear();
+			collisionManager_->Clear();
 
 			for (auto& i : cameraObject->GetTags()) {
-				objectTags_.insert(std::make_pair(i, true));
+				objectTags_.insert(std::make_pair(i.second, true));
 			}
 			
 			if (cameraObject->HasComp<ObbComp>()) {
-				obbManager_->Set(cameraObject->GetComp<ObbComp>());
+				collisionManager_->Set(cameraObject->GetComp<ObbComp>());
 			}
 			if (cameraObject->HasComp<ObbPushComp>()) {
-				obbManager_->Set(cameraObject->GetComp<ObbPushComp>());
+				collisionManager_->Set(cameraObject->GetComp<ObbPushComp>());
 			}
 		}
 	}
@@ -368,7 +379,7 @@ void ObjectManager::Debug() {
 	if (isAddComp) {
 		// ゲーム固有処理
 		// Eyeの処理の別オブジェクトのPlayerCompが必要なのでここで設定する
-		SetPlayerCompToEyeComp();
+		SetPlayerCompToOther();
 	}
 
 	ImGui::EndChild();
@@ -447,7 +458,7 @@ void ObjectManager::Save() {
 	}
 }
 
-void ObjectManager::SetPlayerCompToEyeComp() {
+void ObjectManager::SetPlayerCompToOther() {
 	Lamb::SafePtr<PlayerComp> playerComp;
 	for (auto& i : objects_) {
 		if (i->HasComp<PlayerComp>()) {
@@ -458,7 +469,15 @@ void ObjectManager::SetPlayerCompToEyeComp() {
 
 	for (auto& i : objects_) {
 		if (i->HasComp<EyeComp>()) {
-			i->GetComp<EyeComp>()->SetPlayerComp(playerComp.get());
+			Lamb::SafePtr eyeComp = i->GetComp<EyeComp>();
+			eyeComp->SetPlayerComp(playerComp.get());
+			eyeComp->SetBeamTransformComp();
+		}
+		if (i->HasComp<GoalComp>()) {
+			i->GetComp<GoalComp>()->SetPlayerComp(playerComp.get());
+		}
+		if (i->HasComp<FollowCamera2DComp>()) {
+			i->GetComp<FollowCamera2DComp>()->SetPlayerComp(playerComp.get());
 		}
 	}
 }
@@ -466,7 +485,8 @@ void ObjectManager::SetPlayerCompToEyeComp() {
 void ObjectManager::Load(const std::string& jsonFileName) {
 	objects_.clear();
 	objectTags_.clear();
-	obbManager_->Clear();
+	collisionManager_->Clear();
+	cloudManager_->Clear();
 	cameraComp_ = nullptr;
 
 	auto jsonFile = Lamb::LoadJson(jsonFileName);
@@ -498,7 +518,10 @@ void ObjectManager::Load(const std::string& jsonFileName) {
 
 	// ゲーム固有処理
 	// Eyeの処理の別オブジェクトのPlayerCompが必要なのでここで設定する
-	SetPlayerCompToEyeComp();
+	SetPlayerCompToOther();
+
+
+	collisionManager_->MakeCollisionPair();
 
 #ifdef _DEBUG
 	MessageBoxA(

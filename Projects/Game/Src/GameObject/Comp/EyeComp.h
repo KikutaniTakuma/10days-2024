@@ -11,6 +11,7 @@ public:
 	void Init() override;
 
 	void SetPlayerComp(class PlayerComp* playerComp);
+	void SetBeamTransformComp();
 
 	void Save(nlohmann::json& json) override;
 	void Load(nlohmann::json& json) override;
@@ -19,6 +20,7 @@ public:
 	// 当たり判定後の処理
 	void Event() override;
 
+	void Update() override;
 
 private:
 	// これは別のオブジェクトが持っているPlayerComp
@@ -31,7 +33,9 @@ private:
 	Lamb::SafePtr<class TransformComp> transformComp_;
 
 	// 黒目の子オブジェクト(これはベータ版で使う)
-	Lamb::SafePtr<class ChildrenComp> eyeBlackEye_;
+	Lamb::SafePtr<class ChildrenObjectComp> childrenObjectComp_;
+	Lamb::SafePtr<class LineComp> childrenBeamLIneComp_;
+	Lamb::SafePtr<class SpriteRenderDataComp> childrenBeamRenderDataComp_;
 
 	Lamb::SafePtr<class LineComp> beamLineComp_;
 	Lamb::SafePtr<class LineCollisionComp> beamLineCollisionComp_;

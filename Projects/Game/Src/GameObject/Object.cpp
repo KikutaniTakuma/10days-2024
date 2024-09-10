@@ -18,19 +18,37 @@
 #include "Comp/SceneChangeComp.h"
 #include "Comp/SpriteRenderComp.h"
 #include "Comp/SpriteRenderDataComp.h"
+#include "Comp/SpriteAnimatorComp.h"
 #include "Comp/TransformComp.h"
 #include "Comp/CloudComp.h"
+#include "Comp/CloudRenderComp.h"
 #include "Comp/FlagComp.h"
 #include "Comp/PlayerComp.h"
+#include "Comp/CountComp.h"
+#include "Comp/Direction2DComp.h"
+#include "Comp/EatCloudComp.h"
+#include "Comp/RemoveCloudComp.h"
+#include "Comp/Mass2DComp.h"
+#include "Comp/JumpComp.h"
+#include "Comp/Aabb2DComp.h"
+#include "Comp/CollectionComp.h"
+#include "Comp/FollowCamera2DComp.h"
+#include "Comp/GoalComp.h"
+#include "Comp/InvisibleComp.h"
+#include "Comp/KeyComp.h"
 
 #include "Comp/LineComp.h"
 #include "Comp/LineRenderComp.h"
 #include "Comp/LineRenderDataComp.h"
 #include "Comp/LineCollisionComp.h"
+#include "Comp/LineConvertTransformComp.h"
 
 #include "Comp/EyeComp.h"
 #include "Comp/EyeStateComp.h"
 #include "Comp/EaseingComp.h"
+
+#include "Comp/AudioComp.h"
+#include "Comp/BgmComp.h"
 
 void Object::Init() {
 	/*for (auto& i : components_) {
@@ -78,6 +96,12 @@ void Object::Draw([[maybe_unused]] CameraComp* cameraComp) const
 	}
 }
 
+void Object::Draw() const {
+	for (auto& i : components_) {
+		i.second->Draw();
+	}
+}
+
 bool Object::Debug([[maybe_unused]] const std::string& guiName) {
 #ifdef _DEBUG
 	if (ImGui::TreeNode(guiName.c_str())) {
@@ -88,12 +112,12 @@ bool Object::Debug([[maybe_unused]] const std::string& guiName) {
 		ImGui::Text("tags : ");
 		ImGui::BeginChild(ImGui::GetID((void*)0), { 0.0f, 50.0f }, ImGuiChildFlags_AlwaysAutoResize | ImGuiChildFlags_AutoResizeX, ImGuiWindowFlags_NoTitleBar);
 		for (auto& i : tags_) {
-			ImGui::Text("%s, ", i.c_str());
+			ImGui::Text("%s, ", i.second.c_str());
 		}
 		ImGui::EndChild();
 		if (ImGui::TreeNode("componets")) {
 			for (auto& i : components_) {
-				i.second->Debug(i.first);
+				i.second->Debug(tags_[i.first]);
 			}
 			ImGui::TreePop();
 		}
@@ -108,6 +132,8 @@ bool Object::DebugAddComp() {
 #ifdef _DEBUG
 	if (ImGui::TreeNode("Comps")) {
 		ImGui::BeginChild(ImGui::GetID((void*)0), { 0.0f, 150.0f }, ImGuiChildFlags_AlwaysAutoResize | ImGuiChildFlags_AutoResizeX, ImGuiWindowFlags_NoTitleBar);
+		DebugAdd<AudioComp>();
+		DebugAdd<BgmComp>();
 		DebugAdd<ButtonComp>();
 		DebugAdd<Camera2DComp>();
 		DebugAdd<Camera3DComp>();
@@ -125,14 +151,29 @@ bool Object::DebugAddComp() {
 		DebugAdd<SceneChangeComp>();
 		DebugAdd<SpriteRenderComp>();
 		DebugAdd<SpriteRenderDataComp>();
+		DebugAdd<SpriteAnimatorComp>();
 		DebugAdd<TransformComp>();
 		DebugAdd<FlagComp>();
 		DebugAdd<CloudComp>();
+		DebugAdd<CloudRenderComp>();
 		DebugAdd<PlayerComp>();
+		DebugAdd<CountComp>();
+		DebugAdd<Direction2DComp>();
+		DebugAdd<EatCloudComp>();
+		DebugAdd<RemoveCloudComp>();
+		DebugAdd<Mass2DComp>();
+		DebugAdd<JumpComp>();
+		DebugAdd<Aabb2DComp>();
+		DebugAdd<CollectionComp>();
+		DebugAdd<FollowCamera2DComp>();
+		DebugAdd<GoalComp>();
+		DebugAdd<InvisibleComp>();
+		DebugAdd<KeyComp>();
 		DebugAdd<LineComp>();
 		DebugAdd<LineRenderComp>();
 		DebugAdd<LineRenderDataComp>();
 		DebugAdd<LineCollisionComp>();
+		DebugAdd<LineConvertTransformComp>();
 		DebugAdd<EyeComp>();
 		DebugAdd<EyeStateComp>();
 		DebugAdd<EaseingComp>();
@@ -172,6 +213,8 @@ void Object::AddComps(nlohmann::json& compData)
 {
 	std::string compName = compData["CompName"].get<std::string>();
 
+	AddAndLoadComp<AudioComp>(compName, compData);
+	AddAndLoadComp<BgmComp>(compName, compData);
 	AddAndLoadComp<ButtonComp>(compName, compData);
 	AddAndLoadComp<Camera2DComp>(compName, compData);
 	AddAndLoadComp<Camera3DComp>(compName, compData);
@@ -189,16 +232,31 @@ void Object::AddComps(nlohmann::json& compData)
 	AddAndLoadComp<SceneChangeComp>(compName, compData);
 	AddAndLoadComp<SpriteRenderComp>(compName, compData);
 	AddAndLoadComp<SpriteRenderDataComp>(compName, compData);
+	AddAndLoadComp<SpriteAnimatorComp>(compName, compData);
 	AddAndLoadComp<TransformComp>(compName, compData);
 	AddAndLoadComp<FlagComp>(compName, compData);
 	AddAndLoadComp<CloudComp>(compName, compData);
+	AddAndLoadComp<CloudRenderComp>(compName, compData);
 	AddAndLoadComp<PlayerComp>(compName, compData);
 	AddAndLoadComp<LineComp>(compName, compData);
 	AddAndLoadComp<LineRenderComp>(compName, compData);
 	AddAndLoadComp<LineRenderDataComp>(compName, compData);
 	AddAndLoadComp<LineCollisionComp>(compName, compData);
+	AddAndLoadComp<LineConvertTransformComp>(compName, compData);
 	AddAndLoadComp<EyeComp>(compName, compData);
 	AddAndLoadComp<EyeStateComp>(compName, compData);
 	AddAndLoadComp<EaseingComp>(compName, compData);
+	AddAndLoadComp<CountComp>(compName, compData);
+	AddAndLoadComp<Direction2DComp>(compName, compData);
+	AddAndLoadComp<EatCloudComp>(compName, compData);
+	AddAndLoadComp<RemoveCloudComp>(compName, compData);
+	AddAndLoadComp<Mass2DComp>(compName, compData);
+	AddAndLoadComp<JumpComp>(compName, compData);
+	AddAndLoadComp<Aabb2DComp>(compName, compData);
+	AddAndLoadComp<CollectionComp>(compName, compData);
+	AddAndLoadComp<FollowCamera2DComp>(compName, compData);
+	AddAndLoadComp<GoalComp>(compName, compData);
+	AddAndLoadComp<InvisibleComp>(compName, compData);
+	AddAndLoadComp<KeyComp>(compName, compData);
 }
 

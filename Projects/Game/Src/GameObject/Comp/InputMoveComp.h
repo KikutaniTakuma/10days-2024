@@ -12,6 +12,8 @@ public:
 
 	void FirstUpdate() override;
 
+	void Debug(const std::string& guiName);
+
 	void Save(nlohmann::json& json) override;
 	void Load(nlohmann::json& json) override;
 
@@ -34,7 +36,7 @@ public:
 
 
 private:
-	float32_t speed_ = 1.0f;
+	float32_t speed_ = 0.3f;
 	Vector3 direction_;
 
 	Vector3 moveVector_;

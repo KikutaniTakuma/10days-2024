@@ -28,7 +28,7 @@ public:
 
 	void Update()override;
 
-	void SetLuminanceThreshold(float32_t luminanceThreshold) {
+	void SetLuminanceThreshold(float32_t3 luminanceThreshold) {
 		*luminanceThreshold_ = luminanceThreshold;
 	}
 
@@ -37,6 +37,6 @@ public:
 	void Debug();
 
 private:
-	ConstantBuffer<float32_t> luminanceThreshold_;
+	ConstantBuffer<float32_t3> luminanceThreshold_;
 	DXGI_FORMAT format_ = DXGI_FORMAT_R32G32B32A32_FLOAT;
 };

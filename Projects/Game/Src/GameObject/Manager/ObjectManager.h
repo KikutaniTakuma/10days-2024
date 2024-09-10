@@ -54,14 +54,15 @@ private:
 
 	void Save();
 
-	void SetPlayerCompToEyeComp();
+	void SetPlayerCompToOther();
 
 public:
 	void Load(const std::string& jsonFileName);
 
 private:
 	std::unordered_set<std::unique_ptr<Object>> objects_;
-	Lamb::SafePtr<class CollisionManager> obbManager_;
+	Lamb::SafePtr<class CloudManager> cloudManager_;
+	Lamb::SafePtr<class CollisionManager> collisionManager_;
 	std::unordered_map<std::string, bool> objectTags_;
 	Lamb::SafePtr<class CameraComp> cameraComp_;
 

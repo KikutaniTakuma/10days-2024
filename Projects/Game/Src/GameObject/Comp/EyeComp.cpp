@@ -6,6 +6,11 @@
 #include "EyeStateComp.h"
 #include "EaseingComp.h"
 #include "LineRenderDataComp.h"
+#include "ChildrenObjectComp.h"
+#include "LineConvertTransformComp.h"
+
+#include "Engine/Graphics/RenderingManager/RenderingManager.h"
+#include "SpriteRenderDataComp.h"
 
 void EyeComp::Init()
 {
@@ -15,6 +20,11 @@ void EyeComp::Init()
 	beamLineRenderDataComp_ = object_.AddComp<LineRenderDataComp>();
 	eyeStateComp_ = object_.AddComp<EyeStateComp>();
 	easeingComp_ = object_.AddComp<EaseingComp>();
+	childrenObjectComp_ = object_.AddComp<ChildrenObjectComp>();
+
+
+	Vector4 bloomColor = 0xd56ff9ff;
+	RenderingManager::GetInstance()->SetBloomColor({ bloomColor.color.r,bloomColor.color.g,bloomColor.color.b });
 }
 
 void EyeComp::SetPlayerComp(PlayerComp* playerComp) {
@@ -26,6 +36,18 @@ void EyeComp::SetPlayerComp(PlayerComp* playerComp) {
 	beamLineComp_->end = playerTransformComp_->translate;
 
 	playerObbComp_ = playerComp_->getObject().GetComp<ObbComp>();
+}
+
+void EyeComp::SetBeamTransformComp() {
+	for (const auto& i : childrenObjectComp_->GetObjects()) {
+		if (i->HasComp<LineConvertTransformComp>()) {
+			childrenBeamLIneComp_ = i->GetComp<LineComp>();
+			i->GetComp<TransformComp>()->SetParent(nullptr);
+		}
+		if (i->HasComp<SpriteRenderDataComp>()) {
+			childrenBeamRenderDataComp_ = i->GetComp<SpriteRenderDataComp>();
+		}
+	}
 }
 
 void EyeComp::Save(nlohmann::json& json) {
@@ -132,7 +154,6 @@ void EyeComp::Event() {
 		break;
 		// 狙いを固定
 	case EyeStateComp::State::kAimFixed:
-		beamLineRenderDataComp_->color = 0xff00ffff;
 		// 時間を加算
 		eyeStateComp_->aimFixedCount += object_.GetDeltaTime();
 
@@ -144,7 +165,7 @@ void EyeComp::Event() {
 		break;
 		// 発射
 	case EyeStateComp::State::kFire:
-		beamLineRenderDataComp_->color = 0xffff;
+		beamLineRenderDataComp_->color = 0xd56ff9ff;
 
 		// 時間を加算
 		eyeStateComp_->fireCount += object_.GetDeltaTime();
@@ -163,4 +184,25 @@ void EyeComp::Event() {
 		break;
 	}
 
+}
+
+void EyeComp::Update() {
+	if (childrenBeamLIneComp_.empty()) {
+		return;
+	}
+	
+	if (eyeStateComp_->state == EyeStateComp::State::kFire) {
+		childrenBeamLIneComp_->start = beamLineComp_->start;
+		childrenBeamLIneComp_->end = beamLineComp_->end;
+	}
+	else {
+		childrenBeamLIneComp_->start = Vector3::kZero;
+		childrenBeamLIneComp_->end = Vector3::kZero;
+	}
+
+	if (childrenBeamRenderDataComp_.empty()) {
+		return;
+	}
+
+	childrenBeamRenderDataComp_->color = beamLineRenderDataComp_->color;
 }

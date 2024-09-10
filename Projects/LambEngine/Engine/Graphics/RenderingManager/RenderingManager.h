@@ -52,6 +52,7 @@ public:
 	void SetProjectionInverseMatrix(const Mat4x4& projectionInverce);
 	void SetHsv(const Vector3& hsv);
 	void SetColor(const Vector4& color);
+	void SetBloomColor(const Vector3& bloomColor);
 
 	void Debug(const std::string& guiName);
 
@@ -105,7 +106,7 @@ private:
 	// ブルームで使用する輝度抽出用オフスクリーン
 	std::unique_ptr<PeraRender> luminateTexture_;
 	Lamb::SafePtr<class Luminate> luminate_;
-	float32_t luminanceThreshold = 0.0f;
+	float32_t3 luminanceThreshold;
 
 	// ブルームで使用するガウシアンフィルタ(横)用オフスクリーン
 	std::unique_ptr<PeraRender> gaussianHorizontalTexture_;

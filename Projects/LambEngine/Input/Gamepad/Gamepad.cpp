@@ -5,8 +5,8 @@
 #include "Math/Vector2.h"
 
 Gamepad::Gamepad() :
-	preButton_(0),
-	state_({0}),
+	state_({}),
+	preState_({}),
 	vibration_({0})
 {}
 
@@ -16,12 +16,12 @@ Gamepad* const Gamepad::GetInstance() {
 }
 
 void Gamepad::Input() {
-	preButton_ = state_.Gamepad.wButtons;
+	preState_ = state_;
     XInputGetState(0, &state_);
 }
 
 void Gamepad::InputReset() {
-	preButton_ = 0;
+	preState_ = {};
 	state_ = {  };
 	vibration_ = {  };
 }
@@ -31,19 +31,34 @@ bool Gamepad::GetButton(Button type) {
 }
 
 bool Gamepad::GetPreButton(Button type) {
-	return (preButton_ >> static_cast<short>(type)) % 2 == 1;
+	return (preState_.Gamepad.wButtons >> static_cast<short>(type)) % 2 == 1;
 }
 
 bool Gamepad::Pushed(Button type) {
-	return GetButton(type) && !GetPreButton(type);
+	return GetButton(type) and !GetPreButton(type);
 }
 
 bool Gamepad::LongPush(Button type) {
-	return GetButton(type) && GetPreButton(type);
+	return GetButton(type) and GetPreButton(type);
 }
 
 bool Gamepad::Released(Button type) {
-	return !GetButton(type) && GetPreButton(type);
+	return not GetButton(type) and GetPreButton(type);
+}
+
+bool Gamepad::Pushed(Trigger type, float deadZone)
+{
+	return (0.0f < GetTrigger(type, deadZone)) and (0.0f == GetPreTrigger(type, deadZone));
+}
+
+bool Gamepad::LongPush(Trigger type, float deadZone)
+{
+	return (0.0f < GetTrigger(type, deadZone)) and (0.0f < GetPreTrigger(type, deadZone));
+}
+
+bool Gamepad::Released(Trigger type, float deadZone)
+{
+	return (0.0f == GetTrigger(type, deadZone)) and (0.0f < GetPreTrigger(type, deadZone));
 }
 
 bool Gamepad::PushAnyKey() {
@@ -61,20 +76,41 @@ bool Gamepad::PushAnyKey() {
 		return true;
 	}
 
-	return instance->state_.Gamepad.wButtons != instance->preButton_;
+	return instance->state_.Gamepad.wButtons != instance->preState_.Gamepad.wButtons;
 }
 
-float Gamepad::GetTriger(Triger type, float deadZone) {
+float Gamepad::GetTrigger(Trigger type, float deadZone) {
 	static constexpr float kNormal = 1.0f / static_cast<float>(UCHAR_MAX);
 	float moveTriger = 0.0f;
 	switch (type)
 	{
-	case Gamepad::Triger::LEFT:
+	case Gamepad::Trigger::LEFT:
 		moveTriger = static_cast<float>(state_.Gamepad.bLeftTrigger) * kNormal;
 		break;
 
-	case Gamepad::Triger::RIGHT:
+	case Gamepad::Trigger::RIGHT:
 		moveTriger = static_cast<float>(state_.Gamepad.bRightTrigger) * kNormal;
+		break;
+
+	default:
+		return 0.0f;
+	}
+
+	return moveTriger <= deadZone ? 0.0f : moveTriger;
+}
+
+float Gamepad::GetPreTrigger(Trigger type, float deadZone)
+{
+	static constexpr float kNormal = 1.0f / static_cast<float>(UCHAR_MAX);
+	float moveTriger = 0.0f;
+	switch (type)
+	{
+	case Gamepad::Trigger::LEFT:
+		moveTriger = static_cast<float>(preState_.Gamepad.bLeftTrigger) * kNormal;
+		break;
+
+	case Gamepad::Trigger::RIGHT:
+		moveTriger = static_cast<float>(preState_.Gamepad.bRightTrigger) * kNormal;
 		break;
 
 	default:
@@ -106,7 +142,7 @@ Vector2 Gamepad::GetStick(Stick type, float deadZone) {
 	float length = moveStick.Length();
 
 	// もしデッドゾーン内だった場合は0.0fを返す
-	if (-deadZone <= length && length <= deadZone) {
+	if (-deadZone <= length and length <= deadZone) {
 		return Vector2::kZero;
 	}
 
@@ -134,8 +170,8 @@ void Gamepad::Debug() {
 		ImGui::TreePop();
 	}
 	if (ImGui::TreeNode("triger")) {
-		ImGui::Text("LEFT_TRIGER    = %.2f%%\n", GetTriger(Triger::LEFT) * 100.0f);
-		ImGui::Text("RIGHT_TRIGER   = %.2f%%\n", GetTriger(Triger::RIGHT) * 100.0f);
+		ImGui::Text("LEFT_TRIGER    = %.2f%%\n", GetTrigger(Trigger::LEFT) * 100.0f);
+		ImGui::Text("RIGHT_TRIGER   = %.2f%%\n", GetTrigger(Trigger::RIGHT) * 100.0f);
 		ImGui::TreePop();
 	}
 	if (ImGui::TreeNode("ABXY")) {

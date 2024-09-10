@@ -98,6 +98,7 @@ public:
 	virtual void LastUpdate() override {}
 
 	virtual void Draw([[maybe_unused]] CameraComp*) {}
+	virtual void Draw() {}
 
 	virtual void Debug([[maybe_unused]]const std::string& guiName) {};
 
@@ -139,6 +140,7 @@ public:
 	virtual void LastUpdate() override;
 
 	virtual void Draw([[maybe_unused]] CameraComp* cameraComp) const;
+	virtual void Draw() const;
 
 	virtual bool Debug(const std::string& guiName);
 
@@ -168,39 +170,40 @@ public:
 
 public:
 	void SetTag(const std::string& tag) {
-		tags_.insert(tag);
+		tags_.insert(std::make_pair(std::hash<std::string>()(tag), tag));
 	}
 
 	[[nodiscard]] bool HasTag(const std::string& tag) const {
-		return tags_.contains(tag);
+		return tags_.contains(std::hash<std::string>()(tag));
 	}
 	template<IsBaseIComp Name>
 	[[nodiscard]] bool HasTag(const std::string& tag) const {
-		return tags_.contains(typeid(Name).name());
+		return tags_.contains(std::hash<std::string>()(typeid(Name).name()));
 	}
 
 	void EraseTag(const std::string& tag) {
 		if (this->HasTag(tag)) {
-			tags_.erase(tag);
+			tags_.erase(std::hash<std::string>()(tag));
 		}
 	}
 
-	const std::unordered_set<std::string>& GetTags() const {
+	const std::unordered_map<size_t, std::string>& GetTags() const {
 		return tags_;
 	}
 
 	template<IsBaseIComp CompType>
 	CompType* const AddComp() {
 		auto&& key = std::string(typeid(CompType).name());
-		tags_.insert(key);
-		bool isExist = components_.contains(key);
+		size_t hashKey = std::hash<std::string>()(key);
+		bool isExist = components_.contains(hashKey);
 
 		if (not isExist) {
-			components_[key] = std::make_unique<CompType>(this);
-			components_[key]->Init();
+			SetTag(key);
+			components_[hashKey] = std::make_unique<CompType>(this);
+			components_[hashKey]->Init();
 		}
 
-		return static_cast<CompType*>(components_.at(key).get());
+		return static_cast<CompType*>(components_.at(hashKey).get());
 	}
 
 	void AddComps(nlohmann::json& compData);
@@ -217,20 +220,21 @@ public:
 	template<IsBaseIComp CompType>
 	[[nodiscard]]CompType* const GetComp() const {
 		auto&& key = std::string(typeid(CompType).name());
-		bool isExist = components_.contains(key);
+		size_t hashKey = std::hash<std::string>()(key);
+		bool isExist = tags_.contains(hashKey);
 
 		if (not isExist) {
 			throw Lamb::Error::Code<Object>("This comp is not add", ErrorPlace);
 		}
 		else {
-			return static_cast<CompType*>(components_.at(key).get());
+			return static_cast<CompType*>(components_.at(hashKey).get());
 		}
 	}
 
 	template<IsBaseIComp CompType>
 	[[nodiscard]] bool HasComp() const {
 		auto&& key = std::string(typeid(CompType).name());
-		return components_.contains(key);
+		return components_.contains(std::hash<std::string>()(key));
 	}
 
 	const std::string& GetObjectName() const {
@@ -242,8 +246,8 @@ public:
 	}
 
 protected:
-	std::unordered_map<std::string, std::unique_ptr<IComp>> components_;
-	std::unordered_set<std::string> tags_;
+	std::unordered_map<size_t, std::unique_ptr<IComp>> components_;
+	std::unordered_map<size_t, std::string> tags_;
 	std::string objectName_;
 	float32_t deltatime_ = 0.0_f32;
 };

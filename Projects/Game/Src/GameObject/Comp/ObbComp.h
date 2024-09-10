@@ -33,7 +33,7 @@ public:
 	bool IsCollision(ObbComp* const other, Vector3& pushVector);
 	bool IsCollision(const Vector3& start, const Vector3& end);
 
-	bool CollisionHasTag(ObbComp* const other);
+	bool Collision(ObbComp* const other);
 
 	TransformComp& GetTransformComp();
 	const TransformComp& GetTransformComp() const;
@@ -47,6 +47,9 @@ public:
 	void Load(nlohmann::json& json) override;
 
 	const std::string& GetCurrentCollisionTag() const;
+	const std::unordered_set<std::string>& GetCollisionTagList() const {
+		return collisionTags_;
+	}
 
 public:
 	Vector3 scale = Vector3::kIdentity;

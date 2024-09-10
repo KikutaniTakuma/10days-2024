@@ -19,7 +19,7 @@ void Luminate::SetRtvFormt(DXGI_FORMAT format) {
 
 void Luminate::Debug() {
 #ifdef _DEBUG
-	ImGui::DragFloat("輝度閾値", &(*luminanceThreshold_), 0.001f, 0.0f, 1.0f);
+	ImGui::DragFloat("ブルーム閾値", luminanceThreshold_->data(), 0.001f, 0.0f, 1.0f);
 #endif // _DEBUG
 }
 
