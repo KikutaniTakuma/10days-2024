@@ -22,7 +22,7 @@ public:
 
 	void Debug(const std::string& guiName) override;
 
-	Audio& GetAudio();
+	Audio* GetAudio();
 
 private:
 	std::string fileName_;

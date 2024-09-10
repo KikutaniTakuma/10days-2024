@@ -75,7 +75,7 @@ void AudioComp::Debug(const std::string& guiName) {
 
 }
 
-Audio& AudioComp::GetAudio()
+Audio* AudioComp::GetAudio()
 {
-	return *audio_;
+	return audio_;
 }
