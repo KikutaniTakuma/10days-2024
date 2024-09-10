@@ -60,7 +60,7 @@ bool LineCollisionComp::Collision(ObbComp* obbComp)
 
 void LineCollisionComp::Save(nlohmann::json& json) {
 	SaveCompName(json);
-	json["CollisionTag"] = nlohmann::json::array();
+	json["CollisionTags"] = nlohmann::json::array();
 	for (auto& i : collisionTags_) {
 		json["CollisionTags"].push_back(i);
 	}

@@ -3,6 +3,13 @@
 
 void InputMoveComp::FirstUpdate()
 {
+#ifdef _DEBUG
+	bool isOnImGui = ImGui::GetIO().WantCaptureMouse or ImGui::IsAnyItemHovered();
+
+	if (isOnImGui) {
+		return;
+	}
+#endif // _DEBUG
 	Lamb::SafePtr gamepad = Input::GetInstance()->GetGamepad();
 	Lamb::SafePtr key = Input::GetInstance()->GetKey();
 	Lamb::SafePtr mouse = Input::GetInstance()->GetMouse();

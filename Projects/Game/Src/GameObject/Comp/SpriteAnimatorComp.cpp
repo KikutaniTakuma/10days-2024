@@ -34,7 +34,7 @@ void SpriteAnimatorComp::Init()
 void SpriteAnimatorComp::Update() {
 	if ((duration_ * static_cast<float>(currentAnimationNumber_) < animationTime_)) {
 		currentAnimationNumber_++;
-		currentPos_.x += scale_.x;
+		currentPos_.x += std::abs(scale_.x);
 	}
 
 	if (isActive_) {
@@ -65,6 +65,7 @@ void SpriteAnimatorComp::Debug([[maybe_unused]]const std::string& guiName) {
 		ImGui::Checkbox("isLoop", &isLoop_);
 		ImGui::DragInt("アニメーション枚数", &animationNumber_, 0.01f, 1, 100);
 		ImGui::DragFloat("アニメーション間隔", &duration_, 0.01f, 0.0001f, 100.0f);
+		ImGui::Checkbox("向き反転", &isDirectionInverse_);
 
 		if (ImGui::Button("start")) {
 			Start();
@@ -80,6 +81,7 @@ void SpriteAnimatorComp::Debug([[maybe_unused]]const std::string& guiName) {
 		}
 
 		SetAnimationNumber(animationNumber_);
+		DirectionInverse(isDirectionInverse_);
 		ImGui::TreePop();
 	}
 #endif // _DEBUG
@@ -112,4 +114,13 @@ void SpriteAnimatorComp::Pause() {
 void SpriteAnimatorComp::SetAnimationNumber(uint32_t animationNumber) {
 	animationNumber_ = std::max(1u, animationNumber);
 	scale_.x = 1.0f / static_cast<float>(animationNumber_);
+}
+
+void SpriteAnimatorComp::DirectionInverse(bool isSigned) {
+	if (isSigned) {
+		scale_.x = -1.0f * std::abs(scale_.x);
+	}
+	else {
+		scale_.x = std::abs(scale_.x);
+	}
 }

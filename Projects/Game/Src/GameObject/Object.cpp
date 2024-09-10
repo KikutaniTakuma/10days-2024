@@ -40,10 +40,14 @@
 #include "Comp/LineRenderComp.h"
 #include "Comp/LineRenderDataComp.h"
 #include "Comp/LineCollisionComp.h"
+#include "Comp/LineConvertTransformComp.h"
 
 #include "Comp/EyeComp.h"
 #include "Comp/EyeStateComp.h"
 #include "Comp/EaseingComp.h"
+
+#include "Comp/AudioComp.h"
+#include "Comp/BgmComp.h"
 
 void Object::Init() {
 	/*for (auto& i : components_) {
@@ -91,6 +95,12 @@ void Object::Draw([[maybe_unused]] CameraComp* cameraComp) const
 	}
 }
 
+void Object::Draw() const {
+	for (auto& i : components_) {
+		i.second->Draw();
+	}
+}
+
 bool Object::Debug([[maybe_unused]] const std::string& guiName) {
 #ifdef _DEBUG
 	if (ImGui::TreeNode(guiName.c_str())) {
@@ -121,6 +131,8 @@ bool Object::DebugAddComp() {
 #ifdef _DEBUG
 	if (ImGui::TreeNode("Comps")) {
 		ImGui::BeginChild(ImGui::GetID((void*)0), { 0.0f, 150.0f }, ImGuiChildFlags_AlwaysAutoResize | ImGuiChildFlags_AutoResizeX, ImGuiWindowFlags_NoTitleBar);
+		DebugAdd<AudioComp>();
+		DebugAdd<BgmComp>();
 		DebugAdd<ButtonComp>();
 		DebugAdd<Camera2DComp>();
 		DebugAdd<Camera3DComp>();
@@ -159,6 +171,7 @@ bool Object::DebugAddComp() {
 		DebugAdd<LineRenderComp>();
 		DebugAdd<LineRenderDataComp>();
 		DebugAdd<LineCollisionComp>();
+		DebugAdd<LineConvertTransformComp>();
 		DebugAdd<EyeComp>();
 		DebugAdd<EyeStateComp>();
 		DebugAdd<EaseingComp>();
@@ -198,6 +211,8 @@ void Object::AddComps(nlohmann::json& compData)
 {
 	std::string compName = compData["CompName"].get<std::string>();
 
+	AddAndLoadComp<AudioComp>(compName, compData);
+	AddAndLoadComp<BgmComp>(compName, compData);
 	AddAndLoadComp<ButtonComp>(compName, compData);
 	AddAndLoadComp<Camera2DComp>(compName, compData);
 	AddAndLoadComp<Camera3DComp>(compName, compData);
@@ -224,6 +239,7 @@ void Object::AddComps(nlohmann::json& compData)
 	AddAndLoadComp<LineRenderComp>(compName, compData);
 	AddAndLoadComp<LineRenderDataComp>(compName, compData);
 	AddAndLoadComp<LineCollisionComp>(compName, compData);
+	AddAndLoadComp<LineConvertTransformComp>(compName, compData);
 	AddAndLoadComp<EyeComp>(compName, compData);
 	AddAndLoadComp<EyeStateComp>(compName, compData);
 	AddAndLoadComp<EaseingComp>(compName, compData);

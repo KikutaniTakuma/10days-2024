@@ -70,6 +70,9 @@ public:
 		duration_ = duration;
 	}
 
+	// 向き反転
+	void DirectionInverse(bool isSigned);
+
 private:
 	Vector3 startPos_;
 	Vector3 currentPos_;
@@ -83,6 +86,7 @@ private:
 
 	bool isActive_ = false;
 	bool isLoop_ = false;
+	bool isDirectionInverse_ = false;
 
 	Lamb::SafePtr<class SpriteRenderDataComp> spriteRenderDataComp_;
 };
