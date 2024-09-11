@@ -180,7 +180,7 @@ void PlayerComp::Move() {
 
 	if (keyTransform_) {
 
-		keyTransform_->scale = { 0.5f,0.5f,0.5f };
+		keyTransform_->scale = { 24.0f,24.0f,24.0f };
 		keyTransform_->translate = transform_->translate + Vector3{ 0.0f,32.0f,0.0f };
 
 	}
@@ -202,6 +202,8 @@ void PlayerComp::Event() {
 		if (key_) {
 
 			key_->SetIsObtained(false);
+			keyTransform_->scale = { 32.0f,32.0f,32.0f };
+			keyTransform_->translate = Vector3{ float(mass_->GetMassX()) * 32.0f, -float(mass_->GetMassY()) * 32.0f, 1.0f };
 			csvData_->SetNumber(mass_->GetMassX(), mass_->GetMassY(), static_cast<int32_t>(TileName::kKey));
 			RemoveKey();
 
@@ -237,12 +239,12 @@ void PlayerComp::SetKey(KeyComp* keyComp)
 void PlayerComp::RemoveKey()
 {
 
-	if (key_) {
-		key_ = nullptr;
-	}
-
 	if (keyTransform_) {
 		keyTransform_ = nullptr;
+	}
+
+	if (key_) {
+		key_ = nullptr;
 	}
 
 }

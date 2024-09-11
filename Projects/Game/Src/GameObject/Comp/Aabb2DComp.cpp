@@ -35,7 +35,17 @@ void Aabb2DComp::LastUpdate()
 void Aabb2DComp::UpdatePosAndOrient()
 {
 
-	const Mat4x4& worldMatrix = isScaleEffect_ ? transformComp_->GetWorldMatrix() : Mat4x4::MakeScale(transformComp_->GetWorldMatrix().GetScale()).Inverse() * transformComp_->GetWorldMatrix();
+	Mat4x4 worldMatrix;
+	if (isScaleEffect_) {
+		worldMatrix = transformComp_->GetWorldMatrix();
+	}
+	else {
+		Vector3 wScale;
+		Quaternion rotate;
+		Vector3 translate;
+		transformComp_->GetWorldMatrix().Decompose(wScale, rotate, translate);
+		worldMatrix = Mat4x4::MakeAffin(Vector3::kIdentity, rotate, translate);
+	}
 
 	min_ = (Vector3{ -0.5f,-0.5f,-0.5f }) * Mat4x4::MakeAffin(scale_, Vector3(), Vector3()) * worldMatrix;
 
