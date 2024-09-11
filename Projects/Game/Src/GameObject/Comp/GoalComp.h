@@ -10,6 +10,8 @@ public:
 
 	void Event() override;
 
+	void Update() override;
+
 	void SetPlayerComp(class PlayerComp* playerComp);
 
 	~GoalComp() = default;
@@ -37,5 +39,7 @@ private:
 	Lamb::SafePtr<class Mass2DComp> mass_;
 
 	Lamb::SafePtr<class FlagComp> isGoal_;
+
+	Lamb::SafePtr<class SpriteAnimatorComp> animation_;
 
 };

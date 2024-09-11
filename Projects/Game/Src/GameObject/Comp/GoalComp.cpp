@@ -5,6 +5,7 @@
 #include "Mass2DComp.h"
 #include "PlayerComp.h"
 #include "FlagComp.h"
+#include "SpriteAnimatorComp.h"
 
 void GoalComp::Init()
 {
@@ -13,6 +14,7 @@ void GoalComp::Init()
 	spriteRenderComp_ = object_.AddComp<SpriteRenderComp>();
 	mass_ = object_.AddComp<Mass2DComp>();
 	isGoal_ = object_.AddComp<FlagComp>();
+	animation_ = object_.AddComp<SpriteAnimatorComp>();
 }
 
 void GoalComp::Event()
@@ -23,8 +25,19 @@ void GoalComp::Event()
 	}
 
 	//プレイヤーがゴールに触れたらフラグを立てる
-	if (playerAabbCollision_->IsCollision(aabbCollision_.get())) {
+	if (not isGoal_->GetIsActive() and playerAabbCollision_->IsCollision(aabbCollision_.get())) {
 		isGoal_->SetIsActive(true);
+	}
+
+}
+
+void GoalComp::Update()
+{
+
+	if (isGoal_->GetIsActive().OnEnter()) {
+
+		
+
 	}
 
 }

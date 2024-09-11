@@ -39,7 +39,7 @@ void RemoveCloudComp::Event()
 				//マスが空いていたら雲を吐き出す
 				if (csvData_->GetNumber(mass_->GetMassX(), mass_->GetMassY()) == static_cast<int32_t>(TileName::kNone)) {
 
-					Vector3 newPosition = { float(mass_->GetMassX()) * 32.0f, -float(mass_->GetMassY()) * 32.0f, 1.0f };
+					Vector3 newPosition = { float(mass_->GetMassX()) * 32.0f, -float(mass_->GetMassY()) * 32.0f, 5.0f };
 
 					CloudManager::GetInstance()->GetDeadCloud()->SetPosition(newPosition);
 
@@ -57,7 +57,7 @@ void RemoveCloudComp::Event()
 				//隣のマスが空いていたら雲を吐き出す
 				if (csvData_->GetNumber(mass_->GetMassX() - 1, mass_->GetMassY()) == static_cast<int32_t>(TileName::kNone)) {
 
-					Vector3 newPosition = { float(mass_->GetMassX() - 1) * 32.0f, -float(mass_->GetMassY()) * 32.0f, 1.0f };
+					Vector3 newPosition = { float(mass_->GetMassX() - 1) * 32.0f, -float(mass_->GetMassY()) * 32.0f, 5.0f };
 
 					CloudManager::GetInstance()->GetDeadCloud()->SetPosition(newPosition);
 
