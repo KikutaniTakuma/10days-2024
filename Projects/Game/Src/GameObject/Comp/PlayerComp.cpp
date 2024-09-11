@@ -202,6 +202,7 @@ void PlayerComp::Event() {
 		if (key_) {
 
 			key_->SetIsObtained(false);
+			csvData_->SetNumber(mass_->GetMassX(), mass_->GetMassY(), static_cast<int32_t>(TileName::kKey));
 			RemoveKey();
 
 		}

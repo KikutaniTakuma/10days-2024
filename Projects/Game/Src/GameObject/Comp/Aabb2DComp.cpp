@@ -35,7 +35,7 @@ void Aabb2DComp::LastUpdate()
 void Aabb2DComp::UpdatePosAndOrient()
 {
 
-	const Mat4x4& worldMatrix = transformComp_->GetWorldMatrix();
+	const Mat4x4& worldMatrix = isScaleEffect_ ? transformComp_->GetWorldMatrix() : Mat4x4::MakeScale(transformComp_->GetWorldMatrix().GetScale()).Inverse() * transformComp_->GetWorldMatrix();
 
 	min_ = (Vector3{ -0.5f,-0.5f,-0.5f }) * Mat4x4::MakeAffin(scale_, Vector3(), Vector3()) * worldMatrix;
 
@@ -107,6 +107,7 @@ void Aabb2DComp::Save(nlohmann::json& json) {
 		json["collsiionTags"].push_back(i);
 	}
 	json["scale"] = nlohmann::json::array({ scale_.x, scale_.y, scale_.z });
+	json["isScaleEffect"] = isScaleEffect_;
 }
 
 void Aabb2DComp::Load([[maybe_unused]] nlohmann::json& json) {
@@ -120,5 +121,13 @@ void Aabb2DComp::Load([[maybe_unused]] nlohmann::json& json) {
 		scale_[i] = json["scale"][i].get<float32_t>();
 	}
 
+	if (json.contains("isScaleEffect")) {
+		isScaleEffect_ = json["isScaleEffect"].get<bool>();
+	}
+
 }
 
+void Aabb2DComp::SetEnableScaleEffect(bool isScaleEffect)
+{
+	isScaleEffect_ = isScaleEffect;
+}

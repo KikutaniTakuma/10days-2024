@@ -14,14 +14,14 @@
                         1.0
                     ],
                     "scale": [
-                        1.0,
-                        1.0,
+                        0.6000000238418579,
+                        0.6000000238418579,
                         1.0
                     ],
                     "translate": [
                         624.0,
                         -344.0,
-                        0.0
+                        -10.0
                     ]
                 },
                 {
@@ -30,6 +30,9 @@
                     "height": 720,
                     "nearClip": 0.10000000149011612,
                     "width": 1280
+                },
+                {
+                    "CompName": "class FollowCamera2DComp"
                 }
             ],
             "type": "Object"
@@ -60,14 +63,14 @@
                         1.0
                     ],
                     "scale": [
-                        1280.0,
-                        720.0,
+                        12800.0,
+                        7200.0,
                         16.0
                     ],
                     "translate": [
                         624.0,
                         -344.0,
-                        10.0
+                        100.0
                     ]
                 }
             ]
@@ -105,7 +108,7 @@
                     "translate": [
                         384.0,
                         -128.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -119,16 +122,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -145,6 +156,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -182,7 +208,7 @@
                     "translate": [
                         576.0,
                         -128.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -196,16 +222,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -222,6 +256,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -259,7 +308,7 @@
                     "translate": [
                         352.0,
                         -160.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -273,16 +322,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -299,6 +356,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -332,9 +404,9 @@
                         1.0
                     ],
                     "scale": [
-                        24.0,
-                        24.0,
-                        24.0
+                        48.0,
+                        48.0,
+                        48.0
                     ],
                     "translate": [
                         384.0,
@@ -355,14 +427,23 @@
                     ],
                     "collisiionTags": [],
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        0.5,
+                        0.5,
+                        0.5
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
                     "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": true,
+                    "scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
                 },
                 {
                     "CompName": "class InputMoveComp",
@@ -398,6 +479,30 @@
                         16.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class SpriteAnimatorComp",
+                    "animationNumber": 6,
+                    "duration": 0.16660000383853912,
+                    "isLoop": true,
+                    "startPos": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "CompName": "class TextureHandlesComp",
+                    "fileNames": [
+                        "./Resources/Textures/player/player_stop.png",
+                        "./Resources/Textures/player/player_walk.png",
+                        "./Resources/Textures/player/player_eat.png",
+                        "./Resources/Textures/player/player_out.png",
+                        "./Resources/Textures/player/player_stop_transparent.png",
+                        "./Resources/Textures/player/player_walk_transparent.png",
+                        "./Resources/Textures/player/player_eat_transparent.png",
+                        "./Resources/Textures/player/player_out_transparent.png"
+                    ]
                 }
             ]
         },
@@ -434,7 +539,7 @@
                     "translate": [
                         576.0,
                         -160.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -448,16 +553,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -474,6 +587,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -511,7 +639,7 @@
                     "translate": [
                         0.0,
                         -192.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -525,16 +653,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -551,6 +687,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -588,7 +739,7 @@
                     "translate": [
                         576.0,
                         -192.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -602,16 +753,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -628,6 +787,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -665,7 +839,7 @@
                     "translate": [
                         0.0,
                         -224.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -679,16 +853,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -705,6 +887,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -720,7 +917,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/gimmick/goal_close1.png",
+                    "fileName": "./Resources/Textures/gimmick/goal_close_doing.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -735,14 +932,14 @@
                         1.0
                     ],
                     "scale": [
-                        32.0,
-                        32.0,
+                        64.0,
+                        45.33000183105469,
                         32.0
                     ],
                     "translate": [
                         480.0,
                         -224.0,
-                        1.0
+                        7.0
                     ]
                 },
                 {
@@ -759,6 +956,34 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "scale": [
+                        0.3499999940395355,
+                        0.550000011920929,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class SpriteAnimatorComp",
+                    "animationNumber": 8,
+                    "duration": 0.125,
+                    "isLoop": true,
+                    "startPos": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "CompName": "class TextureHandlesComp",
+                    "fileNames": [
+                        "./Resources/Textures/gimmick/goal_open_doing.png",
+                        "./Resources/Textures/gimmick/goal_close_doing.png",
+                        "./Resources/Textures/gimmick/goal_open_anime.png",
+                        "./Resources/Textures/gimmick/goal_close_anime.png"
+                    ]
                 }
             ],
             "type": "Object"
@@ -796,7 +1021,7 @@
                     "translate": [
                         576.0,
                         -224.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -810,16 +1035,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -836,6 +1069,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -873,7 +1121,7 @@
                     "translate": [
                         0.0,
                         -256.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -887,16 +1135,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -913,6 +1169,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -950,7 +1221,7 @@
                     "translate": [
                         352.0,
                         -256.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -964,16 +1235,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -990,6 +1269,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -1027,7 +1321,7 @@
                     "translate": [
                         384.0,
                         -256.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -1041,16 +1335,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -1067,6 +1369,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -1104,7 +1421,7 @@
                     "translate": [
                         416.0,
                         -256.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -1118,16 +1435,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -1144,6 +1469,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -1181,7 +1521,7 @@
                     "translate": [
                         448.0,
                         -256.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -1195,16 +1535,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -1221,6 +1569,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -1258,7 +1621,7 @@
                     "translate": [
                         480.0,
                         -256.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -1272,16 +1635,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -1298,6 +1669,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -1335,7 +1721,7 @@
                     "translate": [
                         576.0,
                         -256.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -1349,16 +1735,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -1375,6 +1769,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -1412,7 +1821,7 @@
                     "translate": [
                         32.0,
                         -288.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -1426,16 +1835,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -1452,6 +1869,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -1489,7 +1921,7 @@
                     "translate": [
                         544.0,
                         -288.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -1503,16 +1935,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -1529,6 +1969,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -1566,7 +2021,7 @@
                     "translate": [
                         64.0,
                         -320.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -1580,16 +2035,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -1606,6 +2069,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -1643,7 +2121,7 @@
                     "translate": [
                         320.0,
                         -320.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -1657,16 +2135,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -1683,6 +2169,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -1720,7 +2221,7 @@
                     "translate": [
                         512.0,
                         -320.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -1734,16 +2235,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -1760,6 +2269,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -1797,7 +2321,7 @@
                     "translate": [
                         96.0,
                         -352.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -1811,16 +2335,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -1837,6 +2369,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -1874,7 +2421,7 @@
                     "translate": [
                         288.0,
                         -352.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -1888,16 +2435,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -1914,6 +2469,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -1951,7 +2521,7 @@
                     "translate": [
                         352.0,
                         -352.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -1965,16 +2535,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -1991,6 +2569,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -2028,7 +2621,7 @@
                     "translate": [
                         384.0,
                         -352.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -2042,16 +2635,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -2068,6 +2669,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -2105,7 +2721,7 @@
                     "translate": [
                         480.0,
                         -352.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -2119,16 +2735,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -2145,6 +2769,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -2182,7 +2821,7 @@
                     "translate": [
                         128.0,
                         -384.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -2196,16 +2835,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -2222,6 +2869,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -2259,7 +2921,7 @@
                     "translate": [
                         160.0,
                         -384.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -2273,16 +2935,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -2299,6 +2969,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -2336,7 +3021,7 @@
                     "translate": [
                         256.0,
                         -384.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -2350,16 +3035,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -2376,6 +3069,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -2413,7 +3121,7 @@
                     "translate": [
                         416.0,
                         -384.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -2427,16 +3135,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -2453,6 +3169,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -2490,7 +3221,7 @@
                     "translate": [
                         448.0,
                         -384.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -2504,16 +3235,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -2530,6 +3269,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -2567,7 +3321,7 @@
                     "translate": [
                         192.0,
                         -416.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -2581,16 +3335,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -2607,6 +3369,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -2644,7 +3421,7 @@
                     "translate": [
                         224.0,
                         -448.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -2658,16 +3435,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -2684,6 +3469,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -2721,7 +3521,7 @@
                     "translate": [
                         256.0,
                         -480.0,
-                        1.0
+                        5.0
                     ]
                 },
                 {
@@ -2735,16 +3535,24 @@
                         0.0
                     ],
                     "collisiionTags": [],
+                    "isScaleEffect": false,
                     "scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        32.0099983215332,
+                        32.0099983215332,
+                        32.0099983215332
                     ]
                 },
                 {
                     "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
                     ]
                 },
                 {
@@ -2761,6 +3569,21 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
