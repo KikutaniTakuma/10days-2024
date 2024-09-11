@@ -22,6 +22,7 @@
 #include "../Comp/PlayerComp.h"
 #include "../Comp/GoalComp.h"
 #include "../Comp/FollowCamera2DComp.h"
+#include "../Comp/KeyComp.h"
 
 std::unique_ptr<ObjectManager> ObjectManager::instance_;
 
@@ -485,7 +486,27 @@ void ObjectManager::SetPlayerCompToOther() {
 void ObjectManager::InitFlags()
 {
 	
-	
+	bool locateKey = false;
+
+	//鍵を検索
+	for (auto& i : objects_) {
+		if (i->HasComp<KeyComp>()) {
+			locateKey = true;
+			break;
+		}
+	}
+
+	//鍵があるならゴールにロックをかける
+	if (locateKey) {
+
+		for (auto& i : objects_) {
+			if (i->HasComp<GoalComp>()) {
+				i->GetComp<GoalComp>()->SetIsOpen(false);
+				break;
+			}
+		}
+
+	}
 
 }
 
@@ -526,7 +547,7 @@ void ObjectManager::Load(const std::string& jsonFileName) {
 	// ゲーム固有処理
 	// Eyeの処理の別オブジェクトのPlayerCompが必要なのでここで設定する
 	SetPlayerCompToOther();
-
+	InitFlags();
 
 	collisionManager_->MakeCollisionPair();
 

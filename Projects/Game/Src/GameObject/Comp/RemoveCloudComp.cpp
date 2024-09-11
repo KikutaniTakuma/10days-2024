@@ -37,7 +37,8 @@ void RemoveCloudComp::Event()
 			if (csvData_->GetNumber(mass_->GetMassX(), mass_->GetMassY() + 1) == static_cast<int32_t>(TileName::kNone)) {
 
 				//マスが空いていたら雲を吐き出す
-				if (csvData_->GetNumber(mass_->GetMassX(), mass_->GetMassY()) == static_cast<int32_t>(TileName::kNone)) {
+				if (csvData_->GetNumber(mass_->GetMassX() - 1, mass_->GetMassY()) == static_cast<int32_t>(TileName::kNone) or
+					csvData_->GetNumber(mass_->GetMassX() - 1, mass_->GetMassY()) == static_cast<int32_t>(TileName::kPlayer)) {
 
 					Vector3 newPosition = { float(mass_->GetMassX()) * 32.0f, -float(mass_->GetMassY()) * 32.0f, 5.0f };
 
@@ -55,7 +56,8 @@ void RemoveCloudComp::Event()
 			else {
 
 				//隣のマスが空いていたら雲を吐き出す
-				if (csvData_->GetNumber(mass_->GetMassX() - 1, mass_->GetMassY()) == static_cast<int32_t>(TileName::kNone)) {
+				if (csvData_->GetNumber(mass_->GetMassX() - 1, mass_->GetMassY()) == static_cast<int32_t>(TileName::kNone) or
+					csvData_->GetNumber(mass_->GetMassX() - 1, mass_->GetMassY()) == static_cast<int32_t>(TileName::kPlayer)) {
 
 					Vector3 newPosition = { float(mass_->GetMassX() - 1) * 32.0f, -float(mass_->GetMassY()) * 32.0f, 5.0f };
 
@@ -78,7 +80,8 @@ void RemoveCloudComp::Event()
 			if (csvData_->GetNumber(mass_->GetMassX(), mass_->GetMassY() + 1) == static_cast<int32_t>(TileName::kNone)) {
 
 				//マスが空いていたら雲を吐き出す
-				if (csvData_->GetNumber(mass_->GetMassX(), mass_->GetMassY()) == static_cast<int32_t>(TileName::kNone)) {
+				if (csvData_->GetNumber(mass_->GetMassX() - 1, mass_->GetMassY()) == static_cast<int32_t>(TileName::kNone) or
+					csvData_->GetNumber(mass_->GetMassX() - 1, mass_->GetMassY()) == static_cast<int32_t>(TileName::kPlayer)) {
 
 					Vector3 newPosition = { float(mass_->GetMassX()) * 32.0f, -float(mass_->GetMassY()) * 32.0f, 1.0f };
 
@@ -96,7 +99,8 @@ void RemoveCloudComp::Event()
 			else {
 
 				//隣のマスが空いていたら雲を吐き出す
-				if (csvData_->GetNumber(mass_->GetMassX() + 1, mass_->GetMassY()) == static_cast<int32_t>(TileName::kNone)) {
+				if (csvData_->GetNumber(mass_->GetMassX() - 1, mass_->GetMassY()) == static_cast<int32_t>(TileName::kNone) or
+					csvData_->GetNumber(mass_->GetMassX() - 1, mass_->GetMassY()) == static_cast<int32_t>(TileName::kPlayer)) {
 
 					Vector3 newPosition = { float(mass_->GetMassX() + 1) * 32.0f, -float(mass_->GetMassY()) * 32.0f, 1.0f };
 

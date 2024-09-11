@@ -6,19 +6,30 @@
 #include "PlayerComp.h"
 #include "FlagComp.h"
 #include "SpriteAnimatorComp.h"
+#include "SpriteRenderDataComp.h"
+#include "TextureHandlesComp.h"
 
 void GoalComp::Init()
 {
 	transformComp_ = object_.AddComp<TransformComp>();
 	aabbCollision_ = object_.AddComp<Aabb2DComp>();
 	spriteRenderComp_ = object_.AddComp<SpriteRenderComp>();
+	spriteRenderDataComp_ = object_.AddComp<SpriteRenderDataComp>();
 	mass_ = object_.AddComp<Mass2DComp>();
 	isGoal_ = object_.AddComp<FlagComp>();
 	animation_ = object_.AddComp<SpriteAnimatorComp>();
+	handles_ = object_.AddComp<TextureHandlesComp>();
 }
 
 void GoalComp::Event()
 {
+
+	if (isOpen_) {
+		spriteRenderDataComp_->texHandle = handles_->textureHandles_[0];
+	}
+	else {
+		spriteRenderDataComp_->texHandle = handles_->textureHandles_[1];
+	}
 
 	if (player_.empty()) {
 		return;
@@ -26,7 +37,16 @@ void GoalComp::Event()
 
 	//プレイヤーがゴールに触れたらフラグを立てる
 	if (not isGoal_->GetIsActive() and playerAabbCollision_->IsCollision(aabbCollision_.get())) {
-		isGoal_->SetIsActive(true);
+		
+		if (isOpen_) {
+			isGoal_->SetIsActive(true);
+		}
+		else {
+			
+
+
+		}
+		
 	}
 
 }
