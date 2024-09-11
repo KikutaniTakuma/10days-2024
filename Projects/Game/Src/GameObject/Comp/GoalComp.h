@@ -18,6 +18,8 @@ public:
 
 	const Lamb::Flg& GetIsGoal() const;
 
+	void SetIsOpen(bool flag) { isOpen_ = flag; }
+
 public:
 
 	void Save(nlohmann::json& json) override;
@@ -43,5 +45,9 @@ private:
 	Lamb::SafePtr<class FlagComp> isGoal_;
 
 	Lamb::SafePtr<class SpriteAnimatorComp> animation_;
+
+	Lamb::SafePtr<class TextureHandlesComp> handles_;
+
+	Lamb::Flg isOpen_ = true;
 
 };
