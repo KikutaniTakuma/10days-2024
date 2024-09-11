@@ -30,52 +30,29 @@ private:
 	static std::unique_ptr<SceneManager> instance_;
 public:
 
-	void Initialize(std::optional<BaseScene::ID> firstScene, std::optional<BaseScene::ID> finishID);
+	void Initialize(const std::string& sceneJsonFilePath);
 	void Finalize();
 
-	void SceneChange(std::optional<BaseScene::ID> next);
+	void SceneChange(const std::string& nextSceneJsonFilePath);
 
 	void Update();
 
 	void Draw();
 
 public:
-	inline bool GetIsPad() const {
-		return isPad_;
-	}
-
 	bool IsEnd() const;
-
-	const class Camera& GetCurrentSceneCamera() const;
-
-	BaseScene::ID GetCurrentSceneID() const;
-	BaseScene::ID GetPreSceneID() const;
 
 
 private:
-	void Debug();
-
 	void UploadTextureData();
 
 
 private:
-	std::unique_ptr<BaseScene> scene_;
-	std::unique_ptr<BaseScene> next_;
-
 	std::unique_ptr<Fade> fade_;
 
 	class FrameInfo* frameInfo_ = nullptr;
-	Input* input_ = nullptr;
-
-	bool isPad_ = false;
-
-	std::optional<BaseScene::ID> finishID_;
-	std::optional<BaseScene::ID> preSceneID_;
 
 	std::unique_ptr<SceneLoad> load_;
 
-#ifdef _DEBUG
-	std::unordered_map<BaseScene::ID, std::string> sceneName_;
-#endif // _DEBUG
-	std::unordered_map<BaseScene::ID, uint8_t> sceneNum_;
+	std::string nextSceneJsonFilePath_;
 };

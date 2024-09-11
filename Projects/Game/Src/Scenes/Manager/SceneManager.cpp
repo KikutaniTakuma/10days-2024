@@ -25,56 +25,27 @@ SceneManager* const SceneManager::GetInstance()
 	return instance_.get();
 }
 
-void SceneManager::Initialize(std::optional<BaseScene::ID> firstScene, std::optional<BaseScene::ID> finishID) {
-	finishID_ = finishID;
-	preSceneID_ = firstScene.value();
-
-
+void SceneManager::Initialize(const std::string& sceneJsonFilePath) {
 	fade_ = std::make_unique<Fade>();
 
 	frameInfo_ = FrameInfo::GetInstance();
-	input_ = Input::GetInstance();
-
 	SceneFactory* const sceneFactory = SceneFactory::GetInstance();
 
-	scene_.reset(sceneFactory->CreateBaseScene(firstScene));
-	scene_->SceneInitialize(this);
-	scene_->Load();
-	scene_->Initialize();
-
-
 	load_ = std::make_unique<SceneLoad>();
-
-
-#ifdef _DEBUG
-	sceneName_[BaseScene::ID::Title] = "Title";
-	sceneName_[BaseScene::ID::Game] = "Game";
-	sceneName_[BaseScene::ID::StageSelect] = "Select";
-	sceneName_[BaseScene::ID::Result] = "Result";
-#endif // _DEBUG
-	sceneNum_;
-	sceneNum_[BaseScene::ID::Title] = DIK_1;
-	sceneNum_[BaseScene::ID::Game] = DIK_2;
-	sceneNum_[BaseScene::ID::StageSelect] = DIK_3;
-	sceneNum_[BaseScene::ID::Result] = DIK_4;
 
 	// テクスチャデータのアップロード
 	UploadTextureData();
 
 }
 
-void SceneManager::SceneChange(std::optional<BaseScene::ID> next) {
-	if (next_ || fade_->InEnd()
+void SceneManager::SceneChange(const std::string& nextSceneJsonFilePath) {
+	if (not nextSceneJsonFilePath_.empty() || fade_->InEnd()
 		|| fade_->OutEnd() || fade_->IsActive()
 		)
 	{
 		return;
 	}
-	SceneFactory* const sceneFactory = SceneFactory::GetInstance();
-
-	next_.reset(sceneFactory->CreateBaseScene(next));
-	next_->SceneInitialize(this);
-
+	nextSceneJsonFilePath_ = nextSceneJsonFilePath;
 
 	fade_->OutStart();
 }
@@ -173,34 +144,6 @@ BaseScene::ID SceneManager::GetPreSceneID() const
 	return preSceneID_.value();
 }
 
-void SceneManager::Debug()
-{
-	if (input_->GetKey()->LongPush(DIK_SEMICOLON)) {
-		for (auto& i : sceneNum_) {
-			if (input_->GetKey()->Pushed(i.second)) {
-				SceneChange(i.first);
-				return;
-			}
-		}
-	}
-#ifdef _DEBUG
-	ImGui::Begin("SceneManager");
-	if (ImGui::TreeNode("シーン変更")) {
-		for (auto& i : sceneName_) {
-			if (ImGui::Button(i.second.c_str())) {
-				SceneChange(i.first);
-				break;
-			}
-		}
-		ImGui::TreePop();
-	}
-
-	ImGui::Text((std::string("currentScene : ") + sceneName_[scene_->GetID()]).c_str());
-	ImGui::Text((std::string("preScene : ") + sceneName_[preSceneID_.value()]).c_str());
-	ImGui::End();
-#endif // _DEBUG
-}
-
 void SceneManager::UploadTextureData()
 {
 	auto textureManager = TextureManager::GetInstance();
@@ -210,6 +153,10 @@ void SceneManager::UploadTextureData()
 	textureManager->ReleaseIntermediateResource();
 }
 
+void SceneManager::Initialize(const std::string& sceneJsonFilePath)
+{
+}
+
 void SceneManager::Finalize() {
 	if (load_) {
 		load_.reset();
@@ -217,12 +164,8 @@ void SceneManager::Finalize() {
 
 
 	fade_.reset();
-	if (scene_) {
-		scene_->Finalize();
-	}
-	scene_.reset();
-	if (next_) {
-		next_->Finalize();
-	}
-	next_.reset();
+}
+
+void SceneManager::SceneChange(const std::string& nextSceneJsonFilePath)
+{
 }
