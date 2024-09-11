@@ -27,4 +27,6 @@ private:
 
 	Lamb::SafePtr<class Mass2DComp> mass_;
 
+	Lamb::SafePtr<class Aabb2DComp> aabbCollision_;
+
 };

@@ -482,6 +482,13 @@ void ObjectManager::SetPlayerCompToOther() {
 	}
 }
 
+void ObjectManager::InitFlags()
+{
+	
+	
+
+}
+
 void ObjectManager::Load(const std::string& jsonFileName) {
 	objects_.clear();
 	objectTags_.clear();
