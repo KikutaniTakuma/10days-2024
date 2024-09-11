@@ -6,12 +6,14 @@
 #include "PlayerComp.h"
 #include "FlagComp.h"
 #include "SpriteAnimatorComp.h"
+#include "SpriteRenderDataComp.h"
 
 void GoalComp::Init()
 {
 	transformComp_ = object_.AddComp<TransformComp>();
 	aabbCollision_ = object_.AddComp<Aabb2DComp>();
 	spriteRenderComp_ = object_.AddComp<SpriteRenderComp>();
+	spriteRenderDataComp_ = object_.AddComp<SpriteRenderDataComp>();
 	mass_ = object_.AddComp<Mass2DComp>();
 	isGoal_ = object_.AddComp<FlagComp>();
 	animation_ = object_.AddComp<SpriteAnimatorComp>();

@@ -34,6 +34,8 @@ private:
 
 	Lamb::SafePtr<class SpriteRenderComp> spriteRenderComp_;
 
+	Lamb::SafePtr<class SpriteRenderDataComp> spriteRenderDataComp_;
+
 	Lamb::SafePtr<class Aabb2DComp> aabbCollision_;
 
 	Lamb::SafePtr<class Mass2DComp> mass_;

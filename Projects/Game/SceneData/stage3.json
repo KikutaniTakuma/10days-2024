@@ -125,6 +125,17 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class SpriteAnimatorComp",
+                    "animationNumber": 7,
+                    "duration": 0.14285700023174286,
+                    "isLoop": true,
+                    "startPos": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 }
             ],
             "type": "Object"
@@ -1427,6 +1438,17 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class SpriteAnimatorComp",
+                    "animationNumber": 7,
+                    "duration": 0.14285700023174286,
+                    "isLoop": true,
+                    "startPos": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 }
             ],
             "type": "Object"
@@ -2729,6 +2751,17 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class SpriteAnimatorComp",
+                    "animationNumber": 7,
+                    "duration": 0.14285700023174286,
+                    "isLoop": true,
+                    "startPos": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 }
             ],
             "type": "Object"
@@ -3227,14 +3260,14 @@
                         1.0
                     ],
                     "scale": [
-                        32.0,
-                        32.0,
+                        64.0,
+                        45.33000183105469,
                         32.0
                     ],
                     "translate": [
                         1056.0,
                         -384.0,
-                        1.0
+                        7.0
                     ]
                 },
                 {
@@ -3251,6 +3284,25 @@
                         0.0
                     ],
                     "size": 32
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "scale": [
+                        0.3499999940395355,
+                        0.550000011920929,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class SpriteAnimatorComp",
+                    "animationNumber": 8,
+                    "duration": 0.125,
+                    "isLoop": true,
+                    "startPos": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 }
             ],
             "type": "Object"
