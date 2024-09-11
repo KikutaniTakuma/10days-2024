@@ -8,6 +8,10 @@ void EaseingComp::Finalize() {
 	ease_.reset();
 }
 
+void EaseingComp::LastUpdate() {
+	ease_->Update();
+}
+
 void EaseingComp::Debug([[maybe_unused]]const std::string& guiName) {
 #ifdef _DEBUG
 	if (ImGui::TreeNode(guiName.c_str())) {
@@ -30,6 +34,13 @@ void EaseingComp::Debug([[maybe_unused]]const std::string& guiName) {
 
 		ImGui::Checkbox("isLoop", &isLoop);
 		ImGui::DragFloat("speed", &spdT);
+		if (ImGui::Button("Start")) {
+			ease_->Start(isLoop, spdT, type);
+		}
+		else if (ImGui::Button("Stop")) {
+			ease_->Stop();
+		}
+
 
 		ImGui::TreePop();
 	}

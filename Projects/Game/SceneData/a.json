@@ -2,9 +2,9 @@
     "RederingSetting": {
         "bloom": {
             "luminanceThreshold": [
-                1.0,
-                1.0,
-                1.0
+                0.8352941870689392,
+                0.43529415130615234,
+                0.9764706492424011
             ],
             "x": 8,
             "y": 8
@@ -49,7 +49,7 @@
                     "translate": [
                         0.0,
                         0.0,
-                        -8.282039642333984
+                        -10.0
                     ]
                 },
                 {
@@ -71,10 +71,10 @@
         {
             "Comps": [
                 {
-                    "CompName": "class SpriteRenderComp"
+                    "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class CloudComp"
+                    "CompName": "class SpriteRenderComp"
                 },
                 {
                     "CompName": "class TransformComp",
@@ -85,9 +85,9 @@
                         1.0
                     ],
                     "scale": [
-                        32.0,
-                        32.0,
-                        32.0
+                        34.5684814453125,
+                        34.5684814453125,
+                        34.5684814453125
                     ],
                     "translate": [
                         0.0,
@@ -111,7 +111,25 @@
                         1.0
                     ],
                     "fileName": "./Resources\\Textures\\gimmick\\cloud_shadow1.png",
-                    "offsetType": "kMiddle"
+                    "offsetType": "kMiddle",
+                    "uvTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "scale": [
+                            0.25,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
                 },
                 {
                     "CompName": "class Mass2DComp",
@@ -144,10 +162,27 @@
                 },
                 {
                     "CompName": "class Aabb2DComp",
-                    "collsiionTags": []
+                    "collsiionTags": [],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
                 },
                 {
-                    "CompName": "class CloudRenderComp"
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"

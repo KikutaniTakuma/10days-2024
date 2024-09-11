@@ -154,6 +154,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Src\GameObject\Comp\FlagComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\FollowCamera2DComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\GoalComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\InstanceTimeComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\InvisibleComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\JsonComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\LineCollisionComp.cpp" />
@@ -225,6 +226,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="Src\GameObject\Comp\FollowCamera2DComp.h" />
     <ClInclude Include="Src\GameObject\Comp\GoalComp.h" />
     <ClInclude Include="Src\GameObject\Comp\InputMoveComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\InstanceTimeComp.h" />
     <ClInclude Include="Src\GameObject\Comp\InvisibleComp.h" />
     <ClInclude Include="Src\GameObject\Comp\JsonComp.h" />
     <ClInclude Include="Src\GameObject\Comp\LineCollisionComp.h" />

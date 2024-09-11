@@ -128,8 +128,6 @@ void EyeComp::Event() {
 			transformComp_->translate.x = playerTransformComp_->translate.x;
 		}
 
-		easeingComp_->GetEaseing().Update();
-
 		break;
 		// 狙いを定める
 	case EyeStateComp::State::kAim:
@@ -155,8 +153,6 @@ void EyeComp::Event() {
 		else {
 			transformComp_->translate.x = playerTransformComp_->translate.x;
 		}
-
-		easeingComp_->GetEaseing().Update();
 
 		// ビームの終わりをプレイヤーにする
 		beamLineComp_->end = playerTransformComp_->translate;

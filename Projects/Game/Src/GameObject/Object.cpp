@@ -51,6 +51,8 @@
 #include "Comp/AudioComp.h"
 #include "Comp/BgmComp.h"
 
+#include "Comp/InstanceTimeComp.h"
+
 void Object::Init() {
 	/*for (auto& i : components_) {
 		i.second->Init();
@@ -179,6 +181,7 @@ bool Object::DebugAddComp() {
 		DebugAdd<EyeStateComp>();
 		DebugAdd<EaseingComp>();
 		DebugAdd<TextureHandlesComp>();
+		DebugAdd<InstanceTimeComp>();
 		
 		ImGui::EndChild();
 
@@ -261,5 +264,6 @@ void Object::AddComps(nlohmann::json& compData)
 	AddAndLoadComp<InvisibleComp>(compName, compData);
 	AddAndLoadComp<KeyComp>(compName, compData);
 	AddAndLoadComp<TextureHandlesComp>(compName, compData);
+	AddAndLoadComp<InstanceTimeComp>(compName, compData);
 }
 
