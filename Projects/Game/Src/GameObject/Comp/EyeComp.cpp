@@ -41,11 +41,11 @@ void EyeComp::SetPlayerComp(PlayerComp* playerComp) {
 void EyeComp::SetBeamTransformComp() {
 	for (const auto& i : childrenObjectComp_->GetObjects()) {
 		if (i->HasComp<LineConvertTransformComp>()) {
-			childrenBeamLIneComp_ = i->GetComp<LineComp>();
+			childrenBeamLineComp_ = i->GetComp<LineComp>();
 			i->GetComp<TransformComp>()->SetParent(nullptr);
-		}
-		if (i->HasComp<SpriteRenderDataComp>()) {
-			childrenBeamRenderDataComp_ = i->GetComp<SpriteRenderDataComp>();
+			if (i->HasComp<SpriteRenderDataComp>()) {
+				childrenBeamRenderDataComp_ = i->GetComp<SpriteRenderDataComp>();
+			}
 		}
 	}
 }
@@ -68,7 +68,7 @@ void EyeComp::FirstUpdate() {
 	beamLineComp_->end = playerTransformComp_->translate;
 
 	if (eyeStateComp_->state == EyeStateComp::State::kAimFixed or eyeStateComp_->state == EyeStateComp::State::kFire) {
-		beamLineComp_->end = beamLineComp_->start + aimDirection_ * ((aimPoint_ - beamLineComp_->start).Length() + playerTransformComp_->scale.Length());
+		beamLineComp_->end = beamLineComp_->start + aimDirection_ * ((aimPoint_ - beamLineComp_->start).Length() + playerTransformComp_->scale.Length() * 3.0f);
 	}
 }
 
@@ -102,16 +102,33 @@ void EyeComp::Event() {
 		eyeStateComp_->aimCount = 0.0f;
 		eyeStateComp_->aimFixedCount = 0.0f;
 		eyeStateComp_->fireCount = 0.0f;
-		isEasesingStart_ = false;
 
 
 		// 探している最中にプレイヤーを直視できたら狙う
-		if(not isCollision){
+		// かつ、プレイヤーが透明じゃない
+		if(not isCollision and not playerComp_->GetIsInvisible()){
 			eyeStateComp_->state = EyeStateComp::State::kAim;
 		}
 
 		beamLineRenderDataComp_->color = 0x00ff00ff;
 
+		// もしイージングしてなかったら開始する
+		if (not isEasesingStart_) {
+			easeingComp_->GetEaseing().Start(easeingComp_->isLoop, easeingComp_->spdT, easeingComp_->type);
+			isEasesingStart_ = true;
+			easeingStartPosX = transformComp_->translate.x;
+		}
+		// イージングが開始されたら
+		else if (isEasesingStart_ and easeingComp_->GetEaseing().GetIsActive()) {
+			// イージングさせて近づけさせる
+			transformComp_->translate.x = easeingComp_->GetEaseing().Get(easeingStartPosX, playerTransformComp_->translate.x);
+		}
+		// それ以外は完全に一致させる
+		else {
+			transformComp_->translate.x = playerTransformComp_->translate.x;
+		}
+
+		easeingComp_->GetEaseing().Update();
 
 		break;
 		// 狙いを定める
@@ -158,6 +175,8 @@ void EyeComp::Event() {
 		break;
 		// 狙いを固定
 	case EyeStateComp::State::kAimFixed:
+		isEasesingStart_ = false;
+
 		// 時間を加算
 		eyeStateComp_->aimFixedCount += object_.GetDeltaTime();
 
@@ -191,17 +210,17 @@ void EyeComp::Event() {
 }
 
 void EyeComp::Update() {
-	if (childrenBeamLIneComp_.empty()) {
+	if (childrenBeamLineComp_.empty()) {
 		return;
 	}
 	
 	if (eyeStateComp_->state == EyeStateComp::State::kFire) {
-		childrenBeamLIneComp_->start = beamLineComp_->start;
-		childrenBeamLIneComp_->end = beamLineComp_->end;
+		childrenBeamLineComp_->start = beamLineComp_->start;
+		childrenBeamLineComp_->end = beamLineComp_->end;
 	}
 	else {
-		childrenBeamLIneComp_->start = Vector3::kZero;
-		childrenBeamLIneComp_->end = Vector3::kZero;
+		childrenBeamLineComp_->start = Vector3::kZero;
+		childrenBeamLineComp_->end = Vector3::kZero;
 	}
 
 	if (childrenBeamRenderDataComp_.empty()) {
