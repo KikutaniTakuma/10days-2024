@@ -13,6 +13,8 @@ public:
 
 	void Finalize() override;
 
+	void LastUpdate();
+
 	void Debug(const std::string& guiName) override;
 
 public:
