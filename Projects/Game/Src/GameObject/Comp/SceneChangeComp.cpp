@@ -9,12 +9,12 @@ void SceneChangeComp::Event() {
 	EventComp::Event();
 
 	if (isEvent) {
-		sceneManager_->SceneChange(nextID_);
+		//sceneManager_->SceneChange(nextID_);
 	}
 }
 
-void SceneChangeComp::SetNextScene(BaseScene::ID nextID) {
-	nextID_ = nextID;
+void SceneChangeComp::SetNextScene(const std::string& nextSceneJsonFileName) {
+	nextSceneJsonFileName_ = nextSceneJsonFileName;
 }
 
 void SceneChangeComp::SetSceneManager(SceneManager* sceneManager)
@@ -25,16 +25,10 @@ void SceneChangeComp::SetSceneManager(SceneManager* sceneManager)
 void SceneChangeComp::Save(nlohmann::json& json)
 {
 	SaveCompName(json);
-	json["nextID"] = BaseScene::kSceneStrings[size_t(nextID_)];
+	json["nextID"] = nextSceneJsonFileName_;
 }
 
 void SceneChangeComp::Load(nlohmann::json& json)
 {
-	std::string&& id = json["nextID"].get<std::string>();
-	for (size_t count = 0; BaseScene::kSceneStrings.size(); count++) {
-		if (id == BaseScene::kSceneStrings[count]) {
-			nextID_ = BaseScene::ID(count);
-			break;
-		}
-	}
+	nextSceneJsonFileName_ = json["nextID"].get<std::string>();
 }

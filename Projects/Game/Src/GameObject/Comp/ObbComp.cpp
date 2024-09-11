@@ -57,7 +57,18 @@ void ObbComp::Event() {
 
 void ObbComp::UpdatePosAndOrient()
 {
-	const Mat4x4& worldMatrix = isScaleEffect_ ? transformComp_->GetWorldMatrix() : Mat4x4::MakeScale(transformComp_->GetWorldMatrix().GetScale()).Inverse() * transformComp_->GetWorldMatrix();
+	Mat4x4 worldMatrix;
+	if (isScaleEffect_) {
+		worldMatrix = transformComp_->GetWorldMatrix();
+	}
+	else {
+		Vector3 wScale;
+		Quaternion rotate;
+		Vector3 translate;
+		transformComp_->GetWorldMatrix().Decompose(wScale, rotate, translate);
+		worldMatrix = Mat4x4::MakeAffin(Vector3::kIdentity, rotate, translate);
+	}
+
 
 	for (size_t i = 0; i < localPositions_.size(); i++) {
 		positions_->at(i) = localPositions_.at(i) * Mat4x4::MakeAffin(scale, Vector3(), center) * worldMatrix;
@@ -158,7 +169,18 @@ void ObbComp::Draw([[maybe_unused]]CameraComp* cameraComp) {
 		color_
 	);
 
-	const Mat4x4& worldMatrix = transformComp_->GetWorldMatrix();
+	Mat4x4 worldMatrix;
+	if (isScaleEffect_) {
+		worldMatrix = transformComp_->GetWorldMatrix();
+	}
+	else {
+		Vector3 wScale;
+		Quaternion rotate;
+		Vector3 translate;
+		transformComp_->GetWorldMatrix().Decompose(wScale, rotate, translate);
+		worldMatrix = Mat4x4::MakeAffin(Vector3::kIdentity, rotate, translate);
+	}
+
 	for (size_t i = 0llu; i < orientations_->size(); i++) {
 		Line::Draw(
 			transformComp_->translate,
@@ -383,7 +405,17 @@ bool ObbComp::IsCollision(const Vector3& start, const Vector3& end)
 	static constexpr float kEpsilon = static_cast<float32_t>(1.175494e-37);
 
 	Vector3 orientarionLength = Vector3::kIdentity * 0.5f;
-	const Mat4x4& worldMatrix = isScaleEffect_ ? transformComp_->GetWorldMatrix() : Mat4x4::MakeScale(transformComp_->GetWorldMatrix().GetScale()).Inverse() * transformComp_->GetWorldMatrix();
+	Mat4x4 worldMatrix;
+	if (isScaleEffect_) {
+		worldMatrix = transformComp_->GetWorldMatrix();
+	}
+	else {
+		Vector3 wScale;
+		Quaternion rotate;
+		Vector3 translate;
+		transformComp_->GetWorldMatrix().Decompose(wScale, rotate, translate);
+		worldMatrix = Mat4x4::MakeAffin(Vector3::kIdentity, rotate, translate);
+	}
 	Mat4x4&& invWorldMat = (Mat4x4::MakeAffin(scale, Vector3(), center) * worldMatrix).Inverse();
 
 	Vector3 localStart = start * invWorldMat;
