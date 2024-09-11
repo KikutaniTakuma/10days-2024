@@ -40,7 +40,6 @@ void SpriteRenderDataComp::Init() {
     filePaths_ = Lamb::GetFilePathFormDir("./", ".png");
     auto bmp = Lamb::GetFilePathFormDir("./", ".bmp");
     filePaths_.insert(filePaths_.end(), bmp.begin(), bmp.end());
-    euler_ = uvTransform.rotate.ToEuler();
 #endif // _DEBUG
 
     texHandle = 0;
@@ -48,6 +47,7 @@ void SpriteRenderDataComp::Init() {
 
 void SpriteRenderDataComp::FirstUpdate() {
 #ifdef _DEBUG
+    euler_ = uvTransform.rotate.ToEuler();
     uvTransform.rotate = Quaternion::EulerToQuaternion(euler_);
 #endif // _DEBUG
     offsetTransform_ = kOffsetMatrix[static_cast<uint32_t>(offsetType)];
@@ -95,6 +95,10 @@ void SpriteRenderDataComp::Debug([[maybe_unused]]const std::string& guiName)
 
         offsetTransform_ = kOffsetMatrix[static_cast<uint32_t>(offsetType)];
 
+
+        euler_ = uvTransform.rotate.ToEuler();
+        euler_ *= Lamb::Math::kToDegree<float>;
+
         ImGui::ColorEdit4("color", color.data());
         ImGui::NewLine();
         ImGui::Text("uv");
@@ -102,9 +106,7 @@ void SpriteRenderDataComp::Debug([[maybe_unused]]const std::string& guiName)
         ImGui::DragFloat3("rotate", euler_.data(), 0.001f);
         ImGui::DragFloat3("translate", uvTransform.translate.data(), 0.001f);
 
-        if (euler_ == Vector3::kZero) {
-            euler_ = uvTransform.rotate.ToEuler();
-        }
+        euler_ *= Lamb::Math::kToRadian<float>;
         uvTransform.rotate = Quaternion::EulerToQuaternion(euler_);
 
         ImGui::Text("texture %s", fileName.c_str());
@@ -153,6 +155,18 @@ void SpriteRenderDataComp::Save(nlohmann::json& json)
     }
     json["offsetType"] = kOffsetEnumString_[size_t(offsetType)];
     json["fileName"] = fileName;
+    json["uvTransform"]["scale"] = nlohmann::json::array();
+    for (auto& i : uvTransform.scale) {
+        json["uvTransform"]["scale"].push_back(i);
+    }
+    json["uvTransform"]["rotate"] = nlohmann::json::array();
+    for (auto& i : uvTransform.rotate) {
+        json["uvTransform"]["rotate"].push_back(i);
+    }
+    json["uvTransform"]["translate"] = nlohmann::json::array();
+    for (auto& i : uvTransform.translate) {
+        json["uvTransform"]["translate"].push_back(i);
+    }
 }
 
 void SpriteRenderDataComp::Load(nlohmann::json& json)
@@ -178,6 +192,24 @@ void SpriteRenderDataComp::Load(nlohmann::json& json)
         count++;
     }
     fileName = json["fileName"].get<std::string>();
+
+    if (json.contains("uvTransform")) {
+        for (size_t i = 0; i < uvTransform.scale.size(); i++) {
+            uvTransform.scale[i] = json["uvTransform"]["scale"][i];
+        }
+        for (size_t i = 0; i < uvTransform.rotate.m.size(); i++) {
+            uvTransform.rotate.m[i] = json["uvTransform"]["rotate"][i];
+        }
+        for (size_t i = 0; i < uvTransform.translate.size(); i++) {
+            uvTransform.translate[i] = json["uvTransform"]["translate"][i];
+        }
+    }
+    else {
+        uvTransform.scale = Vector3::kIdentity;
+        uvTransform.rotate.vector4 = Vector4::kWIdentity;
+        uvTransform.translate = Vector3::kZero;
+
+    }
 }
 
 void SpriteRenderDataComp::Load()

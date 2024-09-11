@@ -59,16 +59,11 @@ Matrix<float,4,4> Matrix<float,4,4>::MakeRotate(const Quaternion& rad)
 Matrix<float,4,4> Matrix<float,4,4>::MakeAffin(const Vector3& scale, const Vector3& rad, const Vector3& translate) {
 	Matrix<float,4,4> result;
 
-	Mat4x4 rotate = Mat4x4::MakeRotateX(rad.x) * Mat4x4::MakeRotateY(rad.y) * Mat4x4::MakeRotateZ(rad.z);
+	Quaternion q;
+	q.SetEuler(rad);
 
-	result = Mat4x4(
-		Mat4x4::vector_type{
-			scale.x * rotate[0][0], scale.x * rotate[0][1],scale.x * rotate[0][2], 0.0f,
-			scale.y * rotate[1][0], scale.y * rotate[1][1],scale.y * rotate[1][2], 0.0f,
-			scale.z * rotate[2][0], scale.z * rotate[2][1],scale.z * rotate[2][2], 0.0f,
-			translate.x, translate.y, translate.z, 1.0f
-		}
-	);
+	result.xmMatrix_ = DirectX::XMMatrixAffineTransformation({ scale.x, scale.y, scale.z }, {}, q.m128, { translate.x,translate.y,translate.z });
+
 
 	return result;
 }

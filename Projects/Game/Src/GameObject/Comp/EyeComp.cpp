@@ -68,7 +68,7 @@ void EyeComp::FirstUpdate() {
 	beamLineComp_->end = playerTransformComp_->translate;
 
 	if (eyeStateComp_->state == EyeStateComp::State::kAimFixed or eyeStateComp_->state == EyeStateComp::State::kFire) {
-		beamLineComp_->end = beamLineComp_->start + aimDirection_ * ((aimPoint_ - beamLineComp_->start).Length() + playerTransformComp_->scale.Length());
+		beamLineComp_->end = beamLineComp_->start + aimDirection_ * ((aimPoint_ - beamLineComp_->start).Length() + playerTransformComp_->scale.Length() * 3.0f);
 	}
 }
 
@@ -102,7 +102,6 @@ void EyeComp::Event() {
 		eyeStateComp_->aimCount = 0.0f;
 		eyeStateComp_->aimFixedCount = 0.0f;
 		eyeStateComp_->fireCount = 0.0f;
-		isEasesingStart_ = false;
 
 
 		// 探している最中にプレイヤーを直視できたら狙う
@@ -111,17 +110,6 @@ void EyeComp::Event() {
 		}
 
 		beamLineRenderDataComp_->color = 0x00ff00ff;
-
-
-		break;
-		// 狙いを定める
-	case EyeStateComp::State::kAim:
-		beamLineRenderDataComp_->color = 0xff0000ff;
-
-		// 狙いを定めている最中にプレイヤーを直視できなくなったらSearchに移行
-		if(isCollision){
-			eyeStateComp_->state = EyeStateComp::State::kSearch;
-		}
 
 		// もしイージングしてなかったら開始する
 		if (not isEasesingStart_) {
@@ -141,6 +129,19 @@ void EyeComp::Event() {
 
 		easeingComp_->GetEaseing().Update();
 
+		break;
+		// 狙いを定める
+	case EyeStateComp::State::kAim:
+		beamLineRenderDataComp_->color = 0xff0000ff;
+
+		// 狙いを定めている最中にプレイヤーを直視できなくなったらSearchに移行
+		if(isCollision){
+			eyeStateComp_->state = EyeStateComp::State::kSearch;
+		}
+
+		// 完全に一致させる
+		transformComp_->translate.x = playerTransformComp_->translate.x;
+
 		// ビームの終わりをプレイヤーにする
 		beamLineComp_->end = playerTransformComp_->translate;
 
@@ -158,6 +159,8 @@ void EyeComp::Event() {
 		break;
 		// 狙いを固定
 	case EyeStateComp::State::kAimFixed:
+		isEasesingStart_ = false;
+
 		// 時間を加算
 		eyeStateComp_->aimFixedCount += object_.GetDeltaTime();
 
