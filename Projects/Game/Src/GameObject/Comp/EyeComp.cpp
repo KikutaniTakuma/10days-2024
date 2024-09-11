@@ -41,11 +41,11 @@ void EyeComp::SetPlayerComp(PlayerComp* playerComp) {
 void EyeComp::SetBeamTransformComp() {
 	for (const auto& i : childrenObjectComp_->GetObjects()) {
 		if (i->HasComp<LineConvertTransformComp>()) {
-			childrenBeamLIneComp_ = i->GetComp<LineComp>();
+			childrenBeamLineComp_ = i->GetComp<LineComp>();
 			i->GetComp<TransformComp>()->SetParent(nullptr);
-		}
-		if (i->HasComp<SpriteRenderDataComp>()) {
-			childrenBeamRenderDataComp_ = i->GetComp<SpriteRenderDataComp>();
+			if (i->HasComp<SpriteRenderDataComp>()) {
+				childrenBeamRenderDataComp_ = i->GetComp<SpriteRenderDataComp>();
+			}
 		}
 	}
 }
@@ -105,7 +105,8 @@ void EyeComp::Event() {
 
 
 		// 探している最中にプレイヤーを直視できたら狙う
-		if(not isCollision){
+		// かつ、プレイヤーが透明じゃない
+		if(not isCollision and not playerComp_->GetIsInvisible()){
 			eyeStateComp_->state = EyeStateComp::State::kAim;
 		}
 
@@ -139,8 +140,23 @@ void EyeComp::Event() {
 			eyeStateComp_->state = EyeStateComp::State::kSearch;
 		}
 
-		// 完全に一致させる
-		transformComp_->translate.x = playerTransformComp_->translate.x;
+		// もしイージングしてなかったら開始する
+		if (not isEasesingStart_) {
+			easeingComp_->GetEaseing().Start(easeingComp_->isLoop, easeingComp_->spdT, easeingComp_->type);
+			isEasesingStart_ = true;
+			easeingStartPosX = transformComp_->translate.x;
+		}
+		// イージングが開始されたら
+		else if (isEasesingStart_ and easeingComp_->GetEaseing().GetIsActive()) {
+			// イージングさせて近づけさせる
+			transformComp_->translate.x = easeingComp_->GetEaseing().Get(easeingStartPosX, playerTransformComp_->translate.x);
+		}
+		// それ以外は完全に一致させる
+		else {
+			transformComp_->translate.x = playerTransformComp_->translate.x;
+		}
+
+		easeingComp_->GetEaseing().Update();
 
 		// ビームの終わりをプレイヤーにする
 		beamLineComp_->end = playerTransformComp_->translate;
@@ -194,17 +210,17 @@ void EyeComp::Event() {
 }
 
 void EyeComp::Update() {
-	if (childrenBeamLIneComp_.empty()) {
+	if (childrenBeamLineComp_.empty()) {
 		return;
 	}
 	
 	if (eyeStateComp_->state == EyeStateComp::State::kFire) {
-		childrenBeamLIneComp_->start = beamLineComp_->start;
-		childrenBeamLIneComp_->end = beamLineComp_->end;
+		childrenBeamLineComp_->start = beamLineComp_->start;
+		childrenBeamLineComp_->end = beamLineComp_->end;
 	}
 	else {
-		childrenBeamLIneComp_->start = Vector3::kZero;
-		childrenBeamLIneComp_->end = Vector3::kZero;
+		childrenBeamLineComp_->start = Vector3::kZero;
+		childrenBeamLineComp_->end = Vector3::kZero;
 	}
 
 	if (childrenBeamRenderDataComp_.empty()) {
