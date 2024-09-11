@@ -5,6 +5,7 @@
 #include "Utils/SafePtr.h"
 
 #include "../Comp/TransformComp.h"
+#include "../Comp/UITransformComp.h"
 
 class TransformCompUpdater {
 private:
@@ -32,6 +33,9 @@ public:
 	void Set(const Lamb::SafePtr<TransformComp>& transformComp);
 	void Erase(const Lamb::SafePtr<TransformComp>& transformComp);
 
+	void Set(const Lamb::SafePtr<UITransformComp>& transformComp);
+	void Erase(const Lamb::SafePtr<UITransformComp>& transformComp);
+
 	void UpdateMatrix();
 
 	void SetCurretnGuizmoID(uint32_t currentGuizmoID);
@@ -44,6 +48,7 @@ public:
 
 private:
 	std::unordered_set<Lamb::SafePtr<TransformComp>> transformComps_;
+	std::unordered_set<Lamb::SafePtr<UITransformComp>> UItransformComps_;
 	uint32_t currentGuizmoID_;
 	uint32_t setID = 0;
 };

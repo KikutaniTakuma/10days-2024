@@ -57,7 +57,7 @@ void ObbComp::Event() {
 
 void ObbComp::UpdatePosAndOrient()
 {
-	const Mat4x4& worldMatrix = transformComp_->GetWorldMatrix();
+	const Mat4x4& worldMatrix = isScaleEffect_ ? transformComp_->GetWorldMatrix() : Mat4x4::MakeScale(transformComp_->GetWorldMatrix().GetScale()).Inverse() * transformComp_->GetWorldMatrix();
 
 	for (size_t i = 0; i < localPositions_.size(); i++) {
 		positions_->at(i) = localPositions_.at(i) * Mat4x4::MakeAffin(scale, Vector3(), center) * worldMatrix;
@@ -383,7 +383,8 @@ bool ObbComp::IsCollision(const Vector3& start, const Vector3& end)
 	static constexpr float kEpsilon = static_cast<float32_t>(1.175494e-37);
 
 	Vector3 orientarionLength = Vector3::kIdentity * 0.5f;
-	Mat4x4&& invWorldMat = (Mat4x4::MakeAffin(scale, Vector3(), center) * transformComp_->GetWorldMatrix()).Inverse();
+	const Mat4x4& worldMatrix = isScaleEffect_ ? transformComp_->GetWorldMatrix() : Mat4x4::MakeScale(transformComp_->GetWorldMatrix().GetScale()).Inverse() * transformComp_->GetWorldMatrix();
+	Mat4x4&& invWorldMat = (Mat4x4::MakeAffin(scale, Vector3(), center) * worldMatrix).Inverse();
 
 	Vector3 localStart = start * invWorldMat;
 	Vector3 localEnd = end * invWorldMat;
@@ -474,6 +475,7 @@ void ObbComp::Debug([[maybe_unused]]const std::string& guiName) {
 		inputTag_.resize(32);
 		ImGui::DragFloat3("scale", scale.data(), 0.01f);
 		ImGui::DragFloat3("center", center.data(), 0.01f);
+		ImGui::Checkbox("transformの大きさの影響", &isScaleEffect_);
 		ImGui::Text("current collision tag : %s", currentCollisionTag_.c_str());
 		ImGui::InputText(
 			"タグ",
@@ -509,6 +511,7 @@ void ObbComp::Save(nlohmann::json& json) {
 	for (auto& i : collisionTags_) {
 		json["collsiionTags"].push_back(i);
 	}
+	json["isScaleEffect"] = isScaleEffect_;
 }
 
 void ObbComp::Load(nlohmann::json& json)
@@ -524,8 +527,15 @@ void ObbComp::Load(nlohmann::json& json)
 	for (size_t i = 0; i < json["collsiionTags"].size(); i++) {
 		collisionTags_.insert(json["collsiionTags"][i].get<std::string>());
 	}
+	if (json.contains("isScaleEffect")) {
+		isScaleEffect_ = json["isScaleEffect"].get<bool>();
+	}
 }
 
 const std::string& ObbComp::GetCurrentCollisionTag() const {
 	return currentCollisionTag_;
+}
+
+void ObbComp::SetEnableScaleEffect(bool isScaleEffect) {
+	isScaleEffect_ = isScaleEffect;
 }

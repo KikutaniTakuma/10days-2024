@@ -51,6 +51,9 @@ public:
 		return collisionTags_;
 	}
 
+	// transformのスケールの影響を受けないようにする
+	void SetEnableScaleEffect(bool isScaleEffect);
+
 public:
 	Vector3 scale = Vector3::kIdentity;
 	Vector3 center;
@@ -77,6 +80,8 @@ private:
 	Lamb::Flg isCollision_;
 
 	std::string currentCollisionTag_;
+
+	bool isScaleEffect_ = true;
 
 	/// <summary>
 	/// ゲッター

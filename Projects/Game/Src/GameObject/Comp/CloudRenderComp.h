@@ -28,6 +28,7 @@ private:
 	Lamb::SafePtr<class EaseingComp> easeingComp_;
 	Lamb::SafePtr<class TransformComp> transformComp_;
 	Lamb::SafePtr<class InstanceTimeComp> instanceTimeComp_;
+	Lamb::SafePtr<class CloudComp> cloudComp_;
 	
 	// もくもくの拡縮開始時間(ランダム)
 	float32_t easeStartTime_ = 0.0f;

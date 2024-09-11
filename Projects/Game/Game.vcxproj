@@ -179,6 +179,8 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Src\GameObject\Comp\SpriteRenderDataComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\TextureHandlesComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\TransformComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\UIDrawComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\UITransformComp.cpp" />
     <ClCompile Include="Src\GameObject\Manager\Aabb2DManager.cpp" />
     <ClCompile Include="Src\GameObject\Manager\CollisionManager.cpp" />
     <ClCompile Include="Src\GameObject\Manager\CloudManager.cpp" />
@@ -250,6 +252,8 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="Src\GameObject\Comp\SpriteRenderDataComp.h" />
     <ClInclude Include="Src\GameObject\Comp\TextureHandlesComp.h" />
     <ClInclude Include="Src\GameObject\Comp\TransformComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\UIDrawComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\UITransformComp.h" />
     <ClInclude Include="Src\GameObject\Manager\Aabb2DManager.h" />
     <ClInclude Include="Src\GameObject\Manager\CollisionManager.h" />
     <ClInclude Include="Src\GameObject\Manager\CloudManager.h" />

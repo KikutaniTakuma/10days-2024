@@ -5065,6 +5065,136 @@
         {
             "Comps": [
                 {
+                    "CompName": "class PlayerComp"
+                },
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/player/player_stop.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        48.0,
+                        48.0,
+                        48.0
+                    ],
+                    "translate": [
+                        224.0,
+                        -416.0,
+                        1.0
+                    ]
+                },
+                {
+                    "CompName": "class FallComp",
+                    "gravity": -9.800000190734863
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "CompName": "class InputMoveComp",
+                    "speed": 1.0
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Direction2DComp"
+                },
+                {
+                    "CompName": "class CsvDataComp",
+                    "fileName": "Resources/Maps/stage1.csv"
+                },
+                {
+                    "CompName": "class EatCloudComp"
+                },
+                {
+                    "CompName": "class RemoveCloudComp"
+                },
+                {
+                    "CompName": "class CountComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        7,
+                        13
+                    ],
+                    "offset": [
+                        16.0,
+                        16.0
+                    ],
+                    "size": 32
+                },
+                {
+                    "CompName": "class SpriteAnimatorComp",
+                    "animationNumber": 6,
+                    "duration": 0.16660000383853912,
+                    "isLoop": true,
+                    "startPos": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "CompName": "class TextureHandlesComp",
+                    "fileNames": [
+                        "./Resources/Textures/player/player_stop.png",
+                        "./Resources/Textures/player/player_walk.png",
+                        "./Resources/Textures/player/player_eat.png",
+                        "./Resources/Textures/player/player_out.png",
+                        "./Resources/Textures/player/player_stop_transparent.png",
+                        "./Resources/Textures/player/player_walk_transparent.png",
+                        "./Resources/Textures/player/player_eat_transparent.png",
+                        "./Resources/Textures/player/player_out_transparent.png"
+                    ]
+                }
+            ]
+        },
+        {
+            "Comps": [
+                {
                     "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
@@ -6051,136 +6181,6 @@
                 }
             ],
             "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "CompName": "class PlayerComp"
-                },
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/player/player_stop.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        48.0,
-                        48.0,
-                        48.0
-                    ],
-                    "translate": [
-                        224.0,
-                        -448.0,
-                        1.0
-                    ]
-                },
-                {
-                    "CompName": "class FallComp",
-                    "gravity": -9.800000190734863
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collisiionTags": [],
-                    "scale": [
-                        0.5,
-                        0.5,
-                        0.5
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": []
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "scale": [
-                        0.5,
-                        0.5,
-                        0.5
-                    ]
-                },
-                {
-                    "CompName": "class InputMoveComp",
-                    "speed": 1.0
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Direction2DComp"
-                },
-                {
-                    "CompName": "class CsvDataComp",
-                    "fileName": "Resources/Maps/stage1.csv"
-                },
-                {
-                    "CompName": "class EatCloudComp"
-                },
-                {
-                    "CompName": "class RemoveCloudComp"
-                },
-                {
-                    "CompName": "class CountComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        7,
-                        14
-                    ],
-                    "offset": [
-                        16.0,
-                        16.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class SpriteAnimatorComp",
-                    "animationNumber": 6,
-                    "duration": 0.16660000383853912,
-                    "isLoop": true,
-                    "startPos": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ]
-                },
-                {
-                    "CompName": "class TextureHandlesComp",
-                    "fileNames": [
-                        "./Resources/Textures/player/player_stop.png",
-                        "./Resources/Textures/player/player_walk.png",
-                        "./Resources/Textures/player/player_eat.png",
-                        "./Resources/Textures/player/player_out.png",
-                        "./Resources/Textures/player/player_stop_transparent.png",
-                        "./Resources/Textures/player/player_walk_transparent.png",
-                        "./Resources/Textures/player/player_eat_transparent.png",
-                        "./Resources/Textures/player/player_out_transparent.png"
-                    ]
-                }
-            ]
         },
         {
             "Comps": [

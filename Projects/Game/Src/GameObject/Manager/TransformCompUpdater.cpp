@@ -43,11 +43,35 @@ void TransformCompUpdater::Erase(const Lamb::SafePtr<class TransformComp>& trans
 	}
 }
 
+void TransformCompUpdater::Set(const Lamb::SafePtr<class UITransformComp>& transformComp) {
+	if (not UItransformComps_.contains(transformComp)) {
+#ifdef _DEBUG
+		transformComp->SetGuizmoID(setID);
+#endif // _DEBUG
+		setID++;
+		UItransformComps_.insert(transformComp);
+	}
+}
+
+void TransformCompUpdater::Erase(const Lamb::SafePtr<class UITransformComp>& transformComp) {
+	if (UItransformComps_.contains(transformComp)) {
+		UItransformComps_.erase(transformComp);
+	}
+}
+
 void TransformCompUpdater::UpdateMatrix() {
 	for (auto& i : transformComps_) {
 		i->UpdateMatrix();
 	}
 	for (auto& i : transformComps_) {
+		if (not i->HaveParent()) {
+			i->UpdateChildrenMatrix();
+		}
+	}
+	for (auto& i : UItransformComps_) {
+		i->UpdateMatrix();
+	}
+	for (auto& i : UItransformComps_) {
 		if (not i->HaveParent()) {
 			i->UpdateChildrenMatrix();
 		}
@@ -68,6 +92,9 @@ uint32_t TransformCompUpdater::GetGuizmoID() const
 void TransformCompUpdater::Guizmo(CameraComp* cameraComp) {
 	for (auto& i : transformComps_) {
 		i->Guizmo(cameraComp);
+	}
+	for (auto& i : UItransformComps_) {
+		i->Guizmo();
 	}
 }
 #endif // _DEBUG
