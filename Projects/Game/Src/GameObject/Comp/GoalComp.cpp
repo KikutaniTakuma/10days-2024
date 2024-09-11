@@ -43,7 +43,9 @@ void GoalComp::Event()
 		}
 		else {
 			
-
+			if (player_->IsGetKey()) {
+				isGoal_->SetIsActive(true);
+			}
 
 		}
 		
