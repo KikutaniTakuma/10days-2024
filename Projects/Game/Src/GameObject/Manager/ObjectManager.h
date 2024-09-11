@@ -56,6 +56,8 @@ private:
 
 	void SetPlayerCompToOther();
 
+	void InitFlags();
+
 public:
 	void Load(const std::string& jsonFileName);
 

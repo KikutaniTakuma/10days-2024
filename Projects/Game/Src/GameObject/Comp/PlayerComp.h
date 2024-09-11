@@ -31,6 +31,8 @@ public:
 
 	void SetIsBeamCollision(const Lamb::Flg& collisionFlg);
 
+	const Lamb::Flg& GetIsInvisible() const;
+
 private:
 
 	void CheckCollision();
