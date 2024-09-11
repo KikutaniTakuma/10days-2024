@@ -5,6 +5,7 @@
 #include "TransformComp.h"
 #include "Utils/Random.h"
 #include "InstanceTimeComp.h"
+#include "CloudComp.h"
 
 void CloudRenderComp::Save(nlohmann::json& json)
 {
@@ -34,6 +35,8 @@ void CloudRenderComp::Init() {
 	transformComp_ = object_.AddComp<TransformComp>();
 	instanceTimeComp_ = object_.AddComp<InstanceTimeComp>();
 	easeStartTime_ = Lamb::Random(randDuration_.min, randDuration_.max);
+
+	cloudComp_ = object_.AddComp<CloudComp>();
 }
 
 void CloudRenderComp::FirstUpdate()
@@ -54,7 +57,10 @@ void CloudRenderComp::Update() {
 }
 
 void CloudRenderComp::LastUpdate() {
-	if (easeingComp_->GetEaseing().GetIsActive()) {
+	if (not cloudComp_->GetIsActive()) {
+		transformComp_->scale = Vector3::kZero;
+	}
+	else if (easeingComp_->GetEaseing().GetIsActive()) {
 		transformComp_->scale = easeingComp_->GetEaseing().Get(scale_, scale_ * scaleMax_);
 	}
 }
