@@ -206,6 +206,12 @@
     <ClCompile Include="Src\GameObject\Comp\InstanceTimeComp.cpp">
       <Filter>GameObject\Comp</Filter>
     </ClCompile>
+    <ClCompile Include="Src\GameObject\Comp\UIDrawComp.cpp">
+      <Filter>GameObject\Comp</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\Comp\UITransformComp.cpp">
+      <Filter>GameObject\Comp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="GlobalVariables">
@@ -475,6 +481,12 @@
       <Filter>GameObject\Comp</Filter>
     </ClInclude>
     <ClInclude Include="Src\GameObject\Comp\InstanceTimeComp.h">
+      <Filter>GameObject\Comp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Comp\UIDrawComp.h">
+      <Filter>GameObject\Comp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Comp\UITransformComp.h">
       <Filter>GameObject\Comp</Filter>
     </ClInclude>
   </ItemGroup>
