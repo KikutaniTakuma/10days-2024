@@ -5,6 +5,7 @@
 #include "Mass2DComp.h"
 #include "CountComp.h"
 #include "Input/Input.h"
+#include "Game/TileName/TileName.h"
 
 void EatCloudComp::FirstUpdate()
 {
@@ -32,25 +33,62 @@ void EatCloudComp::Event()
 		//左を向いている場合
 		if (direction_->IsLeft()) {
 
-			//隣に雲があれば食べて、カウントを増加させる
-			if (auto cloud = CloudManager::GetInstance()->GetAliveCloud(mass_->GetMassX() - 1, mass_->GetMassY())) {
+			//下に地面が無い(半分浮いている)場合
+			if (csvData_->GetNumber(mass_->GetMassX(), mass_->GetMassY() + 1) == static_cast<int32_t>(TileName::kNone)) {
 
-				cloud->SetIsActive(false);
-				csvData_->SetNumber(mass_->GetMassX() - 1, mass_->GetMassY(), 0);
+				//雲があれば食べて、カウントを増加させる
+				if (auto cloud = CloudManager::GetInstance()->GetAliveCloud(mass_->GetMassX(), mass_->GetMassY())) {
 
-				count_->AddCount(1);
+					cloud->SetIsActive(false);
+					csvData_->SetNumber(mass_->GetMassX(), mass_->GetMassY(), 0);
+
+					count_->AddCount(1);
+
+				}
+
+			}
+			else {
+
+				//隣に雲があれば食べて、カウントを増加させる
+				if (auto cloud = CloudManager::GetInstance()->GetAliveCloud(mass_->GetMassX() - 1, mass_->GetMassY())) {
+
+					cloud->SetIsActive(false);
+					csvData_->SetNumber(mass_->GetMassX() - 1, mass_->GetMassY(), 0);
+
+					count_->AddCount(1);
+
+				}
 
 			}
 
 		}
 		else {
 
-			if (auto cloud = CloudManager::GetInstance()->GetAliveCloud(mass_->GetMassX() + 1, mass_->GetMassY())) {
+			//下に地面が無い(半分浮いている)場合
+			if (csvData_->GetNumber(mass_->GetMassX(), mass_->GetMassY() + 1) == static_cast<int32_t>(TileName::kNone)) {
 
-				cloud->SetIsActive(false);
-				csvData_->SetNumber(mass_->GetMassX() + 1, mass_->GetMassY(), 0);
+				//雲があれば食べて、カウントを増加させる
+				if (auto cloud = CloudManager::GetInstance()->GetAliveCloud(mass_->GetMassX(), mass_->GetMassY())) {
 
-				count_->AddCount(1);
+					cloud->SetIsActive(false);
+					csvData_->SetNumber(mass_->GetMassX(), mass_->GetMassY(), 0);
+
+					count_->AddCount(1);
+
+				}
+
+			}
+			else {
+
+				//隣に雲があれば食べて、カウントを増加させる
+				if (auto cloud = CloudManager::GetInstance()->GetAliveCloud(mass_->GetMassX() + 1, mass_->GetMassY())) {
+
+					cloud->SetIsActive(false);
+					csvData_->SetNumber(mass_->GetMassX() + 1, mass_->GetMassY(), 0);
+
+					count_->AddCount(1);
+
+				}
 
 			}
 
