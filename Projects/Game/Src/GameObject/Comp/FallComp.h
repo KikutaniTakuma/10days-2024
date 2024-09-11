@@ -25,6 +25,11 @@ public:
 
 	float32_t GetDeltaFall() {
 
+		//最大値を超えている場合は制限
+		if (fabsf(gravity * object_.GetDeltaTime()) > fabsf(limit_)) {
+			return limit_;
+		}
+
 		return gravity * object_.GetDeltaTime();
 
 	}
