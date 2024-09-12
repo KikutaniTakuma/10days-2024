@@ -242,3 +242,15 @@ void EyeComp::Update() {
 
 	childrenBeamRenderDataComp_->color = beamLineRenderDataComp_->color;
 }
+
+bool EyeComp::IsFire() const {
+	return eyeStateComp_->state == EyeStateComp::State::kFire;
+}
+
+bool EyeComp::IsAiming() const {
+	return eyeStateComp_->state == EyeStateComp::State::kAim;
+}
+
+bool EyeComp::IsAimFixed() const {
+	return eyeStateComp_->state == EyeStateComp::State::kAimFixed;
+}
