@@ -131,7 +131,7 @@ bool ObjectManager::SetCamera() {
 
 void ObjectManager::Update() {
 	// すべてに関数呼び出しするのはなんか不健全なのでバッファする
-	float32_t deltaTime = Lamb::DeltaTime();
+	static constexpr float32_t deltaTime = 1.0f / 60.0f;
 
 	// デルタタイムセット
 	for (auto& i : objects_) {
