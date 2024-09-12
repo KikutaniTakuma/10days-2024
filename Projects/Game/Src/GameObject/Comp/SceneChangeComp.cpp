@@ -9,7 +9,7 @@ void SceneChangeComp::Init() {
 }
 
 void SceneChangeComp::LastUpdate() {
-	if (eventComp_->isEvent.OnEnter() and not nextSceneJsonFileName_.empty()) {
+	if (eventComp_->isEvent and not nextSceneJsonFileName_.empty()) {
 		sceneManager_->SceneChange(nextSceneJsonFileName_);
 	}
 }

@@ -59,6 +59,8 @@ private:
 public:
 	void Load(const std::string& jsonFileName);
 
+	const std::string& GetCurrentSceneFilePath() const { return currentSceneFilePath_; }
+
 private:
 	std::unordered_set<std::unique_ptr<Object>> objects_;
 	Lamb::SafePtr<class CloudManager> cloudManager_;
@@ -69,8 +71,8 @@ private:
 
 	std::unordered_map<std::string, std::unique_ptr<LevelData>> levelDatas_;
 	std::string inputSceneName_;
+	std::string currentSceneFilePath_;
 	std::string currentSceneName_;
-	std::string currentScene_;
 #ifdef _DEBUG
 	std::vector<std::filesystem::path> levelDataFilePathes_;
 	bool isLoad_ = false;

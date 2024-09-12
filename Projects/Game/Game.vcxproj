@@ -131,6 +131,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
   <ItemGroup>
     <ClCompile Include="Src\GameObject\Comp\Aabb2DComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\AudioComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\BackGroundComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\BgmComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\CloudComp.cpp" />
     <ClCompile Include="Src\Camera\Camera.cpp" />
@@ -182,6 +183,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Src\GameObject\Comp\TransformComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\UIDrawComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\UITransformComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\UvOperator.cpp" />
     <ClCompile Include="Src\GameObject\Manager\Aabb2DManager.cpp" />
     <ClCompile Include="Src\GameObject\Manager\CollisionManager.cpp" />
     <ClCompile Include="Src\GameObject\Manager\CloudManager.cpp" />
@@ -201,6 +203,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
   <ItemGroup>
     <ClInclude Include="Src\GameObject\Comp\Aabb2DComp.h" />
     <ClInclude Include="Src\GameObject\Comp\AudioComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\BackGroundComp.h" />
     <ClInclude Include="Src\GameObject\Comp\BgmComp.h" />
     <ClInclude Include="Src\GameObject\Comp\CloudComp.h" />
     <ClInclude Include="Src\Camera\Camera.h" />
@@ -252,6 +255,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="Src\GameObject\Comp\TransformComp.h" />
     <ClInclude Include="Src\GameObject\Comp\UIDrawComp.h" />
     <ClInclude Include="Src\GameObject\Comp\UITransformComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\UvOperator.h" />
     <ClInclude Include="Src\GameObject\Manager\Aabb2DManager.h" />
     <ClInclude Include="Src\GameObject\Manager\CollisionManager.h" />
     <ClInclude Include="Src\GameObject\Manager\CloudManager.h" />

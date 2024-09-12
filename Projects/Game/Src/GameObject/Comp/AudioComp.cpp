@@ -27,7 +27,7 @@ void AudioComp::Load() {
 	audio_ = AudioManager::GetInstance()->Get(fileName_);
 }
 
-void AudioComp::Debug(const std::string& guiName) {
+void AudioComp::Debug([[maybe_unused]]const std::string& guiName) {
 #ifdef _DEBUG
 	if (ImGui::TreeNode(guiName.c_str())) {
 		ImGui::DragFloat("音量", &volume, 0.001f, 0.0f, 1.0f);

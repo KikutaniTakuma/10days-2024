@@ -103,6 +103,8 @@ private:
 
 	Lamb::SafePtr<class EaseingComp> easing_;
 
+	Lamb::SafePtr<class SceneChangeComp> sceneChangeComp_;
+
 	Lamb::Flg onGround_;
 
 	Lamb::Flg isGoal_;
@@ -128,6 +130,8 @@ private:
 	int32_t invisibleValue_ = 0;
 
 	int32_t coinCount_ = 0;
+
+	float deadLine_ = -600.0f;
 
 #pragma region 菊谷が追加 2024/9/8
 	Lamb::Flg beamCollisionFlg_;

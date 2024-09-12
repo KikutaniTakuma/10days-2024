@@ -65,9 +65,9 @@ void ObjectManager::Finalize()
 
 void ObjectManager::SetLevelData(Lamb::SafePtr<LevelData> levelData) {
 	assert(levelData.have());
-	currentScene_ = levelData->name;
-	levelDatas_[currentScene_].reset(levelData.get());
-	for (auto& i : levelDatas_[currentScene_]->objects) {
+	currentSceneName_ = levelData->name;
+	levelDatas_[currentSceneName_].reset(levelData.get());
+	for (auto& i : levelDatas_[currentSceneName_]->objects) {
 		this->Set(i);
 	}
 
@@ -213,8 +213,8 @@ void ObjectManager::Debug() {
 	auto windowHandle = WindowFactory::GetInstance()->GetHwnd();
 
 	ImGui::Begin("Objects");
-	ImGui::Text("current scene : %s", currentScene_.c_str());
-	ImGui::Text("select file name : %s", currentSceneName_.c_str());
+	ImGui::Text("current scene : %s", currentSceneName_.c_str());
+	ImGui::Text("select file name : %s", currentSceneFilePath_.c_str());
 	if (ImGui::TreeNode("ファイル")) {
 		inputSceneName_.resize(32);
 		ImGui::Text("新規ファイル : ");
@@ -240,12 +240,12 @@ void ObjectManager::Debug() {
 				);
 
 				if (button == IDOK) {
-					currentSceneName_ = newFilePath;
+					currentSceneFilePath_ = newFilePath;
 					Save();
 				}
 			}
 			else {
-				currentSceneName_ = newFilePath;
+				currentSceneFilePath_ = newFilePath;
 				Save();
 			}
 		}
@@ -255,13 +255,13 @@ void ObjectManager::Debug() {
 		ImGui::BeginChild(ImGui::GetID((void*)0), ImVec2(250, 100), ImGuiWindowFlags_NoTitleBar);
 		for (auto& i : levelDataFilePathes_) {
 			if (ImGui::Button(i.string().c_str())) {
-				currentSceneName_ = i.string();
+				currentSceneFilePath_ = i.string();
 			}
 		}
 		ImGui::EndChild();
 
 		if (ImGui::Button("ロード")) {
-			Load(currentSceneName_);
+			Load(currentSceneFilePath_);
 			ImGui::TreePop();
 			ImGui::End();
 
@@ -411,7 +411,7 @@ void ObjectManager::Save() {
 	nlohmann::json root;
 	root = nlohmann::json::object();
 
-	std::filesystem::path filePath = currentSceneName_;
+	std::filesystem::path filePath = currentSceneFilePath_;
 	std::string fileName = filePath.stem().string();
 
 	auto windowHandle = WindowFactory::GetInstance()->GetHwnd();
@@ -544,16 +544,16 @@ void ObjectManager::Load(const std::string& jsonFileName) {
 	cameraComp_ = nullptr;
 
 	auto jsonFile = Lamb::LoadJson(jsonFileName);
-	currentSceneName_ = jsonFileName;
+	currentSceneFilePath_ = jsonFileName;
 
-	currentScene_ = jsonFile["scene"].get<std::string>();
+	currentSceneName_ = jsonFile["scene"].get<std::string>();
 	if (jsonFile.find("RederingSetting") != jsonFile.end()) {
 		RenderingManager::GetInstance()->Load(jsonFile);
 	}
 
-	levelDatas_[currentScene_].reset(new LevelData());
-	LevelData& levelData = *levelDatas_[currentScene_];
-	levelData.name = currentScene_;
+	levelDatas_[currentSceneName_].reset(new LevelData());
+	LevelData& levelData = *levelDatas_[currentSceneName_];
+	levelData.name = currentSceneName_;
 	levelData.objects.reserve(jsonFile["objects"].size());
 	
 	// オブジェクトを追加
@@ -564,7 +564,7 @@ void ObjectManager::Load(const std::string& jsonFileName) {
 	}
 
 	// オブジェクトをセット
-	for (auto& i : levelDatas_[currentScene_]->objects) {
+	for (auto& i : levelDatas_[currentSceneName_]->objects) {
 		this->Set(i);
 	}
 
