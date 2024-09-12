@@ -22,6 +22,12 @@ void AudioComp::Init(){
 }
 #endif // _DEBUG
 
+void AudioComp::Finalize() {
+	if (audio_.have()) {
+		audio_->Stop();
+	}
+}
+
 void AudioComp::Load() {
 	AudioManager::GetInstance()->Load(fileName_);
 	audio_ = AudioManager::GetInstance()->Get(fileName_);

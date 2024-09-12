@@ -13,6 +13,8 @@ public:
 	void FirstUpdate() override;
 	void LastUpdate() override;
 
+	void Finalize() override;
+
 	void Start();
 
 	void Stop();

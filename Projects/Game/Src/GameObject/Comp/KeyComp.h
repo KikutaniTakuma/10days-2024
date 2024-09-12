@@ -11,6 +11,8 @@ public:
 	void Load() override;
 	void LastUpdate() override;
 
+	void Finalize() override;
+
 	void Event() override;
 
 	~KeyComp() = default;

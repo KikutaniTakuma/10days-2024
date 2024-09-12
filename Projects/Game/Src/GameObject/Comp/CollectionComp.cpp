@@ -51,6 +51,12 @@ void CollectionComp::LastUpdate()
 	}
 }
 
+void CollectionComp::Finalize() {
+	if (getCoinAudio_) {
+		getCoinAudio_->Stop();
+	}
+}
+
 void CollectionComp::SetPlayerComp(PlayerComp* playerComp)
 {
 

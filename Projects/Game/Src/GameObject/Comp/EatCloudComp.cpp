@@ -111,6 +111,12 @@ void EatCloudComp::LastUpdate() {
 	}
 }
 
+void EatCloudComp::Finalize() {
+	if (eatAudio_) {
+		eatAudio_->Stop();
+	}
+}
+
 void EatCloudComp::Save(nlohmann::json& json)
 {
 	SaveCompName(json);

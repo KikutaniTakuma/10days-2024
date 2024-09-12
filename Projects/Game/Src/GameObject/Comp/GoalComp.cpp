@@ -134,6 +134,12 @@ void GoalComp::Update()
 
 }
 
+void GoalComp::Finalize() {
+	if (openDoorAudio_) {
+		openDoorAudio_->Stop();
+	}
+}
+
 void GoalComp::SetPlayerComp(PlayerComp* playerComp)
 {
 

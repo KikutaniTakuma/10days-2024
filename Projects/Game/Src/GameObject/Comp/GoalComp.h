@@ -14,6 +14,8 @@ public:
 
 	void Update() override;
 
+	void Finalize() override;
+
 	void SetPlayerComp(class PlayerComp* playerComp);
 
 	~GoalComp() = default;

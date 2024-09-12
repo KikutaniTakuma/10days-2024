@@ -26,6 +26,12 @@ void KeyComp::LastUpdate() {
 	}
 }
 
+void KeyComp::Finalize() {
+	if (getKeyAudio_) {
+		getKeyAudio_->Stop();
+	}
+}
+
 void KeyComp::Event()
 {
 

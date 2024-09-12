@@ -17,6 +17,7 @@ public:
 	void Init() override;
 #endif // _DEBUG
 
+	void Finalize() override;
 
 	void Load() override;
 
