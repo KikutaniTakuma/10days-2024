@@ -6,9 +6,13 @@ public:
 
 	using IComp::IComp;
 
+	void Load() override;
+
 	void Init() override;
 
 	void Event() override;
+
+	void LastUpdate() override;
 
 	~CollectionComp() = default;
 
@@ -39,4 +43,5 @@ private:
 
 	Lamb::Flg isObtained_;
 
+	Lamb::SafePtr<class Audio> getCoinAudio_;
 };

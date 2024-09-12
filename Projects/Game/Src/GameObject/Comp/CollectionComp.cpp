@@ -5,6 +5,12 @@
 #include "Aabb2DComp.h"
 #include "PlayerComp.h"
 #include "CsvDataComp.h"
+#include "AudioManager/AudioManager.h"
+
+void CollectionComp::Load() {
+	AudioManager::GetInstance()->Load("./Resources/Sounds/SE_ingame_getCoin.mp3");
+	getCoinAudio_ = AudioManager::GetInstance()->Get("./Resources/Sounds/SE_ingame_getCoin.mp3");
+}
 
 void CollectionComp::Init()
 {
@@ -36,6 +42,13 @@ void CollectionComp::Event()
 
 	}
 
+}
+
+void CollectionComp::LastUpdate()
+{
+	if (getCoinAudio_ and isObtained_.OnEnter()) {
+		getCoinAudio_->Start(0.3f, false);
+	}
 }
 
 void CollectionComp::SetPlayerComp(PlayerComp* playerComp)

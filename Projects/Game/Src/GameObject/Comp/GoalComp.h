@@ -8,6 +8,8 @@ public:
 
 	void Init() override;
 
+	void Load() override;
+
 	void Event() override;
 
 	void Update() override;
@@ -50,4 +52,5 @@ private:
 
 	Lamb::Flg isOpen_ = true;
 
+	Lamb::SafePtr<class Audio> openDoorAudio_;
 };
