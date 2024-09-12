@@ -6,6 +6,12 @@
 #include "CountComp.h"
 #include "Game/TileName/TileName.h"
 #include "Input/Input.h"
+#include "AudioManager/AudioManager.h"
+
+void RemoveCloudComp::Load() {
+	AudioManager::GetInstance()->Load("./Resources/Sounds/SE_ingame_player_outPut.mp3");
+	removeCloudAudio_ = AudioManager::GetInstance()->Get("./Resources/Sounds/SE_ingame_player_outPut.mp3");
+}
 
 void RemoveCloudComp::Init()
 {
@@ -19,9 +25,7 @@ void RemoveCloudComp::Init()
 void RemoveCloudComp::FirstUpdate()
 {
 
-	Lamb::SafePtr gamepad = Input::GetInstance()->GetGamepad();
-	Lamb::SafePtr key = Input::GetInstance()->GetKey();
-	Lamb::SafePtr mouse = Input::GetInstance()->GetMouse();
+	isStartAudio_ = false;
 
 }
 
@@ -49,7 +53,7 @@ void RemoveCloudComp::Event()
 					csvData_->SetNumber(mass_->GetMassX(), mass_->GetMassY(), 1);
 
 					count_->AddCount(-1);
-
+					isStartAudio_ = true;
 				}
 
 			}
@@ -68,7 +72,7 @@ void RemoveCloudComp::Event()
 					csvData_->SetNumber(mass_->GetMassX() - 1, mass_->GetMassY(), 1);
 
 					count_->AddCount(-1);
-
+					isStartAudio_ = true;
 				}
 
 			}
@@ -92,7 +96,7 @@ void RemoveCloudComp::Event()
 					csvData_->SetNumber(mass_->GetMassX(), mass_->GetMassY(), 1);
 
 					count_->AddCount(-1);
-
+					isStartAudio_ = true;
 				}
 
 			}
@@ -111,7 +115,7 @@ void RemoveCloudComp::Event()
 					csvData_->SetNumber(mass_->GetMassX() + 1, mass_->GetMassY(), 1);
 
 					count_->AddCount(-1);
-
+					isStartAudio_ = true;
 				}
 
 			}
@@ -124,11 +128,11 @@ void RemoveCloudComp::Event()
 	}
 
 }
-
-void RemoveCloudComp::Update()
-{
+void RemoveCloudComp::LastUpdate() {
+	if (isStartAudio_) {
+		removeCloudAudio_->Start(0.3f, false);
+	}
 }
-
 void RemoveCloudComp::Save(nlohmann::json& json)
 {
 	SaveCompName(json);

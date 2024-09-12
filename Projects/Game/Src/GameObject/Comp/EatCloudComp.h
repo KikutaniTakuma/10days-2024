@@ -9,13 +9,15 @@
 
 	 ~EatCloudComp() = default;
 
+	 void Load() override;
+
 	 void FirstUpdate() override;
 
 	 void Init() override;
 
 	 void Event() override;
 
-	 void Update() override;
+	 void LastUpdate() override;
 
  public:
 
@@ -36,5 +38,7 @@
 
 	 Lamb::SafePtr<class CountComp> count_;
 
+	 Lamb::SafePtr<class Audio> eatAudio_;
+	 bool isStartAudio_ = false;
  };
 

@@ -24,9 +24,9 @@ private:
 	Lamb::SafePtr<Audio> chargeAudio_;
 	Lamb::SafePtr<Audio> fireAudio_;
 
-	float aimVolume_ = 1.0f;
-	float chargeVolume_ = 1.0f;
-	float fireVolume_ = 1.0f;
+	float aimVolume_ = 0.3f;
+	float chargeVolume_ = 0.3f;
+	float fireVolume_ = 0.3f;
 	
 	Lamb::SafePtr<class EyeComp> eyeComp_;
 };

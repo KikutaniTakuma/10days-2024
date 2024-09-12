@@ -8,7 +8,10 @@ public:
 
 	~JumpComp() = default;
 
+	void Load() override;
+
 	void FirstUpdate() override;
+	void LastUpdate() override;
 
 	void Start();
 
@@ -31,5 +34,6 @@ private:
 	float32_t startJumpTime_ = 0.11_f32;
 	Lamb::Flg isJump_;
 
+	Lamb::SafePtr<class Audio> eatAudio_;
 };
 

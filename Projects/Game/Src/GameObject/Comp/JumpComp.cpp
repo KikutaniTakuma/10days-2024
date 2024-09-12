@@ -1,4 +1,10 @@
 #include "JumpComp.h"
+#include "AudioManager/AudioManager.h"
+
+void JumpComp::Load() {
+	AudioManager::GetInstance()->Load("./Resources/Sounds/SE_ingame_player_jump.mp3");
+	eatAudio_ = AudioManager::GetInstance()->Get("./Resources/Sounds/SE_ingame_player_jump.mp3");
+}
 
 void JumpComp::FirstUpdate()
 {
@@ -13,6 +19,12 @@ void JumpComp::FirstUpdate()
 
 	}
 
+}
+
+void JumpComp::LastUpdate() {
+	if (isJump_.OnEnter()) {
+		eatAudio_->Start(0.5f, false);
+	}
 }
 
 void JumpComp::Start()

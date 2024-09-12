@@ -6,13 +6,15 @@
 #include "CountComp.h"
 #include "Input/Input.h"
 #include "Game/TileName/TileName.h"
+#include "AudioManager/AudioManager.h"
 
-void EatCloudComp::FirstUpdate()
-{
+void EatCloudComp::Load() {
+	AudioManager::GetInstance()->Load("./Resources/Sounds/SE_ingame_player_eat.mp3");
+	eatAudio_ = AudioManager::GetInstance()->Get("./Resources/Sounds/SE_ingame_player_eat.mp3");
+}
 
-	Lamb::SafePtr gamepad = Input::GetInstance()->GetGamepad();
-	Lamb::SafePtr key = Input::GetInstance()->GetKey();
-	Lamb::SafePtr mouse = Input::GetInstance()->GetMouse();
+void EatCloudComp::FirstUpdate() {
+	isStartAudio_ = false;
 
 }
 
@@ -43,7 +45,7 @@ void EatCloudComp::Event()
 					csvData_->SetNumber(mass_->GetMassX(), mass_->GetMassY(), 0);
 
 					count_->AddCount(1);
-
+					isStartAudio_ = true;
 				}
 
 			}
@@ -56,6 +58,7 @@ void EatCloudComp::Event()
 					csvData_->SetNumber(mass_->GetMassX() - 1, mass_->GetMassY(), 0);
 
 					count_->AddCount(1);
+					isStartAudio_ = true;
 
 				}
 
@@ -74,6 +77,7 @@ void EatCloudComp::Event()
 					csvData_->SetNumber(mass_->GetMassX(), mass_->GetMassY(), 0);
 
 					count_->AddCount(1);
+					isStartAudio_ = true;
 
 				}
 
@@ -87,6 +91,7 @@ void EatCloudComp::Event()
 					csvData_->SetNumber(mass_->GetMassX() + 1, mass_->GetMassY(), 0);
 
 					count_->AddCount(1);
+					isStartAudio_ = true;
 
 				}
 
@@ -100,9 +105,10 @@ void EatCloudComp::Event()
 
 }
 
-void EatCloudComp::Update()
-{
-
+void EatCloudComp::LastUpdate() {
+	if (isStartAudio_) {
+		eatAudio_->Start(0.3f, false);
+	}
 }
 
 void EatCloudComp::Save(nlohmann::json& json)
