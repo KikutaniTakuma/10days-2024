@@ -11,17 +11,8 @@
     <ClCompile Include="Src\Scenes\Manager\SceneManager.cpp">
       <Filter>Scenes\Manager</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Scenes\Manager\SceneFactory\SceneFactory.cpp">
-      <Filter>Scenes\Manager\SceneFactory</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Scenes\Manager\Fade\Fade.cpp">
       <Filter>Scenes\Manager\Fade</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Scenes\Manager\BaseScene\BaseScene.cpp">
-      <Filter>Scenes\Manager\BaseScene</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Scenes\SubMenu\SubMenu.cpp">
-      <Filter>Scenes\SubMenu</Filter>
     </ClCompile>
     <ClCompile Include="Src\Game\Water\Water.cpp">
       <Filter>Game\Water</Filter>
@@ -103,9 +94,6 @@
     </ClCompile>
     <ClCompile Include="Src\GameObject\Comp\QuadComp.cpp">
       <Filter>GameObject\Comp</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Scenes\TestScene\TestScene.cpp">
-      <Filter>Scenes\TestScene</Filter>
     </ClCompile>
     <ClCompile Include="Src\GameObject\Manager\CollisionManager.cpp">
       <Filter>GameObject\Manager</Filter>
@@ -226,17 +214,8 @@
     <Filter Include="Scenes">
       <UniqueIdentifier>{fad8cc50-c290-488f-b4fb-cdbad1bbd763}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scenes\SubMenu">
-      <UniqueIdentifier>{06de54b1-47bd-4884-994f-f76486248bca}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Scenes\Manager">
       <UniqueIdentifier>{3920a90e-0f61-4c3e-a578-f7f4a2d79fd9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scenes\Manager\BaseScene">
-      <UniqueIdentifier>{09c8f465-3aff-4334-9c04-c77e3f818100}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scenes\Manager\SceneFactory">
-      <UniqueIdentifier>{e3cb3459-6828-4847-8a7d-6269ce3a1eba}</UniqueIdentifier>
     </Filter>
     <Filter Include="Scenes\Manager\Fade">
       <UniqueIdentifier>{fc86e848-5d67-4732-9a7d-9ea0a4889d0f}</UniqueIdentifier>
@@ -265,9 +244,6 @@
     <Filter Include="GameObject\Manager">
       <UniqueIdentifier>{2795ad23-5238-41cd-b501-ec1d9cd1431c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scenes\TestScene">
-      <UniqueIdentifier>{509f02f8-d848-4da3-bd97-134e93acdf86}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Game\TileName">
       <UniqueIdentifier>{fb9b6611-7260-4fb4-9508-6e526aa23fbe}</UniqueIdentifier>
     </Filter>
@@ -282,17 +258,8 @@
     <ClInclude Include="Src\Scenes\Manager\SceneManager.h">
       <Filter>Scenes\Manager</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Scenes\Manager\SceneFactory\SceneFactory.h">
-      <Filter>Scenes\Manager\SceneFactory</Filter>
-    </ClInclude>
     <ClInclude Include="Src\Scenes\Manager\Fade\Fade.h">
       <Filter>Scenes\Manager\Fade</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Scenes\Manager\BaseScene\BaseScene.h">
-      <Filter>Scenes\Manager\BaseScene</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Scenes\SubMenu\SubMenu.h">
-      <Filter>Scenes\SubMenu</Filter>
     </ClInclude>
     <ClInclude Include="Src\Game\Water\Water.h">
       <Filter>Game\Water</Filter>
@@ -377,9 +344,6 @@
     </ClInclude>
     <ClInclude Include="Src\GameObject\Comp\QuadComp.h">
       <Filter>GameObject\Comp</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Scenes\TestScene\TestScene.h">
-      <Filter>Scenes\TestScene</Filter>
     </ClInclude>
     <ClInclude Include="Src\GameObject\Manager\CollisionManager.h">
       <Filter>GameObject\Manager</Filter>

@@ -38,7 +38,7 @@ void World::Initialize() {
 	SceneManager::Initialize();
 	sceneManager_ = SceneManager::GetInstance();
 
-	sceneManager_->Initialize(BaseScene::ID::Test, BaseScene::ID::Test);
+	sceneManager_->Initialize("./SceneData/stage1.json");
 
 	ParticleEditor::Initialize();
 	particleEditor_ = ParticleEditor::GetInstance();
@@ -67,7 +67,6 @@ void World::Update() {
 	if (sceneManager_) {
 		sceneManager_->Update();
 		particleEditor_->Editor();
-		isEnd_ = sceneManager_->IsEnd();
 	}
 	else {
 		isEnd_ = true;
@@ -77,7 +76,7 @@ void World::Update() {
 void World::Draw() {
 	if (sceneManager_) {
 		sceneManager_->Draw();
-		particleEditor_->Draw(sceneManager_->GetCurrentSceneCamera());
+		particleEditor_->Draw(Mat4x4::MakeTranslate(Vector3::kZIdentity * 10.0f) * Camera::GetStaticViewOthographics());
 
 		Framework::Draw();
 	}

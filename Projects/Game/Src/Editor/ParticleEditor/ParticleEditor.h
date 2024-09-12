@@ -25,7 +25,7 @@ private:
 public:
 	void Editor();
 
-	void Draw(const Camera& camera);
+	void Draw(const Mat4x4& camera);
 
 private:
 	std::string inputLoadString_;

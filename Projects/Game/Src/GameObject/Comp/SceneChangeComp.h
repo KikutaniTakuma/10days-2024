@@ -1,6 +1,5 @@
 #pragma once
 #include "EventComp.h"
-#include "Scenes/Manager/BaseScene/BaseScene.h"
 
 
 class SceneChangeComp : public EventComp {

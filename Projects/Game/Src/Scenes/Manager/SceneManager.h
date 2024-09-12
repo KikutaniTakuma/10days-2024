@@ -1,14 +1,9 @@
 #pragma once
-#include <unordered_map>
 #include <string>
 #include <memory>
-#include <vector>
-#include <bitset>
-#include <optional>
 #include "Fade/Fade.h"
-#include "Input/Input.h"
-#include "BaseScene/BaseScene.h"
 #include "SceneLoad/SceneLoad.h"
+#include "GameObject/Manager/ObjectManager.h"
 
 class SceneManager final {
 public:
@@ -39,9 +34,6 @@ public:
 
 	void Draw();
 
-public:
-	bool IsEnd() const;
-
 
 private:
 	void UploadTextureData();
@@ -55,4 +47,6 @@ private:
 	std::unique_ptr<SceneLoad> load_;
 
 	std::string nextSceneJsonFilePath_;
+
+	Lamb::SafePtr<ObjectManager> objectManager_;
 };

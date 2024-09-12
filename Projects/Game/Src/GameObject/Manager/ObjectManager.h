@@ -1,14 +1,12 @@
 #pragma once
 #include <memory>
 #include <unordered_set>
-#include <list>
 
 #include "Utils/SafePtr.h"
 
 #include "../Object.h"
 
 #include "Level/LevelData.h"
-#include "Scenes/Manager/BaseScene/BaseScene.h"
 
 class ObjectManager {
 private:
