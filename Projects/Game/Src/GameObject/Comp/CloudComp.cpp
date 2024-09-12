@@ -34,7 +34,7 @@ void CloudComp::Update() {
 	//雲が存在している状態だったら表示
 	if (flagComp_->GetIsActive()) {
 		transformComp_->scale = { kCloudSize_,kCloudSize_,kCloudSize_ };
-		collision_->GetObbComp().scale = { kCloudSize_,kCloudSize_,kCloudSize_ };
+		collision_->GetObbComp().scale = { kCloudSize_ + 0.5f,kCloudSize_ + 0.5f,kCloudSize_ + 0.5f };
 		aabbCollision_->scale_ = { kCloudSize_,kCloudSize_,kCloudSize_ };
 	}
 	//食べられて存在しなくなった場合は非表示
