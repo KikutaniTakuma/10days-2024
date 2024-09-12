@@ -111,6 +111,10 @@ private:
 
 	bool isFirstEasingStart_ = false;
 
+	bool isStartEatAnimation_ = false;
+
+	bool isStartRemoveAnimation_ = false;
+
 	std::unique_ptr<std::array<Vector3, 4>> prePositions_;
 
 	Vector3 velocity_ = {};
