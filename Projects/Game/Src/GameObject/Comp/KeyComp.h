@@ -8,6 +8,9 @@ public:
 
 	void Init() override;
 
+	void Load() override;
+	void LastUpdate() override;
+
 	void Event() override;
 
 	~KeyComp() = default;
@@ -40,4 +43,5 @@ private:
 
 	Lamb::Flg isObtained_;
 
+	Lamb::SafePtr<class Audio> getKeyAudio_;
 };
