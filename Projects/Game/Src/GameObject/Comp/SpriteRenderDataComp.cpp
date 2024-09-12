@@ -207,7 +207,7 @@ void SpriteRenderDataComp::Load(nlohmann::json& json)
     }
 
     for (size_t i = 0; i < json["color"].size(); i++) {
-        color[i] = json["color"][0];
+        color[i] = json["color"][i];
     }
     std::string&& offsetTypeStr = json["offsetType"].get<std::string>();
     for (size_t count = 0; const auto & i : kOffsetEnumString_) {
