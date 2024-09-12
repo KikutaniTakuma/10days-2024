@@ -43,6 +43,8 @@ void InputMoveComp::FirstUpdate()
 
 void InputMoveComp::Debug([[maybe_unused]] const std::string& guiName)
 {
+#ifdef _DEBUG
+
 
 	if (ImGui::TreeNode(guiName.c_str())) {
 
@@ -51,6 +53,7 @@ void InputMoveComp::Debug([[maybe_unused]] const std::string& guiName)
 		ImGui::TreePop();
 	}
 
+#endif // _DEBUG
 }
 
 void InputMoveComp::Save(nlohmann::json& json)
