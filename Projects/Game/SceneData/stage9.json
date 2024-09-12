@@ -63,8 +63,8 @@
                         1.0
                     ],
                     "scale": [
-                        12800.0,
-                        7200.0,
+                        768.0,
+                        432.0,
                         16.0
                     ],
                     "translate": [
@@ -72,6 +72,9 @@
                         -344.0,
                         100.0
                     ]
+                },
+                {
+                    "CompName": "class BackGroundComp"
                 }
             ]
         },
@@ -7078,11 +7081,11 @@
                 },
                 {
                     "CompName": "class Aabb2DComp",
-                    "isScaleEffect": true,
+                    "isScaleEffect": false,
                     "scale": [
-                        0.5,
-                        0.5,
-                        0.5
+                        24.0,
+                        24.0,
+                        24.0
                     ]
                 },
                 {

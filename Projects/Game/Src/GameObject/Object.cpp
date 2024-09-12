@@ -57,6 +57,12 @@
 #include "Comp/UIDrawComp.h"
 #include "Comp/UITransformComp.h"
 
+#include "Comp/BackGroundComp.h"
+#include "Comp/UvOperatorComp.h"
+
+#include "Comp/TitleInputComp.h"
+#include "Comp/StageSelectInputComp.h"
+
 void Object::Init() {
 	/*for (auto& i : components_) {
 		i.second->Init();
@@ -189,7 +195,11 @@ bool Object::DebugAddComp() {
 		DebugAdd<InstanceTimeComp>();
 		DebugAdd<UIDrawComp>();
 		DebugAdd<UITransformComp>();
-		
+		DebugAdd<BackGroundComp>();
+		DebugAdd<UvOperatorComp>();
+		DebugAdd<TitleInputComp>();
+		DebugAdd<StageSelectInputComp>();
+
 		ImGui::EndChild();
 
 		ImGui::TreePop();
@@ -274,5 +284,9 @@ void Object::AddComps(nlohmann::json& compData)
 	AddAndLoadComp<InstanceTimeComp>(compName, compData);
 	AddAndLoadComp<UIDrawComp>(compName, compData);
 	AddAndLoadComp<UITransformComp>(compName, compData);
+	AddAndLoadComp<BackGroundComp>(compName, compData);
+	AddAndLoadComp<UvOperatorComp>(compName, compData);
+	AddAndLoadComp<TitleInputComp>(compName, compData);
+	AddAndLoadComp<StageSelectInputComp>(compName, compData);
 }
 

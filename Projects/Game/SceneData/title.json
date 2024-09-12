@@ -103,6 +103,24 @@
                     ],
                     "fileName": "./Resources\\Textures\\backGround\\backGround_back.png",
                     "offsetType": "kMiddle",
+                    "userOffsetTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
                     "uvTransform": {
                         "rotate": [
                             1.0,
@@ -123,6 +141,10 @@
                     }
                 }
             ],
+            "type": "Object"
+        },
+        {
+            "Comps": [],
             "type": "Object"
         },
         {
@@ -160,6 +182,24 @@
                     ],
                     "fileName": "./Resources\\Textures\\backGround\\backGround_cloud1.png",
                     "offsetType": "kMiddle",
+                    "userOffsetTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
                     "uvTransform": {
                         "rotate": [
                             0.0,
@@ -185,6 +225,9 @@
         {
             "Comps": [
                 {
+                    "CompName": "class EventComp"
+                },
+                {
                     "CompName": "class SpriteRenderComp"
                 },
                 {
@@ -207,6 +250,10 @@
                     ]
                 },
                 {
+                    "CompName": "class SceneChangeComp",
+                    "nextID": ""
+                },
+                {
                     "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
@@ -217,6 +264,24 @@
                     ],
                     "fileName": "./Resources\\Textures\\backGround\\backGround_cloud2.png",
                     "offsetType": "kMiddle",
+                    "userOffsetTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
                     "uvTransform": {
                         "rotate": [
                             0.0,
@@ -235,6 +300,9 @@
                             0.0
                         ]
                     }
+                },
+                {
+                    "CompName": "class TitleInputComp"
                 }
             ],
             "type": "Object"
