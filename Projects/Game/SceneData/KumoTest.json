@@ -277,10 +277,6 @@
                                             0.0
                                         ]
                                     }
-                                },
-                                {
-                                    "Children": [],
-                                    "CompName": "class ChildrenObjectComp"
                                 }
                             ],
                             "type": "Object"
