@@ -8,14 +8,17 @@ public:
 
 	~EatCloudAnimationComp() = default;
 
+public:
 	void Init() override;
 
 	// 引っ張られる
 	void PullStart();
 
+private:
 	// 元に戻る
 	void ReturnStart();
 
+public:
 	void FirstUpdate() override;
 	void Update() override;
 	void LastUpdate() override;
@@ -26,6 +29,7 @@ public:
 	void Debug(const std::string& guiName);
 
 	Lamb::SafePtr<class TransformComp> GetTransformComp();
+	Lamb::SafePtr<class SpriteRenderDataComp> GetSpriteRenderDataComp();
 
 public:
 	void Save(nlohmann::json& json) override;

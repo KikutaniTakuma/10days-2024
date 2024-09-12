@@ -24,4 +24,6 @@ public:
 private:
 	std::vector<Lamb::SafePtr<EatCloudAnimationComp>> eatCloudAnimationComps_;
 	Lamb::SafePtr<class ChildrenObjectComp> childrenComp_;
+
+	size_t childrenSize_ = 6;
 };

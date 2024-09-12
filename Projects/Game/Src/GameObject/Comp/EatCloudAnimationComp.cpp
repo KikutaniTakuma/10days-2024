@@ -39,15 +39,6 @@ void EatCloudAnimationComp::FirstUpdate() {
 }
 
 void EatCloudAnimationComp::Update() {
-	ease_.Update();
-	colorEase_.Update();
-}
-
-void EatCloudAnimationComp::LastUpdate() {
-	if (ease_.GetIsActive().OnExit() and not isReturnTime_) {
-		ReturnStart();
-	}
-
 	if (ease_.GetIsActive()) {
 		if (not isReturnTime_) {
 			transformComp_->scale.x = defaultScale_ * ease_.Get(scaleMagnification_.min, scaleMagnification_.max);
@@ -74,14 +65,23 @@ void EatCloudAnimationComp::LastUpdate() {
 	}
 }
 
+void EatCloudAnimationComp::LastUpdate() {
+
+	ease_.Update();
+	colorEase_.Update();
+	if (ease_.GetIsActive().OnExit() and not isReturnTime_) {
+		ReturnStart();
+	}
+}
+
 void EatCloudAnimationComp::SetIsLeft(bool isLeft) {
 	if (isLeft) {
 		transformComp_->translate.x = std::abs(transformComp_->translate.x) * -1.0f;
-		spriteRenderDataComp_->offsetType = SpriteRenderDataComp::Offset::kRight;
+		spriteRenderDataComp_->offsetType = SpriteRenderDataComp::Offset::kLeft;
 	}
 	else {
 		transformComp_->translate.x = std::abs(transformComp_->translate.x);
-		spriteRenderDataComp_->offsetType = SpriteRenderDataComp::Offset::kLeft;
+		spriteRenderDataComp_->offsetType = SpriteRenderDataComp::Offset::kRight;
 	}
 }
 
@@ -101,6 +101,11 @@ void EatCloudAnimationComp::Debug([[maybe_unused]]const std::string& guiName) {
 Lamb::SafePtr<class TransformComp> EatCloudAnimationComp::GetTransformComp()
 {
 	return transformComp_;
+}
+
+Lamb::SafePtr<class SpriteRenderDataComp> EatCloudAnimationComp::GetSpriteRenderDataComp()
+{
+	return spriteRenderDataComp_;
 }
 
 void EatCloudAnimationComp::Save(nlohmann::json& json) {

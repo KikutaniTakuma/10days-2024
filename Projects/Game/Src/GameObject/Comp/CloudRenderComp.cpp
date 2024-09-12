@@ -57,10 +57,7 @@ void CloudRenderComp::Update() {
 }
 
 void CloudRenderComp::LastUpdate() {
-	if (not cloudComp_->GetIsActive()) {
-		transformComp_->scale = Vector3::kZero;
-	}
-	else if (easeingComp_->GetEaseing().GetIsActive()) {
+	if (easeingComp_->GetEaseing().GetIsActive()) {
 		transformComp_->scale = easeingComp_->GetEaseing().Get(scale_, scale_ * scaleMax_);
 	}
 }

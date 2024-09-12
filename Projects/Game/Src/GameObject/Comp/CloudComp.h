@@ -26,7 +26,8 @@
 
 	 void SetPosition(const Vector3& position);
 
-	 void SetIsDead(bool flag) { isDead_ = flag; }
+	 void SetIsDead(bool flag);
+	 void SetIsAtePlayerLeft(bool flag);
 
 	 bool GetIsDead() const { return isDead_; }
 
@@ -58,6 +59,10 @@
 
 	 Lamb::SafePtr<class Aabb2DComp> aabbCollision_;
 
+	 Lamb::SafePtr<class EatAnimationControllComp> eatCloudAnimationControllComp_;
+
 	 bool isDead_ = false;
 
+	 // プレイヤーが食べたときの方向
+	 bool isAtePlayerLeft_ = false;
  };
