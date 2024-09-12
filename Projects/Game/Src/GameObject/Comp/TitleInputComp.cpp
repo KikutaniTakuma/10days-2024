@@ -18,7 +18,7 @@ void TitleInputComp::Move()
 	if (not sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent) {
 
 		//ボタンを押してセレクトシーンに移動
-		if (gamepad->Pushed(Gamepad::Button::A)) {
+		if (gamepad->Pushed(Gamepad::Button::A) or key->Pushed(DIK_SPACE)) {
 			sceneChangeComp_->SetNextScene("./SceneData/stageSelect.json");
 			sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
 		}

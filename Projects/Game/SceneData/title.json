@@ -34,6 +34,81 @@
         {
             "Comps": [
                 {
+                    "CompName": "class UIDrawComp"
+                },
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources\\Textures\\outGame\\title_cloud.png",
+                    "offsetType": "kMiddle",
+                    "userOffsetTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    "uvTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                },
+                {
+                    "CompName": "class UITransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        144.0,
+                        96.0,
+                        1.0
+                    ],
+                    "translate": [
+                        400.0,
+                        0.0,
+                        -1.0
+                    ]
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
                     "CompName": "class TransformComp",
                     "rotate": [
                         0.0,
@@ -66,85 +141,6 @@
                     "CompName": "class FollowCamera2DComp"
                 }
             ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        1280.0,
-                        720.0,
-                        1.0
-                    ],
-                    "translate": [
-                        0.0,
-                        0.0,
-                        10.0
-                    ]
-                },
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources\\Textures\\backGround\\backGround_back.png",
-                    "offsetType": "kMiddle",
-                    "userOffsetTransform": {
-                        "rotate": [
-                            0.0,
-                            0.0,
-                            0.0,
-                            1.0
-                        ],
-                        "scale": [
-                            1.0,
-                            1.0,
-                            1.0
-                        ],
-                        "translate": [
-                            0.0,
-                            0.0,
-                            0.0
-                        ]
-                    },
-                    "uvTransform": {
-                        "rotate": [
-                            1.0,
-                            5.960464477539063e-08,
-                            5.960464477539063e-08,
-                            3.552713678800501e-15
-                        ],
-                        "scale": [
-                            1.0,
-                            1.0,
-                            1.0
-                        ],
-                        "translate": [
-                            0.0,
-                            0.0,
-                            0.0
-                        ]
-                    }
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [],
             "type": "Object"
         },
         {
@@ -225,10 +221,241 @@
         {
             "Comps": [
                 {
-                    "CompName": "class EventComp"
+                    "CompName": "class SpriteRenderComp"
                 },
                 {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        1280.0,
+                        720.0,
+                        1.0
+                    ],
+                    "translate": [
+                        0.0,
+                        0.0,
+                        10.0
+                    ]
+                },
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources\\Textures\\backGround\\backGround_back.png",
+                    "offsetType": "kMiddle",
+                    "userOffsetTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    "uvTransform": {
+                        "rotate": [
+                            1.0,
+                            5.960464477539063e-08,
+                            5.960464477539063e-08,
+                            3.552713678800501e-15
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "CompName": "class UIDrawComp"
+                },
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources\\Textures\\outGame\\title_cloud.png",
+                    "offsetType": "kMiddle",
+                    "userOffsetTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    "uvTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                },
+                {
+                    "CompName": "class UITransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        360.0,
+                        240.0,
+                        1.0
+                    ],
+                    "translate": [
+                        -300.0,
+                        0.0,
+                        -1.0
+                    ]
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "CompName": "class UIDrawComp"
+                },
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources\\Textures\\outGame\\title_logo_light.png",
+                    "offsetType": "kMiddle",
+                    "userOffsetTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    "uvTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                },
+                {
+                    "CompName": "class UITransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        640.0,
+                        270.0,
+                        1.0
+                    ],
+                    "translate": [
+                        0.0,
+                        100.0,
+                        0.0
+                    ]
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 0.009999999776482582,
+                    "type": "InSine"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
                     "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class EventComp"
                 },
                 {
                     "CompName": "class TransformComp",
@@ -303,6 +530,156 @@
                 },
                 {
                     "CompName": "class TitleInputComp"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "CompName": "class UIDrawComp"
+                },
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources\\Textures\\outGame\\title_cloud.png",
+                    "offsetType": "kMiddle",
+                    "userOffsetTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    "uvTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                },
+                {
+                    "CompName": "class UITransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        360.0,
+                        240.0,
+                        1.0
+                    ],
+                    "translate": [
+                        300.0,
+                        200.0,
+                        -1.0
+                    ]
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "CompName": "class UIDrawComp"
+                },
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources\\Textures\\UI\\title_UI_A.png",
+                    "offsetType": "kMiddle",
+                    "userOffsetTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    "uvTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                },
+                {
+                    "CompName": "class UITransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        128.0,
+                        128.0,
+                        1.0
+                    ],
+                    "translate": [
+                        0.0,
+                        -250.0,
+                        -1.0
+                    ]
                 }
             ],
             "type": "Object"

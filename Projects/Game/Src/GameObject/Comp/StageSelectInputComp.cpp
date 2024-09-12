@@ -19,7 +19,7 @@ void StageSelectInputComp::Move()
 
 	if (not sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent) {
 
-		if (gamepad->Pushed(Gamepad::Button::A)) {
+		if (gamepad->Pushed(Gamepad::Button::A) or key->Pushed(DIK_SPACE)) {
 
 			std::string stageStr = "./SceneData/stage";
 
@@ -31,19 +31,21 @@ void StageSelectInputComp::Move()
 			sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
 
 		}
-		else if (gamepad->Pushed(Gamepad::Button::B)) {
+		else if (gamepad->Pushed(Gamepad::Button::B) or key->Pushed(DIK_ESCAPE)) {
 			//ボタンを押してセレクトシーンに移動
 			sceneChangeComp_->SetNextScene("./SceneData/title.json");
 			sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
 		}
-		else if (gamepad->Pushed(Gamepad::Button::LEFT) or gamepad->GetStick(Gamepad::Stick::LEFT).x < 0.0f) {
+		else if (gamepad->Pushed(Gamepad::Button::LEFT) or gamepad->GetStick(Gamepad::Stick::LEFT).x < 0.0f or
+			key->Pushed(DIK_A) or key->Pushed(DIK_LEFT)) {
 
 			if (stageNumber_ > 1) {
 				stageNumber_--;
 			}
 
 		}
-		else if (gamepad->Pushed(Gamepad::Button::RIGHT) or gamepad->GetStick(Gamepad::Stick::LEFT).x > 0.0f) {
+		else if (gamepad->Pushed(Gamepad::Button::RIGHT) or gamepad->GetStick(Gamepad::Stick::LEFT).x > 0.0f or
+			key->Pushed(DIK_D) or key->Pushed(DIK_RIGHT)) {
 
 			if (stageNumber_ < kMaxStage_) {
 				stageNumber_++;

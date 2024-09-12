@@ -69,10 +69,17 @@ void PlayerComp::Move() {
 	if (not isGoal_ and not sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent) {
 
 		//シーンリセット
-		if (gamepad->Pushed(Gamepad::Button::X)) {
+		if ((gamepad->Pushed(Gamepad::Button::X) or key->Pushed(DIK_R)) and
+			not sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent) {
 			sceneChangeComp_->SetNextScene(ObjectManager::GetInstance()->GetCurrentSceneFilePath());
 			sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
 		}
+		else if ((gamepad->Pushed(Gamepad::Button::START) or key->Pushed(DIK_ESCAPE)) and
+			not sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent) {
+			sceneChangeComp_->SetNextScene("./SceneData/stageSelect.json");
+			sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
+		}
+
 
 		if (not isStartEatAnimation_ and not isStartRemoveAnimation_) {
 
@@ -242,7 +249,7 @@ void PlayerComp::Move() {
 		}
 
 		//デッドラインより下なら死亡扱いしてシーンチェンジ
-		if (transform_->translate.y < deadLine_) {
+		if (transform_->translate.y < deadLine_ and not sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent) {
 			sceneChangeComp_->SetNextScene(ObjectManager::GetInstance()->GetCurrentSceneFilePath());
 			sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
 		}
