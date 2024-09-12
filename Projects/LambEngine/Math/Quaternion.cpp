@@ -389,13 +389,13 @@ Vector3 Quaternion::QuaternionToEuler(const Quaternion& q) {
 	float cosZ = (2.0f * std::pow(q.quaternion.w, 2.0f) + 2.0f * std::pow(q.quaternion.y, 2.0f) - 1.0f) / cosX;
 	float z = std::atan2(sinZ, cosZ);
 
-	if (Lamb::Between(x, std::numbers::pi_v<float> - e, std::numbers::pi_v<float> + e)) {
+	if (Lamb::Between(std::abs(x), std::numbers::pi_v<float> -e, std::numbers::pi_v<float> +e)) {
 		x = std::abs(x);
 	}
-	if (Lamb::Between(y, std::numbers::pi_v<float> -e, std::numbers::pi_v<float> +e)) {
+	if (Lamb::Between(std::abs(y), std::numbers::pi_v<float> -e, std::numbers::pi_v<float> +e)) {
 		y = std::abs(y);
 	}
-	if (Lamb::Between(z, std::numbers::pi_v<float> -e, std::numbers::pi_v<float> +e)) {
+	if (Lamb::Between(std::abs(z), std::numbers::pi_v<float> -e, std::numbers::pi_v<float> +e)) {
 		z = std::abs(z);
 	}
 

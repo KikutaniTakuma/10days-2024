@@ -14,6 +14,8 @@
 #include "CloudComp.h"
 #include "CsvDataComp.h"
 
+#include "EyeAudioComp.h"
+
 void EyeComp::Init()
 {
 	transformComp_ = object_.AddComp<TransformComp>();
@@ -23,7 +25,7 @@ void EyeComp::Init()
 	eyeStateComp_ = object_.AddComp<EyeStateComp>();
 	easeingComp_ = object_.AddComp<EaseingComp>();
 	childrenObjectComp_ = object_.AddComp<ChildrenObjectComp>();
-
+	object_.AddComp<EyeAudioComp>();
 
 	Vector4 bloomColor = 0xd56ff9ff;
 	RenderingManager::GetInstance()->SetBloomColor({ bloomColor.color.r,bloomColor.color.g,bloomColor.color.b });

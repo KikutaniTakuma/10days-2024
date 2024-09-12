@@ -8,6 +8,7 @@
 #include "SpriteAnimatorComp.h"
 #include "SpriteRenderDataComp.h"
 #include "TextureHandlesComp.h"
+#include "AudioManager/AudioManager.h"
 
 void GoalComp::Init()
 {
@@ -19,6 +20,11 @@ void GoalComp::Init()
 	isGoal_ = object_.AddComp<FlagComp>();
 	animation_ = object_.AddComp<SpriteAnimatorComp>();
 	handles_ = object_.AddComp<TextureHandlesComp>();
+}
+
+void GoalComp::Load() {
+	AudioManager::GetInstance()->Load("./Resources/Sounds/SE_ingame_goal_open_close.mp3");
+	openDoorAudio_ = AudioManager::GetInstance()->Get("./Resources/Sounds/SE_ingame_goal_open_close.mp3");
 }
 
 void GoalComp::Event()
@@ -86,6 +92,7 @@ void GoalComp::Update()
 			//プレイヤーの座標を奥にする
 			player_->getObject().GetComp<TransformComp>()->translate.z = 3.0f;
 			isOpen_ = false;
+			openDoorAudio_->Start(0.3f, false);
 		}
 		//閉じていたら開く演出から入る
 		else {
@@ -96,6 +103,9 @@ void GoalComp::Update()
 			animation_->Start();
 			animation_->SetLoopAnimation(false);
 			isOpen_ = true;
+
+			// ここに音を挿入する
+			openDoorAudio_->Start(0.3f, false);
 		}
 
 	}
@@ -111,6 +121,9 @@ void GoalComp::Update()
 		//プレイヤーの座標を奥にする
 		player_->getObject().GetComp<TransformComp>()->translate.z = 3.0f;
 		isOpen_ = false;
+
+		// ここに音を挿入する
+		openDoorAudio_->Start(0.3f, false);
 
 	}
 

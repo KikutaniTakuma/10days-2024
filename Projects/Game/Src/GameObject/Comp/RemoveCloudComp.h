@@ -9,13 +9,15 @@
 
 	 ~RemoveCloudComp() = default;
 
+	 void Load() override;
+
 	 void Init() override;
 
 	 void FirstUpdate() override;
 
 	 void Event() override;
 
-	 void Update() override;
+	 void LastUpdate() override;
 
  public:
 
@@ -36,5 +38,7 @@
 
 	 Lamb::SafePtr<class CountComp> count_;
 
+	 Lamb::SafePtr<class Audio> removeCloudAudio_;
+	 bool isStartAudio_ = false;
  };
 
