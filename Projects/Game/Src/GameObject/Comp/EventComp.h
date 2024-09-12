@@ -6,16 +6,13 @@ class EventComp : public IComp {
 public:
 	using IComp::IComp;
 
-	virtual ~EventComp() = default;
-
-	virtual void Init() override;
-
-	virtual void Event() override;
+	~EventComp() = default;
 
 	void Save(nlohmann::json& json) override;
 	void Load(nlohmann::json& json) override;
 
-protected:
-	Lamb::SafePtr<class ObbComp> obbComp;
+	void Debug(const std::string& guiName) override;
+
+public:
 	Lamb::Flg isEvent;
 };

@@ -1,15 +1,15 @@
 #include "SceneChangeComp.h"
 #include "Scenes/Manager/SceneManager.h"
 
+#include "EventComp.h"
+
 void SceneChangeComp::Init() {
-	EventComp::Init();
+    eventComp_ = object_.AddComp<EventComp>();
     sceneManager_ = SceneManager::GetInstance();
 }
 
-void SceneChangeComp::Event() {
-	EventComp::Event();
-
-	if (isEvent and not nextSceneJsonFileName_.empty()) {
+void SceneChangeComp::LastUpdate() {
+	if (eventComp_->isEvent.OnEnter() and not nextSceneJsonFileName_.empty()) {
 		sceneManager_->SceneChange(nextSceneJsonFileName_);
 	}
 }

@@ -74,6 +74,7 @@ private:
 #ifdef _DEBUG
 	std::vector<std::filesystem::path> levelDataFilePathes_;
 	bool isLoad_ = false;
+	bool isSelectInverse_ = false;
 #endif // _DEBUG
 
 };

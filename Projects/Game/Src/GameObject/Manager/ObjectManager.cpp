@@ -286,6 +286,8 @@ void ObjectManager::Debug() {
 				}
 			}
 		}
+		ImGui::Checkbox("選択しているものを表示しない", &isSelectInverse_);
+		ImGui::SameLine();
 		if (ImGui::Button("すべてを選択")) {
 			for (auto& i : objectTags_) {
 				i.second = true;
@@ -365,7 +367,7 @@ void ObjectManager::Debug() {
 	bool isAddComp = false;
 	for (auto itr = objects_.begin(); itr != objects_.end(); itr++) {
 		for (auto& tag : objectTags_) {
-			if (((*itr)->HasTag(tag.first) and tag.second) or (*itr)->GetTags().empty()) {
+			if (((*itr)->HasTag(tag.first) and (isSelectInverse_ ? not tag.second : tag.second)) or (*itr)->GetTags().empty()) {
 				bool isCamera = (*itr)->HasComp<CameraComp>();
 				bool isButton = isCamera ? false : ImGui::Button("erase object");
 				if (not isButton) {
