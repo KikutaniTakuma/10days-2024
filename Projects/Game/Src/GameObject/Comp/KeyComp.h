@@ -8,7 +8,15 @@ public:
 
 	void Init() override;
 
+	void Event() override;
+
 	~KeyComp() = default;
+
+	void SetPlayerComp(class PlayerComp* playerComp);
+
+	void SetIsObtained(bool flag) { isObtained_ = flag; }
+
+	const Lamb::Flg& GetIsObtained() const { return isObtained_; }
 
 public:
 
@@ -16,13 +24,20 @@ public:
 	void Load(nlohmann::json& json) override;
 
 private:
+	//プレイヤーのポインタ
+	Lamb::SafePtr<class PlayerComp> player_;
+	//プレイヤーのAabb2DComp
+	Lamb::SafePtr <class Aabb2DComp> playerAabbCollision_;
+private:
 
 	Lamb::SafePtr<class TransformComp> transformComp_;
 
 	Lamb::SafePtr<class SpriteRenderComp> spriteRenderComp_;
 
-	Lamb::SafePtr<class ObbPushComp> collision_;
-
 	Lamb::SafePtr<class Mass2DComp> mass_;
+
+	Lamb::SafePtr<class Aabb2DComp> aabbCollision_;
+
+	Lamb::Flg isObtained_;
 
 };

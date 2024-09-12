@@ -26,6 +26,10 @@
 
 	 void SetPosition(const Vector3& position);
 
+	 void SetIsDead(bool flag) { isDead_ = flag; }
+
+	 bool GetIsDead() const { return isDead_; }
+
 	 int32_t GetMassX() const;
 	 int32_t GetMassY() const;
 
@@ -53,5 +57,7 @@
 	 Lamb::SafePtr<class Mass2DComp> mass_;
 
 	 Lamb::SafePtr<class Aabb2DComp> aabbCollision_;
+
+	 bool isDead_ = false;
 
  };

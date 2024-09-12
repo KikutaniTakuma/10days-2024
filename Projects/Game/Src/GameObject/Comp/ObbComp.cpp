@@ -194,6 +194,10 @@ void ObbComp::Draw([[maybe_unused]]CameraComp* cameraComp) {
 
 bool ObbComp::IsCollision(Vector3 pos, float radius)
 {
+	if (scale == float32_t3::kZero or (transformComp_->scale == float32_t3::kZero and isScaleEffect_) or radius == 0.0f) {
+		return false;
+	}
+
 	constexpr int32_t min = 0;
 	constexpr int32_t max = 1;
 
@@ -235,6 +239,11 @@ bool ObbComp::IsCollision(Vector3 pos, float radius)
 
 bool ObbComp::IsCollision(ObbComp* const other)
 {
+	if (scale == float32_t3::kZero or (transformComp_->scale == float32_t3::kZero and isScaleEffect_)
+		or other->scale == float32_t3::kZero or (other->transformComp_->scale == float32_t3::kZero and other->isScaleEffect_)) {
+		return false;
+	}
+
 	float length = 0.0f, otherLength = 0.0f;
 	float min = 0.0f, max = 0.0f, otherMin = 0.0f, otherMax = 0.0f;
 
@@ -307,6 +316,12 @@ bool ObbComp::IsCollision(ObbComp* const other)
 
 bool ObbComp::IsCollision(ObbComp* const other, Vector3& pushVector)
 {
+	if (scale == float32_t3::kZero or (transformComp_->scale == float32_t3::kZero and isScaleEffect_)
+		or other->scale == float32_t3::kZero or (other->transformComp_->scale == float32_t3::kZero and other->isScaleEffect_)) {
+		pushVector = float32_t3::kZero;
+		return false;
+	}
+
 	float length = 0.0f, otherLength = 0.0f;
 	float min = 0.0f, max = 0.0f, otherMin = 0.0f, otherMax = 0.0f;
 
@@ -398,6 +413,10 @@ bool ObbComp::IsCollision(ObbComp* const other, Vector3& pushVector)
 
 bool ObbComp::IsCollision(const Vector3& start, const Vector3& end)
 {
+	if (scale == float32_t3::kZero or (transformComp_->scale == float32_t3::kZero and isScaleEffect_)) {
+		return false;
+	}
+
 	if (not isCollision_.OnEnter()) {
 		isCollision_ = false;
 	}

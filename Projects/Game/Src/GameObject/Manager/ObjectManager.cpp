@@ -23,6 +23,7 @@
 #include "../Comp/GoalComp.h"
 #include "../Comp/FollowCamera2DComp.h"
 #include "../Comp/KeyComp.h"
+#include "../Comp/CollectionComp.h"
 
 std::unique_ptr<ObjectManager> ObjectManager::instance_;
 
@@ -476,6 +477,12 @@ void ObjectManager::SetPlayerCompToOther() {
 		}
 		if (i->HasComp<GoalComp>()) {
 			i->GetComp<GoalComp>()->SetPlayerComp(playerComp.get());
+		}
+		if (i->HasComp<CollectionComp>()) {
+			i->GetComp<CollectionComp>()->SetPlayerComp(playerComp.get());
+		}
+		if (i->HasComp<KeyComp>()) {
+			i->GetComp<KeyComp>()->SetPlayerComp(playerComp.get());
 		}
 		if (i->HasComp<FollowCamera2DComp>()) {
 			i->GetComp<FollowCamera2DComp>()->SetPlayerComp(playerComp.get());

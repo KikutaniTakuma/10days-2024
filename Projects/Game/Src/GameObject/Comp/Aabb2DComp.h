@@ -52,6 +52,9 @@ public:
 		return prePositions_->at(static_cast<size_t>(point));
 	}
 
+	// transformのスケールの影響を受けないようにする
+	void SetEnableScaleEffect(bool isScaleEffect);
+
 public:
 
 	void Save(nlohmann::json& json) override;
@@ -74,5 +77,7 @@ private:
 	std::unordered_set<std::string> collisionTags_;
 
 	Lamb::Flg isCollision_;
+
+	bool isScaleEffect_ = true;
 
 };
