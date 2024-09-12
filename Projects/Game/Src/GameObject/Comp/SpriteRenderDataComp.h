@@ -38,6 +38,7 @@ public:
 	void Debug(const std::string& guiName) override;
 
 	const Mat4x4& GetOffsetMatrix() const;
+	const Mat4x4& GetUserOffsetMatrix() const;
 
 	void Save(nlohmann::json& json) override;
 	void Load(nlohmann::json& json) override;
@@ -53,8 +54,11 @@ public:
 	
 	Offset offsetType = Offset::kMiddle;
 
+	QuaternionTransform userOffsetTransform;
+
 private:
 	Mat4x4 offsetTransform_ = Mat4x4::kIdentity;
+	Mat4x4 userOffsetTransformMatrix_ = Mat4x4::kIdentity;
 
 private:
 #ifdef _DEBUG
