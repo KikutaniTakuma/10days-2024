@@ -44,6 +44,7 @@ private:
 	// 黒目の子オブジェクト(これはベータ版で使う)
 	Lamb::SafePtr<class ChildrenObjectComp> childrenObjectComp_;
 	Lamb::SafePtr<class LineComp> childrenBeamLineComp_;
+	Lamb::SafePtr<class TransformComp> childrenTransformComp_;
 	Lamb::SafePtr<class SpriteRenderDataComp> childrenBeamRenderDataComp_;
 
 	Lamb::SafePtr<class LineComp> beamLineComp_;
