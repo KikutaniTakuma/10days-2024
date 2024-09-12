@@ -64,118 +64,160 @@ void PlayerComp::Move() {
 
 	if (not isGoal_) {
 
-		velocity_.x = move_->GetMoveVector().x;
+		if (not isStartEatAnimation_ and not isStartRemoveAnimation_) {
 
-		if (gamepad->Pushed(Gamepad::Button::A) and onGround_) {
+			velocity_.x = move_->GetMoveVector().x;
 
-			jump_->Stop();
-			jump_->Start();
-			onGround_ = false;
+			if (gamepad->Pushed(Gamepad::Button::A) and onGround_) {
 
-		}
+				jump_->Stop();
+				jump_->Start();
+				onGround_ = false;
+
+			}
 
 #ifdef _DEBUG
 
-		if (key->Pushed(DIK_SPACE) and onGround_) {
+			if (key->Pushed(DIK_SPACE) and onGround_) {
 
-			jump_->Stop();
-			jump_->Start();
-			onGround_ = false;
+				jump_->Stop();
+				jump_->Start();
+				onGround_ = false;
 
-		}
+			}
 
 #endif // _DEBUG
 
 
-		if (fabsf(move_->GetDirection().Length()) > 0.01f) {
-			direction_->direction_ = { move_->GetMoveVector().x, move_->GetMoveVector().y };
-		}
-
-		if (fabsf(velocity_.x) > 0.01f) {
-
-			if (spriteRenderData_->texHandle != handles_->textureHandles_[1 + invisibleValue_]) {
-				spriteRenderData_->texHandle = handles_->textureHandles_[1 + invisibleValue_];
-				animation_->Reset();
+			if (fabsf(move_->GetDirection().Length()) > 0.01f) {
+				direction_->direction_ = { move_->GetMoveVector().x, move_->GetMoveVector().y };
 			}
 
+			if (fabsf(velocity_.x) > 0.01f) {
 
-		}
-		else {
-			if (spriteRenderData_->texHandle != handles_->textureHandles_[0 + invisibleValue_]) {
-				spriteRenderData_->texHandle = handles_->textureHandles_[0 + invisibleValue_];
-				animation_->Reset();
+				if (spriteRenderData_->texHandle != handles_->textureHandles_[1 + invisibleValue_]) {
+					spriteRenderData_->texHandle = handles_->textureHandles_[1 + invisibleValue_];
+					animation_->Reset();
+				}
+
+
 			}
-		}
+			else {
+				if (spriteRenderData_->texHandle != handles_->textureHandles_[0 + invisibleValue_]) {
+					spriteRenderData_->texHandle = handles_->textureHandles_[0 + invisibleValue_];
+					animation_->Reset();
+				}
+			}
 
-		if (not onGround_ and not fall_->GetIsFall()) {
-			fall_->Start();
-		}
+			if (not onGround_ and not fall_->GetIsFall()) {
+				fall_->Start();
+			}
 
-		velocity_.y += jump_->GetJumpVelocity();
+			velocity_.y += jump_->GetJumpVelocity();
 
-		if (not onGround_) {
-			velocity_.y += +fall_->GetDeltaFall();
-		}
+			if (not onGround_) {
+				velocity_.y += +fall_->GetDeltaFall();
+			}
 
-		for (size_t i = 0; i < static_cast<size_t>(Aabb2DComp::Point::kNum); i++) {
-			prePositions_->at(i) = aabbCollision_->GetPosition(static_cast<Aabb2DComp::Point>(i));
-		}
+			for (size_t i = 0; i < static_cast<size_t>(Aabb2DComp::Point::kNum); i++) {
+				prePositions_->at(i) = aabbCollision_->GetPosition(static_cast<Aabb2DComp::Point>(i));
+			}
 
-		tmpPosition_ = transform_->translate;
+			tmpPosition_ = transform_->translate;
 
-		tmpPosition_ += velocity_;
+			tmpPosition_ += velocity_;
 
-		transform_->translate = tmpPosition_;
-		transform_->UpdateMatrix();
+			transform_->translate = tmpPosition_;
+			transform_->UpdateMatrix();
 
-		aabbCollision_->UpdatePosAndOrient();
+			aabbCollision_->UpdatePosAndOrient();
 
-		CheckCollision();
+			CheckCollision();
 
-		transform_->translate = tmpPosition_;
+			transform_->translate = tmpPosition_;
 
-		if (onGround_) {
-			fall_->Stop();
-			velocity_.y = 0.0f;
-		}
+			if (onGround_) {
+				fall_->Stop();
+				velocity_.y = 0.0f;
+			}
 
-		//雲が10未満でRボタンかトリガーを押したら食事開始。吐き出す動作とは重複しない
-		if (not eatCloud_->isEat_ and count_->GetCount() < 10 and onGround_ and
-			not gamepad->Pushed(Gamepad::Button::LEFT_SHOULDER) and not gamepad->Pushed(Gamepad::Trigger::LEFT) and
-			(gamepad->Pushed(Gamepad::Button::RIGHT_SHOULDER) or gamepad->Pushed(Gamepad::Trigger::RIGHT))) {
+			//雲が10未満でRボタンかトリガーを押したら食事開始。吐き出す動作とは重複しない
+			if (not eatCloud_->isEat_ and count_->GetCount() < 10 and onGround_ and
+				not gamepad->Pushed(Gamepad::Button::LEFT_SHOULDER) and not gamepad->Pushed(Gamepad::Trigger::LEFT) and
+				(gamepad->Pushed(Gamepad::Button::RIGHT_SHOULDER) or gamepad->Pushed(Gamepad::Trigger::RIGHT))) {
 
-			eatCloud_->isEat_ = true;
+				eatCloud_->isEat_ = true;
+				animation_->Reset();
+				animation_->SetDuration(0.0416f);
+				spriteRenderData_->texHandle = handles_->textureHandles_[2 + invisibleValue_];
+				isStartEatAnimation_ = true;
 
-		}
+			}
 
-		//雲を持っていてLボタンかトリガーを押したら吐き出し開始。食べる動作とは重複しない
-		if (not removeCloud_->isRemove_ and count_->GetCount() > 0 and onGround_
-			and (gamepad->Pushed(Gamepad::Button::LEFT_SHOULDER) or gamepad->Pushed(Gamepad::Trigger::LEFT)) and
-			not gamepad->Pushed(Gamepad::Button::RIGHT_SHOULDER) and not gamepad->Pushed(Gamepad::Trigger::RIGHT)) {
+			//雲を持っていてLボタンかトリガーを押したら吐き出し開始。食べる動作とは重複しない
+			if (not removeCloud_->isRemove_ and count_->GetCount() > 0 and onGround_
+				and (gamepad->Pushed(Gamepad::Button::LEFT_SHOULDER) or gamepad->Pushed(Gamepad::Trigger::LEFT)) and
+				not gamepad->Pushed(Gamepad::Button::RIGHT_SHOULDER) and not gamepad->Pushed(Gamepad::Trigger::RIGHT)) {
 
-			removeCloud_->isRemove_ = true;
+				removeCloud_->isRemove_ = true;
+				animation_->Reset();
+				animation_->SetDuration(0.0416f);
+				spriteRenderData_->texHandle = handles_->textureHandles_[3 + invisibleValue_];
+				isStartRemoveAnimation_ = true;
 
-		}
+			}
 
 #ifdef _DEBUG
 
-		//雲が10未満でRボタンかトリガーを押したら食事開始。吐き出す動作とは重複しない
-		if (not eatCloud_->isEat_ and count_->GetCount() < 10 and onGround_ and
-			not key->Pushed(DIK_Q) and key->Pushed(DIK_E)) {
+			//雲が10未満でRボタンかトリガーを押したら食事開始。吐き出す動作とは重複しない
+			if (not eatCloud_->isEat_ and count_->GetCount() < 10 and onGround_ and
+				not key->Pushed(DIK_Q) and key->Pushed(DIK_E)) {
 
-			eatCloud_->isEat_ = true;
+				eatCloud_->isEat_ = true;
+				animation_->Reset();
+				animation_->SetDuration(0.0416f);
+				spriteRenderData_->texHandle = handles_->textureHandles_[2 + invisibleValue_];
+				isStartEatAnimation_ = true;
 
-		}
+			}
 
-		//雲を持っていてLボタンかトリガーを押したら吐き出し開始。食べる動作とは重複しない
-		if (not removeCloud_->isRemove_ and count_->GetCount() > 0 and onGround_
-			and key->Pushed(DIK_Q) and not key->Pushed(DIK_E)) {
+			//雲を持っていてLボタンかトリガーを押したら吐き出し開始。食べる動作とは重複しない
+			if (not removeCloud_->isRemove_ and count_->GetCount() > 0 and onGround_
+				and key->Pushed(DIK_Q) and not key->Pushed(DIK_E)) {
 
-			removeCloud_->isRemove_ = true;
+				removeCloud_->isRemove_ = true;
+				animation_->Reset();
+				animation_->SetDuration(0.0416f);
+				spriteRenderData_->texHandle = handles_->textureHandles_[3 + invisibleValue_];
+				isStartRemoveAnimation_ = true;
 
-		}
+			}
 
 #endif // _DEBUG
+
+		}
+		else if (isStartEatAnimation_) {
+
+			if (animation_->GetCurrentAnimationNumber() == 5) {
+				animation_->Reset();
+				animation_->SetDuration(0.1666f);
+				isStartEatAnimation_ = false;
+			}
+
+			CheckCollision();
+
+		}
+		else if (isStartRemoveAnimation_) {
+
+			if (animation_->GetCurrentAnimationNumber() == 5) {
+				animation_->Reset();
+				animation_->SetDuration(0.1666f);
+				isStartRemoveAnimation_ = false;
+			}
+
+			CheckCollision();
+
+		}
 
 		//向きによってuvのスケールを変更
 		animation_->DirectionInverse(direction_->IsLeft());
@@ -192,6 +234,11 @@ void PlayerComp::Move() {
 	}
 	//ゴール時の移動演出
 	else {
+
+		//鍵を持っていたらスケールを0にして消す
+		if (keyTransform_) {
+			keyTransform_->scale = { 0.0f,0.0f,0.0f };
+		}
 
 		if (isGoal_ and not easing_->GetEaseing().GetIsActive() and not isFirstEasingStart_) {
 			easing_->isLoop = false;
