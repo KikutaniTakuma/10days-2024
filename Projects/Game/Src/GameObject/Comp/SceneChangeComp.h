@@ -26,6 +26,8 @@ private:
 
 	Lamb::SafePtr<class EventComp> eventComp_;
 
+	
+
 #ifdef _DEBUG
 	std::vector<std::filesystem::path> filePaths_;
 #endif // _DEBUG

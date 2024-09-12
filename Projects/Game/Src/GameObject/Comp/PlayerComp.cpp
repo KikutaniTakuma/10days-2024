@@ -22,6 +22,9 @@
 #include "TextureHandlesComp.h"
 #include "KeyComp.h"
 #include "EaseingComp.h"
+#include "SceneChangeComp.h"
+#include "../Manager/ObjectManager.h"
+#include "EventComp.h"
 
 void PlayerComp::Init() {
 
@@ -45,6 +48,7 @@ void PlayerComp::Init() {
 	animation_ = object_.AddComp<SpriteAnimatorComp>();
 	handles_ = object_.AddComp<TextureHandlesComp>();
 	easing_ = object_.AddComp<EaseingComp>();
+	sceneChangeComp_ = object_.AddComp<SceneChangeComp>();
 
 }
 
@@ -63,6 +67,12 @@ void PlayerComp::Move() {
 	Lamb::SafePtr mouse = Input::GetInstance()->GetMouse();
 
 	if (not isGoal_) {
+
+		//シーンリセット
+		if (gamepad->Pushed(Gamepad::Button::X)) {
+			sceneChangeComp_->SetNextScene(ObjectManager::GetInstance()->GetCurrentSceneFilePath());
+			sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
+		}
 
 		if (not isStartEatAnimation_ and not isStartRemoveAnimation_) {
 
@@ -229,6 +239,12 @@ void PlayerComp::Move() {
 			keyTransform_->scale = { 24.0f,24.0f,24.0f };
 			keyTransform_->translate = transform_->translate + Vector3{ 0.0f,32.0f,0.0f };
 
+		}
+
+		//デッドラインより下なら死亡扱いしてシーンチェンジ
+		if (transform_->translate.y < deadLine_) {
+			sceneChangeComp_->SetNextScene(ObjectManager::GetInstance()->GetCurrentSceneFilePath());
+			sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
 		}
 
 	}
