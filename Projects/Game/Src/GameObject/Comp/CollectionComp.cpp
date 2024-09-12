@@ -25,7 +25,7 @@ void CollectionComp::Event()
 		transformComp_->scale = { 32.0f,32.0f,32.0f };
 	}
 
-	if (not isObtained_ and aabbCollision_->IsCollision(playerAabbCollision_.get())) {
+	if (not isObtained_ and aabbCollision_->IsCollision(playerAabbCollision_.get()) and not player_->GetIsInvisible()) {
 
 		//取得した時にマス目を消す
 		player_->getObject().GetComp<CsvDataComp>()->SetNumber(mass_->GetMassX(), mass_->GetMassY(), 0);

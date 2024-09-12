@@ -24,11 +24,18 @@ void GoalComp::Init()
 void GoalComp::Event()
 {
 
-	if (isOpen_) {
-		spriteRenderDataComp_->texHandle = handles_->textureHandles_[0];
+	if (not isGoal_) {
+
+		if (isOpen_) {
+			spriteRenderDataComp_->texHandle = handles_->textureHandles_[0];
+		}
+		else {
+			spriteRenderDataComp_->texHandle = handles_->textureHandles_[1];
+		}
+
 	}
 	else {
-		spriteRenderDataComp_->texHandle = handles_->textureHandles_[1];
+
 	}
 
 	if (player_.empty()) {
@@ -56,9 +63,40 @@ void GoalComp::Event()
 void GoalComp::Update()
 {
 
+	//ゴールした時
 	if (isGoal_->GetIsActive().OnEnter()) {
 
-		
+		//開いていたら閉まる演出
+		if (isOpen_) {
+			spriteRenderDataComp_->texHandle = handles_->textureHandles_[3];
+			animation_->Reset();
+			animation_->SetAnimationNumber(8);
+			animation_->SetDuration(0.125f);
+			animation_->Start();
+			animation_->SetLoopAnimation(false);
+			isOpen_ = false;
+		}
+		//閉じていたら開く演出から入る
+		else {
+			spriteRenderDataComp_->texHandle = handles_->textureHandles_[2];
+			animation_->SetAnimationNumber(8);
+			animation_->SetDuration(0.125f);
+			animation_->Start();
+			animation_->SetLoopAnimation(false);
+			isOpen_ = true;
+		}
+
+	}
+
+	//ゴールしてアニメーションが終わって扉が開いている時
+	if (isGoal_ and not animation_->GetIsActive() and isOpen_) {
+
+		spriteRenderDataComp_->texHandle = handles_->textureHandles_[3];
+		animation_->SetAnimationNumber(8);
+		animation_->SetDuration(0.125f);
+		animation_->Start();
+		animation_->SetLoopAnimation(false);
+		isOpen_ = false;
 
 	}
 

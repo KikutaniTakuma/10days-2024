@@ -11,6 +11,8 @@
 
 #include "Engine/Graphics/RenderingManager/RenderingManager.h"
 #include "SpriteRenderDataComp.h"
+#include "CloudComp.h"
+#include "CsvDataComp.h"
 
 void EyeComp::Init()
 {
@@ -91,7 +93,22 @@ void EyeComp::Event() {
 		else {
 			beamLineComp_->end = beamLineComp_->start + beamLineComp_->GetDirection() * (collsionCbjectTransFormComp->translate - beamLineComp_->start).Length();
 		}
+
+		if (mostNearCollisionObjectPtr->HasComp<CloudComp>() and not isDeleteCloud_ and eyeStateComp_->state == EyeStateComp::State::kFire) {
+
+			int32_t mussX = mostNearCollisionObjectPtr->GetComp<CloudComp>()->GetMassX();
+			int32_t mussY = mostNearCollisionObjectPtr->GetComp<CloudComp>()->GetMassY();
+
+			playerComp_->getObject().GetComp<CsvDataComp>()->SetNumber(mussX, mussY, 0);
+
+			mostNearCollisionObjectPtr->GetComp<CloudComp>()->SetIsDead(true);
+
+			isDeleteCloud_ = true;
+
+		}
+
 		isCollision = true;
+
 	}
 
 	// 状態
@@ -102,7 +119,7 @@ void EyeComp::Event() {
 		eyeStateComp_->aimCount = 0.0f;
 		eyeStateComp_->aimFixedCount = 0.0f;
 		eyeStateComp_->fireCount = 0.0f;
-
+		isDeleteCloud_ = false;
 
 		// 探している最中にプレイヤーを直視できたら狙う
 		// かつ、プレイヤーが透明じゃない
