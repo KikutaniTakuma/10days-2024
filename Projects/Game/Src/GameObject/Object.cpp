@@ -53,6 +53,9 @@
 
 #include "Comp/InstanceTimeComp.h"
 
+#include "Comp/UIDrawComp.h"
+#include "Comp/UITransformComp.h"
+
 void Object::Init() {
 	/*for (auto& i : components_) {
 		i.second->Init();
@@ -182,6 +185,8 @@ bool Object::DebugAddComp() {
 		DebugAdd<EaseingComp>();
 		DebugAdd<TextureHandlesComp>();
 		DebugAdd<InstanceTimeComp>();
+		DebugAdd<UIDrawComp>();
+		DebugAdd<UITransformComp>();
 		
 		ImGui::EndChild();
 
@@ -265,5 +270,7 @@ void Object::AddComps(nlohmann::json& compData)
 	AddAndLoadComp<KeyComp>(compName, compData);
 	AddAndLoadComp<TextureHandlesComp>(compName, compData);
 	AddAndLoadComp<InstanceTimeComp>(compName, compData);
+	AddAndLoadComp<UIDrawComp>(compName, compData);
+	AddAndLoadComp<UITransformComp>(compName, compData);
 }
 
