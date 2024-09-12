@@ -47,6 +47,7 @@
 #include "Comp/EyeComp.h"
 #include "Comp/EyeStateComp.h"
 #include "Comp/EaseingComp.h"
+#include "Comp/EyeAudioComp.h"
 
 #include "Comp/AudioComp.h"
 #include "Comp/BgmComp.h"
@@ -182,6 +183,7 @@ bool Object::DebugAddComp() {
 		DebugAdd<LineConvertTransformComp>();
 		DebugAdd<EyeComp>();
 		DebugAdd<EyeStateComp>();
+		DebugAdd<EyeAudioComp>();
 		DebugAdd<EaseingComp>();
 		DebugAdd<TextureHandlesComp>();
 		DebugAdd<InstanceTimeComp>();
