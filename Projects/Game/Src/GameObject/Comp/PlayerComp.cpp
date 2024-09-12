@@ -232,6 +232,15 @@ void PlayerComp::Move() {
 		//向きによってuvのスケールを変更
 		animation_->DirectionInverse(direction_->IsLeft());
 
+		if (direction_->IsLeft()) {
+			spriteRenderData_->userOffsetTransform.translate.x = -0.06f;
+		}
+		else {
+			spriteRenderData_->userOffsetTransform.translate.x = 0.06f;
+		}
+
+		spriteRenderData_->userOffsetTransform.translate.y = 0.1f;
+
 		transform_->UpdateMatrix();
 
 		if (keyTransform_) {
