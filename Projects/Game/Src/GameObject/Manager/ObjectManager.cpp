@@ -24,6 +24,7 @@
 #include "../Comp/FollowCamera2DComp.h"
 #include "../Comp/KeyComp.h"
 #include "../Comp/CollectionComp.h"
+#include "../Comp/BackGroundComp.h"
 
 std::unique_ptr<ObjectManager> ObjectManager::instance_;
 
@@ -399,7 +400,7 @@ void ObjectManager::Debug() {
 	if (isAddComp) {
 		// ゲーム固有処理
 		// Eyeの処理の別オブジェクトのPlayerCompが必要なのでここで設定する
-		SetPlayerCompToOther();
+		SetCompToOther();
 	}
 
 	ImGui::EndChild();
@@ -478,12 +479,15 @@ void ObjectManager::Save() {
 	}
 }
 
-void ObjectManager::SetPlayerCompToOther() {
+void ObjectManager::SetCompToOther() {
 	Lamb::SafePtr<PlayerComp> playerComp;
+	Lamb::SafePtr<FollowCamera2DComp> followCamera2DComp;
 	for (auto& i : objects_) {
 		if (i->HasComp<PlayerComp>()) {
 			playerComp = i->GetComp<PlayerComp>();
-			break;
+		}
+		if (i->HasComp<FollowCamera2DComp>()) {
+			followCamera2DComp = i->GetComp<FollowCamera2DComp>();
 		}
 	}
 
@@ -504,6 +508,9 @@ void ObjectManager::SetPlayerCompToOther() {
 		}
 		if (i->HasComp<FollowCamera2DComp>()) {
 			i->GetComp<FollowCamera2DComp>()->SetPlayerComp(playerComp.get());
+		}
+		if (i->HasComp<BackGroundComp>()) {
+			i->GetComp<BackGroundComp>()->SetFollowCameraComp(followCamera2DComp.get());
 		}
 	}
 }
@@ -579,7 +586,7 @@ void ObjectManager::Load(const std::string& jsonFileName) {
 
 	// ゲーム固有処理
 	// Eyeの処理の別オブジェクトのPlayerCompが必要なのでここで設定する
-	SetPlayerCompToOther();
+	SetCompToOther();
 	InitFlags();
 
 	collisionManager_->MakeCollisionPair();

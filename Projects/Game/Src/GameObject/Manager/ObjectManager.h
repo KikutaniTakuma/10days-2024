@@ -52,7 +52,7 @@ private:
 
 	void Save();
 
-	void SetPlayerCompToOther();
+	void SetCompToOther();
 
 	void InitFlags();
 

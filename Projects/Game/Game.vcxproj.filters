@@ -203,10 +203,16 @@
     <ClCompile Include="Src\GameObject\Comp\BackGroundComp.cpp">
       <Filter>GameObject\Comp</Filter>
     </ClCompile>
-    <ClCompile Include="Src\GameObject\Comp\UvOperator.cpp">
+    <ClCompile Include="Src\GameObject\Comp\UvOperatorComp.cpp">
       <Filter>GameObject\Comp</Filter>
     </ClCompile>
     <ClCompile Include="Src\GameObject\Comp\EyeAudioComp.cpp">
+      <Filter>GameObject\Comp</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\Comp\TitleInputComp.cpp">
+      <Filter>GameObject\Comp</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\Comp\StageSelectInputComp.cpp">
       <Filter>GameObject\Comp</Filter>
     </ClCompile>
   </ItemGroup>
@@ -465,10 +471,16 @@
     <ClInclude Include="Src\GameObject\Comp\BackGroundComp.h">
       <Filter>GameObject\Comp</Filter>
     </ClInclude>
-    <ClInclude Include="Src\GameObject\Comp\UvOperator.h">
+    <ClInclude Include="Src\GameObject\Comp\UvOperatorComp.h">
       <Filter>GameObject\Comp</Filter>
     </ClInclude>
     <ClInclude Include="Src\GameObject\Comp\EyeAudioComp.h">
+      <Filter>GameObject\Comp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Comp\TitleInputComp.h">
+      <Filter>GameObject\Comp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Comp\StageSelectInputComp.h">
       <Filter>GameObject\Comp</Filter>
     </ClInclude>
   </ItemGroup>

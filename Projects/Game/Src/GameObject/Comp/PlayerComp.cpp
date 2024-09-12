@@ -66,7 +66,7 @@ void PlayerComp::Move() {
 	Lamb::SafePtr key = Input::GetInstance()->GetKey();
 	Lamb::SafePtr mouse = Input::GetInstance()->GetMouse();
 
-	if (not isGoal_) {
+	if (not isGoal_ and not sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent) {
 
 		//シーンリセット
 		if (gamepad->Pushed(Gamepad::Button::X)) {
@@ -86,8 +86,6 @@ void PlayerComp::Move() {
 
 			}
 
-#ifdef _DEBUG
-
 			if (key->Pushed(DIK_SPACE) and onGround_) {
 
 				jump_->Stop();
@@ -95,9 +93,6 @@ void PlayerComp::Move() {
 				onGround_ = false;
 
 			}
-
-#endif // _DEBUG
-
 
 			if (fabsf(move_->GetDirection().Length()) > 0.01f) {
 				direction_->direction_ = { move_->GetMoveVector().x, move_->GetMoveVector().y };
@@ -177,8 +172,6 @@ void PlayerComp::Move() {
 
 			}
 
-#ifdef _DEBUG
-
 			//雲が10未満でRボタンかトリガーを押したら食事開始。吐き出す動作とは重複しない
 			if (not eatCloud_->isEat_ and count_->GetCount() < 10 and onGround_ and
 				not key->Pushed(DIK_Q) and key->Pushed(DIK_E)) {
@@ -202,8 +195,6 @@ void PlayerComp::Move() {
 				isStartRemoveAnimation_ = true;
 
 			}
-
-#endif // _DEBUG
 
 		}
 		else if (isStartEatAnimation_) {
@@ -258,11 +249,43 @@ void PlayerComp::Move() {
 
 	}
 	//ゴール時の移動演出
-	else {
+	else if(isGoal_) {
 
 		//鍵を持っていたらスケールを0にして消す
 		if (keyTransform_) {
 			keyTransform_->scale = { 0.0f,0.0f,0.0f };
+		}
+
+		if (not onGround_ and not fall_->GetIsFall()) {
+			fall_->Start();
+		}
+
+		velocity_.y += jump_->GetJumpVelocity();
+
+		if (not onGround_) {
+			velocity_.y += +fall_->GetDeltaFall();
+		}
+
+		for (size_t i = 0; i < static_cast<size_t>(Aabb2DComp::Point::kNum); i++) {
+			prePositions_->at(i) = aabbCollision_->GetPosition(static_cast<Aabb2DComp::Point>(i));
+		}
+
+		tmpPosition_ = transform_->translate;
+
+		tmpPosition_ += velocity_;
+
+		transform_->translate = tmpPosition_;
+		transform_->UpdateMatrix();
+
+		aabbCollision_->UpdatePosAndOrient();
+
+		CheckCollision();
+
+		transform_->translate = tmpPosition_;
+
+		if (onGround_) {
+			fall_->Stop();
+			velocity_.y = 0.0f;
 		}
 
 		if (isGoal_ and not easing_->GetEaseing().GetIsActive() and not isFirstEasingStart_) {
