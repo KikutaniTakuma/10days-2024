@@ -278,6 +278,11 @@ void ObjectManager::Debug() {
 			for (const auto& i : object->GetTags()) {
 				if (not objectTags_.contains(i.second)) {
 					objectTags_.insert(std::make_pair(i.second, true));
+
+					objectTagKeys_.reserve(objectTags_.size());
+					objectTagKeys_.push_back(i.second);
+
+					std::sort(objectTagKeys_.begin(), objectTagKeys_.end());
 				}
 			}
 		}
@@ -292,8 +297,8 @@ void ObjectManager::Debug() {
 				i.second = false;
 			}
 		}
-		for (size_t tagCount = 0, sameLineCount = 0; auto& i : objectTags_) {
-			ImGui::Checkbox(i.first.c_str(), &i.second);
+		for (size_t tagCount = 0, sameLineCount = 0; auto& i : objectTagKeys_) {
+			ImGui::Checkbox(i.c_str(), &objectTags_[i]);
 			tagCount++;
 			sameLineCount++;
 			if (sameLineCount < 3 and tagCount < objectTags_.size()) {
@@ -333,10 +338,17 @@ void ObjectManager::Debug() {
 
 			objectTags_.clear();
 			collisionManager_->Clear();
+			objectTagKeys_.clear();
 
 			for (auto& i : cameraObject->GetTags()) {
 				objectTags_.insert(std::make_pair(i.second, true));
 			}
+			objectTagKeys_.reserve(objectTags_.size());
+			for (auto& i : objectTags_) {
+				objectTagKeys_.push_back(i.first);
+			}
+
+			std::sort(objectTagKeys_.begin(), objectTagKeys_.end());
 			
 			if (cameraObject->HasComp<ObbComp>()) {
 				collisionManager_->Set(cameraObject->GetComp<ObbComp>());
@@ -520,6 +532,7 @@ void ObjectManager::InitFlags()
 void ObjectManager::Load(const std::string& jsonFileName) {
 	objects_.clear();
 	objectTags_.clear();
+	objectTagKeys_.clear();
 	collisionManager_->Clear();
 	cloudManager_->Clear();
 	cameraComp_ = nullptr;
@@ -548,6 +561,13 @@ void ObjectManager::Load(const std::string& jsonFileName) {
 	for (auto& i : levelDatas_[currentScene_]->objects) {
 		this->Set(i);
 	}
+
+	objectTagKeys_.reserve(objectTags_.size());
+	for (auto& i : objectTags_) {
+		objectTagKeys_.push_back(i.first);
+	}
+
+	std::sort(objectTagKeys_.begin(), objectTagKeys_.end());
 
 	SetCamera();
 

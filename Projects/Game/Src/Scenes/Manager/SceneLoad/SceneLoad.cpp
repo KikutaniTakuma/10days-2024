@@ -4,6 +4,7 @@
 #include "Utils/EngineInfo.h"
 #include "Drawers/DrawerManager.h"
 #include "Engine/Graphics/RenderContextManager/RenderContextManager.h"
+#include "Engine/Graphics/RenderingManager/RenderingManager.h"
 #include <climits>
 
 SceneLoad::Desc SceneLoad::setting = {};
@@ -27,7 +28,7 @@ SceneLoad::SceneLoad() :
 	textureID_ = drawerManager->GetTexture(setting.fileName);
 
 	std::unique_ptr<Camera> camera = std::make_unique<Camera>();
-	camera->pos.z = -1.0f;
+	camera->pos.z = -10.0f;
 	camera->Update();
 	cameraMatrix_ = camera->GetViewOthographics();
 
@@ -49,6 +50,8 @@ void SceneLoad::Start()
 			std::numeric_limits<uint32_t>::max(),
 			BlendType::kUnenableDepthNone
 		);
+
+		RenderingManager::GetInstance()->Draw();
 
 		Engine::FrameEnd();
 
@@ -78,13 +81,12 @@ void SceneLoad::CreateLoad()
 	thread_ = std::make_unique<Lamb::Thread>();
 	thread_->Create(
 		[this]()->void {
-			Lamb::SafePtr renderContextManager = RenderContextManager::GetInstance();
 			Engine::FrameStart();
 
 			tex2Danimator_->Update();
 
 			loadTex_->Draw(
-				Mat4x4::MakeAffin(Vector3(Lamb::ClientSize(), 1.0f), Vector3::kZero, Vector3::kZero),
+				Mat4x4::MakeScale(Vector3(Lamb::ClientSize(), 1.0f)),
 				tex2Danimator_->GetUvMat4x4(),
 				cameraMatrix_,
 				textureID_,
@@ -92,11 +94,9 @@ void SceneLoad::CreateLoad()
 				BlendType::kUnenableDepthNone
 			);
 
-			renderContextManager->Draw();
+			RenderingManager::GetInstance()->Draw();
 
 			Engine::FrameEnd();
-
-			renderContextManager->ResetDrawCount();
 		},
 		[this]()->bool { return !isLoad_; },
 		[this]()->bool { return isLoad_; }

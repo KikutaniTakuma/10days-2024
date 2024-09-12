@@ -6,7 +6,7 @@
       <Filter>GlobalVariables</Filter>
     </ClCompile>
     <ClCompile Include="Src\World\World.cpp">
-      <Filter>World</Filter>
+      <Filter>Scenes\World</Filter>
     </ClCompile>
     <ClCompile Include="Src\Scenes\Manager\SceneManager.cpp">
       <Filter>Scenes\Manager</Filter>
@@ -208,9 +208,6 @@
     <Filter Include="Game">
       <UniqueIdentifier>{e16d5b6d-612f-4477-b4d3-85f9d99b2ab8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="World">
-      <UniqueIdentifier>{b8981fb7-5ba2-4533-897e-e706c7dc3049}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Scenes">
       <UniqueIdentifier>{fad8cc50-c290-488f-b4fb-cdbad1bbd763}</UniqueIdentifier>
     </Filter>
@@ -247,13 +244,16 @@
     <Filter Include="Game\TileName">
       <UniqueIdentifier>{fb9b6611-7260-4fb4-9508-6e526aa23fbe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scenes\World">
+      <UniqueIdentifier>{b8981fb7-5ba2-4533-897e-e706c7dc3049}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\GlobalVariables\GlobalVariables.h">
       <Filter>GlobalVariables</Filter>
     </ClInclude>
     <ClInclude Include="Src\World\World.h">
-      <Filter>World</Filter>
+      <Filter>Scenes\World</Filter>
     </ClInclude>
     <ClInclude Include="Src\Scenes\Manager\SceneManager.h">
       <Filter>Scenes\Manager</Filter>

@@ -64,6 +64,7 @@ private:
 	Lamb::SafePtr<class CloudManager> cloudManager_;
 	Lamb::SafePtr<class CollisionManager> collisionManager_;
 	std::unordered_map<std::string, bool> objectTags_;
+	std::vector<std::string> objectTagKeys_;
 	Lamb::SafePtr<class CameraComp> cameraComp_;
 
 	std::unordered_map<std::string, std::unique_ptr<LevelData>> levelDatas_;

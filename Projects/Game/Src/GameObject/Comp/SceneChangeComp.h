@@ -14,11 +14,11 @@ public:
 	void Event() override;
 
 	void SetNextScene(const std::string& nextSceneJsonFileName);
-	void SetSceneManager(class SceneManager* sceneManager);
 
 	void Save(nlohmann::json& json) override;
 	void Load(nlohmann::json& json) override;
 
+	void Debug(const std::string& guiName) override;
 private:
 	std::string nextSceneJsonFileName_;
 	Lamb::SafePtr<class SceneManager> sceneManager_;
