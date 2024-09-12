@@ -2,11 +2,13 @@
 #include "TransformComp.h"
 #include "SpriteRenderDataComp.h"
 #include "SpriteRenderComp.h"
+#include "CloudComp.h"
 
 void EatCloudAnimationComp::Init() {
 	transformComp_ = object_.AddComp<decltype(transformComp_)::type>();
 	spriteRenderDataComp_ = object_.AddComp<decltype(spriteRenderDataComp_)::type>();
 	spriteRenderComp_ = object_.AddComp<decltype(spriteRenderComp_)::type>();
+	cloudComp_ = object_.AddComp<CloudComp>();
 
 	scaleMagnification_.min = 1.0f;
 	scaleMagnification_.max = 2.0f;
@@ -14,15 +16,20 @@ void EatCloudAnimationComp::Init() {
 	colorAlphaMagnification_.min = 0.0f;
 	colorAlphaMagnification_.max = 1.0f;
 
-	spriteRenderComp_->isDraw = false;
+	spriteRenderComp_->isDraw = true;
 }
 
 void EatCloudAnimationComp::PullStart() {
+	ease_.Stop();
+	colorEase_.Stop();
+
 	isReturnTime_ = false;
 	ease_.Start(false, pullTime_, pullType_);
-	spriteRenderDataComp_->color.color.a = 1.0f;
+	spriteRenderDataComp_->color.color.a = colorAlphaMagnification_.max;
 	isClorEaseStart_ = false;
 	spriteRenderComp_->isDraw = true;
+
+	spriteRenderDataComp_->type = BlendType::kNormal;
 }
 
 void EatCloudAnimationComp::ReturnStart() {
@@ -32,19 +39,30 @@ void EatCloudAnimationComp::ReturnStart() {
 
 void EatCloudAnimationComp::FirstUpdate() {
 	if (not isFirstUpdate_) {
-		defaultScale_ = transformComp_->scale.x;
+		defaultScale_ = CloudComp::kCloudSize_;
 		isFirstUpdate_ = true;
-		spriteRenderDataComp_->type = BlendType::kNormal;
+	}
+
+	if (cloudComp_->GetIsActive()) {
+		spriteRenderDataComp_->type = BlendType::kNone;
+		spriteRenderDataComp_->color.color.a = colorAlphaMagnification_.max;
+		spriteRenderComp_->isDraw = true;
+		spriteRenderDataComp_->offsetType = SpriteRenderDataComp::Offset::kMiddle;
 	}
 }
 
 void EatCloudAnimationComp::Update() {
+	if (cloudComp_->GetIsActive()) {
+		return;
+	}
+
+
 	if (ease_.GetIsActive()) {
 		if (not isReturnTime_) {
 			transformComp_->scale.x = defaultScale_ * ease_.Get(scaleMagnification_.min, scaleMagnification_.max);
 		}
 		else {
-			transformComp_->scale.x = defaultScale_ * ease_.Get(scaleMagnification_.max, scaleMagnification_.min);
+			transformComp_->scale.x = defaultScale_ * ease_.Get(scaleMagnification_.max, scaleMagnification_.min * 0.5f);
 		}
 	}
 	else {
@@ -62,6 +80,12 @@ void EatCloudAnimationComp::Update() {
 	if (isReturnTime_ and colorEaseStartT < ease_.GetT() and not isClorEaseStart_) {
 		colorEase_.Start(false, returnTime_ * 0.5f);
 		isClorEaseStart_ = true;
+		if (spriteRenderDataComp_->offsetType == SpriteRenderDataComp::Offset::kLeft) {
+			transformComp_->translate.x += defaultScale_ * 0.5f;
+		}
+		if (spriteRenderDataComp_->offsetType == SpriteRenderDataComp::Offset::kRight) {
+			transformComp_->translate.x -= defaultScale_ * 0.5f;
+		}
 	}
 }
 
@@ -76,11 +100,11 @@ void EatCloudAnimationComp::LastUpdate() {
 
 void EatCloudAnimationComp::SetIsLeft(bool isLeft) {
 	if (isLeft) {
-		transformComp_->translate.x = std::abs(transformComp_->translate.x) * -1.0f;
+		transformComp_->translate.x -= transformComp_->scale.x;
 		spriteRenderDataComp_->offsetType = SpriteRenderDataComp::Offset::kLeft;
 	}
 	else {
-		transformComp_->translate.x = std::abs(transformComp_->translate.x);
+		transformComp_->translate.x += transformComp_->scale.x;
 		spriteRenderDataComp_->offsetType = SpriteRenderDataComp::Offset::kRight;
 	}
 }

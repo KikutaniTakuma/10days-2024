@@ -7,7 +7,7 @@
 #include "SpriteRenderDataComp.h"
 #include "../Manager/CloudManager.h"
 #include "Aabb2DComp.h"
-#include "EatAnimationControllComp.h"
+#include "EatCloudAnimationComp.h"
 
 void CloudComp::Init() {
 
@@ -23,7 +23,7 @@ void CloudComp::Init() {
 	aabbCollision_ = object_.AddComp<Aabb2DComp>();
 	//spriteRenderDataComp_->uvTransform.scale.x = 0.25f;
 
-	eatCloudAnimationControllComp_ = object_.AddComp<EatAnimationControllComp>();
+	eatCloudAnimationComp_ = object_.AddComp<EatCloudAnimationComp>();
 
 }
 
@@ -43,7 +43,6 @@ void CloudComp::Update() {
 	}
 	//食べられて存在しなくなった場合は非表示
 	else {
-		spriteRenderComp_->isDraw = false;
 		collision_->GetObbComp().scale = { 0.0f,0.0f,0.0f };
 		aabbCollision_->scale_ = { 0.0f,0.0f,0.0f };
 	}
@@ -65,7 +64,7 @@ void CloudComp::SetIsActive(bool flag)
 {
 	flagComp_->SetIsActive(flag);
 	if (not flag) {
-		eatCloudAnimationControllComp_->StartAnimation();
+		eatCloudAnimationComp_->PullStart();
 	}
 }
 
@@ -80,7 +79,7 @@ void CloudComp::SetIsDead(bool flag) {
 
 void CloudComp::SetIsAtePlayerLeft(bool flag) {
 	isAtePlayerLeft_ = flag; 
-	eatCloudAnimationControllComp_->SetIsLeft(isAtePlayerLeft_);
+	eatCloudAnimationComp_->SetIsLeft(isAtePlayerLeft_);
 }
 
 int32_t CloudComp::GetMassX() const
