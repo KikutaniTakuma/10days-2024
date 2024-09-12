@@ -15,6 +15,13 @@ public:
 	void Save(nlohmann::json& json) override;
 	void Load(nlohmann::json& json) override;
 
+	void Debug(const std::string& guiName);
+
+public:
+	// 描画するかのフラグ
+	// trueなら描画
+	bool isDraw = true;
+
 private:
 	Lamb::SafePtr<class Texture2D> tex2D_;
 
