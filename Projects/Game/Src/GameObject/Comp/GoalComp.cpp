@@ -24,7 +24,7 @@ void GoalComp::Init()
 void GoalComp::Event()
 {
 
-	if (not isGoal_) {
+	if (not isGoal_->GetIsActive()) {
 
 		if (isOpen_) {
 			spriteRenderDataComp_->texHandle = handles_->textureHandles_[0];
@@ -42,16 +42,25 @@ void GoalComp::Event()
 		return;
 	}
 
+	//プレイヤーのイージングが終了したらゴールフラグを立てる
+	if (player_->GetIsGoal() and not isGoal_->GetIsActive() and not player_->GetIsEasing()) {
+		isGoal_->SetIsActive(true);
+	}
+
 	//プレイヤーがゴールに触れたらフラグを立てる
-	if (not isGoal_->GetIsActive() and playerAabbCollision_->IsCollision(aabbCollision_.get())) {
+	if (not player_->GetIsGoal() and playerAabbCollision_->IsCollision(aabbCollision_.get()) and not player_->GetIsInvisible()) {
 		
 		if (isOpen_) {
-			isGoal_->SetIsActive(true);
+			player_->easingStartX_ = player_->getObject().GetComp<TransformComp>()->translate.x;
+			player_->easingEndX_ = transformComp_->translate.x;
+			player_->SetIsGoal(true);
 		}
 		else {
 			
 			if (player_->IsGetKey()) {
-				isGoal_->SetIsActive(true);
+				player_->easingStartX_ = player_->getObject().GetComp<TransformComp>()->translate.x;
+				player_->easingEndX_ = transformComp_->translate.x;
+				player_->SetIsGoal(true);
 			}
 
 		}
@@ -74,11 +83,14 @@ void GoalComp::Update()
 			animation_->SetDuration(0.125f);
 			animation_->Start();
 			animation_->SetLoopAnimation(false);
+			//プレイヤーの座標を奥にする
+			player_->getObject().GetComp<TransformComp>()->translate.z = 3.0f;
 			isOpen_ = false;
 		}
 		//閉じていたら開く演出から入る
 		else {
 			spriteRenderDataComp_->texHandle = handles_->textureHandles_[2];
+			animation_->Reset();
 			animation_->SetAnimationNumber(8);
 			animation_->SetDuration(0.125f);
 			animation_->Start();
@@ -96,8 +108,15 @@ void GoalComp::Update()
 		animation_->SetDuration(0.125f);
 		animation_->Start();
 		animation_->SetLoopAnimation(false);
+		//プレイヤーの座標を奥にする
+		player_->getObject().GetComp<TransformComp>()->translate.z = 3.0f;
 		isOpen_ = false;
 
+	}
+
+	//扉が閉じるコマに入ったらアニメーションを止める
+	if (isGoal_ and animation_->GetIsActive() and not isOpen_ and animation_->GetCurrentAnimationNumber() == 7) {
+		animation_->Pause();
 	}
 
 }

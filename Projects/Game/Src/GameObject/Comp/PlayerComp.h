@@ -43,9 +43,20 @@ public:
 
 	bool IsGetKey() { return key_ != nullptr; }
 
+	void SetIsGoal(bool flag) { isGoal_ = flag; }
+
+	const Lamb::Flg& GetIsGoal() const { return isGoal_; }
+
+	const Lamb::Flg& GetIsEasing() const { return isEasing_; }
+
 private:
 
 	void CheckCollision();
+
+public:
+
+	float easingEndX_ = 0.0f;
+	float easingStartX_ = 0.0f;
 
 private:
 	//鍵のポインタ
@@ -90,13 +101,25 @@ private:
 
 	Lamb::SafePtr<class TextureHandlesComp> handles_;
 
+	Lamb::SafePtr<class EaseingComp> easing_;
+
 	Lamb::Flg onGround_;
+
+	Lamb::Flg isGoal_;
+
+	Lamb::Flg isEasing_;
+
+	bool isFirstEasingStart_ = false;
 
 	std::unique_ptr<std::array<Vector3, 4>> prePositions_;
 
-	Vector3 velocity_{};
+	Vector3 velocity_ = {};
 
-	Vector3 tmpPosition_{ 0.0f,0.0f,1.0f };
+	Vector3 tmpPosition_ = { 0.0f,0.0f,1.0f };
+
+	Vector3 easingScaleStart_ = { 48.0f,48.0f,48.0f };
+
+	Vector3 easingScaleEnd_ = { 32.0f,32.0f,32.0f };
 
 	int32_t invisibleValue_ = 0;
 
