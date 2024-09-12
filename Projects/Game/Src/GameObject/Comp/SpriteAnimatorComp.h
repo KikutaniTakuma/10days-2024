@@ -73,6 +73,12 @@ public:
 	// 向き反転
 	void DirectionInverse(bool isSigned);
 
+	//アニメーション中かどうか取得
+	bool GetIsActive() const { return isActive_; }
+
+	//現在のアニメーションナンバー取得
+	int32_t GetCurrentAnimationNumber() const { return currentAnimationNumber_; }
+
 private:
 	Vector3 startPos_;
 	Vector3 currentPos_;

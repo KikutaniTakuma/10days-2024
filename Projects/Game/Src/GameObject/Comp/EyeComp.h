@@ -48,6 +48,8 @@ private:
 	Vector3 aimDirection_;
 	Vector3 aimPoint_;
 	
+	//雲を一個消したかどうか
+	bool isDeleteCloud_ = false;
 
 	bool isEasesingStart_ = false;
 	float32_t easeingStartPosX = 0.0f;

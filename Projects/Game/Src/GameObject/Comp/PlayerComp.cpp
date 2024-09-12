@@ -20,6 +20,7 @@
 #include "SpriteAnimatorComp.h"
 #include "SpriteRenderDataComp.h"
 #include "TextureHandlesComp.h"
+#include "KeyComp.h"
 
 void PlayerComp::Init() {
 
@@ -177,6 +178,13 @@ void PlayerComp::Move() {
 
 	transform_->UpdateMatrix();
 
+	if (keyTransform_) {
+
+		keyTransform_->scale = { 24.0f,24.0f,24.0f };
+		keyTransform_->translate = transform_->translate + Vector3{ 0.0f,32.0f,0.0f };
+
+	}
+
 }
 
 void PlayerComp::Event() {
@@ -187,7 +195,20 @@ void PlayerComp::Event() {
 
 	//透明なら画像の変更処理
 	if (invisible_->GetIsInvisible()) {
+
 		invisibleValue_ = 4;
+
+		//鍵を持っていたら落とすようにする
+		if (key_) {
+
+			key_->SetIsObtained(false);
+			keyTransform_->scale = { 32.0f,32.0f,32.0f };
+			keyTransform_->translate = Vector3{ float(mass_->GetMassX()) * 32.0f, -float(mass_->GetMassY()) * 32.0f, 1.0f };
+			csvData_->SetNumber(mass_->GetMassX(), mass_->GetMassY(), static_cast<int32_t>(TileName::kKey));
+			RemoveKey();
+
+		}
+
 	}
 	else {
 		invisibleValue_ = 0;
@@ -200,6 +221,31 @@ void PlayerComp::Update() {
 }
 
 void PlayerComp::LastUpdate() {
+
+}
+
+void PlayerComp::SetKey(KeyComp* keyComp)
+{
+
+	key_ = keyComp;
+	if (key_.empty()) {
+		return;
+	}
+
+	keyTransform_ = key_->getObject().GetComp<TransformComp>();
+
+}
+
+void PlayerComp::RemoveKey()
+{
+
+	if (keyTransform_) {
+		keyTransform_ = nullptr;
+	}
+
+	if (key_) {
+		key_ = nullptr;
+	}
 
 }
 

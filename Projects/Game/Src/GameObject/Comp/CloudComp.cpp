@@ -26,13 +26,22 @@ void CloudComp::Init() {
 
 void CloudComp::Update() {
 
+	if (isDead_) {
+		transformComp_->scale = { 0.0f,0.0f,0.0f };
+		transformComp_->translate = { -9999.0f,9999.0f,-9999.0f };
+	}
+
 	//雲が存在している状態だったら表示
 	if (flagComp_->GetIsActive()) {
 		transformComp_->scale = { kCloudSize_,kCloudSize_,kCloudSize_ };
+		collision_->GetObbComp().scale = { kCloudSize_,kCloudSize_,kCloudSize_ };
+		aabbCollision_->scale_ = { kCloudSize_,kCloudSize_,kCloudSize_ };
 	}
 	//食べられて存在しなくなった場合は非表示
 	else {
 		transformComp_->scale = { 0.0f,0.0f,0.0f };
+		collision_->GetObbComp().scale = { 0.0f,0.0f,0.0f };
+		aabbCollision_->scale_ = { 0.0f,0.0f,0.0f };
 	}
 
 

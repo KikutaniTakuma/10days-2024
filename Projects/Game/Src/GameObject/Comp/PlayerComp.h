@@ -33,10 +33,25 @@ public:
 
 	const Lamb::Flg& GetIsInvisible() const;
 
+	void AddCoin() { coinCount_++; }
+
+	int32_t GetCoinCount() const { return coinCount_; }
+
+	void SetKey(class KeyComp* keyComp);
+
+	void RemoveKey();
+
+	bool IsGetKey() { return key_ != nullptr; }
+
 private:
 
 	void CheckCollision();
 
+private:
+	//鍵のポインタ
+	Lamb::SafePtr<class KeyComp> key_;
+	//鍵のトランスフォーム
+	Lamb::SafePtr<class TransformComp> keyTransform_;
 private:
 
 	Lamb::SafePtr<class TransformComp> transform_;
@@ -84,6 +99,8 @@ private:
 	Vector3 tmpPosition_{ 0.0f,0.0f,1.0f };
 
 	int32_t invisibleValue_ = 0;
+
+	int32_t coinCount_ = 0;
 
 #pragma region 菊谷が追加 2024/9/8
 	Lamb::Flg beamCollisionFlg_;
