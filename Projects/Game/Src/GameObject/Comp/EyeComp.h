@@ -22,6 +22,15 @@ public:
 
 	void Update() override;
 
+	// 攻撃してるとき
+	bool IsFire() const;
+
+	// 狙っているとき
+	bool IsAiming() const;
+
+	// 狙いを定めたとき
+	bool IsAimFixed() const;
+
 private:
 	// これは別のオブジェクトが持っているPlayerComp
 	Lamb::SafePtr<class PlayerComp> playerComp_;

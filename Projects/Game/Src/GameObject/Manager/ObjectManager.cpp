@@ -202,6 +202,10 @@ void ObjectManager::Draw() {
 	for (auto& i : objects_) {
 		i->Draw(cameraComp_.get());
 	}
+
+	for (auto& i : objects_) {
+		i->Draw();
+	}
 }
 
 void ObjectManager::Debug() {

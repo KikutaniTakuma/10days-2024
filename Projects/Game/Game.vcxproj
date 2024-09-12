@@ -149,6 +149,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Src\GameObject\Comp\EaseingComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\EatCloudComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\EventComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\EyeAudioComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\EyeComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\EyeStateComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\FallComp.cpp" />
@@ -220,6 +221,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="Src\GameObject\Comp\EaseingComp.h" />
     <ClInclude Include="Src\GameObject\Comp\EatCloudComp.h" />
     <ClInclude Include="Src\GameObject\Comp\EventComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\EyeAudioComp.h" />
     <ClInclude Include="Src\GameObject\Comp\EyeComp.h" />
     <ClInclude Include="Src\GameObject\Comp\EyeStateComp.h" />
     <ClInclude Include="Src\GameObject\Comp\FallComp.h" />

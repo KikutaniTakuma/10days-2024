@@ -15,7 +15,7 @@ void SpriteRenderComp::Init() {
 
 void SpriteRenderComp::Draw(CameraComp* cameraComp) {
 	tex2D_->Draw(
-		renderDataComp_->GetOffsetMatrix() * transformComp_->GetWorldMatrix(),
+		renderDataComp_->GetOffsetMatrix() * renderDataComp_->GetUserOffsetMatrix() * transformComp_->GetWorldMatrix(),
 		renderDataComp_->uvTransform.GetMatrix(),
 		cameraComp->GetCameraMatrix(),
 		renderDataComp_->texHandle,
