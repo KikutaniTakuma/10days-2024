@@ -25,7 +25,7 @@ void CloudRenderComp::Load([[maybe_unused]]nlohmann::json& json) {
 }
 
 void CloudRenderComp::Load() {
-	scale_ = transformComp_->scale;
+	scale_ = Vector3::kIdentity;
 }
 
 void CloudRenderComp::Init() {
@@ -58,7 +58,7 @@ void CloudRenderComp::Update() {
 
 void CloudRenderComp::LastUpdate() {
 	if (easeingComp_->GetEaseing().GetIsActive()) {
-		transformComp_->scale = easeingComp_->GetEaseing().Get(scale_, scale_ * scaleMax_);
+		spriteRenderDataComp_->userOffsetTransform.scale = easeingComp_->GetEaseing().Get(scale_, scale_ * scaleMax_);
 	}
 }
 
