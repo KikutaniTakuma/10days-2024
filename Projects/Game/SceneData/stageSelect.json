@@ -64,7 +64,7 @@
                 },
                 {
                     "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
+                    "CompName": "class UISpriteRenderDataComp",
                     "color": [
                         1.0,
                         1.0,
@@ -170,7 +170,7 @@
                 },
                 {
                     "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
+                    "CompName": "class UISpriteRenderDataComp",
                     "color": [
                         1.0,
                         1.0,
@@ -645,7 +645,7 @@
                 },
                 {
                     "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
+                    "CompName": "class UISpriteRenderDataComp",
                     "color": [
                         1.0,
                         1.0,
@@ -726,7 +726,7 @@
                 },
                 {
                     "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
+                    "CompName": "class UISpriteRenderDataComp",
                     "color": [
                         1.0,
                         1.0,
@@ -801,7 +801,7 @@
                 },
                 {
                     "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
+                    "CompName": "class UISpriteRenderDataComp",
                     "color": [
                         1.0,
                         1.0,
@@ -876,7 +876,7 @@
                 },
                 {
                     "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
+                    "CompName": "class UISpriteRenderDataComp",
                     "color": [
                         1.0,
                         1.0,
@@ -958,7 +958,7 @@
                 },
                 {
                     "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
+                    "CompName": "class UISpriteRenderDataComp",
                     "color": [
                         1.0,
                         1.0,

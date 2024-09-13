@@ -1,12 +1,12 @@
 #include "EasingSpriteComp.h"
-#include "SpriteRenderDataComp.h"
+#include "UISpriteRenderDataComp.h"
 #include "UIDrawComp.h"
 #include "EaseingComp.h"
 #include "UITransformComp.h"
 
 void EasingSpriteComp::Init()
 {
-	spriteRenderDataComp_ = object_.AddComp<SpriteRenderDataComp>();
+	spriteRenderDataComp_ = object_.AddComp<UISpriteRenderDataComp>();
 	uiDraw_ = object_.AddComp<UIDrawComp>();
 	easing_ = object_.AddComp<EaseingComp>();
 	transform_ = object_.AddComp<UITransformComp>();
