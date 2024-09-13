@@ -12,6 +12,8 @@ public:
 	void Init() override;
 	void Load() override;
 
+	void FirstUpdate() override;
+
 	void Move() override;
 
 	void Debug(const std::string& guiName) override;

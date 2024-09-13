@@ -43,14 +43,15 @@ void ResultInputComp::Load() {
 
 		Lamb::SafePtr<Object> newObject = Lamb::MakeSafePtr<Object>();
 		stars_.push_back(newObject->AddComp<StarComp>());
-		auto startransform = stars_.back()->getObject().GetComp<UITransformComp>();
-		startransform->translate = { 96.0f * float(i - 1), -50.0f, -2.0f };
+		auto starTransform = stars_.back()->getObject().GetComp<UITransformComp>();
+		starTransform->translate = { 96.0f * float(i - 1), -50.0f, -2.0f };
 		auto starRenderData = stars_.back()->getObject().GetComp<UISpriteRenderDataComp>();
 		starRenderData->fileName = "./Resources/Textures/outGame/result_star_outline.png";
 		starRenderData->type = BlendType::kNormal;
 		starRenderData->Load();
 		starRenderData->uvTransform.rotate = { 0.0f,0.0f,0.0f, 1.0f };
 		childrenComp_->AddObject(newObject);
+		starTransform->SetParent(nullptr);
 
 	}
 
@@ -64,6 +65,7 @@ void ResultInputComp::Load() {
 	renderData->Load();
 	renderData->uvTransform.rotate = { 0.0f,0.0f,0.0f, 1.0f };
 	childrenComp_->AddObject(newObject);
+	transform->SetParent(nullptr);
 
 	newObject = Lamb::MakeSafePtr<Object>();
 	buttonUIs_.push_back(newObject->AddComp<UIDrawComp>());
@@ -75,6 +77,7 @@ void ResultInputComp::Load() {
 	renderData->Load();
 	renderData->uvTransform.rotate = { 0.0f,0.0f,0.0f, 1.0f };
 	childrenComp_->AddObject(newObject);
+	transform->SetParent(nullptr);
 
 	newObject = Lamb::MakeSafePtr<Object>();
 	buttonUIs_.push_back(newObject->AddComp<UIDrawComp>());
@@ -86,6 +89,7 @@ void ResultInputComp::Load() {
 	renderData->Load();
 	renderData->uvTransform.rotate = { 0.0f,0.0f,0.0f, 1.0f };
 	childrenComp_->AddObject(newObject);
+	transform->SetParent(nullptr);
 
 	for (int32_t i = 0; i < 2; i++) {
 
@@ -100,9 +104,35 @@ void ResultInputComp::Load() {
 		numRenderData->Load();
 		numRenderData->uvTransform.rotate = { 0.0f,0.0f,0.0f, 1.0f };
 		childrenComp_->AddObject(newNumObject);
+		numTransform->SetParent(nullptr);
 
 		if (i == 1) {
 			nums_[i]->divide_ = 10;
+		}
+
+	}
+
+}
+
+void ResultInputComp::FirstUpdate()
+{
+
+	for (int32_t i = 0; i < 3; i++) {
+
+		if (stars_[i]->getObject().GetComp<UITransformComp>()->HaveParent()) {
+			stars_[i]->getObject().GetComp<UITransformComp>()->SetParent(nullptr);
+		}
+
+		if (buttonUIs_[i]->getObject().GetComp<UITransformComp>()->HaveParent()) {
+			buttonUIs_[i]->getObject().GetComp<UITransformComp>()->SetParent(nullptr);
+		}
+
+	}
+
+	for (int32_t i = 0; i < 2; i++) {
+
+		if (nums_[i]->getObject().GetComp<UITransformComp>()->HaveParent()) {
+			nums_[i]->getObject().GetComp<UITransformComp>()->SetParent(nullptr);
 		}
 
 	}

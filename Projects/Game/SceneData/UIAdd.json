@@ -1,0 +1,2691 @@
+{
+    "RederingSetting": {
+        "bloom": {
+            "luminanceThreshold": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "x": 8,
+            "y": 8
+        },
+        "hsv": [
+            0.0,
+            0.0,
+            1.0
+        ],
+        "isDirectionLight": false,
+        "lightRotate": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "outline": 0.0,
+        "outline_enable": false,
+        "skybox": {
+            "isDraw": true,
+            "scale": [
+                500.0,
+                500.0,
+                500.0
+            ]
+        }
+    },
+    "objects": [
+        {
+            "Comps": [
+                {
+                    "CompName": "class UIDrawComp"
+                },
+                {
+                    "CompName": "class UITransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        320.0,
+                        80.0,
+                        1.0
+                    ],
+                    "translate": [
+                        -320.0,
+                        300.0,
+                        0.0
+                    ]
+                },
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class UISpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources\\Textures\\UI\\ingame_UI_player.png",
+                    "offsetType": "kMiddle",
+                    "userOffsetTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    "uvTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "CompName": "class CloudUIComp"
+                },
+                {
+                    "Children": [
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class UIDrawComp"
+                                },
+                                {
+                                    "CompName": "class FlagComp"
+                                },
+                                {
+                                    "CompName": "class UITransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.1432291567325592,
+                                        0.19792717695236206,
+                                        1.0
+                                    ],
+                                    "translate": [
+                                        -0.3231547772884369,
+                                        -0.12832403182983398,
+                                        -1.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kUnenableDepthNone",
+                                    "CompName": "class UISpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/EngineResources/white2x2.png",
+                                    "offsetType": "kMiddle",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            1.0,
+                                            5.960464477539063e-08,
+                                            5.960464477539063e-08,
+                                            3.552713678800501e-15
+                                        ],
+                                        "scale": [
+                                            0.5,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                },
+                                {
+                                    "CompName": "class SpriteUVChangeComp"
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class UIDrawComp"
+                                },
+                                {
+                                    "CompName": "class FlagComp"
+                                },
+                                {
+                                    "CompName": "class UITransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.1432291567325592,
+                                        0.19792717695236206,
+                                        1.0
+                                    ],
+                                    "translate": [
+                                        0.011839300394058228,
+                                        0.07267230749130249,
+                                        -1.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kUnenableDepthNone",
+                                    "CompName": "class UISpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/EngineResources/white2x2.png",
+                                    "offsetType": "kMiddle",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            1.0,
+                                            5.960464477539063e-08,
+                                            5.960464477539063e-08,
+                                            3.552713678800501e-15
+                                        ],
+                                        "scale": [
+                                            0.5,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                },
+                                {
+                                    "CompName": "class SpriteUVChangeComp"
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class UIDrawComp"
+                                },
+                                {
+                                    "CompName": "class FlagComp"
+                                },
+                                {
+                                    "CompName": "class UITransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.1432291567325592,
+                                        0.19792717695236206,
+                                        1.0
+                                    ],
+                                    "translate": [
+                                        -0.15565773844718933,
+                                        -0.12832415103912354,
+                                        -1.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kUnenableDepthNone",
+                                    "CompName": "class UISpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/EngineResources/white2x2.png",
+                                    "offsetType": "kMiddle",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            1.0,
+                                            5.960464477539063e-08,
+                                            5.960464477539063e-08,
+                                            3.552713678800501e-15
+                                        ],
+                                        "scale": [
+                                            0.5,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                },
+                                {
+                                    "CompName": "class SpriteUVChangeComp"
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class UIDrawComp"
+                                },
+                                {
+                                    "CompName": "class FlagComp"
+                                },
+                                {
+                                    "CompName": "class UITransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.1432291567325592,
+                                        0.19792717695236206,
+                                        1.0
+                                    ],
+                                    "translate": [
+                                        -0.15565773844718933,
+                                        0.07267230749130249,
+                                        -1.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kUnenableDepthNone",
+                                    "CompName": "class UISpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/EngineResources/white2x2.png",
+                                    "offsetType": "kMiddle",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            1.0,
+                                            5.960464477539063e-08,
+                                            5.960464477539063e-08,
+                                            3.552713678800501e-15
+                                        ],
+                                        "scale": [
+                                            0.5,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                },
+                                {
+                                    "CompName": "class SpriteUVChangeComp"
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class UIDrawComp"
+                                },
+                                {
+                                    "CompName": "class FlagComp"
+                                },
+                                {
+                                    "CompName": "class UITransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.1432291567325592,
+                                        0.19792717695236206,
+                                        1.0
+                                    ],
+                                    "translate": [
+                                        0.011839300394058228,
+                                        -0.12832415103912354,
+                                        -1.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kUnenableDepthNone",
+                                    "CompName": "class UISpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/EngineResources/white2x2.png",
+                                    "offsetType": "kMiddle",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            1.0,
+                                            5.960464477539063e-08,
+                                            5.960464477539063e-08,
+                                            3.552713678800501e-15
+                                        ],
+                                        "scale": [
+                                            0.5,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                },
+                                {
+                                    "CompName": "class SpriteUVChangeComp"
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class UIDrawComp"
+                                },
+                                {
+                                    "CompName": "class FlagComp"
+                                },
+                                {
+                                    "CompName": "class UITransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.1432291567325592,
+                                        0.19792717695236206,
+                                        1.0
+                                    ],
+                                    "translate": [
+                                        0.34683337807655334,
+                                        -0.12832415103912354,
+                                        -1.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kUnenableDepthNone",
+                                    "CompName": "class UISpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/EngineResources/white2x2.png",
+                                    "offsetType": "kMiddle",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            1.0,
+                                            5.960464477539063e-08,
+                                            5.960464477539063e-08,
+                                            3.552713678800501e-15
+                                        ],
+                                        "scale": [
+                                            0.5,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                },
+                                {
+                                    "CompName": "class SpriteUVChangeComp"
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class UIDrawComp"
+                                },
+                                {
+                                    "CompName": "class FlagComp"
+                                },
+                                {
+                                    "CompName": "class UITransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.1432291567325592,
+                                        0.19792717695236206,
+                                        1.0
+                                    ],
+                                    "translate": [
+                                        0.17933633923530579,
+                                        -0.12832415103912354,
+                                        -1.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kUnenableDepthNone",
+                                    "CompName": "class UISpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/EngineResources/white2x2.png",
+                                    "offsetType": "kMiddle",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            1.0,
+                                            5.960464477539063e-08,
+                                            5.960464477539063e-08,
+                                            3.552713678800501e-15
+                                        ],
+                                        "scale": [
+                                            0.5,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                },
+                                {
+                                    "CompName": "class SpriteUVChangeComp"
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class UIDrawComp"
+                                },
+                                {
+                                    "CompName": "class FlagComp"
+                                },
+                                {
+                                    "CompName": "class UITransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.1432291567325592,
+                                        0.19792717695236206,
+                                        1.0
+                                    ],
+                                    "translate": [
+                                        -0.3231547772884369,
+                                        0.07267230749130249,
+                                        -1.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kUnenableDepthNone",
+                                    "CompName": "class UISpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/EngineResources/white2x2.png",
+                                    "offsetType": "kMiddle",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            1.0,
+                                            5.960464477539063e-08,
+                                            5.960464477539063e-08,
+                                            3.552713678800501e-15
+                                        ],
+                                        "scale": [
+                                            0.5,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                },
+                                {
+                                    "CompName": "class SpriteUVChangeComp"
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class UIDrawComp"
+                                },
+                                {
+                                    "CompName": "class FlagComp"
+                                },
+                                {
+                                    "CompName": "class UITransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.1432291567325592,
+                                        0.19792717695236206,
+                                        1.0
+                                    ],
+                                    "translate": [
+                                        0.17933633923530579,
+                                        0.07267230749130249,
+                                        -1.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kUnenableDepthNone",
+                                    "CompName": "class UISpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/EngineResources/white2x2.png",
+                                    "offsetType": "kMiddle",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            1.0,
+                                            5.960464477539063e-08,
+                                            5.960464477539063e-08,
+                                            3.552713678800501e-15
+                                        ],
+                                        "scale": [
+                                            0.5,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                },
+                                {
+                                    "CompName": "class SpriteUVChangeComp"
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class UIDrawComp"
+                                },
+                                {
+                                    "CompName": "class FlagComp"
+                                },
+                                {
+                                    "CompName": "class UITransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.1432291567325592,
+                                        0.19792717695236206,
+                                        1.0
+                                    ],
+                                    "translate": [
+                                        0.34683337807655334,
+                                        0.07267230749130249,
+                                        -1.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kUnenableDepthNone",
+                                    "CompName": "class UISpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/EngineResources/white2x2.png",
+                                    "offsetType": "kMiddle",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            1.0,
+                                            5.960464477539063e-08,
+                                            5.960464477539063e-08,
+                                            3.552713678800501e-15
+                                        ],
+                                        "scale": [
+                                            0.5,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                },
+                                {
+                                    "CompName": "class SpriteUVChangeComp"
+                                }
+                            ],
+                            "type": "Object"
+                        }
+                    ],
+                    "CompName": "class ChildrenObjectComp"
+                },
+                {
+                    "CompName": "class UITransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        270.6899108886719,
+                        163.64881896972656,
+                        1.0
+                    ],
+                    "translate": [
+                        494.9992370605469,
+                        256.999267578125,
+                        1.0
+                    ]
+                },
+                {
+                    "BlendType": "kUnenableDepthNone",
+                    "CompName": "class UISpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/EngineResources/white2x2.png",
+                    "offsetType": "kMiddle",
+                    "userOffsetTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    "uvTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "translate": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "CompName": "class UIDrawComp"
+                },
+                {
+                    "CompName": "class CountComp"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/backGround/backGround_back.png",
+                    "offsetType": "kMiddle",
+                    "userOffsetTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    "uvTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        768.0,
+                        432.0,
+                        16.0
+                    ],
+                    "translate": [
+                        368.0,
+                        -344.0,
+                        100.0
+                    ]
+                },
+                {
+                    "CompName": "class BackGroundComp"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class EventComp"
+                },
+                {
+                    "CompName": "class ResultInputComp"
+                },
+                {
+                    "CompName": "class SceneChangeComp",
+                    "nextID": ""
+                },
+                {
+                    "BlendType": "kNone",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/EngineResources/white2x2.png",
+                    "offsetType": "kMiddle",
+                    "userOffsetTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    "uvTransform": {
+                        "rotate": [
+                            1.0,
+                            5.960464477539063e-08,
+                            5.960464477539063e-08,
+                            3.552713678800501e-15
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "translate": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "BlendType": "kNone",
+                    "CompName": "class UISpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources\\Textures\\outGame\\result_back.png",
+                    "offsetType": "kMiddle",
+                    "userOffsetTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    "uvTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": false,
+                    "spdT": 1.0,
+                    "type": "InSine"
+                },
+                {
+                    "CompName": "class UIDrawComp"
+                },
+                {
+                    "CompName": "class UITransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "translate": [
+                        0.0,
+                        -0.0,
+                        -2.0
+                    ]
+                },
+                {
+                    "Children": [
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class StarComp"
+                                },
+                                {
+                                    "CompName": "class UIDrawComp"
+                                },
+                                {
+                                    "CompName": "class UITransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "translate": [
+                                        0.0,
+                                        -50.0,
+                                        -2.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kNormal",
+                                    "CompName": "class UISpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/Textures/outGame/result_star_outline.png",
+                                    "offsetType": "kMiddle",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            1.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                },
+                                {
+                                    "CompName": "class EaseingComp",
+                                    "isLoop": false,
+                                    "spdT": 0.0,
+                                    "type": "None"
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class StarComp"
+                                },
+                                {
+                                    "CompName": "class UIDrawComp"
+                                },
+                                {
+                                    "CompName": "class UITransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "translate": [
+                                        96.0,
+                                        -50.0,
+                                        -2.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kNormal",
+                                    "CompName": "class UISpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/Textures/outGame/result_star_outline.png",
+                                    "offsetType": "kMiddle",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            1.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                },
+                                {
+                                    "CompName": "class EaseingComp",
+                                    "isLoop": false,
+                                    "spdT": 0.0,
+                                    "type": "None"
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class StarComp"
+                                },
+                                {
+                                    "CompName": "class UIDrawComp"
+                                },
+                                {
+                                    "CompName": "class UITransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "translate": [
+                                        -96.0,
+                                        -50.0,
+                                        -2.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kNormal",
+                                    "CompName": "class UISpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/Textures/outGame/result_star_outline.png",
+                                    "offsetType": "kMiddle",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            1.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                },
+                                {
+                                    "CompName": "class EaseingComp",
+                                    "isLoop": false,
+                                    "spdT": 0.0,
+                                    "type": "None"
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class UIDrawComp"
+                                },
+                                {
+                                    "CompName": "class UITransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "translate": [
+                                        -200.0,
+                                        -300.0,
+                                        -2.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kNormal",
+                                    "CompName": "class UISpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/Textures/UI/ingame_UI_reset.png",
+                                    "offsetType": "kMiddle",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            1.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class UIDrawComp"
+                                },
+                                {
+                                    "CompName": "class UITransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "translate": [
+                                        200.0,
+                                        -300.0,
+                                        -2.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kNormal",
+                                    "CompName": "class UISpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/Textures/UI/result_UI_A.png",
+                                    "offsetType": "kMiddle",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            1.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class UIDrawComp"
+                                },
+                                {
+                                    "CompName": "class UITransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "translate": [
+                                        0.0,
+                                        -300.0,
+                                        -2.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kNormal",
+                                    "CompName": "class UISpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/Textures/UI/result_UI_B.png",
+                                    "offsetType": "kMiddle",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            1.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class UITransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        128.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "translate": [
+                                        48.0,
+                                        150.0,
+                                        -2.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kNormal",
+                                    "CompName": "class UISpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/Textures/outGame/num_white.png",
+                                    "offsetType": "kMiddle",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            1.0
+                                        ],
+                                        "scale": [
+                                            0.10000000149011612,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.10000000149011612,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                },
+                                {
+                                    "CompName": "class UINumSpriteComp",
+                                    "divide": 1
+                                },
+                                {
+                                    "CompName": "class UIDrawComp"
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class UITransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        128.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "translate": [
+                                        -48.0,
+                                        150.0,
+                                        -2.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kNormal",
+                                    "CompName": "class UISpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/Textures/outGame/num_white.png",
+                                    "offsetType": "kMiddle",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            1.0
+                                        ],
+                                        "scale": [
+                                            0.10000000149011612,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                },
+                                {
+                                    "CompName": "class UINumSpriteComp",
+                                    "divide": 10
+                                },
+                                {
+                                    "CompName": "class UIDrawComp"
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class UIDrawComp"
+                                },
+                                {
+                                    "CompName": "class StarComp"
+                                },
+                                {
+                                    "CompName": "class EaseingComp",
+                                    "isLoop": false,
+                                    "spdT": 0.0,
+                                    "type": "None"
+                                },
+                                {
+                                    "CompName": "class UITransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "translate": [
+                                        -96.0,
+                                        -50.0,
+                                        -2.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kNormal",
+                                    "CompName": "class UISpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/Textures/outGame/result_star_outline.png",
+                                    "offsetType": "kMiddle",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            1.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class UIDrawComp"
+                                },
+                                {
+                                    "CompName": "class StarComp"
+                                },
+                                {
+                                    "CompName": "class EaseingComp",
+                                    "isLoop": false,
+                                    "spdT": 0.0,
+                                    "type": "None"
+                                },
+                                {
+                                    "CompName": "class UITransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "translate": [
+                                        0.0,
+                                        -50.0,
+                                        -2.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kNormal",
+                                    "CompName": "class UISpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/Textures/outGame/result_star_outline.png",
+                                    "offsetType": "kMiddle",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            1.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class UIDrawComp"
+                                },
+                                {
+                                    "CompName": "class StarComp"
+                                },
+                                {
+                                    "CompName": "class EaseingComp",
+                                    "isLoop": false,
+                                    "spdT": 0.0,
+                                    "type": "None"
+                                },
+                                {
+                                    "CompName": "class UITransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "translate": [
+                                        96.0,
+                                        -50.0,
+                                        -2.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kNormal",
+                                    "CompName": "class UISpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/Textures/outGame/result_star_outline.png",
+                                    "offsetType": "kMiddle",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            1.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class UIDrawComp"
+                                },
+                                {
+                                    "CompName": "class UITransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "translate": [
+                                        -200.0,
+                                        -300.0,
+                                        -2.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kNormal",
+                                    "CompName": "class UISpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/Textures/UI/ingame_UI_reset.png",
+                                    "offsetType": "kMiddle",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            1.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class UIDrawComp"
+                                },
+                                {
+                                    "CompName": "class UITransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "translate": [
+                                        0.0,
+                                        -300.0,
+                                        -2.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kNormal",
+                                    "CompName": "class UISpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/Textures/UI/result_UI_B.png",
+                                    "offsetType": "kMiddle",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            1.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class UIDrawComp"
+                                },
+                                {
+                                    "CompName": "class UITransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "translate": [
+                                        200.0,
+                                        -300.0,
+                                        -2.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kNormal",
+                                    "CompName": "class UISpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/Textures/UI/result_UI_A.png",
+                                    "offsetType": "kMiddle",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            1.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class UINumSpriteComp",
+                                    "divide": 1
+                                },
+                                {
+                                    "CompName": "class UITransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        1.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "translate": [
+                                        48.0,
+                                        150.0,
+                                        -2.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kNormal",
+                                    "CompName": "class UISpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/Textures/outGame/num_white.png",
+                                    "offsetType": "kMiddle",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            1.0
+                                        ],
+                                        "scale": [
+                                            0.10000000149011612,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.10000000149011612,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                },
+                                {
+                                    "CompName": "class UIDrawComp"
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class UINumSpriteComp",
+                                    "divide": 10
+                                },
+                                {
+                                    "CompName": "class UITransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        1.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "translate": [
+                                        -48.0,
+                                        150.0,
+                                        -2.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kNormal",
+                                    "CompName": "class UISpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources/Textures/outGame/num_white.png",
+                                    "offsetType": "kMiddle",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            1.0
+                                        ],
+                                        "scale": [
+                                            0.10000000149011612,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                },
+                                {
+                                    "CompName": "class UIDrawComp"
+                                }
+                            ],
+                            "type": "Object"
+                        }
+                    ],
+                    "CompName": "class ChildrenObjectComp"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "CompName": "class UIDrawComp"
+                },
+                {
+                    "CompName": "class UITransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        144.0,
+                        96.0,
+                        1.0
+                    ],
+                    "translate": [
+                        -550.0,
+                        300.0,
+                        0.0
+                    ]
+                },
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class UISpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources\\Textures\\UI\\flame_back.png",
+                    "offsetType": "kMiddle",
+                    "userOffsetTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    "uvTransform": {
+                        "rotate": [
+                            1.0,
+                            5.960464477539063e-08,
+                            5.960464477539063e-08,
+                            3.552713678800501e-15
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "CompName": "class UIDrawComp"
+                },
+                {
+                    "CompName": "class UITransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        144.0,
+                        96.0,
+                        1.0
+                    ],
+                    "translate": [
+                        -550.0,
+                        300.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class UISpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources\\Textures\\UI\\ingame_UI_stageSelect.png",
+                    "offsetType": "kMiddle",
+                    "userOffsetTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    "uvTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                }
+            ],
+            "type": "Object"
+        }
+    ],
+    "scene": "UIAdd"
+}
