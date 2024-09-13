@@ -41,6 +41,7 @@ void EatCloudComp::Event()
 				//雲があれば食べて、カウントを増加させる
 				if (auto cloud = CloudManager::GetInstance()->GetAliveCloud(mass_->GetMassX(), mass_->GetMassY())) {
 
+					cloud->SetIsAtePlayerLeft(true);
 					cloud->SetIsActive(false);
 					csvData_->SetNumber(mass_->GetMassX(), mass_->GetMassY(), 0);
 
@@ -54,6 +55,7 @@ void EatCloudComp::Event()
 				//隣に雲があれば食べて、カウントを増加させる
 				if (auto cloud = CloudManager::GetInstance()->GetAliveCloud(mass_->GetMassX() - 1, mass_->GetMassY())) {
 
+					cloud->SetIsAtePlayerLeft(true);
 					cloud->SetIsActive(false);
 					csvData_->SetNumber(mass_->GetMassX() - 1, mass_->GetMassY(), 0);
 
@@ -73,6 +75,7 @@ void EatCloudComp::Event()
 				//雲があれば食べて、カウントを増加させる
 				if (auto cloud = CloudManager::GetInstance()->GetAliveCloud(mass_->GetMassX(), mass_->GetMassY())) {
 
+					cloud->SetIsAtePlayerLeft(false);
 					cloud->SetIsActive(false);
 					csvData_->SetNumber(mass_->GetMassX(), mass_->GetMassY(), 0);
 
@@ -87,6 +90,7 @@ void EatCloudComp::Event()
 				//隣に雲があれば食べて、カウントを増加させる
 				if (auto cloud = CloudManager::GetInstance()->GetAliveCloud(mass_->GetMassX() + 1, mass_->GetMassY())) {
 
+					cloud->SetIsAtePlayerLeft(false);
 					cloud->SetIsActive(false);
 					csvData_->SetNumber(mass_->GetMassX() + 1, mass_->GetMassY(), 0);
 
@@ -108,6 +112,12 @@ void EatCloudComp::Event()
 void EatCloudComp::LastUpdate() {
 	if (isStartAudio_) {
 		eatAudio_->Start(0.3f, false);
+	}
+}
+
+void EatCloudComp::Finalize() {
+	if (eatAudio_) {
+		eatAudio_->Stop();
 	}
 }
 

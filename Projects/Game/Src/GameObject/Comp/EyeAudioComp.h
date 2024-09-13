@@ -18,6 +18,8 @@ public:
 
 	void Draw() override;
 
+	void Finalize() override;
+
 	void Debug(const std::string& guiName);
 private:
 	Lamb::SafePtr<Audio> aimAudio_;

@@ -110,8 +110,8 @@ void SpriteRenderDataComp::Debug([[maybe_unused]]const std::string& guiName)
 
         ImGui::NewLine();
         ImGui::Text("user offset");
-        ImGui::DragFloat3("scale", userOffsetTransform.scale.data(), 0.001f);
-        ImGui::DragFloat3("translate", userOffsetTransform.translate.data(), 0.001f);
+        ImGui::DragFloat3("user scale", userOffsetTransform.scale.data(), 0.001f);
+        ImGui::DragFloat3("user translate", userOffsetTransform.translate.data(), 0.001f);
 
         euler_ *= Lamb::Math::kToRadian<float>;
         uvTransform.rotate = Quaternion::EulerToQuaternion(euler_);
@@ -207,7 +207,7 @@ void SpriteRenderDataComp::Load(nlohmann::json& json)
     }
 
     for (size_t i = 0; i < json["color"].size(); i++) {
-        color[i] = json["color"][0];
+        color[i] = json["color"][i];
     }
     std::string&& offsetTypeStr = json["offsetType"].get<std::string>();
     for (size_t count = 0; const auto & i : kOffsetEnumString_) {

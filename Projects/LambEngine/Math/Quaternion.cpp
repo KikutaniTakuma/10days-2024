@@ -360,6 +360,10 @@ Vector3 ToEulerAnglesZimbalLock(float x, const Quaternion& q) {
 
 // クォータニオンからオイラー角を計算する（ラジアン単位）
 Vector3 Quaternion::QuaternionToEuler(const Quaternion& q) {
+	if (q.vector4 == Vector4::kWIdentity) {
+		return Vector3::kZero;
+	}
+
 	float sinX = (2.0f * q.quaternion.y * q.quaternion.z) - (2.0f * q.quaternion.x * q.quaternion.w);
 	float absSinX = std::abs(sinX);
 

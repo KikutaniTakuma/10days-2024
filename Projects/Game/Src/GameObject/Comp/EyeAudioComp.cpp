@@ -53,6 +53,18 @@ void EyeAudioComp::Draw() {
 
 }
 
+void EyeAudioComp::Finalize() {
+	if (aimAudio_) {
+		aimAudio_->Stop();
+	}
+	if (chargeAudio_) {
+		chargeAudio_->Stop();
+	}
+	if (fireAudio_) {
+		fireAudio_->Stop();
+	}
+}
+
 void EyeAudioComp::Debug([[maybe_unused]]const std::string& guiName) {
 #ifdef _DEBUG
 	if(ImGui::TreeNode(guiName.c_str())){

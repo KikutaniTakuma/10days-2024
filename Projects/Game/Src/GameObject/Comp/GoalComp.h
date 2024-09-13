@@ -14,6 +14,8 @@ public:
 
 	void Update() override;
 
+	void Finalize() override;
+
 	void SetPlayerComp(class PlayerComp* playerComp);
 
 	~GoalComp() = default;
@@ -21,6 +23,8 @@ public:
 	const Lamb::Flg& GetIsGoal() const;
 
 	void SetIsOpen(bool flag) { isOpen_ = flag; }
+
+	bool GetIsCloseDoor() const { return isCloseDoor_; }
 
 public:
 
@@ -53,4 +57,7 @@ private:
 	Lamb::Flg isOpen_ = true;
 
 	Lamb::SafePtr<class Audio> openDoorAudio_;
+
+	bool isCloseDoor_ = false;
+
 };

@@ -19,6 +19,8 @@
 
 	 void LastUpdate() override;
 
+	 void Finalize() override;
+
  public:
 
 	 void Save(nlohmann::json& json) override;

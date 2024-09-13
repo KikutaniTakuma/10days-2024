@@ -34,6 +34,81 @@
         {
             "Comps": [
                 {
+                    "CompName": "class UIDrawComp"
+                },
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources\\Textures\\UI\\stageSelect_UI_stage.png",
+                    "offsetType": "kMiddle",
+                    "userOffsetTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    "uvTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                },
+                {
+                    "CompName": "class UITransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        256.0,
+                        120.0,
+                        1.0
+                    ],
+                    "translate": [
+                        0.0,
+                        100.0,
+                        -1.0
+                    ]
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
                     "CompName": "class TransformComp",
                     "rotate": [
                         0.0,
@@ -134,17 +209,101 @@
                             1.0
                         ],
                         "translate": [
+                            67.98489379882813,
                             0.0,
+                            0.0
+                        ]
+                    }
+                },
+                {
+                    "CompName": "class UvOperatorComp",
+                    "isMove": true,
+                    "moveValue": [
+                        0.0020000000949949026,
+                        0.0,
+                        0.0
+                    ]
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "CompName": "class NumSpriteComp",
+                    "divide": 1
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        128.0,
+                        128.0,
+                        1.0
+                    ],
+                    "translate": [
+                        50.0,
+                        -50.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources\\Textures\\outGame\\num_black.png",
+                    "offsetType": "kMiddle",
+                    "userOffsetTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    "uvTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "scale": [
+                            0.10000000149011612,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.10000000149011612,
                             0.0,
                             0.0
                         ]
                     }
                 }
             ],
-            "type": "Object"
-        },
-        {
-            "Comps": [],
             "type": "Object"
         },
         {
@@ -225,10 +384,10 @@
         {
             "Comps": [
                 {
-                    "CompName": "class SpriteRenderComp"
+                    "CompName": "class EventComp"
                 },
                 {
-                    "CompName": "class EventComp"
+                    "CompName": "class SpriteRenderComp"
                 },
                 {
                     "CompName": "class TransformComp",
@@ -295,7 +454,7 @@
                             1.0
                         ],
                         "translate": [
-                            0.0,
+                            -21.066051483154297,
                             0.0,
                             0.0
                         ]
@@ -303,6 +462,15 @@
                 },
                 {
                     "CompName": "class StageSelectInputComp"
+                },
+                {
+                    "CompName": "class UvOperatorComp",
+                    "isMove": true,
+                    "moveValue": [
+                        -0.0010000000474974513,
+                        0.0,
+                        0.0
+                    ]
                 }
             ],
             "type": "Object"
@@ -546,7 +714,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources\\Textures\\UI\\ingame_UI_stageSelect.png",
+                    "fileName": "./Resources\\Textures\\UI\\stageSelect_UI_title.png",
                     "offsetType": "kMiddle",
                     "userOffsetTransform": {
                         "rotate": [
@@ -760,7 +928,30 @@
         {
             "Comps": [
                 {
-                    "CompName": "class UIDrawComp"
+                    "CompName": "class NumSpriteComp",
+                    "divide": 10
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        128.0,
+                        128.0,
+                        1.0
+                    ],
+                    "translate": [
+                        -50.0,
+                        -50.0,
+                        -1.0
+                    ]
                 },
                 {
                     "BlendType": "kNormal",
@@ -771,7 +962,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources\\Textures\\UI\\stageSelect_UI_stage.png",
+                    "fileName": "./Resources\\Textures\\outGame\\num_black.png",
                     "offsetType": "kMiddle",
                     "userOffsetTransform": {
                         "rotate": [
@@ -799,35 +990,16 @@
                             1.0
                         ],
                         "scale": [
-                            1.0,
+                            0.10000000149011612,
                             1.0,
                             1.0
                         ],
                         "translate": [
-                            0.0,
+                            0.010000000707805157,
                             0.0,
                             0.0
                         ]
                     }
-                },
-                {
-                    "CompName": "class UITransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        256.0,
-                        120.0,
-                        1.0
-                    ],
-                    "translate": [
-                        0.0,
-                        100.0,
-                        0.0
-                    ]
                 }
             ],
             "type": "Object"

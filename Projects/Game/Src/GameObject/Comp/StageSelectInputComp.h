@@ -27,4 +27,6 @@ private:
 
 	Lamb::SafePtr<class SceneChangeComp> sceneChangeComp_;
 
+	bool isStickUsed_ = false;
+
 };

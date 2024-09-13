@@ -1,23 +1,51 @@
 #include "UvOperatorComp.h"
-#include "TransformComp.h"
+#include "SpriteRenderDataComp.h"
 
 void UvOperatorComp::Init()
 {
-	transform_ = object_.AddComp<TransformComp>();
+	spriteRenderDataComp_ = object_.AddComp<SpriteRenderDataComp>();
 }
 
 void UvOperatorComp::Move()
 {
 
-	
+	if (isStartMove_) {
+
+		spriteRenderDataComp_->uvTransform.translate += moveValue_;
+
+	}
+
+}
+
+void UvOperatorComp::Debug([[maybe_unused]] const std::string& guiName)
+{
+
+#ifdef _DEBUG
+
+	if (ImGui::TreeNode(guiName.c_str())) {
+		ImGui::DragFloat3("UV移動速度", moveValue_.data(), 0.01f);
+		ImGui::Checkbox("UVを動かすか", &isStartMove_);
+		ImGui::TreePop();
+	}
+
+#endif // _DEBUG
+
 
 }
 
 void UvOperatorComp::Save(nlohmann::json& json) {
 	SaveCompName(json);
+	json["moveValue"] = nlohmann::json::array();
+	for (auto& i : moveValue_) {
+		json["moveValue"].push_back(i);
+	}
+	json["isMove"] = isStartMove_;
 }
 
 void UvOperatorComp::Load([[maybe_unused]] nlohmann::json& json) {
-
+	for (size_t i = 0; i < json["moveValue"].size(); i++) {
+		moveValue_[i] = json["moveValue"][i].get<float32_t>();
+	}
+	isStartMove_ = json["isMove"].get<bool>();
 }
 

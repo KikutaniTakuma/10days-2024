@@ -28,4 +28,12 @@ private:
 	//ゴールのポインタ
 	Lamb::SafePtr<class GoalComp> goalComp_;
 
+	Lamb::SafePtr <class SpriteRenderComp> spriteRenderComp_;
+
+	Lamb::SafePtr <class SpriteRenderDataComp> spriteRenderDataComp_;
+
+	Lamb::SafePtr<class TransformComp> transform_;
+
+	Lamb::SafePtr<class EaseingComp> easing_;
+
 };

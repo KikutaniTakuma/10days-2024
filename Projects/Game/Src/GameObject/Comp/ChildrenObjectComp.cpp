@@ -45,6 +45,10 @@ void ChildrenObjectComp::EraseObject(Object* object) {
 	}
 }
 
+void ChildrenObjectComp::Clear() {
+	objects_.clear();
+}
+
 void ChildrenObjectComp::ClearObjects() {
 	objects_.clear();
 }

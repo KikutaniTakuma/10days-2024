@@ -147,6 +147,8 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Src\GameObject\Comp\CsvDataComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\Direction2DComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\EaseingComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\EatAnimationControllComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\EatCloudAnimationComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\EatCloudComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\EventComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\EyeAudioComp.cpp" />
@@ -169,6 +171,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Src\GameObject\Comp\ModelRenderComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\InputMoveComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\Mass2DComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\NumSpriteComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\ObbComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\ObbPushComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\ModelRenderDataComp.cpp" />
@@ -222,6 +225,8 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="Src\GameObject\Comp\CsvDataComp.h" />
     <ClInclude Include="Src\GameObject\Comp\Direction2DComp.h" />
     <ClInclude Include="Src\GameObject\Comp\EaseingComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\EatAnimationControllComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\EatCloudAnimationComp.h" />
     <ClInclude Include="Src\GameObject\Comp\EatCloudComp.h" />
     <ClInclude Include="Src\GameObject\Comp\EventComp.h" />
     <ClInclude Include="Src\GameObject\Comp\EyeAudioComp.h" />
@@ -244,6 +249,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="Src\GameObject\Comp\KeyComp.h" />
     <ClInclude Include="Src\GameObject\Comp\ModelRenderComp.h" />
     <ClInclude Include="Src\GameObject\Comp\Mass2DComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\NumSpriteComp.h" />
     <ClInclude Include="Src\GameObject\Comp\ObbComp.h" />
     <ClInclude Include="Src\GameObject\Comp\ObbPushComp.h" />
     <ClInclude Include="Src\GameObject\Comp\ModelRenderDataComp.h" />

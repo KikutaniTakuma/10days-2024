@@ -12,6 +12,8 @@ public:
 
 	void Move() override;
 
+	void Debug(const std::string& guiName) override;
+
 public:
 
 	void Save(nlohmann::json& json) override;
@@ -19,6 +21,10 @@ public:
 
 private:
 
-	Lamb::SafePtr<class TransformComp> transform_;
+	Lamb::SafePtr<class SpriteRenderDataComp> spriteRenderDataComp_;
+
+	Vector3 moveValue_ = { 0.0f,0.0f,0.0f };
+
+	bool isStartMove_ = false;
 
 };

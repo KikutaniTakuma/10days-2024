@@ -133,6 +133,11 @@ void RemoveCloudComp::LastUpdate() {
 		removeCloudAudio_->Start(0.3f, false);
 	}
 }
+void RemoveCloudComp::Finalize() {
+	if (isStartAudio_) {
+		removeCloudAudio_->Stop();
+	}
+}
 void RemoveCloudComp::Save(nlohmann::json& json)
 {
 	SaveCompName(json);

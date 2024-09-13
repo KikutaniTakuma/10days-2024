@@ -14,6 +14,8 @@ public:
 
 	void LastUpdate() override;
 
+	void Finalize() override;
+
 	~CollectionComp() = default;
 
 	void SetPlayerComp(class PlayerComp* playerComp);

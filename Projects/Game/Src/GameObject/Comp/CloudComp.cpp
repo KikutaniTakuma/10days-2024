@@ -7,6 +7,7 @@
 #include "SpriteRenderDataComp.h"
 #include "../Manager/CloudManager.h"
 #include "Aabb2DComp.h"
+#include "EatAnimationControllComp.h"
 
 void CloudComp::Init() {
 
@@ -22,6 +23,8 @@ void CloudComp::Init() {
 	aabbCollision_ = object_.AddComp<Aabb2DComp>();
 	//spriteRenderDataComp_->uvTransform.scale.x = 0.25f;
 
+	eatCloudAnimationControllComp_ = object_.AddComp<EatAnimationControllComp>();
+
 }
 
 void CloudComp::Update() {
@@ -33,13 +36,14 @@ void CloudComp::Update() {
 
 	//雲が存在している状態だったら表示
 	if (flagComp_->GetIsActive()) {
+		spriteRenderComp_->isDraw = true;
 		transformComp_->scale = { kCloudSize_,kCloudSize_,kCloudSize_ };
 		collision_->GetObbComp().scale = { kCloudSize_ + 0.5f,kCloudSize_ + 0.5f,kCloudSize_ + 0.5f };
 		aabbCollision_->scale_ = { kCloudSize_,kCloudSize_,kCloudSize_ };
 	}
 	//食べられて存在しなくなった場合は非表示
 	else {
-		transformComp_->scale = { 0.0f,0.0f,0.0f };
+		spriteRenderComp_->isDraw = false;
 		collision_->GetObbComp().scale = { 0.0f,0.0f,0.0f };
 		aabbCollision_->scale_ = { 0.0f,0.0f,0.0f };
 	}
@@ -60,11 +64,23 @@ const Lamb::Flg& CloudComp::GetIsActive() const
 void CloudComp::SetIsActive(bool flag)
 {
 	flagComp_->SetIsActive(flag);
+	if (not flag) {
+		eatCloudAnimationControllComp_->StartAnimation();
+	}
 }
 
 void CloudComp::SetPosition(const Vector3& position)
 {
 	transformComp_->translate = position;
+}
+
+void CloudComp::SetIsDead(bool flag) {
+	isDead_ = flag;
+}
+
+void CloudComp::SetIsAtePlayerLeft(bool flag) {
+	isAtePlayerLeft_ = flag; 
+	eatCloudAnimationControllComp_->SetIsLeft(isAtePlayerLeft_);
 }
 
 int32_t CloudComp::GetMassX() const

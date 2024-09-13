@@ -46,7 +46,8 @@ void EyeComp::SetBeamTransformComp() {
 	for (const auto& i : childrenObjectComp_->GetObjects()) {
 		if (i->HasComp<LineConvertTransformComp>()) {
 			childrenBeamLineComp_ = i->GetComp<LineComp>();
-			i->GetComp<TransformComp>()->SetParent(nullptr);
+			childrenTransformComp_ = i->GetComp<TransformComp>();
+			childrenTransformComp_->SetParent(nullptr);
 			if (i->HasComp<SpriteRenderDataComp>()) {
 				childrenBeamRenderDataComp_ = i->GetComp<SpriteRenderDataComp>();
 			}
@@ -78,7 +79,7 @@ void EyeComp::FirstUpdate() {
 
 void EyeComp::Event() {
 
-	if (playerComp_.empty()) {
+	if (playerComp_.empty() or playerComp_->GetIsGoal()) {
 		return;
 	}
 
@@ -112,6 +113,8 @@ void EyeComp::Event() {
 		isCollision = true;
 
 	}
+
+	Vector4 bloomColor = 0xd56ff9ff;
 
 	// 状態
 	switch (eyeStateComp_->state) {
@@ -151,6 +154,9 @@ void EyeComp::Event() {
 		// 狙いを定める
 	case EyeStateComp::State::kAim:
 		beamLineRenderDataComp_->color = 0xff0000ff;
+		bloomColor = beamLineRenderDataComp_->color;
+		RenderingManager::GetInstance()->SetBloomColor({ bloomColor.color.r,bloomColor.color.g,bloomColor.color.b });
+		childrenTransformComp_->scale = Vector3::kIdentity * 2.0f;
 
 		// 狙いを定めている最中にプレイヤーを直視できなくなったらSearchに移行
 		if(isCollision){
@@ -203,7 +209,10 @@ void EyeComp::Event() {
 		break;
 		// 発射
 	case EyeStateComp::State::kFire:
+		childrenTransformComp_->scale = Vector3::kIdentity * 10.0f;
 		beamLineRenderDataComp_->color = 0xd56ff9ff;
+		bloomColor = beamLineRenderDataComp_->color;
+		RenderingManager::GetInstance()->SetBloomColor({ bloomColor.color.r,bloomColor.color.g,bloomColor.color.b });
 
 		// 時間を加算
 		eyeStateComp_->fireCount += object_.GetDeltaTime();
@@ -229,11 +238,13 @@ void EyeComp::Update() {
 		return;
 	}
 	
-	if (eyeStateComp_->state == EyeStateComp::State::kFire) {
+	if (eyeStateComp_->state != EyeStateComp::State::kSearch) {
 		childrenBeamLineComp_->start = beamLineComp_->start;
 		childrenBeamLineComp_->end = beamLineComp_->end;
 	}
 	else {
+		beamLineComp_->start = Vector3::kZero;
+		beamLineComp_->end = Vector3::kZero;
 		childrenBeamLineComp_->start = Vector3::kZero;
 		childrenBeamLineComp_->end = Vector3::kZero;
 	}

@@ -40,6 +40,13 @@
         {
             "Comps": [
                 {
+                    "CompName": "class ResultInputComp"
+                }
+            ]
+        },
+        {
+            "Comps": [
+                {
                     "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [

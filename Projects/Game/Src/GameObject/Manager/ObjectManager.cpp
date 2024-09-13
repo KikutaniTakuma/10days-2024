@@ -25,6 +25,7 @@
 #include "../Comp/KeyComp.h"
 #include "../Comp/CollectionComp.h"
 #include "../Comp/BackGroundComp.h"
+#include "../Comp/ResultInputComp.h"
 
 std::unique_ptr<ObjectManager> ObjectManager::instance_;
 
@@ -132,7 +133,7 @@ bool ObjectManager::SetCamera() {
 
 void ObjectManager::Update() {
 	// すべてに関数呼び出しするのはなんか不健全なのでバッファする
-	float32_t deltaTime = Lamb::DeltaTime();
+	static constexpr float32_t deltaTime = 1.0f / 60.0f;
 
 	// デルタタイムセット
 	for (auto& i : objects_) {
@@ -482,12 +483,16 @@ void ObjectManager::Save() {
 void ObjectManager::SetCompToOther() {
 	Lamb::SafePtr<PlayerComp> playerComp;
 	Lamb::SafePtr<FollowCamera2DComp> followCamera2DComp;
+	Lamb::SafePtr<GoalComp> goalComp;
 	for (auto& i : objects_) {
 		if (i->HasComp<PlayerComp>()) {
 			playerComp = i->GetComp<PlayerComp>();
 		}
 		if (i->HasComp<FollowCamera2DComp>()) {
 			followCamera2DComp = i->GetComp<FollowCamera2DComp>();
+		}
+		if (i->HasComp<GoalComp>()) {
+			goalComp = i->GetComp<GoalComp>();
 		}
 	}
 
@@ -511,6 +516,9 @@ void ObjectManager::SetCompToOther() {
 		}
 		if (i->HasComp<BackGroundComp>()) {
 			i->GetComp<BackGroundComp>()->SetFollowCameraComp(followCamera2DComp.get());
+		}
+		if (i->HasComp<ResultInputComp>()) {
+			i->GetComp<ResultInputComp>()->SetGoal(goalComp.get());
 		}
 	}
 }

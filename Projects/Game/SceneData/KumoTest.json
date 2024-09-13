@@ -1,0 +1,676 @@
+{
+    "RederingSetting": {
+        "bloom": {
+            "luminanceThreshold": [
+                0.8352941870689392,
+                0.43529415130615234,
+                0.9764706492424011
+            ],
+            "x": 8,
+            "y": 8
+        },
+        "hsv": [
+            0.0,
+            0.0,
+            1.0
+        ],
+        "isDirectionLight": false,
+        "lightRotate": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "outline": 0.0,
+        "skybox": {
+            "isDraw": false,
+            "scale": [
+                500.0,
+                500.0,
+                500.0
+            ]
+        }
+    },
+    "objects": [
+        {
+            "Comps": [
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "translate": [
+                        0.0,
+                        0.0,
+                        -10.0
+                    ]
+                },
+                {
+                    "CompName": "class Camera2DComp",
+                    "farClip": 1000.0,
+                    "height": 720.0,
+                    "nearClip": 0.10000000149011612,
+                    "width": 1280.0
+                },
+                {
+                    "CompName": "class CameraComp"
+                },
+                {
+                    "CompName": "class FollowCamera2DComp"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        128.0,
+                        128.0,
+                        128.0
+                    ],
+                    "translate": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
+                    "BlendType": "kUnenableDepthNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        0.8745098114013672,
+                        0.0,
+                        0.0,
+                        0.13333334028720856
+                    ],
+                    "fileName": "./Resources\\EngineResources\\white2x2.png",
+                    "offsetType": "kMiddle",
+                    "userOffsetTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    "uvTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "scale": [
+                            0.25,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        0,
+                        0
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collsiionTags": [],
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.5,
+                        32.5,
+                        32.5
+                    ]
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "collsiionTags": [],
+                    "isScaleEffect": true,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.0,
+                    "startTime_Max": 0.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
+                },
+                {
+                    "Children": [
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class SpriteRenderComp"
+                                },
+                                {
+                                    "CompName": "class TransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.4343995153903961,
+                                        0.4047611355781555,
+                                        1.0
+                                    ],
+                                    "translate": [
+                                        0.5546870231628418,
+                                        -0.08593793213367462,
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kNone",
+                                    "CompName": "class SpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources\\Textures\\gimmick\\cloud_shadow1.png",
+                                    "offsetType": "kRight",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            1.0
+                                        ],
+                                        "scale": [
+                                            0.25,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class SpriteRenderComp"
+                                },
+                                {
+                                    "CompName": "class TransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        2.842170943040401e-14,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.3505116105079651,
+                                        0.3216201066970825,
+                                        1.0
+                                    ],
+                                    "translate": [
+                                        0.26471126079559326,
+                                        0.359376460313797,
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kNone",
+                                    "CompName": "class SpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources\\Textures\\gimmick\\cloud_shadow1.png",
+                                    "offsetType": "kRight",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            1.0
+                                        ],
+                                        "scale": [
+                                            0.25,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                },
+                                {
+                                    "CompName": "class EaseingComp",
+                                    "isLoop": false,
+                                    "spdT": 0.0,
+                                    "type": "None"
+                                },
+                                {
+                                    "CompName": "class InstanceTimeComp"
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class SpriteRenderComp"
+                                },
+                                {
+                                    "CompName": "class TransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.3555077612400055,
+                                        0.4428665339946747,
+                                        1.0
+                                    ],
+                                    "translate": [
+                                        0.5078127384185791,
+                                        0.22656220197677612,
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kNone",
+                                    "CompName": "class SpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources\\Textures\\gimmick\\cloud_shadow1.png",
+                                    "offsetType": "kRight",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            1.0
+                                        ],
+                                        "scale": [
+                                            0.25,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class SpriteRenderComp"
+                                },
+                                {
+                                    "CompName": "class TransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.3958333730697632,
+                                        0.3055548071861267,
+                                        1.0
+                                    ],
+                                    "translate": [
+                                        0.38281217217445374,
+                                        -0.38281217217445374,
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kNone",
+                                    "CompName": "class SpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources\\Textures\\gimmick\\cloud_shadow1.png",
+                                    "offsetType": "kRight",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            1.0
+                                        ],
+                                        "scale": [
+                                            0.25,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class SpriteRenderComp"
+                                },
+                                {
+                                    "CompName": "class TransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.26363620162010193,
+                                        0.2796056866645813,
+                                        1.0
+                                    ],
+                                    "translate": [
+                                        0.5937501192092896,
+                                        -0.4218751788139343,
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kNone",
+                                    "CompName": "class SpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources\\Textures\\gimmick\\cloud_shadow1.png",
+                                    "offsetType": "kRight",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            1.0
+                                        ],
+                                        "scale": [
+                                            0.25,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                }
+                            ],
+                            "type": "Object"
+                        },
+                        {
+                            "Comps": [
+                                {
+                                    "CompName": "class SpriteRenderComp"
+                                },
+                                {
+                                    "CompName": "class TransformComp",
+                                    "rotate": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "scale": [
+                                        0.3333328366279602,
+                                        0.2272728979587555,
+                                        1.0
+                                    ],
+                                    "translate": [
+                                        0.5312492847442627,
+                                        0.5078122615814209,
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "BlendType": "kNone",
+                                    "CompName": "class SpriteRenderDataComp",
+                                    "color": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "fileName": "./Resources\\Textures\\gimmick\\cloud_shadow1.png",
+                                    "offsetType": "kRight",
+                                    "userOffsetTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                                        "scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "uvTransform": {
+                                        "rotate": [
+                                            0.0,
+                                            0.0,
+                                            0.0,
+                                            1.0
+                                        ],
+                                        "scale": [
+                                            0.25,
+                                            1.0,
+                                            1.0
+                                        ],
+                                        "translate": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                }
+                            ],
+                            "type": "Object"
+                        }
+                    ],
+                    "CompName": "class ChildrenObjectComp"
+                }
+            ],
+            "type": "Object"
+        }
+    ],
+    "scene": "KumoTest"
+}

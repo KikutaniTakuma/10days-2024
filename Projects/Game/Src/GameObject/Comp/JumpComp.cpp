@@ -27,6 +27,12 @@ void JumpComp::LastUpdate() {
 	}
 }
 
+void JumpComp::Finalize() {
+	if (eatAudio_) {
+		eatAudio_->Stop();
+	}
+}
+
 void JumpComp::Start()
 {
 

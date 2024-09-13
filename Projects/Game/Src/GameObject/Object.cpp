@@ -64,6 +64,10 @@
 #include "Comp/StageSelectInputComp.h"
 #include "Comp/ResultInputComp.h"
 
+#include "Comp/EatCloudAnimationComp.h"
+
+#include "Comp/NumSpriteComp.h"
+
 void Object::Init() {
 	/*for (auto& i : components_) {
 		i.second->Init();
@@ -200,7 +204,10 @@ bool Object::DebugAddComp() {
 		DebugAdd<UvOperatorComp>();
 		DebugAdd<TitleInputComp>();
 		DebugAdd<StageSelectInputComp>();
+		DebugAdd<EatCloudAnimationComp>();
 		DebugAdd<ResultInputComp>();
+		DebugAdd<UvOperatorComp>();
+		DebugAdd<NumSpriteComp>();
 
 		ImGui::EndChild();
 
@@ -290,6 +297,9 @@ void Object::AddComps(nlohmann::json& compData)
 	AddAndLoadComp<UvOperatorComp>(compName, compData);
 	AddAndLoadComp<TitleInputComp>(compName, compData);
 	AddAndLoadComp<StageSelectInputComp>(compName, compData);
+	AddAndLoadComp<EatCloudAnimationComp>(compName, compData);
 	AddAndLoadComp<ResultInputComp>(compName, compData);
+	AddAndLoadComp<UvOperatorComp>(compName, compData);
+	AddAndLoadComp<NumSpriteComp>(compName, compData);
 }
 

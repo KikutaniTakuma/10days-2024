@@ -14,14 +14,16 @@ void SpriteRenderComp::Init() {
 }
 
 void SpriteRenderComp::Draw(CameraComp* cameraComp) {
-	tex2D_->Draw(
-		renderDataComp_->GetOffsetMatrix() * renderDataComp_->GetUserOffsetMatrix() * transformComp_->GetWorldMatrix(),
-		renderDataComp_->uvTransform.GetMatrix(),
-		cameraComp->GetCameraMatrix(),
-		renderDataComp_->texHandle,
-		renderDataComp_->color.GetColorRGBA(),
-		renderDataComp_->type
-	);
+	if (isDraw) {
+		tex2D_->Draw(
+			renderDataComp_->GetOffsetMatrix() * renderDataComp_->GetUserOffsetMatrix() * transformComp_->GetWorldMatrix(),
+			renderDataComp_->uvTransform.GetMatrix(),
+			cameraComp->GetCameraMatrix(),
+			renderDataComp_->texHandle,
+			renderDataComp_->color.GetColorRGBA(),
+			renderDataComp_->type
+		);
+	}
 }
 
 void SpriteRenderComp::Save(nlohmann::json& json)
@@ -31,5 +33,15 @@ void SpriteRenderComp::Save(nlohmann::json& json)
 
 void SpriteRenderComp::Load([[maybe_unused]]nlohmann::json& json)
 {
+}
+
+void SpriteRenderComp::Debug([[maybe_unused]]const std::string& guiName) {
+#ifdef _DEBUG
+	if (ImGui::TreeNode(guiName.c_str())) {
+		ImGui::Checkbox("描画有効", &isDraw);
+
+		ImGui::TreePop();
+	}
+#endif // _DEBUG
 }
 
