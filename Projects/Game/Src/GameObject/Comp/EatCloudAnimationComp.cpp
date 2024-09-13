@@ -86,6 +86,9 @@ void EatCloudAnimationComp::SetIsLeft(bool isLeft) {
 }
 
 void EatCloudAnimationComp::Debug([[maybe_unused]]const std::string& guiName) {
+
+#ifdef _DEBUG
+
 	if (ImGui::TreeNode(guiName.c_str())) {
 		ImGui::DragFloat("引っ張る時間", &pullTime_, 0.001f, 0.0f, 1.0f);
 		ImGui::DragFloat("戻る時間", &returnTime_, 0.001f, 0.0f, 1.0f);
@@ -95,7 +98,10 @@ void EatCloudAnimationComp::Debug([[maybe_unused]]const std::string& guiName) {
 		}
 
 		ImGui::TreePop();
-	}
+}
+
+#endif // _DEBUG
+
 }
 
 Lamb::SafePtr<class TransformComp> EatCloudAnimationComp::GetTransformComp()
