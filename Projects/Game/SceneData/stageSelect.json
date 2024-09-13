@@ -119,8 +119,8 @@
                         1.0
                     ],
                     "scale": [
-                        246.61514282226563,
-                        113.2965316772461,
+                        230.57908630371094,
+                        101.84220123291016,
                         0.0
                     ],
                     "translate": [
@@ -225,8 +225,8 @@
                         1.0
                     ],
                     "scale": [
-                        606.482666015625,
-                        459.88958740234375,
+                        549.2109985351563,
+                        425.526611328125,
                         0.0
                     ],
                     "translate": [
@@ -347,7 +347,7 @@
                             1.0
                         ],
                         "translate": [
-                            0.7519974112510681,
+                            0.5260003209114075,
                             0.0,
                             0.0
                         ]
@@ -368,11 +368,30 @@
         {
             "Comps": [
                 {
+                    "CompName": "class NumSpriteComp",
+                    "divide": 1
+                },
+                {
                     "CompName": "class SpriteRenderComp"
                 },
                 {
-                    "CompName": "class NumSpriteComp",
-                    "divide": 1
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        128.0,
+                        128.0,
+                        1.0
+                    ],
+                    "translate": [
+                        50.0,
+                        -50.0,
+                        -1.0
+                    ]
                 },
                 {
                     "BlendType": "kNormal",
@@ -416,30 +435,11 @@
                             1.0
                         ],
                         "translate": [
-                            1.0,
+                            0.10000000149011612,
                             0.0,
                             0.0
                         ]
                     }
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        128.0,
-                        128.0,
-                        1.0
-                    ],
-                    "translate": [
-                        50.0,
-                        -50.0,
-                        -1.0
-                    ]
                 }
             ],
             "type": "Object"
@@ -522,10 +522,10 @@
         {
             "Comps": [
                 {
-                    "CompName": "class SpriteRenderComp"
+                    "CompName": "class EventComp"
                 },
                 {
-                    "CompName": "class EventComp"
+                    "CompName": "class SpriteRenderComp"
                 },
                 {
                     "CompName": "class TransformComp",
@@ -592,7 +592,7 @@
                             1.0
                         ],
                         "translate": [
-                            -0.40799829363822937,
+                            -0.2969997227191925,
                             0.0,
                             0.0
                         ]
@@ -650,7 +650,7 @@
                         1.0,
                         1.0,
                         1.0,
-                        0.3351735472679138
+                        0.9078897833824158
                     ],
                     "fileName": "./Resources\\Textures\\UI\\stageSelect_UI_A.png",
                     "offsetType": "kMiddle",
@@ -863,7 +863,7 @@
                     "translate": [
                         -500.0,
                         250.0,
-                        0.0
+                        -1.0
                     ]
                 }
             ],
@@ -1036,11 +1036,30 @@
         {
             "Comps": [
                 {
+                    "CompName": "class NumSpriteComp",
+                    "divide": 10
+                },
+                {
                     "CompName": "class SpriteRenderComp"
                 },
                 {
-                    "CompName": "class NumSpriteComp",
-                    "divide": 10
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        128.0,
+                        128.0,
+                        1.0
+                    ],
+                    "translate": [
+                        -50.0,
+                        -50.0,
+                        -1.0
+                    ]
                 },
                 {
                     "BlendType": "kNormal",
@@ -1084,30 +1103,11 @@
                             1.0
                         ],
                         "translate": [
-                            0.10000000149011612,
+                            0.0,
                             0.0,
                             0.0
                         ]
                     }
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        128.0,
-                        128.0,
-                        1.0
-                    ],
-                    "translate": [
-                        -50.0,
-                        -50.0,
-                        -1.0
-                    ]
                 }
             ],
             "type": "Object"

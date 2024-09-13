@@ -260,12 +260,14 @@ void PlayerComp::Move() {
 		if (transform_->translate.y < deadLine_ and not sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent) {
 			sceneChangeComp_->SetNextScene(ObjectManager::GetInstance()->GetCurrentSceneFilePath());
 			sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
+			deadAudio_->Start(0.3f, false);
 		}
 
 		//ビームに当たっていたら死亡
 		if (beamCollisionFlg_ and not sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent) {
 			sceneChangeComp_->SetNextScene(ObjectManager::GetInstance()->GetCurrentSceneFilePath());
 			sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
+			deadAudio_->Start(0.3f, false);
 		}
 
 	}
@@ -624,6 +626,8 @@ void PlayerComp::Load()
 	stageSelectAudio_ = AudioManager::GetInstance()->Get("./Resources/Sounds/SE_backScene.mp3");
 	AudioManager::GetInstance()->Load("./Resources/Sounds/SE_outgame_decision.mp3");
 	stageResetAudio_ = AudioManager::GetInstance()->Get("./Resources/Sounds/SE_outgame_decision.mp3");
+	AudioManager::GetInstance()->Load("./Resources/Sounds/SE_ingame_gameover.mp3");
+	deadAudio_ = AudioManager::GetInstance()->Get("./Resources/Sounds/SE_ingame_gameover.mp3");
 }
 
 void PlayerComp::SetIsBeamCollision(const Lamb::Flg& collisionFlg)

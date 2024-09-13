@@ -140,4 +140,5 @@ private:
 
 	Lamb::SafePtr<class Audio> stageSelectAudio_;
 	Lamb::SafePtr<class Audio> stageResetAudio_;
+	Lamb::SafePtr<class Audio> deadAudio_;
 };
