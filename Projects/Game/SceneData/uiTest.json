@@ -76,17 +76,17 @@
                             1.0
                         ],
                         "translate": [
-                            0.4285714626312256,
+                            0.5714285969734192,
                             0.0,
                             0.0
                         ]
                     }
                 },
                 {
-                    "CompName": "class SpriteRenderComp"
+                    "CompName": "class CollectionComp"
                 },
                 {
-                    "CompName": "class CollectionComp"
+                    "CompName": "class SpriteRenderComp"
                 },
                 {
                     "CompName": "class Aabb2DComp",
@@ -187,17 +187,17 @@
                             1.0
                         ],
                         "translate": [
-                            0.4285714626312256,
+                            0.5714285969734192,
                             0.0,
                             0.0
                         ]
                     }
                 },
                 {
-                    "CompName": "class SpriteRenderComp"
+                    "CompName": "class CollectionComp"
                 },
                 {
-                    "CompName": "class CollectionComp"
+                    "CompName": "class SpriteRenderComp"
                 },
                 {
                     "CompName": "class Aabb2DComp",
@@ -294,14 +294,14 @@
         {
             "Comps": [
                 {
-                    "CompName": "class PlayerComp"
-                },
-                {
                     "CompName": "class SpriteRenderComp"
                 },
                 {
                     "CompName": "class FallComp",
                     "gravity": -9.800000190734863
+                },
+                {
+                    "CompName": "class PlayerComp"
                 },
                 {
                     "CompName": "class TransformComp",
@@ -312,14 +312,14 @@
                         1.0
                     ],
                     "scale": [
-                        48.0,
-                        48.0,
-                        48.0
+                        32.07017517089844,
+                        32.07017517089844,
+                        32.07017517089844
                     ],
                     "translate": [
-                        255.0,
-                        -355.836669921875,
-                        1.0
+                        256.0,
+                        -356.0,
+                        3.0
                     ]
                 },
                 {
@@ -376,7 +376,7 @@
                             1.0
                         ],
                         "translate": [
-                            0.5,
+                            0.3333333432674408,
                             0.0,
                             0.0
                         ]
@@ -413,7 +413,7 @@
                 {
                     "CompName": "class Mass2DComp",
                     "mass": [
-                        8,
+                        10,
                         11
                     ],
                     "offset": [
@@ -471,7 +471,7 @@
                 {
                     "CompName": "class EaseingComp",
                     "isLoop": false,
-                    "spdT": 0.0,
+                    "spdT": 1.0,
                     "type": "None"
                 },
                 {
@@ -524,17 +524,17 @@
                             1.0
                         ],
                         "translate": [
-                            0.4285714626312256,
+                            0.5714285969734192,
                             0.0,
                             0.0
                         ]
                     }
                 },
                 {
-                    "CompName": "class SpriteRenderComp"
+                    "CompName": "class CollectionComp"
                 },
                 {
-                    "CompName": "class CollectionComp"
+                    "CompName": "class SpriteRenderComp"
                 },
                 {
                     "CompName": "class Aabb2DComp",
@@ -555,9 +555,9 @@
                         1.0
                     ],
                     "scale": [
-                        32.0,
-                        32.0,
-                        32.0
+                        0.0,
+                        0.0,
+                        0.0
                     ],
                     "translate": [
                         288.0,
@@ -672,32 +672,13 @@
         {
             "Comps": [
                 {
-                    "CompName": "class ResultInputComp"
+                    "CompName": "class SpriteRenderComp"
                 },
                 {
                     "CompName": "class EventComp"
                 },
                 {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "translate": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ]
+                    "CompName": "class ResultInputComp"
                 },
                 {
                     "CompName": "class SceneChangeComp",
@@ -712,7 +693,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/EngineResources/white2x2.png",
+                    "fileName": "./Resources\\Textures\\outGame\\result_back.png",
                     "offsetType": "kMiddle",
                     "userOffsetTransform": {
                         "rotate": [
@@ -734,10 +715,10 @@
                     },
                     "uvTransform": {
                         "rotate": [
-                            1.0,
-                            5.960464477539063e-08,
-                            5.960464477539063e-08,
-                            3.552713678800501e-15
+                            0.0,
+                            0.0,
+                            0.0,
+                            1.0
                         ],
                         "scale": [
                             1.0,
@@ -752,10 +733,51 @@
                     }
                 },
                 {
+                    "CompName": "class UIDrawComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "translate": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
                     "CompName": "class EaseingComp",
                     "isLoop": false,
-                    "spdT": 0.0,
-                    "type": "None"
+                    "spdT": 1.0,
+                    "type": "InSine"
+                },
+                {
+                    "CompName": "class UITransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        480.0,
+                        480.0,
+                        1.0
+                    ],
+                    "translate": [
+                        0.0,
+                        -0.0,
+                        -2.0
+                    ]
                 }
             ],
             "type": "Object"
@@ -886,6 +908,12 @@
         {
             "Comps": [
                 {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
                     "BlendType": "kNone",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
@@ -904,9 +932,9 @@
                             1.0
                         ],
                         "scale": [
-                            1.2000000476837158,
-                            1.2000000476837158,
-                            1.2000000476837158
+                            1.0567325353622437,
+                            1.0567325353622437,
+                            1.0567325353622437
                         ],
                         "translate": [
                             0.0,
@@ -934,10 +962,7 @@
                     }
                 },
                 {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
-                    ]
+                    "CompName": "class FlagComp"
                 },
                 {
                     "CompName": "class Mass2DComp",
@@ -950,9 +975,6 @@
                         0.0
                     ],
                     "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
                 },
                 {
                     "CompName": "class ObbComp",
@@ -989,10 +1011,10 @@
                     ]
                 },
                 {
-                    "CompName": "class SpriteRenderComp"
+                    "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class CloudComp"
+                    "CompName": "class SpriteRenderComp"
                 },
                 {
                     "CompName": "class Aabb2DComp",
@@ -1028,6 +1050,12 @@
         {
             "Comps": [
                 {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
                     "BlendType": "kNone",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
@@ -1046,9 +1074,9 @@
                             1.0
                         ],
                         "scale": [
-                            1.017204761505127,
-                            1.017204761505127,
-                            1.017204761505127
+                            1.0567325353622437,
+                            1.0567325353622437,
+                            1.0567325353622437
                         ],
                         "translate": [
                             0.0,
@@ -1069,17 +1097,14 @@
                             1.0
                         ],
                         "translate": [
-                            0.0,
+                            0.5,
                             0.0,
                             0.0
                         ]
                     }
                 },
                 {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
-                    ]
+                    "CompName": "class FlagComp"
                 },
                 {
                     "CompName": "class Mass2DComp",
@@ -1092,9 +1117,6 @@
                         0.0
                     ],
                     "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
                 },
                 {
                     "CompName": "class ObbComp",
@@ -1131,10 +1153,10 @@
                     ]
                 },
                 {
-                    "CompName": "class SpriteRenderComp"
+                    "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class CloudComp"
+                    "CompName": "class SpriteRenderComp"
                 },
                 {
                     "CompName": "class Aabb2DComp",
@@ -1170,6 +1192,12 @@
         {
             "Comps": [
                 {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": [
+                        "class PlayerComp"
+                    ]
+                },
+                {
                     "BlendType": "kNone",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
@@ -1188,9 +1216,9 @@
                             1.0
                         ],
                         "scale": [
-                            1.017204761505127,
-                            1.017204761505127,
-                            1.017204761505127
+                            1.0567325353622437,
+                            1.0567325353622437,
+                            1.0567325353622437
                         ],
                         "translate": [
                             0.0,
@@ -1211,17 +1239,14 @@
                             1.0
                         ],
                         "translate": [
-                            0.0,
+                            0.75,
                             0.0,
                             0.0
                         ]
                     }
                 },
                 {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": [
-                        "class PlayerComp"
-                    ]
+                    "CompName": "class FlagComp"
                 },
                 {
                     "CompName": "class Mass2DComp",
@@ -1234,9 +1259,6 @@
                         0.0
                     ],
                     "size": 32
-                },
-                {
-                    "CompName": "class FlagComp"
                 },
                 {
                     "CompName": "class ObbComp",
@@ -1273,10 +1295,10 @@
                     ]
                 },
                 {
-                    "CompName": "class SpriteRenderComp"
+                    "CompName": "class CloudComp"
                 },
                 {
-                    "CompName": "class CloudComp"
+                    "CompName": "class SpriteRenderComp"
                 },
                 {
                     "CompName": "class Aabb2DComp",

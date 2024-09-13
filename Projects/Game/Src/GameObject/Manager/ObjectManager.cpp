@@ -519,6 +519,7 @@ void ObjectManager::SetCompToOther() {
 		}
 		if (i->HasComp<ResultInputComp>()) {
 			i->GetComp<ResultInputComp>()->SetGoal(goalComp.get());
+			i->GetComp<ResultInputComp>()->SetPlayer(playerComp.get());
 		}
 	}
 }

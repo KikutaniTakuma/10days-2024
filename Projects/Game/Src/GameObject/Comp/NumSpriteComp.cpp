@@ -24,8 +24,8 @@ void NumSpriteComp::Event()
 
 	}
 
-	//ステージの数字を割り、その分UVのオフセットを移動させる
-	if (divide_ != 0) {
+	//ステージの数字を割り、その分UVのオフセットを移動させる。更新しない場合は動かさない
+	if (divide_ != 0 and isUpdate_) {
 
 		offset_ = StageSelectInputComp::stageNumber_ / divide_;
 

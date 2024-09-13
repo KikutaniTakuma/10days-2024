@@ -12,6 +12,9 @@
 #include "UIDrawComp.h"
 #include "UITransformComp.h"
 #include "EaseingComp.h"
+#include "StarComp.h"
+#include "ChildrenObjectComp.h"
+#include "PlayerComp.h"
 
 #include "AudioManager/AudioManager.h"
 
@@ -24,13 +27,60 @@ void ResultInputComp::Init()
 	easing_ = object_.AddComp<EaseingComp>();
 	UIDraw_ = object_.AddComp<UIDrawComp>();
 	UITransform_ = object_.AddComp<UITransformComp>();
+	childrenComp_ = object_.AddComp<ChildrenObjectComp>();
 }
 
 void ResultInputComp::Load() {
+	
 	AudioManager::GetInstance()->Load("./Resources/Sounds/SE_backScene.mp3");
 	backAudio_ = AudioManager::GetInstance()->Get("./Resources/Sounds/SE_backScene.mp3");
 	AudioManager::GetInstance()->Load("./Resources/Sounds/SE_outgame_decision.mp3");
 	decideAudio_ = AudioManager::GetInstance()->Get("./Resources/Sounds/SE_outgame_decision.mp3");
+
+	for (int32_t i = 0; i < 3; i++) {
+
+		Lamb::SafePtr<Object> newObject = Lamb::MakeSafePtr<Object>();
+		stars_.push_back(newObject->AddComp<StarComp>());
+		auto startransform = stars_.back()->getObject().GetComp<UITransformComp>();
+		startransform->translate = { 96.0f * float(i - 1), -50.0f, -2.0f };
+		auto starRenderData = stars_.back()->getObject().GetComp<SpriteRenderDataComp>();
+		starRenderData->fileName = "./Resources/Textures/outGame/result_star_outline.png";
+		starRenderData->Load();
+		starRenderData->uvTransform.rotate = { 0.0f,0.0f,0.0f, 1.0f };
+		childrenComp_->AddObject(newObject);
+
+	}
+
+	Lamb::SafePtr<Object> newObject = Lamb::MakeSafePtr<Object>();
+	buttonUIs_.push_back(newObject->AddComp<UIDrawComp>());
+	auto transform = buttonUIs_.back()->getObject().GetComp<UITransformComp>();
+	transform->translate = {-150.0f, -250.0f, -2.0f };
+	auto renderData = buttonUIs_.back()->getObject().GetComp<SpriteRenderDataComp>();
+	renderData->fileName = "./Resources/Textures/UI/result_UI_A.png";
+	renderData->Load();
+	renderData->uvTransform.rotate = { 0.0f,0.0f,0.0f, 1.0f };
+	childrenComp_->AddObject(newObject);
+
+	Lamb::SafePtr<Object> newObject = Lamb::MakeSafePtr<Object>();
+	buttonUIs_.push_back(newObject->AddComp<UIDrawComp>());
+	transform = buttonUIs_.back()->getObject().GetComp<UITransformComp>();
+	transform->translate = { 0.0f, -250.0f, -2.0f };
+	renderData = buttonUIs_.back()->getObject().GetComp<SpriteRenderDataComp>();
+	renderData->fileName = "./Resources/Textures/UI/result_UI_A.png";
+	renderData->Load();
+	renderData->uvTransform.rotate = { 0.0f,0.0f,0.0f, 1.0f };
+	childrenComp_->AddObject(newObject);
+
+	Lamb::SafePtr<Object> newObject = Lamb::MakeSafePtr<Object>();
+	buttonUIs_.push_back(newObject->AddComp<UIDrawComp>());
+	transform = buttonUIs_.back()->getObject().GetComp<UITransformComp>();
+	transform->translate = { 150.0f, -250.0f, -2.0f };
+	renderData = buttonUIs_.back()->getObject().GetComp<SpriteRenderDataComp>();
+	renderData->fileName = "./Resources/Textures/UI/result_UI_A.png";
+	renderData->Load();
+	renderData->uvTransform.rotate = { 0.0f,0.0f,0.0f, 1.0f };
+	childrenComp_->AddObject(newObject);
+
 }
 
 void ResultInputComp::Move()
@@ -54,7 +104,7 @@ void ResultInputComp::Move()
 
 			}
 
-			if (not sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent) {
+			if (not sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent and stars_[2]->isEasingEnd_) {
 
 				//10ステージ目では反応させない
 				if ((gamepad->Pushed(Gamepad::Button::A) or key->Pushed(DIK_SPACE)) and 
@@ -100,8 +150,53 @@ void ResultInputComp::Move()
 	}
 
 	if (isEasingStart_) {
+		UITransform_->scale = { 480.0f,480.0f,1.0f };
+	}
+	else {
+		UITransform_->scale = { 0.0f,0.0f,0.0f };
+	}
 
+	if (easing_->GetEaseing().GetIsActive()) {
+		UITransform_->translate = easing_->GetEaseing().Get(easingPositionStart_, easingPositionEnd_);
+	}
+	else if (isEasingStart_) {
+		UITransform_->translate = easingPositionEnd_;
+	}
 
+	for (size_t i = 0; i < 3; i++) {
+
+		//イージングが完了しているなら
+		if (not easing_->GetEaseing().GetIsActive() and isEasingStart_ and not stars_[2]->isEasingEnd_) {
+
+			if (player_) {
+
+				if (player_->GetCoinCount() > i) {
+					stars_[i]->getObject().GetComp<SpriteRenderDataComp>()->fileName = "./Resources/Textures/outGame/result_star.png";
+					stars_[i]->getObject().GetComp<SpriteRenderDataComp>()->Load();
+				}
+				else {
+					stars_[i]->getObject().GetComp<SpriteRenderDataComp>()->fileName = "./Resources/Textures/outGame/result_star_outline.png";
+					stars_[i]->getObject().GetComp<SpriteRenderDataComp>()->Load();
+				}
+
+			}
+
+			if (i == 0) {
+
+				if (not stars_[i]->isEasingStart_) {
+					stars_[i]->Start();
+				}
+
+			}
+			else {
+
+				if (stars_[i - 1]->isEasingEnd_ and not stars_[i]->isEasingStart_) {
+					stars_[i]->Start();
+				}
+
+			}
+
+		}
 
 	}
 
@@ -123,4 +218,9 @@ void ResultInputComp::Load([[maybe_unused]] nlohmann::json& json)
 void ResultInputComp::SetGoal(GoalComp* goalComp)
 {
 	goalComp_ = goalComp;
+}
+
+void ResultInputComp::SetPlayer(PlayerComp* player)
+{
+	player_ = player;
 }

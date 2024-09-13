@@ -187,6 +187,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Src\GameObject\Comp\SpriteRenderComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\SpriteRenderDataComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\StageSelectInputComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\StarComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\TextureHandlesComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\TitleInputComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\TransformComp.cpp" />

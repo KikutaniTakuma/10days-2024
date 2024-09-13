@@ -19,6 +19,8 @@ public:
 	void Save(nlohmann::json& json) override;
 	void Load(nlohmann::json& json) override;
 
+	void SetIsUpdate(bool flag) { isUpdate_ = flag; }
+
 private:
 
 	Lamb::SafePtr<class SpriteRenderDataComp> spriteRenderDataComp_;
@@ -40,5 +42,7 @@ private:
 	float defaultScale_ = 128.0f;
 
 	float addValue_ = 1.0f;
+
+	bool isUpdate_ = true;
 
 };

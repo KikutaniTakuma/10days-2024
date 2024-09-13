@@ -1,5 +1,6 @@
 #pragma once
 #include "../Object.h"
+#include <vector>
 
 class ResultInputComp : public IComp {
 public:
@@ -16,6 +17,8 @@ public:
 	void Debug(const std::string& guiName) override;
 
 	void SetGoal(class GoalComp* goalComp);
+
+	void SetPlayer(class PlayerComp* player);
 
 public:
 
@@ -45,6 +48,14 @@ private:
 
 	Lamb::SafePtr<class Audio> backAudio_;
 	Lamb::SafePtr<class Audio> decideAudio_;
+
+	Lamb::SafePtr <class ChildrenObjectComp> childrenComp_;
+
+	Lamb::SafePtr<class PlayerComp> player_;
+
+	std::vector<Lamb::SafePtr<class StarComp>> stars_;
+
+	std::vector<Lamb::SafePtr<class UIDrawComp>> buttonUIs_;
 
 	Vector3 easingPositionStart_ = { 0.0f,-500.0f,-2.0f };
 
