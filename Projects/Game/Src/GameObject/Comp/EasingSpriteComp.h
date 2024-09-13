@@ -23,15 +23,20 @@ private:
 
 	Lamb::SafePtr<class SpriteRenderDataComp> spriteRenderDataComp_;
 
-	Lamb::SafePtr<class SpriteRenderComp> spriteRender_;
+	Lamb::SafePtr<class UIDrawComp> uiDraw_;
 
 	Lamb::SafePtr<class EaseingComp> easing_;
+
+	Lamb::SafePtr<class UITransformComp> transform_;
 
 	Vector3 translateStart_ = { 0.0f,0.0f,0.0f };
 	Vector3 translateEnd_ = { 0.0f,0.0f,0.0f };
 
 	Vector3 scaleStart_ = { 0.0f,0.0f,0.0f };
 	Vector3 scaleEnd_ = { 0.0f,0.0f,0.0f };
+
+	float transparStart_ = 1.0f;
+	float transparEnd_ = 1.0f;
 
 
 };

@@ -31,6 +31,10 @@
 
 	 bool GetIsDead() const { return isDead_; }
 
+	 void SetIsHitPlayer(bool flag) { isHitPlayer_ = flag; }
+
+	 const Lamb::Flg& GetIsHitPlayer() const { return isHitPlayer_; }
+
 	 int32_t GetMassX() const;
 	 int32_t GetMassY() const;
 
@@ -65,4 +69,7 @@
 
 	 // プレイヤーが食べたときの方向
 	 bool isAtePlayerLeft_ = false;
+
+	 Lamb::Flg isHitPlayer_;
+
  };

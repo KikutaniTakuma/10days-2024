@@ -37,6 +37,31 @@
                     "CompName": "class UIDrawComp"
                 },
                 {
+                    "CompName": "class EasingSpriteComp",
+                    "scaleEnd": [
+                        144.0,
+                        96.0,
+                        0.0
+                    ],
+                    "scaleStart": [
+                        124.0,
+                        86.0,
+                        0.0
+                    ],
+                    "translateEnd": [
+                        500.0,
+                        0.0,
+                        -1.0
+                    ],
+                    "translateStart": [
+                        300.0,
+                        0.0,
+                        -1.0
+                    ],
+                    "transparEnd": 1.0,
+                    "transparStart": 1.0
+                },
+                {
                     "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
@@ -93,15 +118,21 @@
                         1.0
                     ],
                     "scale": [
-                        360.0,
-                        240.0,
-                        1.0
+                        125.1176528930664,
+                        86.55882263183594,
+                        0.0
                     ],
                     "translate": [
-                        -300.0,
+                        311.176513671875,
                         0.0,
                         -1.0
                     ]
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 4.0,
+                    "type": "InOutSine"
                 }
             ],
             "type": "Object"
@@ -110,6 +141,31 @@
             "Comps": [
                 {
                     "CompName": "class UIDrawComp"
+                },
+                {
+                    "CompName": "class EasingSpriteComp",
+                    "scaleEnd": [
+                        640.0,
+                        270.0,
+                        0.0
+                    ],
+                    "scaleStart": [
+                        580.0,
+                        270.0,
+                        0.0
+                    ],
+                    "translateEnd": [
+                        0.0,
+                        100.0,
+                        0.0
+                    ],
+                    "translateStart": [
+                        0.0,
+                        100.0,
+                        0.0
+                    ],
+                    "transparEnd": 1.0,
+                    "transparStart": 1.0
                 },
                 {
                     "BlendType": "kNormal",
@@ -168,9 +224,9 @@
                         1.0
                     ],
                     "scale": [
-                        640.0,
+                        619.159423828125,
                         270.0,
-                        1.0
+                        0.0
                     ],
                     "translate": [
                         0.0,
@@ -181,236 +237,8 @@
                 {
                     "CompName": "class EaseingComp",
                     "isLoop": true,
-                    "spdT": 0.009999999776482582,
+                    "spdT": 1.0,
                     "type": "InSine"
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "CompName": "class UIDrawComp"
-                },
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources\\Textures\\outGame\\title_cloud.png",
-                    "offsetType": "kMiddle",
-                    "userOffsetTransform": {
-                        "rotate": [
-                            0.0,
-                            0.0,
-                            0.0,
-                            0.0
-                        ],
-                        "scale": [
-                            1.0,
-                            1.0,
-                            1.0
-                        ],
-                        "translate": [
-                            0.0,
-                            0.0,
-                            0.0
-                        ]
-                    },
-                    "uvTransform": {
-                        "rotate": [
-                            0.0,
-                            0.0,
-                            0.0,
-                            1.0
-                        ],
-                        "scale": [
-                            1.0,
-                            1.0,
-                            1.0
-                        ],
-                        "translate": [
-                            0.0,
-                            0.0,
-                            0.0
-                        ]
-                    }
-                },
-                {
-                    "CompName": "class UITransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        144.0,
-                        96.0,
-                        1.0
-                    ],
-                    "translate": [
-                        400.0,
-                        0.0,
-                        -1.0
-                    ]
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class EventComp"
-                },
-                {
-                    "CompName": "class UIDrawComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        1280.0,
-                        720.0,
-                        1.0
-                    ],
-                    "translate": [
-                        0.0,
-                        0.0,
-                        8.0
-                    ]
-                },
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources\\Textures\\backGround\\backGround_cloud2.png",
-                    "offsetType": "kMiddle",
-                    "userOffsetTransform": {
-                        "rotate": [
-                            0.0,
-                            0.0,
-                            0.0,
-                            1.0
-                        ],
-                        "scale": [
-                            1.0,
-                            1.0,
-                            1.0
-                        ],
-                        "translate": [
-                            0.0,
-                            0.0,
-                            0.0
-                        ]
-                    },
-                    "uvTransform": {
-                        "rotate": [
-                            0.0,
-                            0.0,
-                            0.0,
-                            1.0
-                        ],
-                        "scale": [
-                            1.0,
-                            1.0,
-                            1.0
-                        ],
-                        "translate": [
-                            32.44941329956055,
-                            0.0,
-                            0.0
-                        ]
-                    }
-                },
-                {
-                    "CompName": "class SceneChangeComp",
-                    "nextID": ""
-                },
-                {
-                    "CompName": "class UITransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "translate": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ]
-                },
-                {
-                    "CompName": "class TitleInputComp"
-                },
-                {
-                    "CompName": "class UvOperatorComp",
-                    "isMove": true,
-                    "moveValue": [
-                        0.0020000000949949026,
-                        0.0,
-                        0.0
-                    ]
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "translate": [
-                        0.0,
-                        0.0,
-                        -10.0
-                    ]
-                },
-                {
-                    "CompName": "class Camera2DComp",
-                    "farClip": 1000.0,
-                    "height": 720.0,
-                    "nearClip": 0.10000000149011612,
-                    "width": 1280.0
-                },
-                {
-                    "CompName": "class CameraComp"
-                },
-                {
-                    "CompName": "class FollowCamera2DComp"
                 }
             ],
             "type": "Object"
@@ -481,9 +309,9 @@
                             1.0
                         ],
                         "translate": [
-                            159.2494659423828,
+                            -0.25300028920173645,
                             0.0,
-                            203.80029296875
+                            0.0
                         ]
                     }
                 },
@@ -502,7 +330,69 @@
         {
             "Comps": [
                 {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "translate": [
+                        0.0,
+                        0.0,
+                        -10.0
+                    ]
+                },
+                {
+                    "CompName": "class Camera2DComp",
+                    "farClip": 1000.0,
+                    "height": 720.0,
+                    "nearClip": 0.10000000149011612,
+                    "width": 1280.0
+                },
+                {
+                    "CompName": "class CameraComp"
+                },
+                {
+                    "CompName": "class FollowCamera2DComp"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
                     "CompName": "class UIDrawComp"
+                },
+                {
+                    "CompName": "class EasingSpriteComp",
+                    "scaleEnd": [
+                        360.0,
+                        240.0,
+                        1.0
+                    ],
+                    "scaleStart": [
+                        320.0,
+                        220.0,
+                        1.0
+                    ],
+                    "translateEnd": [
+                        -300.0,
+                        0.0,
+                        -1.0
+                    ],
+                    "translateStart": [
+                        -400.0,
+                        0.0,
+                        -1.0
+                    ],
+                    "transparEnd": 1.0,
+                    "transparStart": 1.0
                 },
                 {
                     "BlendType": "kNormal",
@@ -561,14 +451,136 @@
                         1.0
                     ],
                     "scale": [
-                        360.0,
-                        240.0,
+                        328.809814453125,
+                        224.4049072265625,
                         1.0
                     ],
                     "translate": [
-                        300.0,
-                        200.0,
+                        -377.9754943847656,
+                        0.0,
                         -1.0
+                    ]
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 3.0,
+                    "type": "InSine"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "CompName": "class EventComp"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class UIDrawComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        1280.0,
+                        720.0,
+                        1.0
+                    ],
+                    "translate": [
+                        0.0,
+                        0.0,
+                        8.0
+                    ]
+                },
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources\\Textures\\backGround\\backGround_cloud2.png",
+                    "offsetType": "kMiddle",
+                    "userOffsetTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    "uvTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.44200053811073303,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                },
+                {
+                    "CompName": "class SceneChangeComp",
+                    "nextID": ""
+                },
+                {
+                    "CompName": "class UITransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "translate": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "CompName": "class TitleInputComp"
+                },
+                {
+                    "CompName": "class UvOperatorComp",
+                    "isMove": true,
+                    "moveValue": [
+                        0.0020000000949949026,
+                        0.0,
+                        0.0
                     ]
                 }
             ],
@@ -664,6 +676,31 @@
                     "CompName": "class UIDrawComp"
                 },
                 {
+                    "CompName": "class EasingSpriteComp",
+                    "scaleEnd": [
+                        360.0,
+                        240.0,
+                        1.0
+                    ],
+                    "scaleStart": [
+                        300.0,
+                        200.0,
+                        1.0
+                    ],
+                    "translateEnd": [
+                        200.0,
+                        200.0,
+                        -1.0
+                    ],
+                    "translateStart": [
+                        400.0,
+                        200.0,
+                        -1.0
+                    ],
+                    "transparEnd": 1.0,
+                    "transparStart": 1.0
+                },
+                {
                     "BlendType": "kNormal",
                     "CompName": "class SpriteRenderDataComp",
                     "color": [
@@ -671,6 +708,112 @@
                         1.0,
                         1.0,
                         1.0
+                    ],
+                    "fileName": "./Resources\\Textures\\outGame\\title_cloud.png",
+                    "offsetType": "kMiddle",
+                    "userOffsetTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    "uvTransform": {
+                        "rotate": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "translate": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                },
+                {
+                    "CompName": "class UITransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        310.41717529296875,
+                        206.9447784423828,
+                        1.0
+                    ],
+                    "translate": [
+                        365.276123046875,
+                        200.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 10.0,
+                    "type": "InOutCubic"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "CompName": "class UIDrawComp"
+                },
+                {
+                    "CompName": "class EasingSpriteComp",
+                    "scaleEnd": [
+                        128.0,
+                        128.0,
+                        1.0
+                    ],
+                    "scaleStart": [
+                        128.0,
+                        128.0,
+                        1.0
+                    ],
+                    "translateEnd": [
+                        0.0,
+                        -250.0,
+                        -1.0
+                    ],
+                    "translateStart": [
+                        0.0,
+                        -250.0,
+                        -1.0
+                    ],
+                    "transparEnd": 0.0,
+                    "transparStart": 1.0
+                },
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        0.34734296798706055
                     ],
                     "fileName": "./Resources\\Textures\\UI\\title_UI_A.png",
                     "offsetType": "kMiddle",
@@ -729,6 +872,12 @@
                         -250.0,
                         -1.0
                     ]
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 1.0,
+                    "type": "InSine"
                 }
             ],
             "type": "Object"

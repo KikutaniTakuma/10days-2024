@@ -67,6 +67,8 @@
 #include "Comp/EatCloudAnimationComp.h"
 
 #include "Comp/NumSpriteComp.h"
+#include "Comp/EasingSpriteComp.h"
+#include "Comp/ArrowComp.h"
 
 void Object::Init() {
 	/*for (auto& i : components_) {
@@ -214,6 +216,8 @@ bool Object::DebugAddComp() {
 		DebugAdd<ResultInputComp>();
 		DebugAdd<UvOperatorComp>();
 		DebugAdd<NumSpriteComp>();
+		DebugAdd<EasingSpriteComp>();
+		DebugAdd<ArrowComp>();
 
 		ImGui::EndChild();
 
@@ -307,5 +311,7 @@ void Object::AddComps(nlohmann::json& compData)
 	AddAndLoadComp<ResultInputComp>(compName, compData);
 	AddAndLoadComp<UvOperatorComp>(compName, compData);
 	AddAndLoadComp<NumSpriteComp>(compName, compData);
+	AddAndLoadComp<EasingSpriteComp>(compName, compData);
+	AddAndLoadComp<ArrowComp>(compName, compData);
 }
 
