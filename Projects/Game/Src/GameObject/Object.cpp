@@ -56,6 +56,7 @@
 
 #include "Comp/UIDrawComp.h"
 #include "Comp/UITransformComp.h"
+#include "Comp/UISpriteRenderDataComp.h"
 
 #include "Comp/BackGroundComp.h"
 #include "Comp/UvOperatorComp.h"
@@ -210,6 +211,7 @@ bool Object::DebugAddComp() {
 		DebugAdd<InstanceTimeComp>();
 		DebugAdd<UIDrawComp>();
 		DebugAdd<UITransformComp>();
+		DebugAdd<UISpriteRenderDataComp>();
 		DebugAdd<BackGroundComp>();
 		DebugAdd<UvOperatorComp>();
 		DebugAdd<TitleInputComp>();
@@ -307,6 +309,7 @@ void Object::AddComps(nlohmann::json& compData)
 	AddAndLoadComp<InstanceTimeComp>(compName, compData);
 	AddAndLoadComp<UIDrawComp>(compName, compData);
 	AddAndLoadComp<UITransformComp>(compName, compData);
+	AddAndLoadComp<UISpriteRenderDataComp>(compName, compData);
 	AddAndLoadComp<BackGroundComp>(compName, compData);
 	AddAndLoadComp<UvOperatorComp>(compName, compData);
 	AddAndLoadComp<TitleInputComp>(compName, compData);
