@@ -69,6 +69,7 @@
 #include "Comp/NumSpriteComp.h"
 #include "Comp/EasingSpriteComp.h"
 #include "Comp/ArrowComp.h"
+#include "Comp/CloudUIComp.h"
 
 void Object::Init() {
 	/*for (auto& i : components_) {
@@ -218,6 +219,7 @@ bool Object::DebugAddComp() {
 		DebugAdd<NumSpriteComp>();
 		DebugAdd<EasingSpriteComp>();
 		DebugAdd<ArrowComp>();
+		DebugAdd<CloudUIComp>();
 
 		ImGui::EndChild();
 
@@ -313,5 +315,6 @@ void Object::AddComps(nlohmann::json& compData)
 	AddAndLoadComp<NumSpriteComp>(compName, compData);
 	AddAndLoadComp<EasingSpriteComp>(compName, compData);
 	AddAndLoadComp<ArrowComp>(compName, compData);
+	AddAndLoadComp<CloudUIComp>(compName, compData);
 }
 

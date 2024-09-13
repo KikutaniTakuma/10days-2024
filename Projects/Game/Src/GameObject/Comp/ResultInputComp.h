@@ -39,7 +39,17 @@ private:
 
 	Lamb::SafePtr<class Audio> audio_;
 
+	Lamb::SafePtr <class UIDrawComp> UIDraw_;
+
+	Lamb::SafePtr <class UITransformComp> UITransform_;
+
 	Lamb::SafePtr<class Audio> backAudio_;
 	Lamb::SafePtr<class Audio> decideAudio_;
+
+	Vector3 easingPositionStart_ = { 0.0f,-500.0f,-2.0f };
+
+	Vector3 easingPositionEnd_ = { 0.0f,-0.0f,-2.0f };
+
+	bool isEasingStart_ = false;
 
 };

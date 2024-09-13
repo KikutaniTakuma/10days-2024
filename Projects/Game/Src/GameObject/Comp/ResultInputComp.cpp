@@ -9,6 +9,9 @@
 #include "SpriteRenderComp.h"
 #include "TransformComp.h"
 #include "EaseingComp.h"
+#include "UIDrawComp.h"
+#include "UITransformComp.h"
+#include "EaseingComp.h"
 
 #include "AudioManager/AudioManager.h"
 
@@ -19,13 +22,14 @@ void ResultInputComp::Init()
 	spriteRenderDataComp_ = object_.AddComp<SpriteRenderDataComp>();
 	transform_ = object_.AddComp<TransformComp>();
 	easing_ = object_.AddComp<EaseingComp>();
-
+	UIDraw_ = object_.AddComp<UIDrawComp>();
+	UITransform_ = object_.AddComp<UITransformComp>();
 }
 
 void ResultInputComp::Load() {
 	AudioManager::GetInstance()->Load("./Resources/Sounds/SE_backScene.mp3");
 	backAudio_ = AudioManager::GetInstance()->Get("./Resources/Sounds/SE_backScene.mp3");
-	AudioManager::GetInstance()->Load("./Resources/Sounds/SE_backScene.mp3");
+	AudioManager::GetInstance()->Load("./Resources/Sounds/SE_outgame_decision.mp3");
 	decideAudio_ = AudioManager::GetInstance()->Get("./Resources/Sounds/SE_outgame_decision.mp3");
 }
 
@@ -39,6 +43,16 @@ void ResultInputComp::Move()
 	if (goalComp_) {
 
 		if (goalComp_->GetIsCloseDoor()) {
+
+			if (not isEasingStart_) {
+
+				easing_->isLoop = false;
+				easing_->spdT = 1.0f;
+				easing_->type = Easeing::Type::kInSine;
+				easing_->GetEaseing().Start(easing_->isLoop, easing_->spdT, easing_->type);
+				isEasingStart_ = true;
+
+			}
 
 			if (not sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent) {
 
@@ -82,6 +96,12 @@ void ResultInputComp::Move()
 			}
 
 		}
+
+	}
+
+	if (isEasingStart_) {
+
+
 
 	}
 
