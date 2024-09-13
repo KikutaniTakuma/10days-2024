@@ -29,7 +29,7 @@ private:
 
 	Lamb::SafePtr <class UITransformComp> UITransform_;
 
-	Lamb::SafePtr<class SpriteRenderDataComp> spriteRenderDataComp_;
+	Lamb::SafePtr<class UISpriteRenderDataComp> spriteRenderDataComp_;
 
 	Lamb::SafePtr<class EaseingComp> easing_;
 

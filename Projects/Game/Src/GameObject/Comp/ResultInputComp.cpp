@@ -6,6 +6,7 @@
 #include "GoalComp.h"
 #include "StageSelectInputComp.h"
 #include "SpriteRenderDataComp.h"
+#include "UISpriteRenderDataComp.h"
 #include "SpriteRenderComp.h"
 #include "TransformComp.h"
 #include "EaseingComp.h"
@@ -23,7 +24,7 @@ void ResultInputComp::Init()
 {
 	sceneChangeComp_ = object_.AddComp<SceneChangeComp>();
 	spriteRenderComp_ = object_.AddComp<SpriteRenderComp>();
-	spriteRenderDataComp_ = object_.AddComp<SpriteRenderDataComp>();
+	spriteRenderDataComp_ = object_.AddComp<UISpriteRenderDataComp>();
 	transform_ = object_.AddComp<TransformComp>();
 	easing_ = object_.AddComp<EaseingComp>();
 	UIDraw_ = object_.AddComp<UIDrawComp>();
@@ -44,7 +45,7 @@ void ResultInputComp::Load() {
 		stars_.push_back(newObject->AddComp<StarComp>());
 		auto startransform = stars_.back()->getObject().GetComp<UITransformComp>();
 		startransform->translate = { 96.0f * float(i - 1), -50.0f, -2.0f };
-		auto starRenderData = stars_.back()->getObject().GetComp<SpriteRenderDataComp>();
+		auto starRenderData = stars_.back()->getObject().GetComp<UISpriteRenderDataComp>();
 		starRenderData->fileName = "./Resources/Textures/outGame/result_star_outline.png";
 		starRenderData->type = BlendType::kNormal;
 		starRenderData->Load();
@@ -57,7 +58,7 @@ void ResultInputComp::Load() {
 	buttonUIs_.push_back(newObject->AddComp<UIDrawComp>());
 	auto transform = buttonUIs_.back()->getObject().GetComp<UITransformComp>();
 	transform->translate = {-200.0f, -300.0f, -2.0f };
-	auto renderData = buttonUIs_.back()->getObject().GetComp<SpriteRenderDataComp>();
+	auto renderData = buttonUIs_.back()->getObject().GetComp<UISpriteRenderDataComp>();
 	renderData->fileName = "./Resources/Textures/UI/ingame_UI_reset.png";
 	renderData->type = BlendType::kNormal;
 	renderData->Load();
@@ -68,7 +69,7 @@ void ResultInputComp::Load() {
 	buttonUIs_.push_back(newObject->AddComp<UIDrawComp>());
 	transform = buttonUIs_.back()->getObject().GetComp<UITransformComp>();
 	transform->translate = { 0.0f, -300.0f, -2.0f };
-	renderData = buttonUIs_.back()->getObject().GetComp<SpriteRenderDataComp>();
+	renderData = buttonUIs_.back()->getObject().GetComp<UISpriteRenderDataComp>();
 	renderData->fileName = "./Resources/Textures/UI/result_UI_B.png";
 	renderData->type = BlendType::kNormal;
 	renderData->Load();
@@ -79,7 +80,7 @@ void ResultInputComp::Load() {
 	buttonUIs_.push_back(newObject->AddComp<UIDrawComp>());
 	transform = buttonUIs_.back()->getObject().GetComp<UITransformComp>();
 	transform->translate = { 200.0f, -300.0f, -2.0f };
-	renderData = buttonUIs_.back()->getObject().GetComp<SpriteRenderDataComp>();
+	renderData = buttonUIs_.back()->getObject().GetComp<UISpriteRenderDataComp>();
 	renderData->fileName = "./Resources/Textures/UI/result_UI_A.png";
 	renderData->type = BlendType::kNormal;
 	renderData->Load();
@@ -92,7 +93,7 @@ void ResultInputComp::Load() {
 		nums_.push_back(newNumObject->AddComp<UINumSpriteComp>());
 		auto numTransform = nums_.back()->getObject().GetComp<UITransformComp>();
 		numTransform->translate = { 48.0f - 96.0f * float(i), 150.0f, -2.0f};
-		auto numRenderData = nums_.back()->getObject().GetComp<SpriteRenderDataComp>();
+		auto numRenderData = nums_.back()->getObject().GetComp<UISpriteRenderDataComp>();
 		numRenderData->fileName = "./Resources/Textures/outGame/num_white.png";
 		numRenderData->type = BlendType::kNormal;
 		numRenderData->uvTransform.scale.x = 0.1f;
@@ -219,12 +220,12 @@ void ResultInputComp::Move()
 			if (player_) {
 
 				if (player_->GetCoinCount() > i) {
-					stars_[i]->getObject().GetComp<SpriteRenderDataComp>()->fileName = "./Resources/Textures/outGame/result_star.png";
-					stars_[i]->getObject().GetComp<SpriteRenderDataComp>()->Load();
+					stars_[i]->getObject().GetComp<UISpriteRenderDataComp>()->fileName = "./Resources/Textures/outGame/result_star.png";
+					stars_[i]->getObject().GetComp<UISpriteRenderDataComp>()->Load();
 				}
 				else {
-					stars_[i]->getObject().GetComp<SpriteRenderDataComp>()->fileName = "./Resources/Textures/outGame/result_star_outline.png";
-					stars_[i]->getObject().GetComp<SpriteRenderDataComp>()->Load();
+					stars_[i]->getObject().GetComp<UISpriteRenderDataComp>()->fileName = "./Resources/Textures/outGame/result_star_outline.png";
+					stars_[i]->getObject().GetComp<UISpriteRenderDataComp>()->Load();
 				}
 
 			}

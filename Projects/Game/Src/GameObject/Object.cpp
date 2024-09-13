@@ -71,7 +71,9 @@
 #include "Comp/EasingSpriteComp.h"
 #include "Comp/ArrowComp.h"
 #include "Comp/CloudUIComp.h"
+#include "Comp/SpriteUVChangeComp.h"
 #include "Comp/StarComp.h"
+
 
 void Object::Init() {
 	/*for (auto& i : components_) {
@@ -222,6 +224,7 @@ bool Object::DebugAddComp() {
 		DebugAdd<EasingSpriteComp>();
 		DebugAdd<ArrowComp>();
 		DebugAdd<CloudUIComp>();
+		DebugAdd<SpriteUVChangeComp>();
 		DebugAdd<StarComp>();
 		DebugAdd<UINumSpriteComp>();
 
@@ -320,6 +323,7 @@ void Object::AddComps(nlohmann::json& compData)
 	AddAndLoadComp<EasingSpriteComp>(compName, compData);
 	AddAndLoadComp<ArrowComp>(compName, compData);
 	AddAndLoadComp<CloudUIComp>(compName, compData);
+	AddAndLoadComp<SpriteUVChangeComp>(compName, compData);
 	AddAndLoadComp<StarComp>(compName, compData);
 	AddAndLoadComp<UINumSpriteComp>(compName, compData);
 }

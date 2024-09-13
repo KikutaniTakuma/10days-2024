@@ -17,6 +17,8 @@ public:
 	void Save(nlohmann::json& json) override;
 	void Load(nlohmann::json& json) override;
 
+	void Debug(const std::string& guiName) override;
+
 private:
 
 	Lamb::Flg isActive_;

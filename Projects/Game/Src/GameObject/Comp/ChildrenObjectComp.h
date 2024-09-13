@@ -8,7 +8,6 @@ public:
 	~ChildrenObjectComp() = default;
 
 public:
-	void Init() override;
 	void Finalize() override;
 
 	void AddObject(Lamb::SafePtr<Object> object);
@@ -40,5 +39,4 @@ public:
 
 private:
 	std::unordered_set<std::unique_ptr<Object>> objects_;
-	Lamb::SafePtr<class TransformComp> transformComp_;
 };

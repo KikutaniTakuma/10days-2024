@@ -29,10 +29,18 @@ private:
 
 private:
 
-	std::vector<Lamb::SafePtr<class UIDrawComp>> cloudsUI_;
+	std::vector<Lamb::SafePtr<class SpriteUVChangeComp>> cloudsUI_;
 	Lamb::SafePtr<class ChildrenObjectComp> childrenComp_;
-	Lamb::SafePtr<class SpriteRenderDataComp> spriteRenderDataComp_;
+	Lamb::SafePtr<class UISpriteRenderDataComp> spriteRenderDataComp_;
 	Lamb::SafePtr<class UIDrawComp> UIDraw_;
+	Lamb::SafePtr<class UITransformComp> UItransform_;
 
+
+	// 胃の画像
+	uint32_t parentUITexID_ = 0;
+	// 通常
+	uint32_t cloudTexID_ = 0;
+	// 点線のほう
+	uint32_t cloudOutlineLineTexID_ = 0;
 };
 

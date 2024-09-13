@@ -2,41 +2,235 @@
 #include "ChildrenObjectComp.h"
 #include "CountComp.h"
 #include "UIDrawComp.h"
-#include "SpriteRenderDataComp.h"
+#include "UISpriteRenderDataComp.h"
 #include "UITransformComp.h"
+#include "Engine/Graphics/TextureManager/TextureManager.h"
+#include "SpriteUVChangeComp.h"
 
 void CloudUIComp::Init()
 {
 	childrenComp_ = object_.AddComp<ChildrenObjectComp>();
-	spriteRenderDataComp_ = object_.AddComp<SpriteRenderDataComp>();
+	spriteRenderDataComp_ = object_.AddComp<UISpriteRenderDataComp>();
 	UIDraw_ = object_.AddComp<UIDrawComp>();
+	UItransform_ = object_.AddComp<UITransformComp>();
+	count_ = object_.AddComp<CountComp>();
 	cloudsUI_.clear();
 }
 
 void CloudUIComp::Load()
 {
+	UItransform_->translate = {
+		494.9992370605469f,
+						256.999267578125f,
+						0.0f
+	};
+	UItransform_->scale = {
+		262.6899108886719f,
+						163.64881896972656f,
+						1.0f
+	};
 
-	for (size_t i = 0; i < 20; i++) {
+	spriteRenderDataComp_->texHandle = parentUITexID_;
 
-		Lamb::SafePtr<Object> newObject = Lamb::MakeSafePtr<Object>();
-		cloudsUI_.push_back(newObject->AddComp<UIDrawComp>());
-		auto transform = cloudsUI_.back()->getObject().GetComp<UITransformComp>();
-		transform->translate = { 490.0f + 32.0f * float(i), 250.0f, -1.0f};
-		transform->scale = { 32.0f,32.0f, 1.0f };
-		auto renderData = cloudsUI_.back()->getObject().GetComp<SpriteRenderDataComp>();
-		renderData->fileName = "./Resources/Textures/UI/ingame_cloudNum_outline.png";
-		renderData->offsetType = SpriteRenderDataComp::Offset::kMiddle;
-		renderData->Load();
+	TextureManager::GetInstance()->LoadTexture("./Resources/Textures/UI/ingame_cloudNum_backGround.png");
+	TextureManager::GetInstance()->LoadTexture("./Resources/Textures/UI/ingame_cloudNum_outline.png");
+	TextureManager::GetInstance()->LoadTexture("./Resources/Textures/UI/ingame_cloudNum_outline_transparent.png");
 
-	}
+	parentUITexID_ = TextureManager::GetInstance()->GetTexture("./Resources/Textures/UI/ingame_cloudNum_backGround.png")->GetHandleUINT();
+	cloudTexID_ = TextureManager::GetInstance()->GetTexture("./Resources/Textures/UI/ingame_cloudNum_outline.png")->GetHandleUINT();
+	cloudOutlineLineTexID_ = TextureManager::GetInstance()->GetTexture("./Resources/Textures/UI/ingame_cloudNum_outline_transparent.png")->GetHandleUINT();
 
+	// 1
+	Lamb::SafePtr<Object> newObject = Lamb::MakeSafePtr<Object>();
+	newObject->AddComp<UIDrawComp>();
+	cloudsUI_.push_back(newObject->AddComp<SpriteUVChangeComp>());
+	auto transform = cloudsUI_.back()->GetUITransformComp();
+	transform->translate = { -0.31215476989746094f,
+										-0.12832403182983398f,
+										0.0f };
+	transform->scale = { 0.1432291567325592f,
+										0.19792717695236206f,
+										1.0f };
+	auto renderData = cloudsUI_.back()->GetSpriteRenderDataComp();
+	renderData->texHandle = cloudTexID_;
+	renderData->offsetType = UISpriteRenderDataComp::Offset::kLeft;
+	childrenComp_->AddObject(newObject);
+
+	// 2
+	newObject = Lamb::MakeSafePtr<Object>();
+	newObject->AddComp<UIDrawComp>();
+	cloudsUI_.push_back(newObject->AddComp<SpriteUVChangeComp>());
+	transform = cloudsUI_.back()->GetUITransformComp();
+	transform->translate = { -0.14465773105621338f,
+										-0.12832415103912354f,
+										0.0f };
+	transform->scale = { 0.1432291567325592f,
+										0.19792717695236206f,
+										1.0f };
+	renderData = cloudsUI_.back()->GetSpriteRenderDataComp();
+	renderData->texHandle = cloudTexID_;
+	renderData->offsetType = UISpriteRenderDataComp::Offset::kLeft;
+	childrenComp_->AddObject(newObject);
+
+	float sub = 0.31215476989746094f - 0.14465773105621338f;
+	Vector3 pre = transform->translate;
+
+	// 3
+	newObject = Lamb::MakeSafePtr<Object>();
+	newObject->AddComp<UIDrawComp>();
+	cloudsUI_.push_back(newObject->AddComp<SpriteUVChangeComp>());
+	transform = cloudsUI_.back()->GetUITransformComp();
+	transform->translate = pre;
+	transform->translate.x += sub;
+	transform->scale = { 0.1432291567325592f,
+										0.19792717695236206f,
+										1.0f };
+	renderData = cloudsUI_.back()->GetSpriteRenderDataComp();
+	renderData->texHandle = cloudTexID_;
+	renderData->offsetType = UISpriteRenderDataComp::Offset::kLeft;
+	childrenComp_->AddObject(newObject);
+
+	pre = transform->translate;
+
+	// 4
+	newObject = Lamb::MakeSafePtr<Object>();
+	newObject->AddComp<UIDrawComp>();
+	cloudsUI_.push_back(newObject->AddComp<SpriteUVChangeComp>());
+	transform = cloudsUI_.back()->GetUITransformComp();
+	transform->translate = pre;
+	transform->translate.x += sub;
+	transform->scale = { 0.1432291567325592f,
+										0.19792717695236206f,
+										1.0f };
+	renderData = cloudsUI_.back()->GetSpriteRenderDataComp();
+	renderData->texHandle = cloudTexID_;
+	renderData->offsetType = UISpriteRenderDataComp::Offset::kLeft;
+	childrenComp_->AddObject(newObject);
+
+	pre = transform->translate;
+
+	// 5
+	newObject = Lamb::MakeSafePtr<Object>();
+	newObject->AddComp<UIDrawComp>();
+	cloudsUI_.push_back(newObject->AddComp<SpriteUVChangeComp>());
+	transform = cloudsUI_.back()->GetUITransformComp();
+	transform->translate = pre;
+	transform->translate.x += sub;
+	transform->scale = { 0.1432291567325592f,
+										0.19792717695236206f,
+										1.0f };
+	renderData = cloudsUI_.back()->GetSpriteRenderDataComp();
+	renderData->texHandle = cloudTexID_;
+	renderData->offsetType = UISpriteRenderDataComp::Offset::kLeft;
+	childrenComp_->AddObject(newObject);
+
+	pre = transform->translate;
+	pre.x = -0.31215476989746094f;
+	pre.y += sub;
+
+	// 6
+	newObject = Lamb::MakeSafePtr<Object>();
+	newObject->AddComp<UIDrawComp>();
+	cloudsUI_.push_back(newObject->AddComp<SpriteUVChangeComp>());
+	transform = cloudsUI_.back()->GetUITransformComp();
+	transform->translate = pre;
+	transform->translate.x += sub;
+	transform->scale = { 0.1432291567325592f,
+										0.19792717695236206f,
+										1.0f };
+	renderData = cloudsUI_.back()->GetSpriteRenderDataComp();
+	renderData->texHandle = cloudOutlineLineTexID_;
+	renderData->offsetType = UISpriteRenderDataComp::Offset::kLeft;
+	childrenComp_->AddObject(newObject);
+
+	pre = transform->translate;
+
+	// 7
+	newObject = Lamb::MakeSafePtr<Object>();
+	newObject->AddComp<UIDrawComp>();
+	cloudsUI_.push_back(newObject->AddComp<SpriteUVChangeComp>());
+	transform = cloudsUI_.back()->GetUITransformComp();
+	transform->translate = pre;
+	transform->translate.x += sub;
+	transform->scale = { 0.1432291567325592f,
+										0.19792717695236206f,
+										1.0f };
+	renderData = cloudsUI_.back()->GetSpriteRenderDataComp();
+	renderData->texHandle = cloudOutlineLineTexID_;
+	renderData->offsetType = UISpriteRenderDataComp::Offset::kLeft;
+	childrenComp_->AddObject(newObject);
+
+	pre = transform->translate;
+
+
+	// 8
+	newObject = Lamb::MakeSafePtr<Object>();
+	newObject->AddComp<UIDrawComp>();
+	cloudsUI_.push_back(newObject->AddComp<SpriteUVChangeComp>());
+	transform = cloudsUI_.back()->GetUITransformComp();
+	transform->translate = pre;
+	transform->translate.x += sub;
+	transform->scale = { 0.1432291567325592f,
+										0.19792717695236206f,
+										1.0f };
+	renderData = cloudsUI_.back()->GetSpriteRenderDataComp();
+	renderData->texHandle = cloudOutlineLineTexID_;
+	renderData->offsetType = UISpriteRenderDataComp::Offset::kLeft;
+	childrenComp_->AddObject(newObject);
+
+	pre = transform->translate;
+
+	// 9
+	newObject = Lamb::MakeSafePtr<Object>();
+	newObject->AddComp<UIDrawComp>();
+	cloudsUI_.push_back(newObject->AddComp<SpriteUVChangeComp>());
+	transform = cloudsUI_.back()->GetUITransformComp();
+	transform->translate = pre;
+	transform->translate.x += sub;
+	transform->scale = { 0.1432291567325592f,
+										0.19792717695236206f,
+										1.0f };
+	renderData = cloudsUI_.back()->GetSpriteRenderDataComp();
+	renderData->texHandle = cloudOutlineLineTexID_;
+	renderData->offsetType = UISpriteRenderDataComp::Offset::kLeft;
+	childrenComp_->AddObject(newObject);
+
+	pre = transform->translate;
+
+	// 10
+	newObject = Lamb::MakeSafePtr<Object>();
+	newObject->AddComp<UIDrawComp>();
+	cloudsUI_.push_back(newObject->AddComp<SpriteUVChangeComp>());
+	transform = cloudsUI_.back()->GetUITransformComp();
+	transform->translate = pre;
+	transform->translate.x += sub;
+	transform->scale = { 0.1432291567325592f,
+										0.19792717695236206f,
+										1.0f };
+	renderData = cloudsUI_.back()->GetSpriteRenderDataComp();
+	renderData->texHandle = cloudOutlineLineTexID_;
+	renderData->offsetType = UISpriteRenderDataComp::Offset::kLeft;
+	childrenComp_->AddObject(newObject);
+
+	pre = transform->translate;
 }
 
 void CloudUIComp::Update()
 {
+	spriteRenderDataComp_->texHandle = parentUITexID_;
+
 
 	if (count_) {
+		for (int32_t count = 0; auto & i : cloudsUI_) {
+			if (count <= count_->GetCount() - 1) {
+				i->EnableFlag();
+			}
+			else {
+				i->UnenableFlag();
+			}
 
+			count++;
+		}
 
 
 	}

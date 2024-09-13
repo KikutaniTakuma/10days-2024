@@ -25,7 +25,7 @@ public:
 
 private:
 
-	Lamb::SafePtr<class SpriteRenderDataComp> spriteRenderDataComp_;
+	Lamb::SafePtr<class UISpriteRenderDataComp> spriteRenderDataComp_;
 
 	Lamb::SafePtr<class UITransformComp> transform_;
 

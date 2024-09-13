@@ -1,13 +1,13 @@
 #include "StarComp.h"
 #include "UITransformComp.h"
 #include "UIDrawComp.h"
-#include "SpriteRenderDataComp.h"
+#include "UISpriteRenderDataComp.h"
 #include "EaseingComp.h"
 
 void StarComp::Init()
 {
 	easing_ = object_.AddComp<EaseingComp>();
-	spriteRenderDataComp_ = object_.AddComp<SpriteRenderDataComp>();
+	spriteRenderDataComp_ = object_.AddComp<UISpriteRenderDataComp>();
 	UIDraw_ = object_.AddComp<UIDrawComp>();
 	UITransform_ = object_.AddComp<UITransformComp>();
 }

@@ -18,6 +18,6 @@ public:
 
 private:
 	Lamb::SafePtr<class Texture2D> tex2D_;
-	Lamb::SafePtr<class SpriteRenderDataComp> renderDataComp_;
+	Lamb::SafePtr<class UISpriteRenderDataComp> renderDataComp_;
 	Lamb::SafePtr<class UITransformComp> transformComp_;
 };

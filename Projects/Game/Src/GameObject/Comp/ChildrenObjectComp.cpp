@@ -1,11 +1,6 @@
 #include "ChildrenObjectComp.h"
 #include "TransformComp.h"
-
-
-
-void ChildrenObjectComp::Init() {
-	transformComp_ = object_.AddComp<TransformComp>();
-}
+#include "UITransformComp.h"
 
 void ChildrenObjectComp::Finalize() {
 	objects_.clear();
@@ -25,10 +20,22 @@ void ChildrenObjectComp::AddObject(Lamb::SafePtr<Object> object) {
 	// なかったら追加
 	if (itr == objects_.end()) {
 		objects_.insert(std::unique_ptr<Object>(object.get()));
+		Lamb::SafePtr<UITransformComp> transformUI;
+		if (object_.HasComp<UITransformComp>()) {
+			transformUI = object_.GetComp<UITransformComp>();
+		}
+		Lamb::SafePtr<TransformComp> transform;
+		if (object_.HasComp<TransformComp>()) {
+			transform = object_.GetComp<TransformComp>();
+		}
 
 		// トランスフォームコンポーネントを持っていたら親子関係を結ぶ
-		if (object->HasComp<TransformComp>()) {
-			object->GetComp<TransformComp>()->SetParent(transformComp_);
+		if (object->HasComp<TransformComp>() and transform.have()) {
+			object->GetComp<TransformComp>()->SetParent(transform);
+		}
+		// トランスフォームコンポーネントを持っていたら親子関係を結ぶ
+		if (object->HasComp<UITransformComp>()  and transformUI.have()) {
+			object->GetComp<UITransformComp>()->SetParent(transformUI);
 		}
 	}
 }
@@ -114,9 +121,22 @@ void ChildrenObjectComp::Debug([[maybe_unused]]const std::string& guiName) {
 			ImGui::SameLine();
 			(*itr)->Debug("object_" + std::to_string(objectCount));
 
+			Lamb::SafePtr<UITransformComp> transformUI;
+			if (object_.HasComp<UITransformComp>()) {
+				transformUI = object_.GetComp<UITransformComp>();
+			}
+			Lamb::SafePtr<TransformComp> transform;
+			if (object_.HasComp<TransformComp>()) {
+				transform = object_.GetComp<TransformComp>();
+			}
+
 			// トランスフォームコンポーネントを持っていたら親子関係を結ぶ
-			if ((*itr)->HasComp<TransformComp>() && object_.HasComp<TransformComp>()) {
-				(*itr)->GetComp<TransformComp>()->SetParent(transformComp_);
+			if ((*itr)->HasComp<TransformComp>() and transform.have()) {
+				(*itr)->GetComp<TransformComp>()->SetParent(transform);
+			}
+			// トランスフォームコンポーネントを持っていたら親子関係を結ぶ
+			if ((*itr)->HasComp<UITransformComp>() and transformUI.have()) {
+				(*itr)->GetComp<UITransformComp>()->SetParent(transformUI);
 			}
 
 			objectCount++;
@@ -155,9 +175,22 @@ void ChildrenObjectComp::Load(nlohmann::json& json) {
 void ChildrenObjectComp::Load()
 {
 	for (auto itr = objects_.begin(); itr != objects_.end(); itr++) {
+		Lamb::SafePtr<UITransformComp> transformUI;
+		if (object_.HasComp<UITransformComp>()) {
+			transformUI = object_.GetComp<UITransformComp>();
+		}
+		Lamb::SafePtr<TransformComp> transform;
+		if (object_.HasComp<TransformComp>()) {
+			transform = object_.GetComp<TransformComp>();
+		}
+
 		// トランスフォームコンポーネントを持っていたら親子関係を結ぶ
-		if ((*itr)->HasComp<TransformComp>() && object_.HasComp<TransformComp>()) {
-			(*itr)->GetComp<TransformComp>()->SetParent(transformComp_);
+		if ((*itr)->HasComp<TransformComp>() and transform.have()) {
+			(*itr)->GetComp<TransformComp>()->SetParent(transform);
+		}
+		// トランスフォームコンポーネントを持っていたら親子関係を結ぶ
+		if ((*itr)->HasComp<UITransformComp>() and transformUI.have()) {
+			(*itr)->GetComp<UITransformComp>()->SetParent(transformUI);
 		}
 	}
 }

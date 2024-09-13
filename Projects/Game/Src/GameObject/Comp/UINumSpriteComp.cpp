@@ -1,12 +1,12 @@
 #include "UINumSpriteComp.h"
-#include "SpriteRenderDataComp.h"
+#include "UISpriteRenderDataComp.h"
 #include "UIDrawComp.h"
 #include "StageSelectInputComp.h"
 #include "UITransformComp.h"
 
 void UINumSpriteComp::Init()
 {
-	spriteRenderDataComp_ = object_.AddComp<SpriteRenderDataComp>();
+	spriteRenderDataComp_ = object_.AddComp<UISpriteRenderDataComp>();
 	UIDraw_ = object_.AddComp<UIDrawComp>();
 	transform_ = object_.AddComp<UITransformComp>();
 }

@@ -28,7 +28,7 @@
 #include "AudioManager/AudioManager.h"
 
 
-#include "AudioManager/AudioManager.h"
+#include "CloudUIComp.h"
 
 void PlayerComp::Init() {
 
@@ -53,6 +53,9 @@ void PlayerComp::Init() {
 	handles_ = object_.AddComp<TextureHandlesComp>();
 	easing_ = object_.AddComp<EaseingComp>();
 	sceneChangeComp_ = object_.AddComp<SceneChangeComp>();
+	object_.AddComp<CloudUIComp>();
+
+
 
 }
 

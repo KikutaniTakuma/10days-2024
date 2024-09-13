@@ -6,7 +6,7 @@
       <Filter>GlobalVariables</Filter>
     </ClCompile>
     <ClCompile Include="Src\World\World.cpp">
-      <Filter>Scenes\World</Filter>
+      <Filter>World</Filter>
     </ClCompile>
     <ClCompile Include="Src\Scenes\Manager\SceneManager.cpp">
       <Filter>Scenes\Manager</Filter>
@@ -236,6 +236,12 @@
     <ClCompile Include="Src\GameObject\Comp\CloudUIComp.cpp">
       <Filter>GameObject\Comp</Filter>
     </ClCompile>
+    <ClCompile Include="Src\GameObject\Comp\SpriteUVChangeComp.cpp">
+      <Filter>GameObject\Comp</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\Comp\UISpriteRenderDataComp.cpp">
+      <Filter>GameObject\Comp</Filter>
+    </ClCompile>
     <ClCompile Include="Src\GameObject\Comp\StarComp.cpp">
       <Filter>GameObject\Comp</Filter>
     </ClCompile>
@@ -286,7 +292,7 @@
     <Filter Include="Game\TileName">
       <UniqueIdentifier>{fb9b6611-7260-4fb4-9508-6e526aa23fbe}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scenes\World">
+    <Filter Include="World">
       <UniqueIdentifier>{b8981fb7-5ba2-4533-897e-e706c7dc3049}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -295,7 +301,7 @@
       <Filter>GlobalVariables</Filter>
     </ClInclude>
     <ClInclude Include="Src\World\World.h">
-      <Filter>Scenes\World</Filter>
+      <Filter>World</Filter>
     </ClInclude>
     <ClInclude Include="Src\Scenes\Manager\SceneManager.h">
       <Filter>Scenes\Manager</Filter>
@@ -532,6 +538,12 @@
       <Filter>GameObject\Comp</Filter>
     </ClInclude>
     <ClInclude Include="Src\GameObject\Comp\CloudUIComp.h">
+      <Filter>GameObject\Comp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Comp\SpriteUVChangeComp.h">
+      <Filter>GameObject\Comp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Comp\UISpriteRenderDataComp.h">
       <Filter>GameObject\Comp</Filter>
     </ClInclude>
     <ClInclude Include="Src\GameObject\Comp\UINumSpriteComp.h">
