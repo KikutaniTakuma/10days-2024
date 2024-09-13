@@ -77,18 +77,14 @@ void PlayerComp::Move() {
 			sceneChangeComp_->SetNextScene(ObjectManager::GetInstance()->GetCurrentSceneFilePath());
 			sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
 
-			if (not stageResetAudio_->IsStart()) {
-				stageResetAudio_->Start(0.3f, false);
-			}
+			stageResetAudio_->Start(0.3f, false);
 		}
 		else if ((gamepad->Pushed(Gamepad::Button::START) or key->Pushed(DIK_ESCAPE)) and
 			not sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent) {
 			sceneChangeComp_->SetNextScene("./SceneData/stageSelect.json");
 			sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
 
-			if(not stageSelectAudio_->IsStart()) {
-				stageSelectAudio_->Start(0.3f, false);
-			}
+			stageSelectAudio_->Start(0.3f, false);
 		}
 
 

@@ -62,9 +62,7 @@ void ResultInputComp::Move()
 					//ボタンを押してセレクトシーンに移動
 					sceneChangeComp_->SetNextScene("./SceneData/stageSelect.json");
 					sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
-					if (not audio_->IsStart()) {
-						audio_->Start(0.3f, false);
-					}
+					audio_->Start(0.3f, false);
 				}
 				else if (gamepad->Pushed(Gamepad::Button::X) or key->Pushed(DIK_R)) {
 					//ボタンを押してセレクトシーンに移動
