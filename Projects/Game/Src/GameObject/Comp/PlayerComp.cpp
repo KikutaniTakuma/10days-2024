@@ -630,6 +630,11 @@ void PlayerComp::SetIsBeamCollision(const Lamb::Flg& collisionFlg)
 	beamCollisionFlg_ = collisionFlg;
 }
 
+const Lamb::Flg& PlayerComp::GetIsBeamCollision() const
+{
+	return beamCollisionFlg_;
+}
+
 const Lamb::Flg& PlayerComp::GetIsInvisible() const
 {
 	return invisible_->GetIsInvisible();

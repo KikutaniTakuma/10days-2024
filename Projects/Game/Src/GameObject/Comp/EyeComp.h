@@ -1,5 +1,6 @@
 #pragma once
 #include "../Object.h"
+#include "Drawers/Particle/Particle.h"
 
 class EyeComp : public IComp {
 public:
@@ -21,6 +22,8 @@ public:
 	void Event() override;
 
 	void Update() override;
+
+	void Draw(CameraComp* cameraComp) override;
 
 	// 攻撃してるとき
 	bool IsFire() const;
@@ -63,4 +66,7 @@ private:
 
 	bool isEasesingStart_ = false;
 	float32_t easeingStartPosX = 0.0f;
+
+	// パーティクル
+	std::unique_ptr<Particle> paritcle_;
 };
