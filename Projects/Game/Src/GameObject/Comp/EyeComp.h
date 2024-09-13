@@ -1,6 +1,7 @@
 #pragma once
 #include "../Object.h"
 #include "Drawers/Particle/Particle.h"
+#include "Engine/Graphics/Tex2DAniamtor/Tex2DAniamtor.h"
 
 class EyeComp : public IComp {
 public:
@@ -23,6 +24,8 @@ public:
 
 	void Update() override;
 
+	void LastUpdate() override;
+
 	void Draw(CameraComp* cameraComp) override;
 
 	// 攻撃してるとき
@@ -43,6 +46,7 @@ private:
 
 private:
 	Lamb::SafePtr<class TransformComp> transformComp_;
+	Lamb::SafePtr<class SpriteRenderDataComp> renderDataComp_;
 
 	// 黒目の子オブジェクト(これはベータ版で使う)
 	Lamb::SafePtr<class ChildrenObjectComp> childrenObjectComp_;
@@ -69,4 +73,7 @@ private:
 
 	// パーティクル
 	std::unique_ptr<Particle> paritcle_;
+
+	uint32_t animtionTExtureHandle_ = 0;
+	Tex2DAniamtor animator_;
 };
