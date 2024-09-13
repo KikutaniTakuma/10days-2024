@@ -40,4 +40,6 @@ private:
 	
 	Easeing playertTouchEase_;
 	float32_t playertTouchEaseTime_ = 1.0f;
+
+	bool isPlayerTouchEaseStart_ = false;
 };

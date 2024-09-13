@@ -55,10 +55,14 @@ void CloudRenderComp::Update() {
 
 	playertTouchEase_.Update();
 
-	if (cloudComp_->GetIsHitPlayer().OnEnter()) {
+	if (cloudComp_->GetIsHitPlayer().OnEnter() and not isPlayerTouchEaseStart_) {
 		playertTouchEase_.Start(false, playertTouchEaseTime_, Easeing::Type::kOutElastic);
+		isPlayerTouchEaseStart_ = true;
 	}
 
+	if (playertTouchEase_.ActiveExit()) {
+		isPlayerTouchEaseStart_ = false;
+	}
 }
 
 void CloudRenderComp::LastUpdate() {
