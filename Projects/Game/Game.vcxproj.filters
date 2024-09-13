@@ -227,6 +227,9 @@
     <ClCompile Include="Src\GameObject\Comp\NumSpriteComp.cpp">
       <Filter>GameObject\Comp</Filter>
     </ClCompile>
+    <ClCompile Include="Src\GameObject\Comp\EasingSpriteComp.cpp">
+      <Filter>GameObject\Comp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="GlobalVariables">
@@ -505,6 +508,9 @@
       <Filter>GameObject\Comp</Filter>
     </ClInclude>
     <ClInclude Include="Src\GameObject\Comp\NumSpriteComp.h">
+      <Filter>GameObject\Comp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Comp\EasingSpriteComp.h">
       <Filter>GameObject\Comp</Filter>
     </ClInclude>
   </ItemGroup>

@@ -23,7 +23,7 @@ void UvOperatorComp::Debug([[maybe_unused]] const std::string& guiName)
 #ifdef _DEBUG
 
 	if (ImGui::TreeNode(guiName.c_str())) {
-		ImGui::DragFloat3("UV移動速度", moveValue_.data(), 0.01f);
+		ImGui::DragFloat3("UV移動速度", moveValue_.data(), 0.001f);
 		ImGui::Checkbox("UVを動かすか", &isStartMove_);
 		ImGui::TreePop();
 	}

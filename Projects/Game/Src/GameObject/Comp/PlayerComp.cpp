@@ -254,6 +254,12 @@ void PlayerComp::Move() {
 			sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
 		}
 
+		//ビームに当たっていたら死亡
+		if (beamCollisionFlg_ and not sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent) {
+			sceneChangeComp_->SetNextScene(ObjectManager::GetInstance()->GetCurrentSceneFilePath());
+			sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
+		}
+
 	}
 	//ゴール時の移動演出
 	else if(isGoal_) {
