@@ -23,6 +23,8 @@ public:
 
 	int32_t divide_ = 1;
 
+	bool isUpdate_ = true;
+
 private:
 
 	Lamb::SafePtr<class UISpriteRenderDataComp> spriteRenderDataComp_;
@@ -42,7 +44,5 @@ private:
 	float defaultScale_ = 128.0f;
 
 	float addValue_ = 1.0f;
-
-	bool isUpdate_ = true;
 
 };

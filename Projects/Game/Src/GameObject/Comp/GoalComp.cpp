@@ -128,7 +128,7 @@ void GoalComp::Update()
 	}
 
 	//扉が閉じるコマに入ったらアニメーションを止め、扉を閉じたフラグを立てる
-	if (player_->GetIsGoal() and isGoal_ and
+	if (player_->GetIsGoal() and not player_->GetIsEasing() and isGoal_ and
 		animation_->GetIsActive() and not isOpen_ and animation_->GetCurrentAnimationNumber() == 7) {
 		animation_->Pause();
 		isCloseDoor_ = true;
