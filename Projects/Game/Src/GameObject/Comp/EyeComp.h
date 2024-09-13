@@ -37,6 +37,11 @@ public:
 	// 狙いを定めたとき
 	bool IsAimFixed() const;
 
+
+	Lamb::SafePtr<class PlayerComp> GetPlayerComp() {
+		return playerComp_;
+	}
+
 private:
 	// これは別のオブジェクトが持っているPlayerComp
 	Lamb::SafePtr<class PlayerComp> playerComp_;

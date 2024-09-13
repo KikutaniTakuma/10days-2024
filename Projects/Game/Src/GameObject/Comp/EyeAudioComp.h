@@ -21,6 +21,9 @@ public:
 	void Finalize() override;
 
 	void Debug(const std::string& guiName);
+
+	void LastUpdate() override;
+
 private:
 	Lamb::SafePtr<Audio> aimAudio_;
 	Lamb::SafePtr<Audio> chargeAudio_;

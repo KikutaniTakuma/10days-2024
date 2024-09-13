@@ -89,6 +89,13 @@ void ChildrenObjectComp::Draw(CameraComp* cameraComp) {
 	}
 }
 
+void ChildrenObjectComp::Draw()
+{
+	for (auto& i : objects_) {
+		i->Draw();
+	}
+}
+
 void ChildrenObjectComp::Debug([[maybe_unused]]const std::string& guiName) {
 #ifdef _DEBUG
 	if (ImGui::TreeNode(guiName.c_str())) {
