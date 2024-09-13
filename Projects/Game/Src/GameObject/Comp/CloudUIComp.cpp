@@ -15,23 +15,11 @@ void CloudUIComp::Init()
 	UItransform_ = object_.AddComp<UITransformComp>();
 	count_ = object_.AddComp<CountComp>();
 	cloudsUI_.clear();
+
 }
 
 void CloudUIComp::Load()
 {
-	UItransform_->translate = {
-		494.9992370605469f,
-						256.999267578125f,
-						0.0f
-	};
-	UItransform_->scale = {
-		262.6899108886719f,
-						163.64881896972656f,
-						1.0f
-	};
-
-	spriteRenderDataComp_->texHandle = parentUITexID_;
-
 	TextureManager::GetInstance()->LoadTexture("./Resources/Textures/UI/ingame_cloudNum_backGround.png");
 	TextureManager::GetInstance()->LoadTexture("./Resources/Textures/UI/ingame_cloudNum_outline.png");
 	TextureManager::GetInstance()->LoadTexture("./Resources/Textures/UI/ingame_cloudNum_outline_transparent.png");
@@ -39,21 +27,37 @@ void CloudUIComp::Load()
 	parentUITexID_ = TextureManager::GetInstance()->GetTexture("./Resources/Textures/UI/ingame_cloudNum_backGround.png")->GetHandleUINT();
 	cloudTexID_ = TextureManager::GetInstance()->GetTexture("./Resources/Textures/UI/ingame_cloudNum_outline.png")->GetHandleUINT();
 	cloudOutlineLineTexID_ = TextureManager::GetInstance()->GetTexture("./Resources/Textures/UI/ingame_cloudNum_outline_transparent.png")->GetHandleUINT();
+	
+	UItransform_->translate = {
+		494.9992370605469f,
+						256.999267578125f,
+						1.0f
+	};
+	UItransform_->scale = {
+		270.6899108886719f,
+						163.64881896972656f,
+						1.0f
+	};
+	spriteRenderDataComp_->type = BlendType::kUnenableDepthNone;
+
+	spriteRenderDataComp_->texHandle = parentUITexID_;
+
+	spriteRenderDataComp_->uvTransform.rotate.vector4 = Vector4::kWIdentity;
 
 	// 1
 	Lamb::SafePtr<Object> newObject = Lamb::MakeSafePtr<Object>();
 	newObject->AddComp<UIDrawComp>();
 	cloudsUI_.push_back(newObject->AddComp<SpriteUVChangeComp>());
 	auto transform = cloudsUI_.back()->GetUITransformComp();
-	transform->translate = { -0.31215476989746094f,
+	transform->translate = { -0.32315476989746094f,
 										-0.12832403182983398f,
-										0.0f };
+										-1.0f };
 	transform->scale = { 0.1432291567325592f,
 										0.19792717695236206f,
 										1.0f };
 	auto renderData = cloudsUI_.back()->GetSpriteRenderDataComp();
 	renderData->texHandle = cloudTexID_;
-	renderData->offsetType = UISpriteRenderDataComp::Offset::kLeft;
+	renderData->type = BlendType::kUnenableDepthNone;
 	childrenComp_->AddObject(newObject);
 
 	// 2
@@ -61,18 +65,19 @@ void CloudUIComp::Load()
 	newObject->AddComp<UIDrawComp>();
 	cloudsUI_.push_back(newObject->AddComp<SpriteUVChangeComp>());
 	transform = cloudsUI_.back()->GetUITransformComp();
-	transform->translate = { -0.14465773105621338f,
+	transform->translate = { -0.15565773105621338f,
 										-0.12832415103912354f,
-										0.0f };
+										-1.0f };
 	transform->scale = { 0.1432291567325592f,
 										0.19792717695236206f,
 										1.0f };
 	renderData = cloudsUI_.back()->GetSpriteRenderDataComp();
 	renderData->texHandle = cloudTexID_;
-	renderData->offsetType = UISpriteRenderDataComp::Offset::kLeft;
+	
+	renderData->type = BlendType::kUnenableDepthNone;
 	childrenComp_->AddObject(newObject);
 
-	float sub = 0.31215476989746094f - 0.14465773105621338f;
+	float sub = 0.32315476989746094f - 0.15565773105621338f;
 	Vector3 pre = transform->translate;
 
 	// 3
@@ -87,7 +92,8 @@ void CloudUIComp::Load()
 										1.0f };
 	renderData = cloudsUI_.back()->GetSpriteRenderDataComp();
 	renderData->texHandle = cloudTexID_;
-	renderData->offsetType = UISpriteRenderDataComp::Offset::kLeft;
+	
+	renderData->type = BlendType::kUnenableDepthNone;
 	childrenComp_->AddObject(newObject);
 
 	pre = transform->translate;
@@ -104,7 +110,8 @@ void CloudUIComp::Load()
 										1.0f };
 	renderData = cloudsUI_.back()->GetSpriteRenderDataComp();
 	renderData->texHandle = cloudTexID_;
-	renderData->offsetType = UISpriteRenderDataComp::Offset::kLeft;
+	
+	renderData->type = BlendType::kUnenableDepthNone;
 	childrenComp_->AddObject(newObject);
 
 	pre = transform->translate;
@@ -121,12 +128,13 @@ void CloudUIComp::Load()
 										1.0f };
 	renderData = cloudsUI_.back()->GetSpriteRenderDataComp();
 	renderData->texHandle = cloudTexID_;
-	renderData->offsetType = UISpriteRenderDataComp::Offset::kLeft;
+	
+	renderData->type = BlendType::kUnenableDepthNone;
 	childrenComp_->AddObject(newObject);
 
 	pre = transform->translate;
-	pre.x = -0.31215476989746094f;
-	pre.y += sub;
+	pre.x = -0.32315476989746094f - sub;
+	pre.y += sub * 1.2f;
 
 	// 6
 	newObject = Lamb::MakeSafePtr<Object>();
@@ -140,7 +148,8 @@ void CloudUIComp::Load()
 										1.0f };
 	renderData = cloudsUI_.back()->GetSpriteRenderDataComp();
 	renderData->texHandle = cloudOutlineLineTexID_;
-	renderData->offsetType = UISpriteRenderDataComp::Offset::kLeft;
+	
+	renderData->type = BlendType::kUnenableDepthNone;
 	childrenComp_->AddObject(newObject);
 
 	pre = transform->translate;
@@ -157,7 +166,8 @@ void CloudUIComp::Load()
 										1.0f };
 	renderData = cloudsUI_.back()->GetSpriteRenderDataComp();
 	renderData->texHandle = cloudOutlineLineTexID_;
-	renderData->offsetType = UISpriteRenderDataComp::Offset::kLeft;
+	
+	renderData->type = BlendType::kUnenableDepthNone;
 	childrenComp_->AddObject(newObject);
 
 	pre = transform->translate;
@@ -175,7 +185,8 @@ void CloudUIComp::Load()
 										1.0f };
 	renderData = cloudsUI_.back()->GetSpriteRenderDataComp();
 	renderData->texHandle = cloudOutlineLineTexID_;
-	renderData->offsetType = UISpriteRenderDataComp::Offset::kLeft;
+	
+	renderData->type = BlendType::kUnenableDepthNone;
 	childrenComp_->AddObject(newObject);
 
 	pre = transform->translate;
@@ -192,7 +203,8 @@ void CloudUIComp::Load()
 										1.0f };
 	renderData = cloudsUI_.back()->GetSpriteRenderDataComp();
 	renderData->texHandle = cloudOutlineLineTexID_;
-	renderData->offsetType = UISpriteRenderDataComp::Offset::kLeft;
+	
+	renderData->type = BlendType::kUnenableDepthNone;
 	childrenComp_->AddObject(newObject);
 
 	pre = transform->translate;
@@ -209,7 +221,8 @@ void CloudUIComp::Load()
 										1.0f };
 	renderData = cloudsUI_.back()->GetSpriteRenderDataComp();
 	renderData->texHandle = cloudOutlineLineTexID_;
-	renderData->offsetType = UISpriteRenderDataComp::Offset::kLeft;
+	
+	renderData->type = BlendType::kUnenableDepthNone;
 	childrenComp_->AddObject(newObject);
 
 	pre = transform->translate;
