@@ -1173,406 +1173,6 @@
         {
             "Comps": [
                 {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
-                        1024.0,
-                        -192.0,
-                        5.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collisiionTags": [],
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.5,
-                        32.5,
-                        32.5
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": []
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ]
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        32,
-                        6
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class CloudRenderComp",
-                    "scaleMax": 1.2000000476837158,
-                    "startTime_Max": 1.0,
-                    "startTime_Min": 0.0
-                },
-                {
-                    "CompName": "class EaseingComp",
-                    "isLoop": true,
-                    "spdT": 2.0,
-                    "type": "InOutSine"
-                },
-                {
-                    "CompName": "class InstanceTimeComp"
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
-                        1056.0,
-                        -192.0,
-                        5.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collisiionTags": [],
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.5,
-                        32.5,
-                        32.5
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": []
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ]
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        33,
-                        6
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class CloudRenderComp",
-                    "scaleMax": 1.2000000476837158,
-                    "startTime_Max": 1.0,
-                    "startTime_Min": 0.0
-                },
-                {
-                    "CompName": "class EaseingComp",
-                    "isLoop": true,
-                    "spdT": 2.0,
-                    "type": "InOutSine"
-                },
-                {
-                    "CompName": "class InstanceTimeComp"
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
-                        1088.0,
-                        -192.0,
-                        5.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collisiionTags": [],
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.5,
-                        32.5,
-                        32.5
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": []
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ]
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        34,
-                        6
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class CloudRenderComp",
-                    "scaleMax": 1.2000000476837158,
-                    "startTime_Max": 1.0,
-                    "startTime_Min": 0.0
-                },
-                {
-                    "CompName": "class EaseingComp",
-                    "isLoop": true,
-                    "spdT": 2.0,
-                    "type": "InOutSine"
-                },
-                {
-                    "CompName": "class InstanceTimeComp"
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
-                        1120.0,
-                        -192.0,
-                        5.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collisiionTags": [],
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.5,
-                        32.5,
-                        32.5
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": []
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ]
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        35,
-                        6
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class CloudRenderComp",
-                    "scaleMax": 1.2000000476837158,
-                    "startTime_Max": 1.0,
-                    "startTime_Min": 0.0
-                },
-                {
-                    "CompName": "class EaseingComp",
-                    "isLoop": true,
-                    "spdT": 2.0,
-                    "type": "InOutSine"
-                },
-                {
-                    "CompName": "class InstanceTimeComp"
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
                     "CompName": "class PlayerComp"
                 },
                 {
@@ -2032,7 +1632,7 @@
                         32.0
                     ],
                     "translate": [
-                        992.0,
+                        1024.0,
                         -224.0,
                         5.0
                     ]
@@ -2074,7 +1674,7 @@
                 {
                     "CompName": "class Mass2DComp",
                     "mass": [
-                        31,
+                        32,
                         7
                     ],
                     "offset": [
@@ -2132,7 +1732,7 @@
                         32.0
                     ],
                     "translate": [
-                        1024.0,
+                        1056.0,
                         -224.0,
                         5.0
                     ]
@@ -2174,7 +1774,107 @@
                 {
                     "CompName": "class Mass2DComp",
                     "mass": [
-                        32,
+                        33,
+                        7
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        1088.0,
+                        -224.0,
+                        5.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.5,
+                        32.5,
+                        32.5
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        34,
                         7
                     ],
                     "offset": [
@@ -4005,7 +3705,7 @@
                         32.0
                     ],
                     "translate": [
-                        960.0,
+                        992.0,
                         -256.0,
                         5.0
                     ]
@@ -4047,7 +3747,7 @@
                 {
                     "CompName": "class Mass2DComp",
                     "mass": [
-                        30,
+                        31,
                         8
                     ],
                     "offset": [
@@ -4105,7 +3805,7 @@
                         32.0
                     ],
                     "translate": [
-                        992.0,
+                        1024.0,
                         -256.0,
                         5.0
                     ]
@@ -4147,7 +3847,7 @@
                 {
                     "CompName": "class Mass2DComp",
                     "mass": [
-                        31,
+                        32,
                         8
                     ],
                     "offset": [
@@ -4305,7 +4005,7 @@
                         32.0
                     ],
                     "translate": [
-                        1440.0,
+                        1408.0,
                         -256.0,
                         5.0
                     ]
@@ -4347,7 +4047,7 @@
                 {
                     "CompName": "class Mass2DComp",
                     "mass": [
-                        45,
+                        44,
                         8
                     ],
                     "offset": [
@@ -5678,6 +5378,206 @@
                         32.0
                     ],
                     "translate": [
+                        960.0,
+                        -288.0,
+                        5.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.5,
+                        32.5,
+                        32.5
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        30,
+                        9
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        992.0,
+                        -288.0,
+                        5.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.5,
+                        32.5,
+                        32.5
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        31,
+                        9
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
                         1120.0,
                         -288.0,
                         5.0
@@ -5778,7 +5678,7 @@
                         32.0
                     ],
                     "translate": [
-                        1408.0,
+                        1376.0,
                         -288.0,
                         5.0
                     ]
@@ -5820,108 +5720,8 @@
                 {
                     "CompName": "class Mass2DComp",
                     "mass": [
-                        44,
+                        43,
                         9
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class CloudRenderComp",
-                    "scaleMax": 1.2000000476837158,
-                    "startTime_Max": 1.0,
-                    "startTime_Min": 0.0
-                },
-                {
-                    "CompName": "class EaseingComp",
-                    "isLoop": true,
-                    "spdT": 2.0,
-                    "type": "InOutSine"
-                },
-                {
-                    "CompName": "class InstanceTimeComp"
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
-                        128.0,
-                        -320.0,
-                        5.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collisiionTags": [],
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.5,
-                        32.5,
-                        32.5
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": []
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ]
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        4,
-                        10
                     ],
                     "offset": [
                         0.0,
@@ -6278,106 +6078,6 @@
                         32.0
                     ],
                     "translate": [
-                        1088.0,
-                        -320.0,
-                        5.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collisiionTags": [],
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.5,
-                        32.5,
-                        32.5
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": []
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ]
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        34,
-                        10
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class CloudRenderComp",
-                    "scaleMax": 1.2000000476837158,
-                    "startTime_Max": 1.0,
-                    "startTime_Min": 0.0
-                },
-                {
-                    "CompName": "class EaseingComp",
-                    "isLoop": true,
-                    "spdT": 2.0,
-                    "type": "InOutSine"
-                },
-                {
-                    "CompName": "class InstanceTimeComp"
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
                         1120.0,
                         -320.0,
                         5.0
@@ -6478,7 +6178,7 @@
                         32.0
                     ],
                     "translate": [
-                        1376.0,
+                        1344.0,
                         -320.0,
                         5.0
                     ]
@@ -6520,7 +6220,7 @@
                 {
                     "CompName": "class Mass2DComp",
                     "mass": [
-                        43,
+                        42,
                         10
                     ],
                     "offset": [
@@ -6578,7 +6278,7 @@
                         32.0
                     ],
                     "translate": [
-                        1568.0,
+                        1536.0,
                         -320.0,
                         5.0
                     ]
@@ -6620,7 +6320,7 @@
                 {
                     "CompName": "class Mass2DComp",
                     "mass": [
-                        49,
+                        48,
                         10
                     ],
                     "offset": [
@@ -6858,107 +6558,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
-                        672.0,
-                        -352.0,
-                        5.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collisiionTags": [],
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.5,
-                        32.5,
-                        32.5
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": []
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ]
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        21,
-                        11
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class CloudRenderComp",
-                    "scaleMax": 1.2000000476837158,
-                    "startTime_Max": 1.0,
-                    "startTime_Min": 0.0
-                },
-                {
-                    "CompName": "class EaseingComp",
-                    "isLoop": true,
-                    "spdT": 2.0,
-                    "type": "InOutSine"
-                },
-                {
-                    "CompName": "class InstanceTimeComp"
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "fileName": "./Resources/Textures/gimmick/coin.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -6980,106 +6580,6 @@
                     "translate": [
                         704.0,
                         -352.0,
-                        5.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collisiionTags": [],
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.5,
-                        32.5,
-                        32.5
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": []
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ]
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        22,
-                        11
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class CloudRenderComp",
-                    "scaleMax": 1.2000000476837158,
-                    "startTime_Max": 1.0,
-                    "startTime_Min": 0.0
-                },
-                {
-                    "CompName": "class EaseingComp",
-                    "isLoop": true,
-                    "spdT": 2.0,
-                    "type": "InOutSine"
-                },
-                {
-                    "CompName": "class InstanceTimeComp"
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/coin.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
-                        736.0,
-                        -352.0,
                         4.0
                     ]
                 },
@@ -7089,7 +6589,7 @@
                 {
                     "CompName": "class Mass2DComp",
                     "mass": [
-                        23,
+                        22,
                         11
                     ],
                     "offset": [
@@ -7116,6 +6616,106 @@
                         0.0,
                         0.0
                     ]
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        736.0,
+                        -352.0,
+                        5.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.5,
+                        32.5,
+                        32.5
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        23,
+                        11
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -7551,106 +7151,6 @@
                         32.0
                     ],
                     "translate": [
-                        1056.0,
-                        -352.0,
-                        5.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collisiionTags": [],
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.5,
-                        32.5,
-                        32.5
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": []
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ]
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        33,
-                        11
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class CloudRenderComp",
-                    "scaleMax": 1.2000000476837158,
-                    "startTime_Max": 1.0,
-                    "startTime_Min": 0.0
-                },
-                {
-                    "CompName": "class EaseingComp",
-                    "isLoop": true,
-                    "spdT": 2.0,
-                    "type": "InOutSine"
-                },
-                {
-                    "CompName": "class InstanceTimeComp"
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
                         1088.0,
                         -352.0,
                         5.0
@@ -7731,7 +7231,7 @@
                         1.0,
                         1.0
                     ],
-                    "fileName": "./Resources/Textures/gimmick/coin.png",
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
                     "offsetType": "kMiddle"
                 },
                 {
@@ -7751,18 +7251,49 @@
                         32.0
                     ],
                     "translate": [
-                        1376.0,
+                        1120.0,
                         -352.0,
-                        4.0
+                        5.0
                     ]
                 },
                 {
-                    "CompName": "class CollectionComp"
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.5,
+                        32.5,
+                        32.5
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
                 },
                 {
                     "CompName": "class Mass2DComp",
                     "mass": [
-                        43,
+                        35,
                         11
                     ],
                     "offset": [
@@ -7772,23 +7303,319 @@
                     "size": 32
                 },
                 {
-                    "CompName": "class Aabb2DComp",
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
                     "scale": [
-                        0.800000011920929,
-                        0.800000011920929,
-                        0.800000011920929
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        1312.0,
+                        -352.0,
+                        5.0
                     ]
                 },
                 {
-                    "CompName": "class SpriteAnimatorComp",
-                    "animationNumber": 7,
-                    "duration": 0.14285700023174286,
-                    "isLoop": true,
-                    "startPos": [
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
                         0.0,
                         0.0,
                         0.0
+                    ],
+                    "collisiionTags": [],
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.5,
+                        32.5,
+                        32.5
                     ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        41,
+                        11
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        1344.0,
+                        -352.0,
+                        5.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.5,
+                        32.5,
+                        32.5
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        42,
+                        11
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        1504.0,
+                        -352.0,
+                        5.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.5,
+                        32.5,
+                        32.5
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        47,
+                        11
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
                 }
             ],
             "type": "Object"
@@ -7967,106 +7794,6 @@
                     "CompName": "class Mass2DComp",
                     "mass": [
                         49,
-                        11
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class CloudRenderComp",
-                    "scaleMax": 1.2000000476837158,
-                    "startTime_Max": 1.0,
-                    "startTime_Min": 0.0
-                },
-                {
-                    "CompName": "class EaseingComp",
-                    "isLoop": true,
-                    "spdT": 2.0,
-                    "type": "InOutSine"
-                },
-                {
-                    "CompName": "class InstanceTimeComp"
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
-                        1600.0,
-                        -352.0,
-                        5.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collisiionTags": [],
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.5,
-                        32.5,
-                        32.5
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": []
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ]
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        50,
                         11
                     ],
                     "offset": [
@@ -8524,306 +8251,6 @@
                         32.0
                     ],
                     "translate": [
-                        960.0,
-                        -384.0,
-                        5.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collisiionTags": [],
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.5,
-                        32.5,
-                        32.5
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": []
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ]
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        30,
-                        12
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class CloudRenderComp",
-                    "scaleMax": 1.2000000476837158,
-                    "startTime_Max": 1.0,
-                    "startTime_Min": 0.0
-                },
-                {
-                    "CompName": "class EaseingComp",
-                    "isLoop": true,
-                    "spdT": 2.0,
-                    "type": "InOutSine"
-                },
-                {
-                    "CompName": "class InstanceTimeComp"
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
-                        992.0,
-                        -384.0,
-                        5.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collisiionTags": [],
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.5,
-                        32.5,
-                        32.5
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": []
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ]
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        31,
-                        12
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class CloudRenderComp",
-                    "scaleMax": 1.2000000476837158,
-                    "startTime_Max": 1.0,
-                    "startTime_Min": 0.0
-                },
-                {
-                    "CompName": "class EaseingComp",
-                    "isLoop": true,
-                    "spdT": 2.0,
-                    "type": "InOutSine"
-                },
-                {
-                    "CompName": "class InstanceTimeComp"
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
-                        1024.0,
-                        -384.0,
-                        5.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collisiionTags": [],
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.5,
-                        32.5,
-                        32.5
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": []
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ]
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        32,
-                        12
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class CloudRenderComp",
-                    "scaleMax": 1.2000000476837158,
-                    "startTime_Max": 1.0,
-                    "startTime_Min": 0.0
-                },
-                {
-                    "CompName": "class EaseingComp",
-                    "isLoop": true,
-                    "spdT": 2.0,
-                    "type": "InOutSine"
-                },
-                {
-                    "CompName": "class InstanceTimeComp"
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
                         1056.0,
                         -384.0,
                         5.0
@@ -8867,6 +8294,206 @@
                     "CompName": "class Mass2DComp",
                     "mass": [
                         33,
+                        12
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        1088.0,
+                        -384.0,
+                        5.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.5,
+                        32.5,
+                        32.5
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        34,
+                        12
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        1184.0,
+                        -384.0,
+                        5.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.5,
+                        32.5,
+                        32.5
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        37,
                         12
                     ],
                     "offset": [
@@ -9124,7 +8751,7 @@
                         32.0
                     ],
                     "translate": [
-                        1280.0,
+                        1344.0,
                         -384.0,
                         5.0
                     ]
@@ -9166,7 +8793,180 @@
                 {
                     "CompName": "class Mass2DComp",
                     "mass": [
-                        40,
+                        42,
+                        12
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/coin.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        1376.0,
+                        -384.0,
+                        4.0
+                    ]
+                },
+                {
+                    "CompName": "class CollectionComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        43,
+                        12
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "scale": [
+                        0.800000011920929,
+                        0.800000011920929,
+                        0.800000011920929
+                    ]
+                },
+                {
+                    "CompName": "class SpriteAnimatorComp",
+                    "animationNumber": 7,
+                    "duration": 0.14285700023174286,
+                    "isLoop": true,
+                    "startPos": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        1504.0,
+                        -384.0,
+                        5.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.5,
+                        32.5,
+                        32.5
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        47,
                         12
                     ],
                     "offset": [
@@ -9224,7 +9024,7 @@
                         32.0
                     ],
                     "translate": [
-                        1408.0,
+                        1568.0,
                         -384.0,
                         5.0
                     ]
@@ -9266,207 +9066,7 @@
                 {
                     "CompName": "class Mass2DComp",
                     "mass": [
-                        44,
-                        12
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class CloudRenderComp",
-                    "scaleMax": 1.2000000476837158,
-                    "startTime_Max": 1.0,
-                    "startTime_Min": 0.0
-                },
-                {
-                    "CompName": "class EaseingComp",
-                    "isLoop": true,
-                    "spdT": 2.0,
-                    "type": "InOutSine"
-                },
-                {
-                    "CompName": "class InstanceTimeComp"
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
-                        1536.0,
-                        -384.0,
-                        5.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collisiionTags": [],
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.5,
-                        32.5,
-                        32.5
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": []
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ]
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        48,
-                        12
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class CloudRenderComp",
-                    "scaleMax": 1.2000000476837158,
-                    "startTime_Max": 1.0,
-                    "startTime_Min": 0.0
-                },
-                {
-                    "CompName": "class EaseingComp",
-                    "isLoop": true,
-                    "spdT": 2.0,
-                    "type": "InOutSine"
-                },
-                {
-                    "CompName": "class InstanceTimeComp"
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
-                        1600.0,
-                        -384.0,
-                        5.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collisiionTags": [],
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.5,
-                        32.5,
-                        32.5
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": []
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ]
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        50,
+                        49,
                         12
                     ],
                     "offset": [
@@ -10704,6 +10304,406 @@
                         1.0,
                         1.0
                     ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        960.0,
+                        -416.0,
+                        5.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.5,
+                        32.5,
+                        32.5
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        30,
+                        13
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        992.0,
+                        -416.0,
+                        5.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.5,
+                        32.5,
+                        32.5
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        31,
+                        13
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        1024.0,
+                        -416.0,
+                        5.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.5,
+                        32.5,
+                        32.5
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        32,
+                        13
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        1056.0,
+                        -416.0,
+                        5.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.5,
+                        32.5,
+                        32.5
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        33,
+                        13
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
                     "fileName": "./Resources/Textures/gimmick/goal_close_doing.png",
                     "offsetType": "kMiddle"
                 },
@@ -10724,7 +10724,7 @@
                         32.0
                     ],
                     "translate": [
-                        1248.0,
+                        1216.0,
                         -416.0,
                         2.0
                     ]
@@ -10735,7 +10735,7 @@
                 {
                     "CompName": "class Mass2DComp",
                     "mass": [
-                        39,
+                        38,
                         13
                     ],
                     "offset": [
@@ -10806,7 +10806,7 @@
                         32.0
                     ],
                     "translate": [
-                        1440.0,
+                        1376.0,
                         -416.0,
                         5.0
                     ]
@@ -10848,7 +10848,7 @@
                 {
                     "CompName": "class Mass2DComp",
                     "mass": [
-                        45,
+                        43,
                         13
                     ],
                     "offset": [
@@ -10906,7 +10906,7 @@
                         32.0
                     ],
                     "translate": [
-                        1600.0,
+                        1568.0,
                         -416.0,
                         5.0
                     ]
@@ -10948,7 +10948,7 @@
                 {
                     "CompName": "class Mass2DComp",
                     "mass": [
-                        50,
+                        49,
                         13
                     ],
                     "offset": [
@@ -11806,6 +11806,106 @@
                         32.0
                     ],
                     "translate": [
+                        1184.0,
+                        -448.0,
+                        5.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.5,
+                        32.5,
+                        32.5
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        37,
+                        14
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
                         1216.0,
                         -448.0,
                         5.0
@@ -12006,7 +12106,7 @@
                         32.0
                     ],
                     "translate": [
-                        1280.0,
+                        1408.0,
                         -448.0,
                         5.0
                     ]
@@ -12048,7 +12148,107 @@
                 {
                     "CompName": "class Mass2DComp",
                     "mass": [
-                        40,
+                        44,
+                        14
+                    ],
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": 32
+                },
+                {
+                    "CompName": "class CloudRenderComp",
+                    "scaleMax": 1.2000000476837158,
+                    "startTime_Max": 1.0,
+                    "startTime_Min": 0.0
+                },
+                {
+                    "CompName": "class EaseingComp",
+                    "isLoop": true,
+                    "spdT": 2.0,
+                    "type": "InOutSine"
+                },
+                {
+                    "CompName": "class InstanceTimeComp"
+                }
+            ],
+            "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "BlendType": "kNormal",
+                    "CompName": "class SpriteRenderDataComp",
+                    "color": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
+                    "offsetType": "kMiddle"
+                },
+                {
+                    "CompName": "class SpriteRenderComp"
+                },
+                {
+                    "CompName": "class TransformComp",
+                    "rotate": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ],
+                    "translate": [
+                        1536.0,
+                        -448.0,
+                        5.0
+                    ]
+                },
+                {
+                    "CompName": "class CloudComp"
+                },
+                {
+                    "CompName": "class ObbComp",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "collisiionTags": [],
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.5,
+                        32.5,
+                        32.5
+                    ]
+                },
+                {
+                    "CompName": "class ObbPushComp",
+                    "pushTags": []
+                },
+                {
+                    "CompName": "class Aabb2DComp",
+                    "isScaleEffect": false,
+                    "scale": [
+                        32.0,
+                        32.0,
+                        32.0
+                    ]
+                },
+                {
+                    "CompName": "class FlagComp"
+                },
+                {
+                    "CompName": "class Mass2DComp",
+                    "mass": [
+                        48,
                         14
                     ],
                     "offset": [
@@ -12206,107 +12406,7 @@
                         32.0
                     ],
                     "translate": [
-                        1600.0,
-                        -448.0,
-                        5.0
-                    ]
-                },
-                {
-                    "CompName": "class CloudComp"
-                },
-                {
-                    "CompName": "class ObbComp",
-                    "center": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "collisiionTags": [],
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.5,
-                        32.5,
-                        32.5
-                    ]
-                },
-                {
-                    "CompName": "class ObbPushComp",
-                    "pushTags": []
-                },
-                {
-                    "CompName": "class Aabb2DComp",
-                    "isScaleEffect": false,
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ]
-                },
-                {
-                    "CompName": "class FlagComp"
-                },
-                {
-                    "CompName": "class Mass2DComp",
-                    "mass": [
-                        50,
-                        14
-                    ],
-                    "offset": [
-                        0.0,
-                        0.0
-                    ],
-                    "size": 32
-                },
-                {
-                    "CompName": "class CloudRenderComp",
-                    "scaleMax": 1.2000000476837158,
-                    "startTime_Max": 1.0,
-                    "startTime_Min": 0.0
-                },
-                {
-                    "CompName": "class EaseingComp",
-                    "isLoop": true,
-                    "spdT": 2.0,
-                    "type": "InOutSine"
-                },
-                {
-                    "CompName": "class InstanceTimeComp"
-                }
-            ],
-            "type": "Object"
-        },
-        {
-            "Comps": [
-                {
-                    "BlendType": "kNormal",
-                    "CompName": "class SpriteRenderDataComp",
-                    "color": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "fileName": "./Resources/Textures/gimmick/cloud_shadow2.png",
-                    "offsetType": "kMiddle"
-                },
-                {
-                    "CompName": "class SpriteRenderComp"
-                },
-                {
-                    "CompName": "class TransformComp",
-                    "rotate": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "scale": [
-                        32.0,
-                        32.0,
-                        32.0
-                    ],
-                    "translate": [
-                        1248.0,
+                        1216.0,
                         -480.0,
                         5.0
                     ]
@@ -12348,7 +12448,7 @@
                 {
                     "CompName": "class Mass2DComp",
                     "mass": [
-                        39,
+                        38,
                         15
                     ],
                     "offset": [
@@ -12406,7 +12506,7 @@
                         32.0
                     ],
                     "translate": [
-                        1248.0,
+                        1216.0,
                         -512.0,
                         5.0
                     ]
@@ -12448,7 +12548,7 @@
                 {
                     "CompName": "class Mass2DComp",
                     "mass": [
-                        39,
+                        38,
                         16
                     ],
                     "offset": [
@@ -12506,7 +12606,7 @@
                         32.0
                     ],
                     "translate": [
-                        1280.0,
+                        1248.0,
                         -512.0,
                         5.0
                     ]
@@ -12548,7 +12648,7 @@
                 {
                     "CompName": "class Mass2DComp",
                     "mass": [
-                        40,
+                        39,
                         16
                     ],
                     "offset": [
