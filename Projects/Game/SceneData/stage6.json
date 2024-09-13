@@ -9563,6 +9563,20 @@
                 }
             ],
             "type": "Object"
+        },
+        {
+            "Comps": [
+                {
+                    "CompName": "class BgmComp"
+                },
+                {
+                    "CompName": "class AudioComp",
+                    "fileName": "./Resources\\Sounds\\BGM_ingame.mp3",
+                    "isLoop": true,
+                    "volume": 0.30000001192092896
+                }
+            ],
+            "type": "Object"
         }
     ],
     "scene": "stage6"
