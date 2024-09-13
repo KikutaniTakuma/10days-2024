@@ -132,6 +132,7 @@ public:
 
 public:
 	virtual void Init();
+	virtual void Finalize();
 
 	virtual void FirstUpdate() override;
 	virtual void Move() override;

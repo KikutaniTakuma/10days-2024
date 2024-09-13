@@ -551,6 +551,10 @@ void ObjectManager::InitFlags()
 }
 
 void ObjectManager::Load(const std::string& jsonFileName) {
+	for (auto& i : objects_) {
+		i->Finalize();
+	}
+
 	objects_.clear();
 	objectTags_.clear();
 	objectTagKeys_.clear();

@@ -74,6 +74,12 @@ void Object::Init() {
 	}*/
 }
 
+void Object::Finalize() {
+	for (auto& i : components_) {
+		i.second->Finalize();
+	}
+}
+
 void Object::FirstUpdate()
 {
 	for (auto& i : components_) {
