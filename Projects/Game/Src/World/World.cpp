@@ -38,7 +38,7 @@ void World::Initialize() {
 	SceneManager::Initialize();
 	sceneManager_ = SceneManager::GetInstance();
 
-	sceneManager_->Initialize("./SceneData/uiTest.json");
+	sceneManager_->Initialize("./SceneData/title.json");
 
 	ParticleEditor::Initialize();
 	particleEditor_ = ParticleEditor::GetInstance();
