@@ -28,6 +28,9 @@ void ArrowComp::Move()
 			isStickUsed_ = true;
 
 		}
+		else {
+			isStickUsed_ = false;
+		}
 
 		if (transform_->translate.x < startX_) {
 
@@ -80,7 +83,7 @@ void ArrowComp::Debug([[maybe_unused]] const std::string& guiName)
 		ImGui::DragFloat("初期X座標", &startX_, 0.01f);
 		ImGui::DragFloat("移動量", &moveValue_, 0.01f);
 		ImGui::DragFloat("戻るスピード", &backValue_, 0.01f);
-		ImGui::Checkbox("右か左か", &isLeft_);
+		ImGui::Checkbox("向いている向きが左か", &isLeft_);
 		ImGui::TreePop();
 	}
 
@@ -101,7 +104,7 @@ void ArrowComp::Save(nlohmann::json& json)
 void ArrowComp::Load([[maybe_unused]] nlohmann::json& json)
 {
 	isLeft_ = json["isLeft"].get<bool>();
-	startX_ = json["startX"].get<bool>();
-	moveValue_ = json["moveValue"].get<bool>();
-	backValue_ = json["backValue"].get<bool>();
+	startX_ = json["startX"].get<float>();
+	moveValue_ = json["moveValue"].get<float>();
+	backValue_ = json["backValue"].get<float>();
 }
