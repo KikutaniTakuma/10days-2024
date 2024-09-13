@@ -44,7 +44,7 @@ RenderingManager::RenderingManager() {
 	deferredRendering_->SetColorHandle(colorTexture_->GetHandleGPU());
 	deferredRendering_->SetNormalHandle(normalTexture_->GetHandleGPU());
 	deferredRendering_->SetWoprldPositionHandle(worldPositionTexture_->GetHandleGPU());
-	deferredRenderingData_.isDirectionLight = 1;
+	deferredRenderingData_.isDirectionLight = 0;
 	deferredRenderingData_.environmentCoefficient = 0.2f;
 	deferredRenderingData_.directionLight.shinness = 42.0f;
 	deferredRenderingData_.directionLight.ligColor = Vector3::kIdentity;
@@ -410,7 +410,8 @@ void RenderingManager::Debug([[maybe_unused]]const std::string& guiName) {
 		}
 
 		if (ImGui::TreeNode("Outline")) {
-			ImGui::DragFloat("アウトライン閾値", &weight_, 0.01f);
+			ImGui::DragFloat("アウトラインしきい値", &weight_, 0.001f, 0.0f, 1000.0f);
+			ImGui::Checkbox("アウトライン有効", &isOutLine_);
 			outlinePipeline_->SetWeight(weight_);
 
 			ImGui::TreePop();
@@ -446,6 +447,7 @@ void RenderingManager::Save(nlohmann::json& jsonFile) {
 	}
 	json["skybox"]["isDraw"] = isDrawSkyBox_;
 	json["outline"] = weight_;
+	json["outline_enable"] = isOutLine_;
 }
 
 void RenderingManager::Load(nlohmann::json& jsonFile) {
@@ -473,6 +475,10 @@ void RenderingManager::Load(nlohmann::json& jsonFile) {
 	}
 	isDrawSkyBox_ = json["skybox"]["isDraw"].get<bool>();
 	weight_ = json["outline"].get<float>();
+
+	if (json.contains("outline_enable")) {
+		isOutLine_ = json["outline_enable"].get<bool>();
+	}
 
 }
 
@@ -528,16 +534,18 @@ void RenderingManager::DrawPostEffect() {
 		nullptr
 	);
 	gaussianVerticalTexture_->Draw(Pipeline::Blend::Add, nullptr);
+	if (isOutLine_) {
 
-	outlinePipeline_->ChangeDepthBufferState();
-	outlineTexture_->ChangeResourceState();
-	RenderTarget::SetMainAndRenderTargets(
-		nullptr,
-		0,
-		nullptr
-	);
-	outlineTexture_->Draw(Pipeline::Blend::Normal, nullptr);
-	outlinePipeline_->ChangeDepthBufferState();
+		outlinePipeline_->ChangeDepthBufferState();
+		outlineTexture_->ChangeResourceState();
+		RenderTarget::SetMainAndRenderTargets(
+			nullptr,
+			0,
+			nullptr
+		);
+		outlineTexture_->Draw(Pipeline::Blend::Normal, nullptr);
+		outlinePipeline_->ChangeDepthBufferState();
+	}
 }
 
 void RenderingManager::DrawNoDepth(const RenderDataLists& nodepthList)
