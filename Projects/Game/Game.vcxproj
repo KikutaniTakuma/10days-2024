@@ -130,6 +130,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Src\GameObject\Comp\Aabb2DComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\ArrowComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\AudioComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\BackGroundComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\BgmComp.cpp" />
@@ -209,6 +210,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\GameObject\Comp\Aabb2DComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\ArrowComp.h" />
     <ClInclude Include="Src\GameObject\Comp\AudioComp.h" />
     <ClInclude Include="Src\GameObject\Comp\BackGroundComp.h" />
     <ClInclude Include="Src\GameObject\Comp\BgmComp.h" />

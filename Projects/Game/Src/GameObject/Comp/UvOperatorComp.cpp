@@ -13,6 +13,18 @@ void UvOperatorComp::Move()
 
 		spriteRenderDataComp_->uvTransform.translate += moveValue_;
 
+		if (fabsf(spriteRenderDataComp_->uvTransform.translate.x) > 1.0f) {
+			spriteRenderDataComp_->uvTransform.translate.x = 0.0f;
+		}
+
+		if (fabsf(spriteRenderDataComp_->uvTransform.translate.y) > 1.0f) {
+			spriteRenderDataComp_->uvTransform.translate.y = 0.0f;
+		}
+
+		if (fabsf(spriteRenderDataComp_->uvTransform.translate.z) > 1.0f) {
+			spriteRenderDataComp_->uvTransform.translate.z = 0.0f;
+		}
+
 	}
 
 }
