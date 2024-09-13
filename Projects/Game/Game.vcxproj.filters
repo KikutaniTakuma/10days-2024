@@ -519,5 +519,8 @@
     <ClInclude Include="Src\GameObject\Comp\ArrowComp.h">
       <Filter>GameObject\Comp</Filter>
     </ClInclude>
+    <ClInclude Include="Src\GameObject\Comp\StarComp.h">
+      <Filter>GameObject\Comp</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
