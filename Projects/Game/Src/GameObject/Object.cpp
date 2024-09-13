@@ -67,6 +67,7 @@
 #include "Comp/EatCloudAnimationComp.h"
 
 #include "Comp/NumSpriteComp.h"
+#include "Comp/UINumSpriteComp.h"
 #include "Comp/EasingSpriteComp.h"
 #include "Comp/ArrowComp.h"
 #include "Comp/CloudUIComp.h"
@@ -222,6 +223,7 @@ bool Object::DebugAddComp() {
 		DebugAdd<ArrowComp>();
 		DebugAdd<CloudUIComp>();
 		DebugAdd<StarComp>();
+		DebugAdd<UINumSpriteComp>();
 
 		ImGui::EndChild();
 
@@ -319,5 +321,6 @@ void Object::AddComps(nlohmann::json& compData)
 	AddAndLoadComp<ArrowComp>(compName, compData);
 	AddAndLoadComp<CloudUIComp>(compName, compData);
 	AddAndLoadComp<StarComp>(compName, compData);
+	AddAndLoadComp<UINumSpriteComp>(compName, compData);
 }
 

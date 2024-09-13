@@ -57,6 +57,8 @@ private:
 
 	std::vector<Lamb::SafePtr<class UIDrawComp>> buttonUIs_;
 
+	std::vector<Lamb::SafePtr<class UINumSpriteComp>> nums_;
+
 	Vector3 easingPositionStart_ = { 0.0f,-500.0f,-2.0f };
 
 	Vector3 easingPositionEnd_ = { 0.0f,-0.0f,-2.0f };

@@ -192,6 +192,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Src\GameObject\Comp\TitleInputComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\TransformComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\UIDrawComp.cpp" />
+    <ClCompile Include="Src\GameObject\Comp\UINumSpriteComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\UITransformComp.cpp" />
     <ClCompile Include="Src\GameObject\Comp\UvOperatorComp.cpp" />
     <ClCompile Include="Src\GameObject\Manager\Aabb2DManager.cpp" />
@@ -274,6 +275,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="Src\GameObject\Comp\TitleInputComp.h" />
     <ClInclude Include="Src\GameObject\Comp\TransformComp.h" />
     <ClInclude Include="Src\GameObject\Comp\UIDrawComp.h" />
+    <ClInclude Include="Src\GameObject\Comp\UINumSpriteComp.h" />
     <ClInclude Include="Src\GameObject\Comp\UITransformComp.h" />
     <ClInclude Include="Src\GameObject\Comp\UvOperatorComp.h" />
     <ClInclude Include="Src\GameObject\Manager\Aabb2DManager.h" />

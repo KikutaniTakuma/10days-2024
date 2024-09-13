@@ -15,6 +15,7 @@
 #include "StarComp.h"
 #include "ChildrenObjectComp.h"
 #include "PlayerComp.h"
+#include "UINumSpriteComp.h"
 
 #include "AudioManager/AudioManager.h"
 
@@ -45,6 +46,7 @@ void ResultInputComp::Load() {
 		startransform->translate = { 96.0f * float(i - 1), -50.0f, -2.0f };
 		auto starRenderData = stars_.back()->getObject().GetComp<SpriteRenderDataComp>();
 		starRenderData->fileName = "./Resources/Textures/outGame/result_star_outline.png";
+		starRenderData->type = BlendType::kNormal;
 		starRenderData->Load();
 		starRenderData->uvTransform.rotate = { 0.0f,0.0f,0.0f, 1.0f };
 		childrenComp_->AddObject(newObject);
@@ -54,32 +56,55 @@ void ResultInputComp::Load() {
 	Lamb::SafePtr<Object> newObject = Lamb::MakeSafePtr<Object>();
 	buttonUIs_.push_back(newObject->AddComp<UIDrawComp>());
 	auto transform = buttonUIs_.back()->getObject().GetComp<UITransformComp>();
-	transform->translate = {-150.0f, -250.0f, -2.0f };
+	transform->translate = {-200.0f, -300.0f, -2.0f };
 	auto renderData = buttonUIs_.back()->getObject().GetComp<SpriteRenderDataComp>();
-	renderData->fileName = "./Resources/Textures/UI/result_UI_A.png";
+	renderData->fileName = "./Resources/Textures/UI/ingame_UI_reset.png";
+	renderData->type = BlendType::kNormal;
 	renderData->Load();
 	renderData->uvTransform.rotate = { 0.0f,0.0f,0.0f, 1.0f };
 	childrenComp_->AddObject(newObject);
 
-	Lamb::SafePtr<Object> newObject = Lamb::MakeSafePtr<Object>();
+	newObject = Lamb::MakeSafePtr<Object>();
 	buttonUIs_.push_back(newObject->AddComp<UIDrawComp>());
 	transform = buttonUIs_.back()->getObject().GetComp<UITransformComp>();
-	transform->translate = { 0.0f, -250.0f, -2.0f };
+	transform->translate = { 0.0f, -300.0f, -2.0f };
 	renderData = buttonUIs_.back()->getObject().GetComp<SpriteRenderDataComp>();
-	renderData->fileName = "./Resources/Textures/UI/result_UI_A.png";
+	renderData->fileName = "./Resources/Textures/UI/result_UI_B.png";
+	renderData->type = BlendType::kNormal;
 	renderData->Load();
 	renderData->uvTransform.rotate = { 0.0f,0.0f,0.0f, 1.0f };
 	childrenComp_->AddObject(newObject);
 
-	Lamb::SafePtr<Object> newObject = Lamb::MakeSafePtr<Object>();
+	newObject = Lamb::MakeSafePtr<Object>();
 	buttonUIs_.push_back(newObject->AddComp<UIDrawComp>());
 	transform = buttonUIs_.back()->getObject().GetComp<UITransformComp>();
-	transform->translate = { 150.0f, -250.0f, -2.0f };
+	transform->translate = { 200.0f, -300.0f, -2.0f };
 	renderData = buttonUIs_.back()->getObject().GetComp<SpriteRenderDataComp>();
 	renderData->fileName = "./Resources/Textures/UI/result_UI_A.png";
+	renderData->type = BlendType::kNormal;
 	renderData->Load();
 	renderData->uvTransform.rotate = { 0.0f,0.0f,0.0f, 1.0f };
 	childrenComp_->AddObject(newObject);
+
+	for (int32_t i = 0; i < 2; i++) {
+
+		Lamb::SafePtr<Object> newNumObject = Lamb::MakeSafePtr<Object>();
+		nums_.push_back(newNumObject->AddComp<UINumSpriteComp>());
+		auto numTransform = nums_.back()->getObject().GetComp<UITransformComp>();
+		numTransform->translate = { 48.0f - 96.0f * float(i), 150.0f, -2.0f};
+		auto numRenderData = nums_.back()->getObject().GetComp<SpriteRenderDataComp>();
+		numRenderData->fileName = "./Resources/Textures/outGame/num_white.png";
+		numRenderData->type = BlendType::kNormal;
+		numRenderData->uvTransform.scale.x = 0.1f;
+		numRenderData->Load();
+		numRenderData->uvTransform.rotate = { 0.0f,0.0f,0.0f, 1.0f };
+		childrenComp_->AddObject(newNumObject);
+
+		if (i == 1) {
+			nums_[i]->divide_ = 10;
+		}
+
+	}
 
 }
 
@@ -151,16 +176,39 @@ void ResultInputComp::Move()
 
 	if (isEasingStart_) {
 		UITransform_->scale = { 480.0f,480.0f,1.0f };
+
+		for (int32_t i = 0; i < 2; i++) {
+			nums_[i]->getObject().GetComp<UITransformComp>()->scale = { 48.0f,48.0f,48.0f };
+		}
+
 	}
 	else {
 		UITransform_->scale = { 0.0f,0.0f,0.0f };
+
+		for (int32_t i = 0; i < 2; i++) {
+			nums_[i]->getObject().GetComp<UITransformComp>()->scale = { 0.0f,0.0f,0.0f };
+		}
+
 	}
 
 	if (easing_->GetEaseing().GetIsActive()) {
 		UITransform_->translate = easing_->GetEaseing().Get(easingPositionStart_, easingPositionEnd_);
+
+		for (int32_t i = 0; i < 2; i++) {
+			nums_[i]->getObject().GetComp<UITransformComp>()->translate = 
+				easing_->GetEaseing().Get(easingPositionStart_ + Vector3{ 32.0f - 64.0f * float(i), 150.0f, -2.0f },
+					easingPositionEnd_ + Vector3{ 32.0f - 64.0f * float(i), 150.0f, -2.0f });
+		}
+
 	}
 	else if (isEasingStart_) {
+		
 		UITransform_->translate = easingPositionEnd_;
+
+		for (int32_t i = 0; i < 2; i++) {
+			nums_[i]->getObject().GetComp<UITransformComp>()->translate = easingPositionEnd_ + Vector3{ 32.0f - 64.0f * float(i), 150.0f, -2.0f };
+		}
+
 	}
 
 	for (size_t i = 0; i < 3; i++) {
@@ -195,6 +243,25 @@ void ResultInputComp::Move()
 				}
 
 			}
+
+		}
+
+	}
+
+	if (stars_[2]->isEasingEnd_) {
+
+		for (int32_t i = 0; i < 3; i++) {
+
+			buttonUIs_[i]->getObject().GetComp<UITransformComp>()->scale = { 128.0f,128.0f,128.0f };
+
+		}
+
+	}
+	else {
+
+		for (int32_t i = 0; i < 3; i++) {
+
+			buttonUIs_[i]->getObject().GetComp<UITransformComp>()->scale = { 0.0f,0.0f,0.0f };
 
 		}
 
