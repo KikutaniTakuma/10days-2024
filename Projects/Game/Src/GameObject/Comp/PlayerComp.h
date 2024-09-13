@@ -31,6 +31,7 @@ public:
 	void Load() override;
 
 	void SetIsBeamCollision(const Lamb::Flg& collisionFlg);
+	const Lamb::Flg& GetIsBeamCollision() const;
 
 	const Lamb::Flg& GetIsInvisible() const;
 

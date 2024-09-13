@@ -1,5 +1,7 @@
 #pragma once
 #include "../Object.h"
+#include "Drawers/Particle/Particle.h"
+#include "Engine/Graphics/Tex2DAniamtor/Tex2DAniamtor.h"
 
 class EyeComp : public IComp {
 public:
@@ -22,6 +24,10 @@ public:
 
 	void Update() override;
 
+	void LastUpdate() override;
+
+	void Draw(CameraComp* cameraComp) override;
+
 	// 攻撃してるとき
 	bool IsFire() const;
 
@@ -30,6 +36,11 @@ public:
 
 	// 狙いを定めたとき
 	bool IsAimFixed() const;
+
+
+	Lamb::SafePtr<class PlayerComp> GetPlayerComp() {
+		return playerComp_;
+	}
 
 private:
 	// これは別のオブジェクトが持っているPlayerComp
@@ -40,6 +51,7 @@ private:
 
 private:
 	Lamb::SafePtr<class TransformComp> transformComp_;
+	Lamb::SafePtr<class SpriteRenderDataComp> renderDataComp_;
 
 	// 黒目の子オブジェクト(これはベータ版で使う)
 	Lamb::SafePtr<class ChildrenObjectComp> childrenObjectComp_;
@@ -63,4 +75,10 @@ private:
 
 	bool isEasesingStart_ = false;
 	float32_t easeingStartPosX = 0.0f;
+
+	// パーティクル
+	std::unique_ptr<Particle> paritcle_;
+
+	uint32_t animtionTExtureHandle_ = 0;
+	Tex2DAniamtor animator_;
 };

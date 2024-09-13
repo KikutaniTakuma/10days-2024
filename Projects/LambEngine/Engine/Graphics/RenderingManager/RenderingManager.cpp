@@ -363,6 +363,10 @@ void RenderingManager::SetBloomColor(const Vector3& bloomColor) {
 	luminanceThreshold = bloomColor;
 }
 
+void RenderingManager::SetIsLighting(bool isLighting) {
+	deferredRenderingData_.isDirectionLight = static_cast<uint32_t>(isLighting);
+}
+
 void RenderingManager::Debug([[maybe_unused]]const std::string& guiName) {
 #ifdef _DEBUG
 	if(ImGui::TreeNode(guiName.c_str())){

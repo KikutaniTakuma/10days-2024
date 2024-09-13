@@ -1,5 +1,6 @@
 #include "EyeAudioComp.h"
 #include "EyeComp.h"
+#include "PlayerComp.h"
 
 void EyeAudioComp::Save(nlohmann::json& json)
 {
@@ -75,4 +76,12 @@ void EyeAudioComp::Debug([[maybe_unused]]const std::string& guiName) {
 		ImGui::TreePop();
 	}
 #endif // _DEBUG
+}
+
+void EyeAudioComp::LastUpdate() {
+	if (eyeComp_->GetPlayerComp()->GetIsGoal()) {
+		aimAudio_->Stop();
+		chargeAudio_->Stop();
+		fireAudio_->Stop();
+	}
 }

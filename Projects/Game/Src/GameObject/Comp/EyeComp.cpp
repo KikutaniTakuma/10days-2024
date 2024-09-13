@@ -15,6 +15,8 @@
 #include "CsvDataComp.h"
 
 #include "EyeAudioComp.h"
+#include "CameraComp.h"
+#include "Drawers/DrawerManager.h"
 
 void EyeComp::Init()
 {
@@ -26,9 +28,22 @@ void EyeComp::Init()
 	easeingComp_ = object_.AddComp<EaseingComp>();
 	childrenObjectComp_ = object_.AddComp<ChildrenObjectComp>();
 	object_.AddComp<EyeAudioComp>();
+	renderDataComp_ = object_.AddComp<SpriteRenderDataComp>();
 
 	Vector4 bloomColor = 0xd56ff9ff;
 	RenderingManager::GetInstance()->SetBloomColor({ bloomColor.color.r,bloomColor.color.g,bloomColor.color.b });
+
+	paritcle_ = std::make_unique<Particle>();
+	paritcle_->LoadSettingDirectory("fire-works");
+
+	DrawerManager::GetInstance()->LoadTexture("./Resources/Textures/enemy/enemy_eye_down_anime.png");
+	animtionTExtureHandle_ = DrawerManager::GetInstance()->GetTexture("./Resources/Textures/enemy/enemy_eye_down_anime.png");
+
+	renderDataComp_->uvTransform.scale.x = 1.0f / 16.0f;
+	animator_.SetAnimationNumber(16);
+	animator_.SetLoopAnimation(true);
+	animator_.SetDuration(0.12f);
+	animator_.Start();
 }
 
 void EyeComp::SetPlayerComp(PlayerComp* playerComp) {
@@ -99,6 +114,11 @@ void EyeComp::Event() {
 
 		if (mostNearCollisionObjectPtr->HasComp<CloudComp>() and not isDeleteCloud_ and eyeStateComp_->state == EyeStateComp::State::kFire) {
 
+			// 当たってたらパーティクルをスタート
+			if (not paritcle_->GetIsParticleStart()) {
+				paritcle_->ParticleStart(Vector3(collsionCbjectTransFormComp->translate.x, collsionCbjectTransFormComp->translate.y, collsionCbjectTransFormComp->translate.z - 0.1f));
+			}
+
 			int32_t mussX = mostNearCollisionObjectPtr->GetComp<CloudComp>()->GetMassX();
 			int32_t mussY = mostNearCollisionObjectPtr->GetComp<CloudComp>()->GetMassY();
 
@@ -130,6 +150,7 @@ void EyeComp::Event() {
 		// かつ、プレイヤーが透明じゃない
 		if(not isCollision and not playerComp_->GetIsInvisible()){
 			eyeStateComp_->state = EyeStateComp::State::kAim;
+			animator_.Stop();
 		}
 
 		beamLineRenderDataComp_->color = 0x00ff00ff;
@@ -161,6 +182,7 @@ void EyeComp::Event() {
 		// 狙いを定めている最中にプレイヤーを直視できなくなったらSearchに移行
 		if(isCollision){
 			eyeStateComp_->state = EyeStateComp::State::kSearch;
+			animator_.Start();
 		}
 
 		// もしイージングしてなかったら開始する
@@ -220,8 +242,14 @@ void EyeComp::Event() {
 		// 当たり判定の結果を設定
 		playerComp_->SetIsBeamCollision(playerObbComp_->IsCollision(beamLineComp_->start, beamLineComp_->end));
 
+		// 当たってたらパーティクルをスタート
+		if (playerComp_->GetIsBeamCollision().OnEnter() and not paritcle_->GetIsParticleStart()) {
+			paritcle_->ParticleStart(Vector3(playerTransformComp_->translate.x, playerTransformComp_->translate.y, playerTransformComp_->translate.z - 0.1f));
+		}
+
 		if (eyeStateComp_->GetFireTime() <= eyeStateComp_->fireCount) {
 			eyeStateComp_->state = EyeStateComp::State::kSearch;
+			animator_.Start();
 		}
 
 		break;
@@ -254,6 +282,24 @@ void EyeComp::Update() {
 	}
 
 	childrenBeamRenderDataComp_->color = beamLineRenderDataComp_->color;
+
+	paritcle_->Update();
+}
+
+void EyeComp::LastUpdate() {
+	if (eyeStateComp_->state == EyeStateComp::State::kSearch) {
+		animator_.GetUvMat4x4().Decompose(renderDataComp_->uvTransform.scale, renderDataComp_->uvTransform.rotate, renderDataComp_->uvTransform.translate);
+	}
+	else {
+		renderDataComp_->uvTransform.translate.x = 0.0f;
+		renderDataComp_->uvTransform.scale.x = 1.0f / 16.0f;
+	}
+	renderDataComp_->texHandle = animtionTExtureHandle_;
+	animator_.Update();
+}
+
+void EyeComp::Draw(CameraComp* cameraComp) {
+	paritcle_->Draw(Vector3::kZero, cameraComp->GetCameraMatrix());
 }
 
 bool EyeComp::IsFire() const {
