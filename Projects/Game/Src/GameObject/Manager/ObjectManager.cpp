@@ -566,9 +566,11 @@ void ObjectManager::Load(const std::string& jsonFileName) {
 	currentSceneFilePath_ = jsonFileName;
 
 	currentSceneName_ = jsonFile["scene"].get<std::string>();
-	if (jsonFile.find("RederingSetting") != jsonFile.end()) {
+	if (jsonFile.contains("RederingSetting")) {
 		RenderingManager::GetInstance()->Load(jsonFile);
 	}
+
+	RenderingManager::GetInstance()->SetIsLighting(false);
 
 	levelDatas_[currentSceneName_].reset(new LevelData());
 	LevelData& levelData = *levelDatas_[currentSceneName_];

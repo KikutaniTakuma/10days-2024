@@ -53,6 +53,8 @@ public:
 	void SetHsv(const Vector3& hsv);
 	void SetColor(const Vector4& color);
 	void SetBloomColor(const Vector3& bloomColor);
+	void SetIsLighting(bool isLighting);
+
 
 	void Debug(const std::string& guiName);
 
