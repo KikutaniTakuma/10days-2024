@@ -133,6 +133,10 @@ private:
 
 	float deadLine_ = -600.0f;
 
+	Lamb::SafePtr<class Audio> pushButtonAudio_;
+
+	Lamb::SafePtr<class Audio> backSceneAudio_;
+
 #pragma region 菊谷が追加 2024/9/8
 	Lamb::Flg beamCollisionFlg_;
 #pragma endregion

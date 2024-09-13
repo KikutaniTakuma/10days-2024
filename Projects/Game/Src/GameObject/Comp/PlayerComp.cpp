@@ -25,6 +25,7 @@
 #include "SceneChangeComp.h"
 #include "../Manager/ObjectManager.h"
 #include "EventComp.h"
+#include "AudioManager/AudioManager.h"
 
 void PlayerComp::Init() {
 
@@ -49,6 +50,10 @@ void PlayerComp::Init() {
 	handles_ = object_.AddComp<TextureHandlesComp>();
 	easing_ = object_.AddComp<EaseingComp>();
 	sceneChangeComp_ = object_.AddComp<SceneChangeComp>();
+	AudioManager::GetInstance()->Load("./Resources/Sounds/SE_outgame_decision.mp3");
+	pushButtonAudio_ = AudioManager::GetInstance()->Get("./Resources/Sounds/SE_outgame_decision.mp3");
+	AudioManager::GetInstance()->Load("./Resources/Sounds/SE_backScene.mp3");
+	backSceneAudio_ = AudioManager::GetInstance()->Get("./Resources/Sounds/SE_backScene.mp3");
 
 }
 
@@ -73,11 +78,13 @@ void PlayerComp::Move() {
 			not sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent) {
 			sceneChangeComp_->SetNextScene(ObjectManager::GetInstance()->GetCurrentSceneFilePath());
 			sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
+			pushButtonAudio_->Start(0.3f, false);
 		}
 		else if ((gamepad->Pushed(Gamepad::Button::START) or key->Pushed(DIK_ESCAPE)) and
 			not sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent) {
 			sceneChangeComp_->SetNextScene("./SceneData/stageSelect.json");
 			sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
+			backSceneAudio_->Start(0.3f, false);
 		}
 
 
