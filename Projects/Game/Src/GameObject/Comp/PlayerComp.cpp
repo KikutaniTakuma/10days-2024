@@ -623,10 +623,10 @@ void PlayerComp::Load([[maybe_unused]] nlohmann::json& json) {
 
 void PlayerComp::Load()
 {
-	AudioManager::GetInstance()->Load("./Resouces/Sounds/SE_backScene.mp3");
-	stageSelectAudio_ = AudioManager::GetInstance()->Get("./Resouces/Sounds/SE_backScene.mp3");
-	AudioManager::GetInstance()->Load("./Resouces/Sounds/SE_outgame_decision.mp3");
-	stageResetAudio_ = AudioManager::GetInstance()->Get("./Resouces/Sounds/SE_outgame_decision.mp3");
+	AudioManager::GetInstance()->Load("./Resources/Sounds/SE_backScene.mp3");
+	stageSelectAudio_ = AudioManager::GetInstance()->Get("./Resources/Sounds/SE_backScene.mp3");
+	AudioManager::GetInstance()->Load("./Resources/Sounds/SE_outgame_decision.mp3");
+	stageResetAudio_ = AudioManager::GetInstance()->Get("./Resources/Sounds/SE_outgame_decision.mp3");
 }
 
 void PlayerComp::SetIsBeamCollision(const Lamb::Flg& collisionFlg)

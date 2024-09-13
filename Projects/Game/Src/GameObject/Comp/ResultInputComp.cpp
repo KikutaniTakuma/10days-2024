@@ -24,8 +24,8 @@ void ResultInputComp::Init()
 }
 
 void ResultInputComp::Load() {
-	AudioManager::GetInstance()->Load("./Resouces/Sounds/SE_backScene.mp3");
-	audio_ = AudioManager::GetInstance()->Get("./Resouces/Sounds/SE_backScene.mp3");
+	AudioManager::GetInstance()->Load("./Resources/Sounds/SE_backScene.mp3");
+	audio_ = AudioManager::GetInstance()->Get("./Resources/Sounds/SE_backScene.mp3");
 }
 
 void ResultInputComp::Move()
