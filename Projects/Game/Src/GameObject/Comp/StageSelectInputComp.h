@@ -29,4 +29,10 @@ private:
 
 	bool isStickUsed_ = false;
 
+	Lamb::SafePtr<class Audio> arrowAudio_;
+
+	Lamb::SafePtr<class Audio> pushButtonAudio_;
+
+	Lamb::SafePtr<class Audio> backSceneAudio_;
+
 };

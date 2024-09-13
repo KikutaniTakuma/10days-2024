@@ -23,5 +23,6 @@ private:
 
 	Lamb::SafePtr<class SceneChangeComp> sceneChangeComp_;
 
+	Lamb::SafePtr<class Audio> pushButtonAudio_;
 
 };

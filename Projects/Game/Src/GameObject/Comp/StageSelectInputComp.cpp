@@ -2,12 +2,19 @@
 #include "Input/Input.h"
 #include "SceneChangeComp.h"
 #include "EventComp.h"
+#include "AudioManager/AudioManager.h"
 
 int32_t StageSelectInputComp::stageNumber_ = 1;
 
 void StageSelectInputComp::Init()
 {
 	sceneChangeComp_ = object_.AddComp<SceneChangeComp>();
+	AudioManager::GetInstance()->Load("./Resources/Sounds/SE_stageSelect_move.mp3");
+	arrowAudio_ = AudioManager::GetInstance()->Get("./Resources/Sounds/SE_stageSelect_move.mp3");
+	AudioManager::GetInstance()->Load("./Resources/Sounds/SE_outgame_decision.mp3");
+	pushButtonAudio_ = AudioManager::GetInstance()->Get("./Resources/Sounds/SE_outgame_decision.mp3");
+	AudioManager::GetInstance()->Load("./Resources/Sounds/SE_backScene.mp3");
+	backSceneAudio_ = AudioManager::GetInstance()->Get("./Resources/Sounds/SE_backScene.mp3");
 }
 
 void StageSelectInputComp::Move()
@@ -29,12 +36,14 @@ void StageSelectInputComp::Move()
 
 			sceneChangeComp_->SetNextScene(stageStr);
 			sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
+			pushButtonAudio_->Start(0.3f, false);
 
 		}
 		else if (gamepad->Pushed(Gamepad::Button::START) or key->Pushed(DIK_ESCAPE)) {
 			//ボタンを押してセレクトシーンに移動
 			sceneChangeComp_->SetNextScene("./SceneData/title.json");
 			sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
+			backSceneAudio_->Start(0.3f, false);
 		}
 		else if ((gamepad->Pushed(Gamepad::Button::LEFT) or
 			(gamepad->GetStick(Gamepad::Stick::LEFT).x < 0.0f) or
@@ -42,6 +51,7 @@ void StageSelectInputComp::Move()
 
 			if (stageNumber_ > 1 and not isStickUsed_) {
 				stageNumber_--;
+				arrowAudio_->Start(0.3f, false);
 			}
 
 			isStickUsed_ = true;
@@ -53,6 +63,7 @@ void StageSelectInputComp::Move()
 
 			if (stageNumber_ < kMaxStage_ and not isStickUsed_) {
 				stageNumber_++;
+				arrowAudio_->Start(0.3f, false);
 			}
 
 			isStickUsed_ = true;

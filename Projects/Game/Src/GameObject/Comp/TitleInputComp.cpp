@@ -2,10 +2,13 @@
 #include "Input/Input.h"
 #include "SceneChangeComp.h"
 #include "EventComp.h"
+#include "AudioManager/AudioManager.h"
 
 void TitleInputComp::Init()
 {
 	sceneChangeComp_ = object_.AddComp<SceneChangeComp>();
+	AudioManager::GetInstance()->Load("./Resources/Sounds/SE_outgame_decision.mp3");
+	pushButtonAudio_ = AudioManager::GetInstance()->Get("./Resources/Sounds/SE_outgame_decision.mp3");
 }
 
 void TitleInputComp::Move()
@@ -21,6 +24,7 @@ void TitleInputComp::Move()
 		if (gamepad->Pushed(Gamepad::Button::A) or key->Pushed(DIK_SPACE)) {
 			sceneChangeComp_->SetNextScene("./SceneData/stageSelect.json");
 			sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
+			pushButtonAudio_->Start(0.3f, false);
 		}
 
 	}

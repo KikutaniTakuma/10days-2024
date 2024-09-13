@@ -38,4 +38,8 @@ private:
 	Lamb::SafePtr<class EaseingComp> easing_;
 
 	Lamb::SafePtr<class Audio> audio_;
+
+	Lamb::SafePtr<class Audio> backAudio_;
+	Lamb::SafePtr<class Audio> decideAudio_;
+
 };

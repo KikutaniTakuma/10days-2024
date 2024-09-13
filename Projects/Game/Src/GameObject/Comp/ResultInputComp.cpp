@@ -20,12 +20,13 @@ void ResultInputComp::Init()
 	transform_ = object_.AddComp<TransformComp>();
 	easing_ = object_.AddComp<EaseingComp>();
 
-	audio_;
 }
 
 void ResultInputComp::Load() {
 	AudioManager::GetInstance()->Load("./Resources/Sounds/SE_backScene.mp3");
-	audio_ = AudioManager::GetInstance()->Get("./Resources/Sounds/SE_backScene.mp3");
+	backAudio_ = AudioManager::GetInstance()->Get("./Resources/Sounds/SE_backScene.mp3");
+	AudioManager::GetInstance()->Load("./Resources/Sounds/SE_backScene.mp3");
+	decideAudio_ = AudioManager::GetInstance()->Get("./Resources/Sounds/SE_outgame_decision.mp3");
 }
 
 void ResultInputComp::Move()
@@ -56,13 +57,14 @@ void ResultInputComp::Move()
 
 					sceneChangeComp_->SetNextScene(stageStr);
 					sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
+					decideAudio_->Start(0.3f, false);
 
 				}
 				else if (gamepad->Pushed(Gamepad::Button::B) or key->Pushed(DIK_ESCAPE)) {
 					//ボタンを押してセレクトシーンに移動
 					sceneChangeComp_->SetNextScene("./SceneData/stageSelect.json");
 					sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
-					audio_->Start(0.3f, false);
+					backAudio_->Start(0.3f, false);
 				}
 				else if (gamepad->Pushed(Gamepad::Button::X) or key->Pushed(DIK_R)) {
 					//ボタンを押してセレクトシーンに移動
@@ -74,6 +76,7 @@ void ResultInputComp::Move()
 
 					sceneChangeComp_->SetNextScene(stageStr);
 					sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
+					decideAudio_->Start(0.3f, false);
 				}
 
 			}
