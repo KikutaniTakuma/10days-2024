@@ -1,5 +1,7 @@
 #pragma once
 #include "../Object.h"
+#include "Utils/Easeing.h"
+
 class CloudRenderComp : public IComp {
 public:
 	using IComp::IComp;
@@ -36,5 +38,6 @@ private:
 	float32_t scaleMax_ = 0.0f;
 	float32_t3 scale_;
 	
-
+	Easeing playertTouchEase_;
+	float32_t playertTouchEaseTime_ = 1.0f;
 };

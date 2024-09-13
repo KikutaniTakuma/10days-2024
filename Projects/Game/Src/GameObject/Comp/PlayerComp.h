@@ -28,6 +28,7 @@ public:
 
 	void Save(nlohmann::json& json) override;
 	void Load(nlohmann::json& json) override;
+	void Load() override;
 
 	void SetIsBeamCollision(const Lamb::Flg& collisionFlg);
 
@@ -133,12 +134,10 @@ private:
 
 	float deadLine_ = -600.0f;
 
-	Lamb::SafePtr<class Audio> pushButtonAudio_;
-
-	Lamb::SafePtr<class Audio> backSceneAudio_;
-
 #pragma region 菊谷が追加 2024/9/8
 	Lamb::Flg beamCollisionFlg_;
 #pragma endregion
 
+	Lamb::SafePtr<class Audio> stageSelectAudio_;
+	Lamb::SafePtr<class Audio> stageResetAudio_;
 };

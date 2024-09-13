@@ -3,7 +3,6 @@
 #include "Utils/Random.h"
 #include "EaseingComp.h"
 #include "TransformComp.h"
-#include "Utils/Random.h"
 #include "InstanceTimeComp.h"
 #include "CloudComp.h"
 
@@ -54,10 +53,19 @@ void CloudRenderComp::Update() {
 		easeingComp_->GetEaseing().Start(easeingComp_->isLoop, easeingComp_->spdT, easeingComp_->type);
 	}
 
+	playertTouchEase_.Update();
+
+	if (cloudComp_->GetIsHitPlayer().OnEnter()) {
+		playertTouchEase_.Start(false, playertTouchEaseTime_, Easeing::Type::kOutElastic);
+	}
+
 }
 
 void CloudRenderComp::LastUpdate() {
-	if (easeingComp_->GetEaseing().GetIsActive()) {
+	if (playertTouchEase_.GetIsActive()) {
+		spriteRenderDataComp_->userOffsetTransform.scale = playertTouchEase_.Get(scale_ * scaleMax_, scale_);
+	}
+	else if (easeingComp_->GetEaseing().GetIsActive()) {
 		spriteRenderDataComp_->userOffsetTransform.scale = easeingComp_->GetEaseing().Get(scale_, scale_ * scaleMax_);
 	}
 }
