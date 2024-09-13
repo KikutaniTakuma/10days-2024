@@ -23,9 +23,7 @@
 void ResultInputComp::Init()
 {
 	sceneChangeComp_ = object_.AddComp<SceneChangeComp>();
-	spriteRenderComp_ = object_.AddComp<SpriteRenderComp>();
 	spriteRenderDataComp_ = object_.AddComp<UISpriteRenderDataComp>();
-	transform_ = object_.AddComp<TransformComp>();
 	easing_ = object_.AddComp<EaseingComp>();
 	UIDraw_ = object_.AddComp<UIDrawComp>();
 	UITransform_ = object_.AddComp<UITransformComp>();
