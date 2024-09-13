@@ -8,7 +8,7 @@
 void World::Initialize() {
 	// ウィンドウ初期化オプション
 	initDesc_ = Framework::InitDesc{
-		.windowName = "LambEngine_demo",
+		.windowName = "3004_モクモくウ",
 		.windowSize = {1280.0f, 720.0f},
 		.maxFps = 60.0f,
 		.isFullesceen = false
