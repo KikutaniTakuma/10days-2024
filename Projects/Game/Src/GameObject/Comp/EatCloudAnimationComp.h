@@ -39,6 +39,7 @@ private:
 	Lamb::SafePtr<class TransformComp> transformComp_;
 	Lamb::SafePtr<class SpriteRenderDataComp> spriteRenderDataComp_;
 	Lamb::SafePtr<class SpriteRenderComp> spriteRenderComp_;
+	Lamb::SafePtr<class CloudComp> cloudComp_;
 
 	float32_t pullTime_ = 0.2f;
 	float32_t returnTime_ = 0.3f;

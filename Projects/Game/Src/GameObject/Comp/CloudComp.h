@@ -63,7 +63,7 @@
 
 	 Lamb::SafePtr<class Aabb2DComp> aabbCollision_;
 
-	 Lamb::SafePtr<class EatAnimationControllComp> eatCloudAnimationControllComp_;
+	 Lamb::SafePtr<class EatCloudAnimationComp> eatCloudAnimationComp_;
 
 	 bool isDead_ = false;
 

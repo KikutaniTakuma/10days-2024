@@ -51,7 +51,14 @@ void SceneLoad::Start()
 			BlendType::kUnenableDepthNone
 		);
 
+		renderContextManager_ = RenderContextManager::GetInstance();
+
+		renderContextManager_->ResizeRenderList();
+
 		RenderingManager::GetInstance()->Draw();
+
+		// ドローカウントリセット
+		renderContextManager_->ResetDrawCount();
 
 		Engine::FrameEnd();
 
@@ -94,7 +101,15 @@ void SceneLoad::CreateLoad()
 				BlendType::kUnenableDepthNone
 			);
 
+
+			renderContextManager_ = RenderContextManager::GetInstance();
+
+			renderContextManager_->ResizeRenderList();
+
 			RenderingManager::GetInstance()->Draw();
+
+			// ドローカウントリセット
+			renderContextManager_->ResetDrawCount();
 
 			Engine::FrameEnd();
 		},
