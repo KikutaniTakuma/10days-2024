@@ -1,14 +1,14 @@
 #include "UIDrawComp.h"
 #include "Utils/EngineInfo.h"
 #include "Drawers/DrawerManager.h"
-#include "../Comp/SpriteRenderDataComp.h"
+#include "../Comp/UISpriteRenderDataComp.h"
 #include "../Comp/UITransformComp.h"
 #include "Camera/Camera.h"
 
 void UIDrawComp::Init()
 {
 	tex2D_ = DrawerManager::GetInstance()->GetTexture2D();
-	renderDataComp_ = object_.AddComp<SpriteRenderDataComp>();
+	renderDataComp_ = object_.AddComp<UISpriteRenderDataComp>();
 	transformComp_ = object_.AddComp<UITransformComp>();
 }
 

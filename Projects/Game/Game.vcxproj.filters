@@ -236,6 +236,12 @@
     <ClCompile Include="Src\GameObject\Comp\CloudUIComp.cpp">
       <Filter>GameObject\Comp</Filter>
     </ClCompile>
+    <ClCompile Include="Src\GameObject\Comp\SpriteUVChangeComp.cpp">
+      <Filter>GameObject\Comp</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameObject\Comp\UISpriteRenderDataComp.cpp">
+      <Filter>GameObject\Comp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="GlobalVariables">
@@ -526,6 +532,12 @@
       <Filter>GameObject\Comp</Filter>
     </ClInclude>
     <ClInclude Include="Src\GameObject\Comp\CloudUIComp.h">
+      <Filter>GameObject\Comp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Comp\SpriteUVChangeComp.h">
+      <Filter>GameObject\Comp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameObject\Comp\UISpriteRenderDataComp.h">
       <Filter>GameObject\Comp</Filter>
     </ClInclude>
   </ItemGroup>
