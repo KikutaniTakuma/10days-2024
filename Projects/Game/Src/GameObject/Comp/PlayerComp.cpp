@@ -547,6 +547,11 @@ void PlayerComp::CheckCollision()
 
 			}
 
+			(*cloud)->SetIsHitPlayer(true);
+
+		}
+		else {
+			(*cloud)->SetIsHitPlayer(false);
 		}
 
 		//obb当たり判定(雑)
