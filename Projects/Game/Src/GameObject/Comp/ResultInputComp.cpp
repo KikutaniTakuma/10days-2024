@@ -33,7 +33,7 @@ void ResultInputComp::Move()
 			if (not sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent) {
 
 				//10ステージ目では反応させない
-				if (gamepad->Pushed(Gamepad::Button::A) or key->Pushed(DIK_SPACE) and 
+				if ((gamepad->Pushed(Gamepad::Button::A) or key->Pushed(DIK_SPACE)) and 
 					StageSelectInputComp::stageNumber_ < StageSelectInputComp::kMaxStage_) {
 
 					//次のステージに移動
