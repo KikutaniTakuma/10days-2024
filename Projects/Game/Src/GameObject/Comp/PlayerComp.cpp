@@ -26,6 +26,9 @@
 #include "../Manager/ObjectManager.h"
 #include "EventComp.h"
 
+
+#include "AudioManager/AudioManager.h"
+
 void PlayerComp::Init() {
 
 	transform_ = object_.AddComp<TransformComp>();
@@ -73,11 +76,19 @@ void PlayerComp::Move() {
 			not sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent) {
 			sceneChangeComp_->SetNextScene(ObjectManager::GetInstance()->GetCurrentSceneFilePath());
 			sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
+
+			if (not stageResetAudio_->IsStart()) {
+				stageResetAudio_->Start(0.3f, false);
+			}
 		}
 		else if ((gamepad->Pushed(Gamepad::Button::START) or key->Pushed(DIK_ESCAPE)) and
 			not sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent) {
 			sceneChangeComp_->SetNextScene("./SceneData/stageSelect.json");
 			sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
+
+			if(not stageSelectAudio_->IsStart()) {
+				stageSelectAudio_->Start(0.3f, false);
+			}
 		}
 
 
@@ -603,6 +614,14 @@ void PlayerComp::Save(nlohmann::json& json) {
 
 void PlayerComp::Load([[maybe_unused]] nlohmann::json& json) {
 
+}
+
+void PlayerComp::Load()
+{
+	AudioManager::GetInstance()->Load("./Resouces/Sounds/SE_backScene.mp3");
+	stageSelectAudio_ = AudioManager::GetInstance()->Get("./Resouces/Sounds/SE_backScene.mp3");
+	AudioManager::GetInstance()->Load("./Resouces/Sounds/SE_outgame_decision.mp3");
+	stageResetAudio_ = AudioManager::GetInstance()->Get("./Resouces/Sounds/SE_outgame_decision.mp3");
 }
 
 void PlayerComp::SetIsBeamCollision(const Lamb::Flg& collisionFlg)

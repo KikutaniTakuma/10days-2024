@@ -9,6 +9,7 @@ public:
 	~ResultInputComp() = default;
 
 	void Init() override;
+	void Load() override;
 
 	void Move() override;
 
@@ -36,4 +37,5 @@ private:
 
 	Lamb::SafePtr<class EaseingComp> easing_;
 
+	Lamb::SafePtr<class Audio> audio_;
 };

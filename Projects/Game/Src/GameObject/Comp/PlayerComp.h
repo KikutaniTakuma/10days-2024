@@ -28,6 +28,7 @@ public:
 
 	void Save(nlohmann::json& json) override;
 	void Load(nlohmann::json& json) override;
+	void Load() override;
 
 	void SetIsBeamCollision(const Lamb::Flg& collisionFlg);
 
@@ -137,4 +138,6 @@ private:
 	Lamb::Flg beamCollisionFlg_;
 #pragma endregion
 
+	Lamb::SafePtr<class Audio> stageSelectAudio_;
+	Lamb::SafePtr<class Audio> stageResetAudio_;
 };

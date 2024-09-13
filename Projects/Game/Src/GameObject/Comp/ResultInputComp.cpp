@@ -10,6 +10,8 @@
 #include "TransformComp.h"
 #include "EaseingComp.h"
 
+#include "AudioManager/AudioManager.h"
+
 void ResultInputComp::Init()
 {
 	sceneChangeComp_ = object_.AddComp<SceneChangeComp>();
@@ -17,6 +19,13 @@ void ResultInputComp::Init()
 	spriteRenderDataComp_ = object_.AddComp<SpriteRenderDataComp>();
 	transform_ = object_.AddComp<TransformComp>();
 	easing_ = object_.AddComp<EaseingComp>();
+
+	audio_;
+}
+
+void ResultInputComp::Load() {
+	AudioManager::GetInstance()->Load("./Resouces/Sounds/SE_backScene.mp3");
+	audio_ = AudioManager::GetInstance()->Get("./Resouces/Sounds/SE_backScene.mp3");
 }
 
 void ResultInputComp::Move()
@@ -53,6 +62,9 @@ void ResultInputComp::Move()
 					//ボタンを押してセレクトシーンに移動
 					sceneChangeComp_->SetNextScene("./SceneData/stageSelect.json");
 					sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
+					if (not audio_->IsStart()) {
+						audio_->Start(0.3f, false);
+					}
 				}
 				else if (gamepad->Pushed(Gamepad::Button::X) or key->Pushed(DIK_R)) {
 					//ボタンを押してセレクトシーンに移動
