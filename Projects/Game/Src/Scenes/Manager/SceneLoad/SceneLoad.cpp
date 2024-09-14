@@ -33,6 +33,12 @@ SceneLoad::SceneLoad() :
 	cameraMatrix_ = camera->GetViewOthographics();
 
 	CreateLoad();
+
+	auto textureManager = TextureManager::GetInstance();
+	// このフレームで画像読み込みが発生していたらTextureをvramに送る
+	textureManager->UploadTextureData();
+	// dramから解放
+	textureManager->ReleaseIntermediateResource();
 }
 
 void SceneLoad::Start()
@@ -79,7 +85,6 @@ void SceneLoad::Stop()
 
 		tex2Danimator_->Stop();
 		renderContextManager_->SetIsNowThreading(isLoad_);
-		Engine::FrameStart();
 	}
 }
 

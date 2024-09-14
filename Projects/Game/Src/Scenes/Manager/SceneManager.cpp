@@ -3,6 +3,8 @@
 #include "Engine/EngineUtils/FrameInfo/FrameInfo.h"
 #include "Engine/Graphics/TextureManager/TextureManager.h"
 
+#include "Engine/Engine.h"
+
 std::unique_ptr<SceneManager> SceneManager::instance_;
 
 void SceneManager::Initialize()
@@ -27,11 +29,19 @@ void SceneManager::Initialize(const std::string& sceneJsonFilePath) {
 
 	load_ = std::make_unique<SceneLoad>();
 
+	Engine::FrameStart();
+
+	// ロード中の描画を開始
+	load_->Start();
+
 	objectManager_ = ObjectManager::GetInstance();
 	objectManager_->Load(sceneJsonFilePath);
 
 	// テクスチャデータのアップロード
 	UploadTextureData();
+
+	// ロード中の描画を終了
+	load_->Stop();
 }
 
 void SceneManager::SceneChange(const std::string& nextSceneJsonFilePath) {
@@ -63,6 +73,9 @@ void SceneManager::Update() {
 
 		// ロード中の描画を終了
 		load_->Stop();
+
+		// フレーム処理開始
+		Engine::FrameStart();
 #pragma endregion
 
 #pragma region その後の処理
