@@ -277,7 +277,7 @@ void ObjectManager::Debug() {
 	}
 
 
-	RenderingManager::GetInstance()->Debug("RendeirngSetting");
+	RenderingManager::GetInstance()->Debug("RenderSetting");
 
 	if (ImGui::TreeNode("sort")) {
 		for (auto& object : objects_) {
