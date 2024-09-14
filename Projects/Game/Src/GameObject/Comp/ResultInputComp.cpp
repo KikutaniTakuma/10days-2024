@@ -177,6 +177,11 @@ void ResultInputComp::Move()
 					sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
 					decideAudio_->Start(0.3f, false);
 
+					//数字を更新させない
+					for (size_t i = 0; i < 2; i++) {
+						nums_[i]->isUpdate_ = false;
+					}
+
 				}
 				else if (gamepad->Pushed(Gamepad::Button::B) or key->Pushed(DIK_ESCAPE)) {
 					//ボタンを押してセレクトシーンに移動
@@ -195,6 +200,7 @@ void ResultInputComp::Move()
 					sceneChangeComp_->SetNextScene(stageStr);
 					sceneChangeComp_->getObject().GetComp<EventComp>()->isEvent = true;
 					decideAudio_->Start(0.3f, false);
+
 				}
 
 			}
@@ -282,6 +288,10 @@ void ResultInputComp::Move()
 		for (int32_t i = 0; i < 3; i++) {
 
 			buttonUIs_[i]->getObject().GetComp<UITransformComp>()->scale = { 128.0f,128.0f,128.0f };
+
+			if (i == 2 and StageSelectInputComp::stageNumber_ == 10) {
+				buttonUIs_[i]->getObject().GetComp<UITransformComp>()->scale = { 0.0f,0.0f,0.0f };
+			}
 
 		}
 
